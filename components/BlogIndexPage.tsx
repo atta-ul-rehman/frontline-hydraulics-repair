@@ -202,7 +202,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                 <div className="absolute inset-0 bg-brand-orange opacity-0 group-hover:opacity-10 transition-opacity"></div>
                 <h3 className="text-xl font-heading font-bold text-white mb-2">Need Hydraulic Repair?</h3>
                 <p className="text-gray-300 text-sm mb-6">Our mobile technicians are available 24/7 for emergency service.</p>
-                <div className="text-2xl font-black text-brand-orange mb-6">(XXX) XXX-XXXX</div>
+                <div className="text-2xl font-black text-brand-orange mb-6">859 462-4673</div>
                 <button 
                     onClick={onOpenContact}
                     className="w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors shadow-lg"

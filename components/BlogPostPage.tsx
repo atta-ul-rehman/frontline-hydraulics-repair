@@ -237,11 +237,11 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                     <h3 className="font-heading font-bold text-xl mb-3">Broken Hose?</h3>
                     <p className="text-gray-300 text-sm mb-6">We can be at your site in under 60 minutes.</p>
                     <a 
-                        href="tel:555-123-4567" 
+                        href="tel:8594624673" 
                         className="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors"
                     >
                         <Phone className="w-4 h-4 fill-current" />
-                        (XXX) XXX-XXXX
+                        859 462-4673
                     </a>
                 </div>
 
@@ -301,7 +301,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
              </p>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
-                    href="tel:555-123-4567"
+                    href="tel:8594624673"
                     className="flex items-center gap-2 bg-brand-orange text-white text-lg font-bold px-10 py-4 rounded hover:bg-brand-darkOrange transition-colors shadow-lg"
                 >
                     <Phone className="w-5 h-5 fill-current" />

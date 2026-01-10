@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench } from 'lucide-react';
+import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench, Settings } from 'lucide-react';
 import { ServicePageData } from '../types';
 import SeoHead from './SeoHead';
 
@@ -16,6 +16,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Brands list
+  const brands = ["Caterpillar", "John Deere", "Komatsu", "Volvo", "Case", "Hitachi", "Bobcat", "Parker", "Eaton"];
+
   // Enhanced Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -25,7 +28,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
     "provider": {
         "@type": "LocalBusiness",
         "name": "Frontline Hydraulic Services",
-        "telephone": "+1-661-555-0123",
+        "telephone": "+1-859-462-4673",
         "url": "https://frontlinehydraulics.com"
     },
     "areaServed": [
@@ -103,21 +106,32 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="tel:555-123-4567" 
+              href="tel:8594624673" 
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-8 py-4 rounded shadow-lg transition-transform transform hover:-translate-y-1"
             >
               <Phone className="w-5 h-5 fill-current" />
-              <span>(XXX) XXX-XXXX</span>
+              <span>859 462-4673</span>
             </a>
             <button 
               onClick={onOpenContact}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-lg font-bold px-8 py-4 rounded transition-colors"
             >
-              <span>Request Service</span>
+              <span>Dispatch Tech</span>
             </button>
           </div>
         </div>
       </section>
+
+      {/* SCARCITY BANNER */}
+      <div className="bg-green-100 border-b border-green-200 py-3 text-center">
+         <p className="text-green-800 text-sm font-bold flex items-center justify-center gap-2">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            Technicians Currently Available for Immediate Dispatch
+         </p>
+      </div>
 
       {/* SECTION 2: OVERVIEW & COMMON ISSUES */}
       <section className="py-16 md:py-24">
@@ -183,8 +197,8 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 </ul>
                 <div className="bg-white p-6 rounded border border-gray-200 text-center shadow-sm">
                   <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">24/7 Dispatch</p>
-                  <a href="tel:555-123-4567" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-4">
-                    (XXX) XXX-XXXX
+                  <a href="tel:8594624673" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-4">
+                    859 462-4673
                   </a>
                   <button 
                     onClick={onOpenContact}
@@ -200,8 +214,20 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         </div>
       </section>
 
+      {/* BRANDS SECTION */}
+      <section className="py-12 bg-gray-50 border-y border-gray-200">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Brands & Systems We Service</h3>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                {brands.map((brand, idx) => (
+                    <span key={idx} className="text-xl font-bold text-gray-400 uppercase">{brand}</span>
+                ))}
+            </div>
+         </div>
+      </section>
+
       {/* SECTION 3: WHAT'S INCLUDED */}
-      <section className="py-20 bg-gray-50 border-y border-gray-200">
+      <section className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
@@ -214,7 +240,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.whatsIncluded.map((item, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow group">
+              <div key={idx} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow group border border-gray-100">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-brand-light p-3 rounded-full group-hover:bg-brand-orange transition-colors">
                     <item.icon className="w-6 h-6 text-brand-orange group-hover:text-white transition-colors" />
@@ -229,7 +255,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       </section>
 
       {/* SECTION 4: PROCESS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">How It Works</h2>
@@ -240,9 +266,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             {data.process.map((step, idx) => (
               <div key={idx} className="relative">
                 {idx < data.process.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-100 -z-10"></div>
+                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 -z-10"></div>
                 )}
-                <div className="bg-white p-6 text-center">
+                <div className="bg-white p-6 text-center rounded-lg shadow-sm border border-gray-100">
                   <div className="w-16 h-16 bg-brand-navy text-white rounded-full flex items-center justify-center text-xl font-black mx-auto mb-6 shadow-lg relative z-10 border-4 border-white">
                     {idx + 1}
                   </div>
@@ -404,7 +430,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a 
-                href="tel:555-123-4567" 
+                href="tel:8594624673" 
                 className="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-xl font-bold px-10 py-5 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
                 <PhoneCall className="w-6 h-6 fill-current" />

@@ -65,7 +65,7 @@ const ContactSection: React.FC = () => {
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-yellow-700 font-bold">
-                                        Is it a safety emergency? Call <a href="tel:555-123-4567" className="underline">555-123-4567</a> immediately.
+                                        Is it a safety emergency? Call <a href="tel:8594624673" className="underline">859 462-4673</a> immediately.
                                     </p>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ const ContactSection: React.FC = () => {
                                     name="phone" 
                                     id="phone" 
                                     required
-                                    placeholder="(555) 555-5555"
+                                    placeholder="859 462-4673"
                                     className="block w-full bg-gray-50 border border-gray-300 rounded-lg py-4 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all"
                                     value={formData.phone}
                                     onChange={handleChange}
@@ -128,7 +128,7 @@ const ContactSection: React.FC = () => {
                             ) : (
                                 <>
                                     <Send className="-ml-1 mr-3 h-5 w-5" />
-                                    REQUEST TECH NOW
+                                    DISPATCH TECHNICIAN NOW
                                 </>
                             )}
                         </button>

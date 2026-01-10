@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               24/7 Mobile Hydraulic Repair Specialists. We bring the repair shop to you.
             </p>
             <div className="mb-2">
-                 <h5 className="font-bold text-white mb-1">(XXX) XXX-XXXX</h5>
+                 <h5 className="font-bold text-white mb-1">859 462-4673</h5>
                  <p className="text-gray-400 text-xs">24/7 Emergency Service Available</p>
             </div>
           </div>

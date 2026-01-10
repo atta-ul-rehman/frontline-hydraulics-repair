@@ -10,7 +10,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    company: '',
+    zip: '',
     serviceType: 'Emergency Repair',
     message: ''
   });
@@ -52,7 +52,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full">
           <div className="bg-brand-navy px-4 py-4 sm:px-6 flex justify-between items-center">
             <h3 className="text-lg leading-6 font-bold text-white" id="modal-title">
-              Request Service
+              Request Technician
             </h3>
             <button 
                 onClick={onClose}
@@ -81,46 +81,50 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            id="name" 
-                            required
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="col-span-2">
+                            <label htmlFor="name" className="block text-sm font-bold text-gray-700">Full Name <span className="text-red-500">*</span></label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                required
+                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
+                                value={formData.name}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                     
-                    <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-                        <input 
-                            type="tel" 
-                            name="phone" 
-                            id="phone" 
-                            required
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
-                            value={formData.phone}
-                            onChange={handleChange}
-                        />
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="col-span-1">
+                            <label htmlFor="phone" className="block text-sm font-bold text-gray-700">Phone <span className="text-red-500">*</span></label>
+                            <input 
+                                type="tel" 
+                                name="phone" 
+                                id="phone" 
+                                required
+                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
+                                value={formData.phone}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="col-span-1">
+                            <label htmlFor="zip" className="block text-sm font-bold text-gray-700">Zip Code <span className="text-red-500">*</span></label>
+                            <input 
+                                type="text" 
+                                name="zip" 
+                                id="zip" 
+                                required
+                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
+                                value={formData.zip}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
 
                     <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-gray-700">Company (Optional)</label>
-                        <input 
-                            type="text" 
-                            name="company" 
-                            id="company" 
-                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
-                            value={formData.company}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700">Service Needed</label>
+                        <label htmlFor="serviceType" className="block text-sm font-bold text-gray-700">Service Needed</label>
                         <select 
                             id="serviceType" 
                             name="serviceType" 
@@ -136,13 +140,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     </div>
 
                     <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700">Details / Location</label>
+                        <label htmlFor="message" className="block text-sm font-bold text-gray-700">Details / Location</label>
                         <textarea 
                             id="message" 
                             name="message" 
-                            rows={3} 
+                            rows={2} 
                             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
-                            placeholder="Machine type, location, nature of leak..."
+                            placeholder="Machine type, nature of leak..."
                             value={formData.message}
                             onChange={handleChange}
                         ></textarea>
@@ -157,17 +161,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                             {isSubmitting ? (
                                 <>
                                     <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4" />
-                                    Processing...
+                                    Dispatching...
                                 </>
                             ) : (
                                 <>
                                     <Send className="-ml-1 mr-2 h-4 w-4" />
-                                    Request Service Now
+                                    Dispatch Technician Now
                                 </>
                             )}
                         </button>
-                        <p className="mt-2 text-xs text-center text-gray-500">
-                            For immediate emergencies, call us directly at (555) 123-4567.
+                        <p className="mt-3 text-xs text-center text-gray-500 font-bold">
+                            For immediate emergencies, call 859 462-4673.
                         </p>
                     </div>
                 </form>

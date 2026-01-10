@@ -75,10 +75,10 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 <span className="block text-white font-black text-xl uppercase tracking-wide">Hydraulic Emergency? Call Now for 24/7 Service</span>
             </div>
             <a 
-                href="tel:555-123-4567" 
+                href="tel:8594624673" 
                 className="bg-white text-brand-orange hover:text-brand-darkOrange px-6 py-2 rounded-md font-black text-xl shadow-lg transition-transform transform hover:scale-105"
             >
-                (XXX) XXX-XXXX
+                859 462-4673
             </a>
         </div>
       </section>
@@ -101,7 +101,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 uppercase text-sm tracking-wide mb-1">Call or Text</h4>
-                                    <a href="tel:555-123-4567" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-1">(XXX) XXX-XXXX</a>
+                                    <a href="tel:8594624673" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-1">859 462-4673</a>
                                     <span className="inline-block bg-brand-orange/10 text-brand-orange text-xs font-bold px-2 py-1 rounded">24/7 Emergency Service</span>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
 
                                     <div className="text-center space-y-2">
                                         <p className="text-sm text-gray-600 font-medium">
-                                            For immediate emergency service, please call <a href="tel:555-123-4567" className="text-brand-orange font-bold hover:underline">(XXX) XXX-XXXX</a>
+                                            For immediate emergency service, please call <a href="tel:8594624673" className="text-brand-orange font-bold hover:underline">859 462-4673</a>
                                         </p>
                                         <p className="text-xs text-gray-400">
                                             We respect your privacy and will never share your information.
@@ -357,7 +357,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
             
             <p className="text-center text-sm font-medium text-gray-500 mt-6 flex items-center justify-center gap-2">
                 <HelpCircle className="w-4 h-4" />
-                Need service outside this area? <a href="tel:555-123-4567" className="text-brand-orange hover:underline font-bold">Contact us</a> — we may be able to help.
+                Need service outside this area? <a href="tel:8594624673" className="text-brand-orange hover:underline font-bold">Contact us</a> — we may be able to help.
             </p>
         </div>
       </section>
@@ -476,7 +476,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a 
-                href="tel:555-123-4567" 
+                href="tel:8594624673" 
                 className="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-xl font-bold px-10 py-5 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
                 <Phone className="w-6 h-6 fill-current" />

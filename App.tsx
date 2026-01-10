@@ -18,6 +18,9 @@ import ServicesListingPage from './components/ServicesListingPage';
 import LocationPage from './components/LocationPage';
 import BlogIndexPage from './components/BlogIndexPage';
 import BlogPostPage from './components/BlogPostPage';
+import RecentJobs from './components/RecentJobs';
+import CommercialAccounts from './components/CommercialAccounts';
+import Testimonials from './components/Testimonials';
 import SeoHead from './components/SeoHead';
 import { 
   emergencyRepairData, 
@@ -90,13 +93,16 @@ function App() {
             <>
               <SeoHead 
                 title="Mobile Hydraulic Repair Bakersfield | 24/7 Emergency Service | Frontline Hydraulics"
-                description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call (XXX) XXX-XXXX for immediate response."
+                description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call 859 462-4673 for immediate response."
                 type="website"
               />
               <Hero onOpenContact={openModal} />
+              <RecentJobs />
               <Services />
               <WhyChooseUs />
+              <CommercialAccounts />
               <Industries />
+              <Testimonials />
               <ServiceArea />
               <CtaBanner />
               <ContactSection />

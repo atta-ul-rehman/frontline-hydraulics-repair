@@ -14,11 +14,11 @@ const CtaBanner: React.FC = () => {
             
         <div className="flex flex-col items-center justify-center gap-4">
             <a 
-                href="tel:555-123-4567" 
+                href="tel:8594624673" 
                 className="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-xl font-bold px-10 py-5 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
                 <Phone className="w-6 h-6 fill-current" />
-                (XXX) XXX-XXXX
+                859 462-4673
             </a>
             <span className="text-gray-400 text-sm mt-4">Available 24 hours a day, 7 days a week, 365 days a year</span>
         </div>

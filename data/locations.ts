@@ -17,7 +17,7 @@ export const bakersfieldData: LocationPageData = {
     ]
   },
   localDetails: {
-    phone: "(661) 555-0123",
+    phone: "859 462-4673",
     hours: "24/7 Emergency Dispatch",
     responseTime: "60-Min Avg Response",
     serviceAreaShort: "Bakersfield & Kern Co.",
@@ -98,7 +98,7 @@ export const wichitaData: LocationPageData = {
         ]
     },
     localDetails: {
-        phone: "(316) 555-0123",
+        phone: "859 462-4673",
         hours: "24/7 Emergency Dispatch",
         responseTime: "60-Min Avg Response",
         serviceAreaShort: "Wichita & Sedgwick Co.",
@@ -141,7 +141,7 @@ export const lubbockData: LocationPageData = {
         ]
     },
     localDetails: {
-        phone: "(806) 555-0123",
+        phone: "859 462-4673",
         hours: "24/7 Emergency Dispatch",
         responseTime: "60-Min Metro Response",
         serviceAreaShort: "Lubbock & South Plains",
