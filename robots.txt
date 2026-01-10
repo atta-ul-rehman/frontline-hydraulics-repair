@@ -3,7 +3,6 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://frontlinehydraulics.com/sitemap.xml
-Sitemap: https://frontlinehydraulics.com/sitemap-images.xml
 
 # Disallow admin/utility pages
 Disallow: /admin/
