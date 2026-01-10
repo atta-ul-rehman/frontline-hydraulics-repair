@@ -15,67 +15,86 @@ const routes = [
     lastmod: new Date().toISOString()
   },
   {
-    url: '/about/',
+    url: '/about',
     changefreq: 'monthly',
     priority: 0.7,
     lastmod: new Date().toISOString()
   },
+
   {
-    url: '/contact/',
-    changefreq: 'monthly',
-    priority: 0.8,
-    lastmod: new Date().toISOString()
-  },
-  {
-    url: '/services/emergency-hydraulic-hose-repair/',
+    url: '/services',
     changefreq: 'monthly',
     priority: 0.9,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/services/mobile-hydraulic-fabrication/',
+    url: '/services/emergency-repair',
     changefreq: 'monthly',
     priority: 0.8,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/services/hydraulic-system-diagnostics/',
+    url: '/services/mobile-fabrication',
     changefreq: 'monthly',
     priority: 0.8,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/services/pump-cylinder-repair/',
+    url: '/services/diagnostics',
     changefreq: 'monthly',
     priority: 0.8,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/services/oil-fluid-services/',
+    url: '/services/cylinder-repair',
     changefreq: 'monthly',
     priority: 0.8,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/services/fleet-maintenance/',
+    url: '/services/fluid-services',
     changefreq: 'monthly',
     priority: 0.8,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/locations/bakersfield/',
+    url: '/services/fleet-maintenance',
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  },
+  {
+    url: '/services/industrial-plant-service',
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  },
+  {
+    url: '/services/heavy-equipment-repair',
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  },
+  {
+    url: '/blog',
+    changefreq: 'weekly',
+    priority: 0.7,
+    lastmod: new Date().toISOString()
+  },
+  {
+    url: '/locations/bakersfield',
     changefreq: 'monthly',
     priority: 0.9,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/locations/wichita/',
+    url: '/locations/wichita',
     changefreq: 'monthly',
     priority: 0.9,
     lastmod: new Date().toISOString()
   },
   {
-    url: '/locations/lubbock/',
+    url: '/locations/lubbock',
     changefreq: 'monthly',
     priority: 0.9,
     lastmod: new Date().toISOString()

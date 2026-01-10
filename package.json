@@ -10,10 +10,14 @@
     "sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
+    "@types/leaflet": "^1.9.21",
+    "leaflet": "^1.9.4",
     "lucide-react": "0.292.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-helmet-async": "2.0.4"
+    "react-helmet-async": "2.0.4",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^7.12.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

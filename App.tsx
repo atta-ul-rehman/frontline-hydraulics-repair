@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -21,213 +22,221 @@ import BlogPostPage from './components/BlogPostPage';
 import RecentJobs from './components/RecentJobs';
 import CommercialAccounts from './components/CommercialAccounts';
 import Testimonials from './components/Testimonials';
+import ServiceMapPage from './components/ServiceMapPage';
 import SeoHead from './components/SeoHead';
-import { 
-  emergencyRepairData, 
-  mobileFabricationData, 
-  diagnosticsData, 
-  cylinderRepairData, 
-  fluidServicesData, 
-  maintenanceData, 
-  industrialData, 
-  equipmentRepairData 
+import {
+  emergencyRepairData,
+  mobileFabricationData,
+  diagnosticsData,
+  cylinderRepairData,
+  fluidServicesData,
+  maintenanceData,
+  industrialData,
+  equipmentRepairData
 } from './data/services';
-import { 
-  bakersfieldData, 
-  wichitaData, 
-  lubbockData 
+import {
+  bakersfieldData,
+  wichitaData,
+  lubbockData
 } from './data/locations';
 
-function App() {
+// Home Page Component
+const HomePage: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
 
-  // Effect to listen for custom navigation events from deep components
-  useEffect(() => {
-    const handleCustomNav = (e: Event) => {
-        const customEvent = e as CustomEvent;
-        if (customEvent.detail) {
-            handleNavigate(customEvent.detail);
-        }
-    };
-
-    window.addEventListener('navigate', handleCustomNav);
-    return () => window.removeEventListener('navigate', handleCustomNav);
-  }, []);
-
-  const openModal = () => {
-    if (currentPage === 'contact') {
-        window.scrollTo(0, 0); 
-        return;
-    }
-
-    const contactSection = document.getElementById('contact');
-    if (contactSection && currentPage === 'home') {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    } else if (currentPage !== 'home') {
-      setCurrentPage('contact');
-      window.scrollTo(0, 0);
-    } else {
-      setIsContactModalOpen(true);
-    }
-  };
-  
+  const openModal = () => setIsContactModalOpen(true);
   const closeModal = () => setIsContactModalOpen(false);
 
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-  };
+  return (
+    <>
+      <SeoHead
+        title="Mobile Hydraulic Repair Bakersfield | 24/7 Emergency Service | Frontline Hydraulics"
+        description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call 859 462-4673 for immediate response."
+        type="website"
+      />
+      <Hero onOpenContact={openModal} />
+      <RecentJobs />
+      <Services />
+      <WhyChooseUs />
+      <CommercialAccounts />
+      <Industries />
+      <Testimonials />
+      <ServiceArea />
+      <CtaBanner />
+      <ContactSection />
+
+      <ContactModal isOpen={isContactModalOpen} onClose={closeModal} />
+      <FloatingCallButton />
+    </>
+  );
+};
+
+// Layout Component with Header and Footer
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const openModal = () => setIsContactModalOpen(true);
+  const closeModal = () => setIsContactModalOpen(false);
 
   return (
+    <>
+      <Header onOpenContact={openModal} />
+      <main>{children}</main>
+      <Footer />
+      <ContactModal isOpen={isContactModalOpen} onClose={closeModal} />
+      <FloatingCallButton />
+    </>
+  );
+};
+
+function App() {
+  return (
     <HelmetProvider>
-      <div className="font-sans text-gray-900 bg-white selection:bg-brand-orange selection:text-white">
-        <Header 
-          onOpenContact={openModal} 
-          currentPage={currentPage}
-          onNavigate={handleNavigate}
-        />
-        
-        <main>
-          {currentPage === 'home' && (
-            <>
-              <SeoHead 
-                title="Mobile Hydraulic Repair Bakersfield | 24/7 Emergency Service | Frontline Hydraulics"
-                description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call 859 462-4673 for immediate response."
-                type="website"
-              />
-              <Hero onOpenContact={openModal} />
-              <RecentJobs />
-              <Services />
-              <WhyChooseUs />
-              <CommercialAccounts />
-              <Industries />
-              <Testimonials />
-              <ServiceArea />
-              <CtaBanner />
-              <ContactSection />
-            </>
-          )}
+      <Router>
+        <div className="font-sans text-gray-900 bg-white selection:bg-brand-orange selection:text-white">
+          <Routes>
+            {/* Home Page */}
+            <Route path="/" element={<Layout><HomePage /></Layout>} />
 
-          {currentPage === 'about' && (
-            <>
-              <SeoHead 
-                title="About Us - Hydraulic Experts"
-                description="Learn about Frontline Hydraulic Services. Fully licensed and insured mobile hydraulic repair technicians serving the region since 2010."
-              />
-              <AboutPage 
-                onOpenContact={openModal} 
-                onNavigateHome={() => handleNavigate('home')}
-              />
-            </>
-          )}
+            {/* About Page */}
+            <Route path="/about" element={
+              <Layout>
+                <AboutPage
+                  onOpenContact={() => {}}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'contact' && (
-            <>
-              <SeoHead 
-                title="Contact Us - 24/7 Dispatch"
-                description="Contact Frontline Hydraulic Services for immediate emergency repair. Call our 24/7 dispatch hotline or request a quote online."
-              />
-              <ContactPage 
-                onNavigateHome={() => handleNavigate('home')}
-              />
-            </>
-          )}
+            {/* Contact Page */}
+            <Route path="/contact" element={
+              <Layout>
+                <ContactPage onNavigateHome={() => {}} />
+              </Layout>
+            } />
 
-          {currentPage === 'services' && (
-            <>
-              <SeoHead 
-                title="All Hydraulic Services"
-                description="Browse our full range of mobile hydraulic services including emergency hose repair, cylinder repair, and fleet maintenance."
-              />
-              <ServicesListingPage 
-                onNavigate={handleNavigate}
-                onOpenContact={openModal}
-              />
-            </>
-          )}
+            {/* Service Map Page */}
+            <Route path="/service-map" element={
+              <Layout>
+                <ServiceMapPage onOpenContact={() => {}} />
+              </Layout>
+            } />
 
-           {/* BLOG PAGES */}
-           {currentPage === 'blog' && (
-            <BlogIndexPage 
-              onNavigate={handleNavigate}
-              onOpenContact={openModal}
-            />
-          )}
+            {/* Services Pages */}
+            <Route path="/services" element={
+              <Layout>
+                <ServicesListingPage
+                  onOpenContact={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage.startsWith('blog/') && (
-            <BlogPostPage 
-              postSlug={currentPage.replace('blog/', '')}
-              onNavigate={handleNavigate}
-              onOpenContact={openModal}
-            />
-          )}
+            <Route path="/services/emergency-repair" element={
+              <Layout>
+                <ServicePage
+                  data={emergencyRepairData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {/* SERVICE PAGES */}
-          {currentPage === 'service-emergency' && (
-            <ServicePage data={emergencyRepairData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/mobile-fabrication" element={
+              <Layout>
+                <ServicePage
+                  data={mobileFabricationData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-fabrication' && (
-            <ServicePage data={mobileFabricationData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/diagnostics" element={
+              <Layout>
+                <ServicePage
+                  data={diagnosticsData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-diagnostics' && (
-            <ServicePage data={diagnosticsData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/cylinder-repair" element={
+              <Layout>
+                <ServicePage
+                  data={cylinderRepairData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-cylinders' && (
-            <ServicePage data={cylinderRepairData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/fluid-services" element={
+              <Layout>
+                <ServicePage
+                  data={fluidServicesData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-fluid' && (
-            <ServicePage data={fluidServicesData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/fleet-maintenance" element={
+              <Layout>
+                <ServicePage
+                  data={maintenanceData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-fleet' && (
-            <ServicePage data={maintenanceData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/industrial-plant-service" element={
+              <Layout>
+                <ServicePage
+                  data={industrialData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-industrial' && (
-            <ServicePage data={industrialData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/services/heavy-equipment-repair" element={
+              <Layout>
+                <ServicePage
+                  data={equipmentRepairData}
+                  onNavigateHome={() => {}}
+                />
+              </Layout>
+            } />
 
-          {currentPage === 'service-equipment' && (
-            <ServicePage data={equipmentRepairData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            {/* Location Pages */}
+            <Route path="/locations/bakersfield" element={
+              <Layout>
+                <LocationPage data={bakersfieldData} />
+              </Layout>
+            } />
 
-          {/* LOCATION PAGES */}
-          {currentPage === 'location-bakersfield' && (
-            <LocationPage data={bakersfieldData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
-          
-          {currentPage === 'location-wichita' && (
-            <LocationPage data={wichitaData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/locations/wichita" element={
+              <Layout>
+                <LocationPage data={wichitaData} />
+              </Layout>
+            } />
 
-          {currentPage === 'location-lubbock' && (
-            <LocationPage data={lubbockData} onOpenContact={openModal} onNavigate={handleNavigate} />
-          )}
+            <Route path="/locations/lubbock" element={
+              <Layout>
+                <LocationPage data={lubbockData} />
+              </Layout>
+            } />
 
-        </main>
+            {/* Blog Pages */}
+            <Route path="/blog" element={
+              <Layout>
+                <BlogIndexPage />
+              </Layout>
+            } />
 
-        <Footer onNavigate={(page, section) => {
-          handleNavigate(page);
-          if (section) {
-            setTimeout(() => {
-              const el = document.getElementById(section);
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          }
-        }} />
-        
-        <FloatingCallButton />
-        
-        <ContactModal 
-          isOpen={isContactModalOpen} 
-          onClose={closeModal} 
-        />
-      </div>
+            <Route path="/blog/:slug" element={
+              <Layout>
+                <BlogPostPage />
+              </Layout>
+            } />
+          </Routes>
+        </div>
+      </Router>
     </HelmetProvider>
   );
 }

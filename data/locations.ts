@@ -7,6 +7,7 @@ export const bakersfieldData: LocationPageData = {
   city: "Bakersfield",
   state: "CA",
   county: "Kern County",
+  coords: [35.3733, -119.0187],
   heroImage: "https://images.unsplash.com/photo-1535091703666-4148b52f10d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   intro: {
     heading: "Bakersfield's Premier Mobile Hydraulic Repair Service",
@@ -88,6 +89,7 @@ export const wichitaData: LocationPageData = {
     city: "Wichita",
     state: "KS",
     county: "Sedgwick County",
+    coords: [37.6872, -97.3301],
     heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80",
     intro: {
         heading: "Wichita's Choice for Industrial & Mobile Hydraulics",
@@ -132,6 +134,7 @@ export const lubbockData: LocationPageData = {
     city: "Lubbock",
     state: "TX",
     county: "Lubbock County",
+    coords: [33.5779, -101.8552],
     heroImage: "https://images.unsplash.com/photo-1588696773516-6c5b9f93922d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     intro: {
         heading: "Hub City's Toughest Hydraulic Repair Service",

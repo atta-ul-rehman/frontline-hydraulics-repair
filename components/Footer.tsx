@@ -1,25 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Twitter } from 'lucide-react';
 
-interface FooterProps {
-  onNavigate: (page: string, section?: string) => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
-  const handleLinkClick = (e: React.MouseEvent, page: string, section?: string) => {
-    e.preventDefault();
-    onNavigate(page);
-    if (section) {
-      setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-        window.scrollTo(0, 0);
-    }
-  };
+const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-white border-t border-gray-800">
@@ -28,13 +11,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Brand Col */}
           <div className="col-span-1">
-            <div className="mb-6 cursor-pointer" onClick={(e) => handleLinkClick(e, 'home')}>
+            <Link to="/" className="mb-6 cursor-pointer inline-block">
                 <img 
                   src="/assets/FrontLine-Logo.png" 
                   alt="Frontline Hydraulic Services Logo"
                   className="h-12 w-auto"
                 />
-            </div>
+            </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               24/7 Mobile Hydraulic Repair Specialists. We bring the repair shop to you.
             </p>
@@ -48,11 +31,11 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider text-white mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><button onClick={(e) => handleLinkClick(e, 'services')} className="hover:text-brand-orange transition-colors">All Services</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'service-emergency')} className="hover:text-brand-orange transition-colors">Emergency Repair</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'service-fabrication')} className="hover:text-brand-orange transition-colors">Mobile Fabrication</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'about')} className="hover:text-brand-orange transition-colors">About Us</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'contact')} className="hover:text-brand-orange transition-colors">Contact</button></li>
+              <li><Link to="/services" className="hover:text-brand-orange transition-colors">All Services</Link></li>
+              <li><Link to="/services/emergency-repair" className="hover:text-brand-orange transition-colors">Emergency Repair</Link></li>
+              <li><Link to="/services/mobile-fabrication" className="hover:text-brand-orange transition-colors">Mobile Fabrication</Link></li>
+              <li><Link to="/about" className="hover:text-brand-orange transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-orange transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -60,10 +43,10 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider text-white mb-6">Our Locations</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><button onClick={(e) => handleLinkClick(e, 'location-bakersfield')} className="hover:text-brand-orange transition-colors">Bakersfield, CA</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'location-wichita')} className="hover:text-brand-orange transition-colors">Wichita, KS</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'location-lubbock')} className="hover:text-brand-orange transition-colors">Lubbock, TX</button></li>
-              <li><button onClick={(e) => handleLinkClick(e, 'home', 'service-area')} className="hover:text-brand-orange transition-colors">View Service Map</button></li>
+              <li><Link to="/locations/bakersfield" className="hover:text-brand-orange transition-colors">Bakersfield, CA</Link></li>
+              <li><Link to="/locations/wichita" className="hover:text-brand-orange transition-colors">Wichita, KS</Link></li>
+              <li><Link to="/locations/lubbock" className="hover:text-brand-orange transition-colors">Lubbock, TX</Link></li>
+              <li><Link to="/service-map" className="hover:text-brand-orange transition-colors">View Service Map</Link></li>
             </ul>
           </div>
 

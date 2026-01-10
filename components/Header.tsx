@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   onOpenContact: () => void;
-  currentPage: string;
-  onNavigate: (page: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate }) => {
+const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,23 +21,10 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (page: string, sectionId?: string) => {
-    onNavigate(page);
+  const handleNavClick = () => {
     setIsMenuOpen(false);
     setIsServicesDropdownOpen(false);
     setIsLocationsDropdownOpen(false);
-    
-    // If we are staying on the same page or moving to a section
-    if (sectionId) {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      window.scrollTo(0, 0);
-    }
   };
 
   return (
@@ -45,16 +32,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => handleNavClick('home')}>
-            <div className="flex items-center gap-3">
-              <div className={`bg-brand-navy rounded shadow-sm transition-all ${isScrolled ? 'p-1.5' : 'p-2'}`}>
-                <span className={`font-heading font-extrabold text-brand-orange tracking-tighter ${isScrolled ? 'text-lg' : 'text-xl'}`}>FHS</span>
-              </div>
-              <div>
-                <span className={`block font-heading font-black leading-none text-brand-navy tracking-tight ${isScrolled ? 'text-lg' : 'text-xl'}`}>FRONTLINE</span>
-                <span className="block text-[10px] text-brand-orange font-bold tracking-[0.2em] uppercase mt-1">Mobile Hydraulics</span>
-              </div>
-            </div>
+          <div className="flex-shrink-0 flex items-center cursor-pointer">
+            <Link to="/" onClick={handleNavClick}>
+              <img 
+                src="/assets/FrontLine-Logo.png" 
+                alt="Frontline Hydraulic Services Logo"
+                className={`transition-all ${isScrolled ? 'h-12 w-auto' : 'h-16 w-auto'}`}
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -66,23 +51,24 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
                 onMouseEnter={() => setIsServicesDropdownOpen(true)}
                 onMouseLeave={() => setIsServicesDropdownOpen(false)}
             >
-                <button 
-                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${currentPage.startsWith('service') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
-                  onClick={() => handleNavClick('services')}
+                <Link 
+                  to="/services"
+                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/services') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+                  onClick={handleNavClick}
                 >
                   Services <ChevronDown className="w-4 h-4" />
-                </button>
+                </Link>
                 
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 w-80 bg-white shadow-xl border-t-4 border-brand-orange transform transition-all duration-200 origin-top ${isServicesDropdownOpen ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}>
                     <div className="py-2">
-                        <button onClick={() => handleNavClick('service-emergency')} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Emergency Repair</button>
-                        <button onClick={() => handleNavClick('service-fabrication')} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Mobile Fabrication</button>
-                        <button onClick={() => handleNavClick('service-diagnostics')} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Diagnostics & Testing</button>
-                        <button onClick={() => handleNavClick('service-cylinders')} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Pump & Cylinder Repair</button>
-                        <button onClick={() => handleNavClick('service-fluid')} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Oil & Fluid Services</button>
-                        <button onClick={() => handleNavClick('service-fleet')} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Fleet Maintenance</button>
-                        <button onClick={() => handleNavClick('services')} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-orange hover:bg-gray-50 transition-colors">View All Services</button>
+                        <Link to="/services/emergency-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Emergency Repair</Link>
+                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Mobile Fabrication</Link>
+                        <Link to="/services/diagnostics" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Diagnostics & Testing</Link>
+                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Pump & Cylinder Repair</Link>
+                        <Link to="/services/fluid-services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Oil & Fluid Services</Link>
+                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Fleet Maintenance</Link>
+                        <Link to="/services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-orange hover:bg-gray-50 transition-colors">View All Services</Link>
                     </div>
                 </div>
             </div>
@@ -93,57 +79,79 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
                 onMouseEnter={() => setIsLocationsDropdownOpen(true)}
                 onMouseLeave={() => setIsLocationsDropdownOpen(false)}
             >
-                <button 
-                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${currentPage.startsWith('location') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
-                  onClick={() => handleNavClick('home', 'service-area')}
+                <Link 
+                  to="/"
+                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/locations') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('service-area');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    handleNavClick();
+                  }}
                 >
                   Locations <ChevronDown className="w-4 h-4" />
-                </button>
+                </Link>
                 
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 w-60 bg-white shadow-xl border-t-4 border-brand-orange transform transition-all duration-200 origin-top ${isLocationsDropdownOpen ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}>
                     <div className="py-2">
-                        <button 
-                            onClick={() => handleNavClick('location-bakersfield')}
+                        <Link 
+                            to="/locations/bakersfield"
+                            onClick={handleNavClick}
                             className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
                         >
                             Bakersfield, CA
-                        </button>
-                        <button 
-                            onClick={() => handleNavClick('location-wichita')}
+                        </Link>
+                        <Link 
+                            to="/locations/wichita"
+                            onClick={handleNavClick}
                             className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
                         >
                             Wichita, KS
-                        </button>
-                        <button 
-                            onClick={() => handleNavClick('location-lubbock')}
+                        </Link>
+                        <Link 
+                            to="/locations/lubbock"
+                            onClick={handleNavClick}
                             className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
                         >
                             Lubbock, TX
-                        </button>
-                        <button 
-                            onClick={() => handleNavClick('home', 'service-area')}
+                        </Link>
+                        <Link 
+                            to="/service-map"
+                           onClick={handleNavClick}
                             className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-brand-orange transition-colors"
                         >
                             View Full Map
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
             
-            <button 
-              onClick={() => handleNavClick('about')} 
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${currentPage === 'about' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+            <Link 
+              to="/blog"
+              onClick={handleNavClick}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/blog') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+            >
+              Blog
+            </Link>
+
+            <Link 
+              to="/about"
+              onClick={handleNavClick}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/about' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
             >
               About
-            </button>
+            </Link>
             
-            <button 
-              onClick={() => handleNavClick('contact')} 
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${currentPage === 'contact' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+            <Link 
+              to="/contact"
+              onClick={handleNavClick}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/contact' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
             >
               Contact
-            </button>
+            </Link>
             
             <div className="flex items-center gap-4 pl-4 border-l border-gray-200">
                 <div className={`text-right hidden xl:block transition-opacity duration-300 ${isScrolled ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100'}`}>
@@ -193,12 +201,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
                 
                 {isServicesDropdownOpen && (
                     <div className="bg-gray-50 rounded-md mb-2 overflow-hidden">
-                        <button onClick={() => handleNavClick('service-emergency')} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Emergency Repair</button>
-                        <button onClick={() => handleNavClick('service-fabrication')} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Mobile Fabrication</button>
-                        <button onClick={() => handleNavClick('service-diagnostics')} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Diagnostics</button>
-                        <button onClick={() => handleNavClick('service-cylinders')} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Cylinder Repair</button>
-                        <button onClick={() => handleNavClick('service-fleet')} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Fleet Maintenance</button>
-                        <button onClick={() => handleNavClick('services')} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-500 hover:bg-gray-100">View All Services</button>
+                        <Link to="/services/emergency-repair" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Emergency Repair</Link>
+                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Mobile Fabrication</Link>
+                        <Link to="/services/diagnostics" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Diagnostics</Link>
+                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Cylinder Repair</Link>
+                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Fleet Maintenance</Link>
+                        <Link to="/services" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-500 hover:bg-gray-100">View All Services</Link>
                     </div>
                 )}
             </div>
@@ -215,15 +223,16 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
                 
                 {isLocationsDropdownOpen && (
                     <div className="bg-gray-50 rounded-md mb-2 overflow-hidden">
-                        <button onClick={() => handleNavClick('location-bakersfield')} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Bakersfield, CA</button>
-                        <button onClick={() => handleNavClick('location-wichita')} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Wichita, KS</button>
-                        <button onClick={() => handleNavClick('location-lubbock')} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Lubbock, TX</button>
+                        <Link to="/locations/bakersfield" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Bakersfield, CA</Link>
+                        <Link to="/locations/wichita" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Wichita, KS</Link>
+                        <Link to="/locations/lubbock" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Lubbock, TX</Link>
                     </div>
                 )}
             </div>
 
-            <button onClick={() => handleNavClick('about')} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">About Us</button>
-            <button onClick={() => handleNavClick('contact')} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">Contact</button>
+            <Link to="/blog" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">Blog</Link>
+            <Link to="/about" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">About Us</Link>
+            <Link to="/contact" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">Contact</Link>
             <button 
               onClick={() => {
                 setIsMenuOpen(false);

@@ -66,6 +66,7 @@ export interface LocationPageData {
   city: string;
   state: string;
   county: string;
+  coords: [number, number];
   heroImage: string;
   intro: {
     heading: string;

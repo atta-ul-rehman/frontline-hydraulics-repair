@@ -1,13 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, Wrench, ShieldCheck, Truck } from 'lucide-react';
 import { servicesList } from '../data/services';
 
 interface ServicesListingPageProps {
-  onNavigate: (page: string) => void;
   onOpenContact: () => void;
 }
 
-const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onNavigate, onOpenContact }) => {
+const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onOpenContact }) => {
+  // Map service IDs to their routes
+  const getServiceRoute = (serviceId: string) => {
+    const routeMap: Record<string, string> = {
+      'service-emergency': '/services/emergency-repair',
+      'service-fabrication': '/services/mobile-fabrication',
+      'service-diagnostics': '/services/diagnostics',
+      'service-cylinders': '/services/cylinder-repair',
+      'service-fluid': '/services/fluid-services',
+      'service-fleet': '/services/fleet-maintenance',
+      'service-industrial': '/services/industrial-plant-service',
+      'service-equipment': '/services/heavy-equipment-repair'
+    };
+    return routeMap[serviceId] || '/services';
+  };
   return (
     <div className="bg-white">
       {/* SECTION 1: HERO */}
@@ -31,7 +45,7 @@ const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onNavigate, o
           
            {/* Breadcrumbs */}
            <div className="mt-8 flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
-            <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-white">All Services</span>
           </div>
@@ -52,12 +66,12 @@ const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onNavigate, o
                             <h3 className="text-2xl font-bold text-brand-navy mb-3">{service.title}</h3>
                             <p className="text-gray-600 mb-6 min-h-[80px]">{service.description}</p>
                             
-                            <button 
-                                onClick={() => onNavigate(service.id)}
+                            <Link 
+                                to={getServiceRoute(service.id)}
                                 className="inline-flex items-center text-brand-orange font-bold text-sm uppercase tracking-wider hover:text-brand-navy transition-colors"
                             >
                                 Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                            </button>
+                            </Link>
                         </div>
                         <div className="h-2 bg-brand-navy w-0 group-hover:w-full transition-all duration-500"></div>
                     </div>

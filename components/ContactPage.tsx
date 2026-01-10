@@ -55,7 +55,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
             <span className="text-brand-orange">/</span>
             <span className="text-white">Contact</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 tracking-wide">
             Contact Frontline
           </h1>
           <p className="sm:text-lg text-gray-300 max-w-2xl mx-auto font-medium">

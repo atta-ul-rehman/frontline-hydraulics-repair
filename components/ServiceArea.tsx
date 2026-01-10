@@ -57,7 +57,14 @@ const ServiceArea: React.FC = () => {
                 </li>
             </ul>
 
-            <button className="flex items-center text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
+            <button 
+                onClick={() => {
+                    // Dispatch custom event to navigate to service-map
+                    const event = new CustomEvent('navigate', { detail: 'service-map' });
+                    window.dispatchEvent(event);
+                }}
+                className="flex items-center text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors"
+            >
                 <Navigation className="w-4 h-4 mr-2" />
                 View Detailed Maps
             </button>

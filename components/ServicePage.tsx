@@ -93,7 +93,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             <span className="text-white">{data.title}</span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 tracking-wide leading-tight">
             {data.title}
           </h1>
           <p className="text-normal sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed border-l-4 border-brand-orange pl-6 text-left md:text-center md:border-l-0 md:pl-0">

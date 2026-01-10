@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, Clock, ShieldCheck, ArrowRight, Timer, Zap, Wrench, Droplet, Truck, Factory } from 'lucide-react';
 import { LocationPageData } from '../types';
 import SeoHead from './SeoHead';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 
 interface LocationPageProps {
   data: LocationPageData;
-  onOpenContact: () => void;
-  onNavigate: (page: string) => void;
 }
 
-const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavigate }) => {
+const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -61,6 +62,32 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
     { name: "Locations", item: "/locations/" },
     { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}/` }
   ];
+  const iconUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png';
+const iconRetinaUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png';
+const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png';
+
+  const customIcon = new L.Icon({
+    iconUrl: iconUrl,
+    iconRetinaUrl: iconRetinaUrl,
+    shadowUrl: shadowUrl,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+})
+
+  // Map service links to routes
+  const getServiceRoute = (serviceLink: string) => {
+    const routeMap: Record<string, string> = {
+      'service-emergency': '/services/emergency-repair',
+      'service-fabrication': '/services/mobile-fabrication',
+      'service-diagnostics': '/services/diagnostics',
+      'service-cylinders': '/services/cylinder-repair',
+      'service-fluid': '/services/fluid-services',
+      'service-fleet': '/services/fleet-maintenance'
+    };
+    return routeMap[serviceLink] || '/services';
+  };
 
   // Standard services list with DYNAMIC CITY INJECTION for Local SEO Anchor Text
   const standardServices = [
@@ -83,7 +110,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
       />
 
       {/* SECTION 1: LOCAL HERO */}
-      <section className="relative sm:h-[500px] flex items-center justify-center overflow-hidden pt-12 sm:pt-0 pb-4 sm:pb-0 bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
@@ -95,15 +122,15 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumb */}
-          <div className="flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+          <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-gray-300">Service Areas</span>
             <span className="text-brand-orange">/</span>
             <span className="text-white">{data.city}, {data.state}</span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight leading-tight drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 tracking-wide drop-shadow-lg">
             Mobile Hydraulic Repair <br />
             <span className="text-brand-orange">in {data.city}, {data.state}</span>
           </h1>
@@ -119,12 +146,12 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
               <Phone className="w-5 h-5 fill-current" />
               <span>Call {data.city} Dispatch</span>
             </a>
-            <button 
-              onClick={onOpenContact}
+            <Link 
+              to="/contact"
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-lg font-bold px-8 py-4 rounded transition-colors"
             >
               <span>Request Service</span>
-            </button>
+            </Link>
           </div>
 
           {/* Trust Badges */}
@@ -247,12 +274,12 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                             <h3 className="font-bold text-lg text-brand-navy">{service.title}</h3>
                         </div>
                         <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.desc}</p>
-                        <button 
-                            onClick={() => onNavigate(service.link)}
+                        <Link 
+                            to={getServiceRoute(service.link)}
                             className="text-brand-orange font-bold text-sm uppercase flex items-center gap-1 hover:gap-2 transition-all"
                         >
                             Learn More <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -311,26 +338,47 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                     </ul>
                     <div className="mt-8 pt-6 border-t border-gray-300">
                         <p className="text-sm text-gray-500 mb-4">Need service outside this area?</p>
-                        <button onClick={onOpenContact} className="text-brand-orange font-bold text-sm hover:underline">Contact us regarding travel</button>
+                        <Link to="/contact" className="text-brand-orange font-bold text-sm hover:underline">Contact us regarding travel</Link>
                     </div>
                  </div>
 
-                 {/* Simulated Map */}
-                 <div className="lg:col-span-2 relative h-[400px] bg-gray-200 rounded-lg overflow-hidden border border-gray-200 shadow-inner">
-                    <img 
-                        src={data.serviceArea.mapImage} 
-                        alt={`Map of ${data.city} service area`} 
-                        className="w-full h-full object-cover opacity-60 grayscale"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="bg-white/90 backdrop-blur-sm px-6 py-4 rounded-lg shadow-xl text-center border-l-4 border-brand-orange">
-                            <MapPin className="w-8 h-8 text-brand-orange mx-auto mb-2" />
-                            <h3 className="font-bold text-brand-navy text-lg">{data.city} Dispatch</h3>
-                            <p className="text-sm text-gray-600">Serving {data.county}</p>
-                        </div>
-                    </div>
+                 {/* Interactive Map */}
+
+                 <div className="flex flex-col lg:col-span-2 gap-6 justify-between gap-4">
+                 <div className="lg:col-span-2 relative h-[420px] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
+                    <MapContainer 
+                        center={data.coords} 
+                        zoom={10} 
+                        scrollWheelZoom={false} 
+                        style={{ height: "100%", width: "100%" }}
+                    >
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={data.coords} icon={customIcon}>
+                            <Popup>
+                                <div className="text-center p-2">
+                                    <h3 className="font-bold text-brand-navy text-sm mb-1">{data.city} Dispatch</h3>
+                                    <p className="text-xs text-gray-600">Serving {data.county}</p>
+                                </div>
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
                  </div>
+                 <div className="mb-2">
+                 <Link 
+                    to="/service-map"
+                    className="inline-flex items-center text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors"
+                >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    View Full Service Area Map
+                </Link>
             </div>
+            </div>
+            </div>
+            
+            
         </div>
       </section>
 
@@ -419,20 +467,19 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                 <h3 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-6">We Also Serve These Areas</h3>
                 <div className="flex flex-wrap justify-center gap-4">
                     {data.nearbyLocations.map((loc, idx) => (
-                        <button 
+                        <span 
                             key={idx}
-                            onClick={() => onNavigate(loc.id)} // In a real app this would route to that ID
-                            className="bg-gray-100 hover:bg-brand-orange hover:text-white text-brand-navy font-bold py-2 px-6 rounded-full transition-colors"
+                            className="bg-gray-100 text-brand-navy font-bold py-2 px-6 rounded-full"
                         >
                             {loc.name}
-                        </button>
+                        </span>
                     ))}
-                    <button 
-                        onClick={() => onNavigate('home')} 
+                    <Link 
+                        to="/service-map" 
                         className="text-brand-orange font-bold py-2 px-6 hover:underline"
                     >
                         View All Locations
-                    </button>
+                    </Link>
                 </div>
             </div>
           </section>
@@ -455,13 +502,13 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                 <PhoneCall className="w-6 h-6 fill-current" />
                 Call {data.city} Service
             </a>
-            <button 
-                onClick={onOpenContact}
-                className="hidden md:inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
+            <Link 
+                to="/contact"
+                className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 <Calendar className="w-6 h-6" />
                 Request Service Online
-            </button>
+            </Link>
           </div>
           <div className="mt-8 text-sm text-gray-400 font-bold uppercase tracking-wider">
             Licensed & Insured | 24/7 Emergency Service | All Equipment Types
