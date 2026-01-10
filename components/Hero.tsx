@@ -41,18 +41,18 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
-              href="tel:555-123-4567"
+              href="tel:8594624673"
               className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-10 py-5 rounded transition-all shadow-lg hover:shadow-orange-900/50 transform hover:-translate-y-1"
             >
               <Phone className="w-6 h-6 fill-current animate-pulse" />
-              <span>CALL DISPATCH: (XXX) XXX-XXXX</span>
+              <span>CALL DISPATCH: 859 462-4673</span>
             </a>
             
             <button 
               onClick={onOpenContact}
-              className="flex items-center justify-center gap-2 bg-brand-navy/80 backdrop-blur-sm border-2 border-gray-500 hover:border-white hover:bg-white hover:text-brand-navy text-white text-lg font-bold px-10 py-5 rounded transition-all"
+              className="flex items-center justify-center gap-2 bg-white text-brand-navy border-2 border-white hover:bg-gray-100 text-lg font-bold px-10 py-5 rounded transition-all shadow-md"
             >
-              <span>Get A Quote</span>
+              <span>Dispatch Technician Now</span>
             </button>
           </div>
 
