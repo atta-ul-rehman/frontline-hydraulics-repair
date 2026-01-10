@@ -31,39 +31,32 @@ const SeoHead: React.FC<SeoHeadProps> = ({
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const resolvedCanonical = canonicalUrl ?? (typeof window !== 'undefined' ? window.location.href : 'https://frontlinehydraulics.com');
 
-  // Enhanced LocalBusiness Schema (Homepage Default)
+  // Enhanced Multi-Location Schema (Homepage Default)
   const defaultSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "GeneralContractor",
     "name": "Frontline Hydraulic Services",
     "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
     "@id": "https://frontlinehydraulics.com",
     "url": "https://frontlinehydraulics.com",
-    "telephone": "+1-661-555-0123",
+    "telephone": "+1-859-462-4673",
     "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Service Area Only",
-      "addressLocality": "Bakersfield",
-      "addressRegion": "CA",
-      "postalCode": "93301",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.3733,
-      "longitude": -119.0187
-    },
+    "description": "Nationwide network for mobile hydraulic hose repair and emergency heavy equipment service.",
     "areaServed": [
       {
         "@type": "City",
         "name": "Bakersfield",
-        "sameAs": "https://en.wikipedia.org/wiki/Bakersfield,_California"
+        "address": { "@type": "PostalAddress", "addressRegion": "CA" }
       },
       {
-        "@type": "AdministrativeArea",
-        "name": "Kern County",
-        "sameAs": "https://en.wikipedia.org/wiki/Kern_County,_California"
+        "@type": "City",
+        "name": "Wichita",
+        "address": { "@type": "PostalAddress", "addressRegion": "KS" }
+      },
+      {
+        "@type": "City",
+        "name": "Lubbock",
+        "address": { "@type": "PostalAddress", "addressRegion": "TX" }
       }
     ],
     "openingHoursSpecification": {
@@ -77,8 +70,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
     "sameAs": [
       "https://www.facebook.com/frontlinehydraulics",
       "https://www.linkedin.com/company/frontlinehydraulics"
-    ],
-    "description": "24/7 mobile hydraulic hose repair and emergency service in Bakersfield, CA and Kern County. Fast on-site hydraulic repair for construction, oil & gas, agricultural, and industrial equipment."
+    ]
   };
 
   const finalSchema = schema ? { ...defaultSchema, ...schema } : defaultSchema;
@@ -123,12 +115,6 @@ const SeoHead: React.FC<SeoHeadProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-
-      {/* Geo Tags */}
-      <meta name="geo.region" content="US-CA" />
-      <meta name="geo.placename" content="Bakersfield" />
-      <meta name="geo.position" content="35.3733;-119.0187" />
-      <meta name="ICBM" content="35.3733, -119.0187" />
 
       {/* Mobile */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

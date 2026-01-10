@@ -1,95 +1,134 @@
 import React from 'react';
-import { Phone, Clock, ShieldCheck, Wrench } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
-interface HeroProps {
-  onOpenContact: () => void;
+interface BreadcrumbItem {
+  name: string;
+  item: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
+interface SeoHeadProps {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article' | 'service' | 'local';
+  keywords?: string;
+  image?: string;
+  schema?: Record<string, any>;
+  breadcrumbs?: BreadcrumbItem[];
+}
+
+const SeoHead: React.FC<SeoHeadProps> = ({ 
+  title, 
+  description, 
+  canonicalUrl,
+  type = 'website',
+  keywords = "mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Kern County, Wichita, Lubbock",
+  image = "https://frontlinehydraulics.com/images/og-image.jpg",
+  schema,
+  breadcrumbs
+}) => {
+  const siteName = "Frontline Hydraulic Services";
+  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const resolvedCanonical = canonicalUrl ?? (typeof window !== 'undefined' ? window.location.href : 'https://frontlinehydraulics.com');
+
+  // Enhanced Multi-Location Schema (Homepage Default)
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Frontline Hydraulic Services",
+    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
+    "@id": "https://frontlinehydraulics.com",
+    "url": "https://frontlinehydraulics.com",
+    "telephone": "+1-859-462-4673",
+    "priceRange": "$$",
+    "description": "Nationwide network for mobile hydraulic hose repair and emergency heavy equipment service.",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bakersfield",
+        "address": { "@type": "PostalAddress", "addressRegion": "CA" }
+      },
+      {
+        "@type": "City",
+        "name": "Wichita",
+        "address": { "@type": "PostalAddress", "addressRegion": "KS" }
+      },
+      {
+        "@type": "City",
+        "name": "Lubbock",
+        "address": { "@type": "PostalAddress", "addressRegion": "TX" }
+      }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.facebook.com/frontlinehydraulics",
+      "https://www.linkedin.com/company/frontlinehydraulics"
+    ]
+  };
+
+  const finalSchema = schema ? { ...defaultSchema, ...schema } : defaultSchema;
+
+  // Breadcrumb Schema Generator
+  let breadcrumbSchema = null;
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": crumb.name,
+        "item": crumb.item.startsWith('http') ? crumb.item : `https://frontlinehydraulics.com${crumb.item}`
+      }))
+    };
+  }
+
   return (
-    <section className="relative bg-brand-navy pt-12 pb-16 lg:pt-28 lg:pb-32 overflow-hidden border-b-8 border-brand-orange">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-          alt="Mobile hydraulic hose repair technician truck on site" 
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Heavy Industrial Overlay */}
-        <div className="absolute inset-0 bg-brand-navy/85 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
-      </div>
+    <Helmet>
+      {/* Primary Meta Tags */}
+      <title>{fullTitle}</title>
+      <meta name="title" content={fullTitle} />
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      
+      {resolvedCanonical && <link rel="canonical" href={resolvedCanonical} />}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-brand-orange text-white text-xs md:text-sm font-black px-4 py-1.5 uppercase tracking-wider mb-6 transform -skew-x-12">
-            <span className="skew-x-12">24/7 Hydraulic Service</span>
-          </div>
-          
-          {/* H1 Optimized for: Mobile Hydraulic Repair [City] */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[0.95] mb-6 drop-shadow-lg">
-            WE FIX HOSES<br />
-            <span className="text-brand-orange">WHERE YOU WORK</span>
-            <span className="block text-2xl md:text-4xl mt-2 text-gray-300">BAKERSFIELD • WICHITA • LUBBOCK</span>
-          </h1>
-          
-          {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
-          <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
-            <strong>Downtime costs you money.</strong> When a line blows, you need a truck on-site, fast. We bring the hose shop to you—24/7, no excuses.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a 
-              href="tel:8594624673"
-              className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-10 py-5 rounded transition-all shadow-lg hover:shadow-orange-900/50 transform hover:-translate-y-1"
-            >
-              <Phone className="w-6 h-6 fill-current animate-pulse" />
-              <span>CALL DISPATCH: 859 462-4673</span>
-            </a>
-            
-            <button 
-              onClick={onOpenContact}
-              className="flex items-center justify-center gap-2 bg-white text-brand-navy border-2 border-white hover:bg-gray-100 text-lg font-bold px-10 py-5 rounded transition-all shadow-md"
-            >
-              <span>Dispatch Technician Now</span>
-            </button>
-          </div>
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={resolvedCanonical} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:image" content={image} />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={resolvedCanonical} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
-          {/* Trust Indicators - Optimized for Keywords */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-700 pt-8">
-             <div className="flex items-center gap-3">
-                <div className="bg-brand-gray p-2 rounded">
-                    <Clock className="w-6 h-6 text-brand-orange" />
-                </div>
-                <div>
-                    <span className="block text-white font-bold uppercase text-sm">On-Site Fast</span>
-                    <span className="block text-gray-400 text-xs">60-Min Avg Response</span>
-                </div>
-             </div>
-             <div className="flex items-center gap-3">
-                <div className="bg-brand-gray p-2 rounded">
-                    <ShieldCheck className="w-6 h-6 text-brand-orange" />
-                </div>
-                <div>
-                    <span className="block text-white font-bold uppercase text-sm">We Build It There</span>
-                    <span className="block text-gray-400 text-xs">Mobile Fabrication</span>
-                </div>
-             </div>
-             <div className="flex items-center gap-3">
-                <div className="bg-brand-gray p-2 rounded">
-                    <Wrench className="w-6 h-6 text-brand-orange" />
-                </div>
-                <div>
-                    <span className="block text-white font-bold uppercase text-sm">All Equipment</span>
-                    <span className="block text-gray-400 text-xs">Cat, Deere, Komatsu</span>
-                </div>
-             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      {/* Mobile */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="format-detection" content="telephone=yes" />
+      <meta name="HandheldFriendly" content="true" />
+      <meta http-equiv="content-language" content="en-US" />
+
+      {/* Structured Data (JSON-LD) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(finalSchema) }} />
+      {breadcrumbSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      )}
+    </Helmet>
   );
 };
 
-export default Hero;
+export default SeoHead;

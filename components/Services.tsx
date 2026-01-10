@@ -48,7 +48,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-navy hover:border-brand-orange group">
               <div className="p-8">
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
                         }}
                         className="inline-flex items-center text-brand-navy font-bold text-sm uppercase tracking-wide group-hover:text-brand-orange transition-colors"
                     >
-                        View Service Details <ChevronRight className="w-4 h-4 ml-1" />
+                        View Emergency Repair Services <ChevronRight className="w-4 h-4 ml-1" />
                     </button>
                 ) : (
                     <a href="#contact" className="inline-flex items-center text-brand-navy font-bold text-sm uppercase tracking-wider group-hover:text-brand-orange transition-colors">
@@ -87,6 +87,14 @@ const Services: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Equipment We Service - SEO Block */}
+        <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center">
+            <h4 className="text-lg font-bold text-brand-navy mb-4 uppercase tracking-wide">Equipment We Service</h4>
+            <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                We repair hydraulics on: <span className="font-bold text-brand-navy">Excavators</span>, <span className="font-bold text-brand-navy">Backhoes</span>, <span className="font-bold text-brand-navy">Skid Steers</span>, <span className="font-bold text-brand-navy">Forklifts</span>, <span className="font-bold text-brand-navy">Dump Trucks</span>, <span className="font-bold text-brand-navy">Ag Tractors</span>, <span className="font-bold text-brand-navy">Cotton Strippers</span>, <span className="font-bold text-brand-navy">Oil Rigs</span>, and <span className="font-bold text-brand-navy">Industrial Presses</span>.
+            </p>
         </div>
       </div>
     </section>

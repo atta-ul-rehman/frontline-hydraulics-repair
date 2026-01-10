@@ -32,7 +32,7 @@ const RecentJobs: React.FC = () => {
         <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-heading font-bold text-brand-navy flex items-center gap-2">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                Recent Field Activity
+                Recent Mobile Hydraulic Repair Jobs
             </h2>
             <span className="text-sm text-gray-500 hidden sm:block">Live Dispatch Feed</span>
         </div>

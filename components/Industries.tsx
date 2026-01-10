@@ -15,7 +15,7 @@ const Industries: React.FC = () => {
     <section id="industries" className="py-20 bg-white border-b-8 border-brand-orange">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-brand-navy mb-4">Industries We Serve</h3>
+                <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-brand-navy mb-4">Industries We Serve with Mobile Hydraulic Repair</h3>
                 <p className="text-gray-600 max-w-2xl mx-auto">From excavators to oil field equipment, we service hydraulic systems across all industries.</p>
             </div>
 

@@ -4,7 +4,7 @@ import { CheckCircle2, MapPin } from 'lucide-react';
 const benefits = [
   {
     title: "Mobile Fabrication Lab",
-    description: "We don't just carry hoses. We carry crimpers, saws, and thousands of fittings to build exactly what you need, right in your parking lot."
+    description: "We don't just carry hoses. We carry crimpers, saws, and thousands of fittings to build custom **hydraulic hose assemblies** exactly what you need, right in your parking lot."
   },
   {
     title: "Fast Response Times",
@@ -61,7 +61,7 @@ const WhyChooseUs: React.FC = () => {
                   <CheckCircle2 className="w-6 h-6 text-brand-orange flex-shrink-0 mt-1 mr-4 fill-brand-orange/10" />
                   <div>
                     <h4 className="text-xl font-bold text-brand-navy mb-1">{benefit.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: benefit.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
                   </div>
                 </div>
               ))}

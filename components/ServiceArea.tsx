@@ -41,15 +41,15 @@ const ServiceArea: React.FC = () => {
             <ul className="space-y-4 mb-8">
                 <li className="flex items-center text-brand-navy font-semibold">
                     <MapPin className="w-5 h-5 text-brand-orange mr-3" />
-                    Bakersfield & Kern County, CA
+                    Bakersfield, Kern County & Surrounding Areas
                 </li>
                 <li className="flex items-center text-brand-navy font-semibold">
                     <MapPin className="w-5 h-5 text-brand-orange mr-3" />
-                    Wichita & Sedgwick County, KS
+                    Wichita, Sedgwick County & Surrounding Areas
                 </li>
                 <li className="flex items-center text-brand-navy font-semibold">
                     <MapPin className="w-5 h-5 text-brand-orange mr-3" />
-                    Lubbock & South Plains, TX
+                    Lubbock, South Plains & Surrounding Areas
                 </li>
                 <li className="flex items-center text-brand-navy font-semibold">
                     <MapPin className="w-5 h-5 text-brand-orange mr-3" />
