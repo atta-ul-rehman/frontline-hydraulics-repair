@@ -28,14 +28,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Brand Col */}
           <div className="col-span-1">
-            <div className="flex items-center gap-2 mb-6 cursor-pointer" onClick={(e) => handleLinkClick(e, 'home')}>
-                <div className="bg-brand-orange p-1.5 rounded-sm">
-                    <span className="font-heading font-extrabold text-lg text-white">FHS</span>
-                </div>
-                <div>
-                    <span className="block font-heading font-bold text-lg leading-none">FRONTLINE</span>
-                    <span className="block text-xs text-brand-orange font-bold tracking-widest uppercase">Hydraulic Services</span>
-                </div>
+            <div className="mb-6 cursor-pointer" onClick={(e) => handleLinkClick(e, 'home')}>
+                <img 
+                  src="/assets/FrontLine-Logo.png" 
+                  alt="Frontline Hydraulic Services Logo"
+                  className="h-12 w-auto"
+                />
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               24/7 Mobile Hydraulic Repair Specialists. We bring the repair shop to you.

@@ -42,7 +42,7 @@ const Services: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-brand-orange font-black tracking-widest uppercase text-sm mb-3">Don't Let A Blown Hose Stop The Job</h2>
           <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Complete On-Site Hydraulic Solutions</h3>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-normal md:text-lg leading-relaxed">
             We provide expert <strong>mobile hydraulic hose repair</strong> directly at your location. 
             Our trucks are mobile workshops equipped to handle 95% of hydraulic failures on the first trip. You focus on the project; we'll handle the pressure.
           </p>

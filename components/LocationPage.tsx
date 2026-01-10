@@ -83,7 +83,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
       />
 
       {/* SECTION 1: LOCAL HERO */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative sm:h-[500px] flex items-center justify-center overflow-hidden pt-12 sm:pt-0 pb-4 sm:pb-0 bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
@@ -95,7 +95,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumb */}
-          <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
+          <div className="flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
             <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
             <span className="text-brand-orange">/</span>
             <span className="text-gray-300">Service Areas</span>
@@ -457,7 +457,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
             </a>
             <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
+                className="hidden md:inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 <Calendar className="w-6 h-6" />
                 Request Service Online

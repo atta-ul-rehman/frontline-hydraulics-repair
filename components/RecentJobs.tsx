@@ -5,14 +5,14 @@ const jobs = [
   {
     title: "Excavator Boom Hose Replacement",
     location: "Bakersfield, CA (Oildale)",
-    time: "2 hours ago",
+    time: "26 Dec",
     status: "Completed",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
   {
     title: "Emergency Forklift Hydraulic Repair",
-    location: "Wichita, KS (Industrial Park)",
-    time: "4 hours ago",
+    location: "Wichita, KS",
+    time: "31 Dec",
     status: "Completed",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
@@ -31,7 +31,7 @@ const RecentJobs: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-heading font-bold text-brand-navy flex items-center gap-2">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="w-4 h-3 bg-green-500 rounded-full animate-pulse"></span>
                 Recent Mobile Hydraulic Repair Jobs
             </h2>
             <span className="text-sm text-gray-500 hidden sm:block">Live Dispatch Feed</span>

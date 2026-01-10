@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${isScrolled ? 'h-16' : 'h-24'}`}>
+    <header className={`sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md transition-all duration-300 h-20 md:${isScrolled ? 'h-16' : 'h-24'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
@@ -166,12 +166,6 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact, currentPage, onNavigate 
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-4">
-            <a 
-                href="tel:8594624673"
-                className="bg-brand-orange text-white p-2 rounded-md shadow-md"
-            >
-                <Phone size={24} className="fill-current" />
-            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-brand-navy hover:text-brand-orange focus:outline-none p-2"

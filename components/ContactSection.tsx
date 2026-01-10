@@ -33,10 +33,10 @@ const ContactSection: React.FC = () => {
         
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
             <div className="bg-brand-navy p-6 sm:p-10 text-center">
-                <h2 className="text-2xl md:text-3xl font-heading font-black text-white mb-2 uppercase">
+                <h2 className="text-3xl md:text-3xl font-heading font-black text-white mb-2 ">
                     Get A Tech Out Now
                 </h2>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-sm">
                     Tell us where you are. We'll call you in 5 minutes to confirm dispatch.
                 </p>
             </div>
@@ -118,7 +118,7 @@ const ContactSection: React.FC = () => {
                         <button 
                             type="submit" 
                             disabled={isSubmitting}
-                            className="w-full flex justify-center items-center py-5 px-4 border border-transparent rounded-lg shadow-lg text-lg font-black text-white bg-brand-orange hover:bg-brand-darkOrange focus:outline-none focus:ring-4 focus:ring-orange-200 disabled:opacity-70 transition-all transform hover:-translate-y-1"
+                            className="w-full flex justify-center items-center py-5 px-4 border border-transparent rounded-lg shadow-lg text-normal md:text-lg font-black text-white bg-brand-orange hover:bg-brand-darkOrange focus:outline-none focus:ring-4 focus:ring-orange-200 disabled:opacity-70 transition-all transform hover:-translate-y-1"
                         >
                             {isSubmitting ? (
                                 <>
@@ -127,8 +127,8 @@ const ContactSection: React.FC = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Send className="-ml-1 mr-3 h-5 w-5" />
-                                    DISPATCH TECHNICIAN NOW
+                                    <Send className="-ml-1 mr-3 h-4 w-4 md:h-5 md:w-5" />
+                                    Dispatch Technician Now
                                 </>
                             )}
                         </button>

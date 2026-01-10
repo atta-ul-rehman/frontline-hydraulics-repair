@@ -11,7 +11,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
   return (
     <div className="bg-white">
       {/* SECTION 1: HERO */}
-      <section className="relative h-[350px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative pt-12 pb-4 sm:pt-0 sm:pb-0 sm:h-[350px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
@@ -22,19 +22,19 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
-            About Frontline <span className="text-brand-orange">Hydraulic Network</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-medium">
-            A network of certified technicians dedicated to keeping your equipment running.
-          </p>
-          
-          {/* Breadcrumbs */}
-          <div className="mt-8 flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
+         {/* Breadcrumbs */}
+          <div className="mb-8 flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400">
             <button onClick={onNavigateHome} className="hover:text-brand-orange transition-colors">Home</button>
             <span className="text-brand-orange">/</span>
             <span className="text-white">About Us</span>
           </div>
+          <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
+            About Frontline <span className="text-brand-orange">Hydraulic Network</span>
+          </h1>
+          <p className="md:text-xl text-gray-300 max-w-2xl mx-auto font-medium">
+            A network of certified technicians dedicated to keeping your equipment running.
+          </p>
+          
         </div>
       </section>
 
@@ -161,7 +161,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-20 h-1 bg-brand-orange mx-auto mb-8"></div>
           <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-8">Our Service Guarantee</h2>
-          <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 md:p-8 mb-8">
              <div className="flex flex-col items-center justify-center gap-4">
                 <Award className="w-12 h-12 text-brand-orange" />
                 <h3 className="text-2xl font-bold text-brand-navy">No-Fix, No-Pay Guarantee</h3>
@@ -176,20 +176,20 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
       {/* SECTION 7: CTA BANNER */}
       <section className="bg-brand-gray py-20 px-4 text-center border-t-8 border-brand-orange">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading leading-[1.25em] tracking-[0.1em] font-black text-white mb-6">
               Need Hydraulic Repair? We're Available 24/7
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a 
                 href="tel:8594624673" 
-                className="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-xl font-bold px-10 py-5 rounded-md shadow-lg transition-transform transform hover:scale-105"
+                className="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white sm:text-xl font-bold px-10 py-5 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
                 <Phone className="w-6 h-6 fill-current" />
                 Call Now: 859 462-4673
             </a>
             <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
+                className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy sm:text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 Dispatch Technician Now
             </button>

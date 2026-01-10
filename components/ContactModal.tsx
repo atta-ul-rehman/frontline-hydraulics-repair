@@ -96,7 +96,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="col-span-1">
                             <label htmlFor="phone" className="block text-sm font-bold text-gray-700">Phone <span className="text-red-500">*</span></label>
                             <input 

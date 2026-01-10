@@ -49,19 +49,19 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
-            Contact Frontline
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-medium">
-            Get fast mobile hydraulic repair — call now or request service online.
-          </p>
-          
-          {/* Breadcrumbs */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
+         {/* Breadcrumbs */}
+          <div className="mb-6 flex items-center justify-center gap-2 text-[8px] sm:text-sm font-bold uppercase tracking-widest text-gray-400">
             <button onClick={onNavigateHome} className="hover:text-brand-orange transition-colors">Home</button>
             <span className="text-brand-orange">/</span>
             <span className="text-white">Contact</span>
           </div>
+          <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
+            Contact Frontline
+          </h1>
+          <p className="sm:text-lg text-gray-300 max-w-2xl mx-auto font-medium">
+            Get fast mobile hydraulic repair — call now or request service online.
+          </p>
+          
         </div>
       </section>
 
@@ -471,7 +471,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
       {/* SECTION 8: BOTTOM CTA */}
       <section className="bg-gray-900 py-20 px-4 text-center border-t-8 border-brand-orange">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-6">
+          <h2 className="text-2xl md:text-4xl font-heading font-black text-white mb-6">
               Ready to Get Started?
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">

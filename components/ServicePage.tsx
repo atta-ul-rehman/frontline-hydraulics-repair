@@ -73,7 +73,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       />
 
       {/* SECTION 1: HERO */}
-      <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative sm:h-[450px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange pt-12 md:pt-0 pb-4 sm:pb-0">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
@@ -85,7 +85,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumb Visual */}
-          <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
+          <div className="flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
             <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
             <span className="text-brand-orange">/</span>
             <span className="text-gray-300">Services</span>
@@ -96,17 +96,17 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight leading-tight">
             {data.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed border-l-4 border-brand-orange pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+          <p className="text-normal sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed border-l-4 border-brand-orange pl-6 text-left md:text-center md:border-l-0 md:pl-0">
             {data.subheading}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
               href="tel:8594624673" 
-              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-8 py-4 rounded shadow-lg transition-transform transform hover:-translate-y-1"
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white sm:text-lg font-black px-8 py-4 rounded shadow-lg transition-transform transform hover:-translate-y-1"
             >
               <Phone className="w-5 h-5 fill-current animate-pulse" />
-              <span>CALL DISPATCH: 859 462-4673</span>
+              <span>CALL NOW!: 859 462-4673</span>
             </a>
             <button 
               onClick={onOpenContact}
@@ -443,7 +443,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             </a>
             <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
+                className="hidden md:inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 <Calendar className="w-6 h-6" />
                 Request Service Online

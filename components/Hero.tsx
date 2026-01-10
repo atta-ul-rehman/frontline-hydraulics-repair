@@ -28,29 +28,38 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           </div>
           
           {/* H1 Optimized for: Mobile Hydraulic Repair [City] */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[0.95] mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[1.09em] tracking-wide mb-6 drop-shadow-lg">
             MOBILE HYDRAULIC HOSE REPAIR<br />
             <span className="text-brand-orange">WE GOT YOU 24/7</span>
-            <span className="block text-2xl md:text-4xl mt-2 text-gray-300">Serving Bakersfield, Wichita & Lubbock</span>
+            <span className="inline-flex items-center gap-2 mt-4 px-0 sm:px-4 py-2 text-base md:text-2xl mt-2 text-gray-300"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6 text-white"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21s8-4.438 8-11a8 8 0 10-16 0c0 6.562 8 11 8 11z" />
+  </svg> Bakersfield, Wichita & Lubbock</span>
           </h1>
           
           {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
-          <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
+          <p className="text-base md:text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
             <strong>Downtime costs you money.</strong> When a line blows, you need a truck on-site, fast. We bring the hose shop to you—24/7, no excuses.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
               href="tel:8594624673"
-              className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-10 py-5 rounded transition-all shadow-lg hover:shadow-orange-900/50 transform hover:-translate-y-1"
+              className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-base sm:text-lg font-black px-6 sm:px-10 py-4 sm:py-5 rounded transition-all shadow-lg hover:shadow-orange-900/50 transform hover:-translate-y-1"
             >
-              <Phone className="w-6 h-6 fill-current animate-pulse" />
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-pulse" />
               <span>CALL DISPATCH: 859 462-4673</span>
             </a>
             
             <button 
               onClick={onOpenContact}
-              className="flex items-center justify-center gap-2 bg-white text-brand-navy border-2 border-white hover:bg-gray-100 text-lg font-bold px-10 py-5 rounded transition-all shadow-md"
+              className="flex items-center justify-center gap-2 bg-white text-brand-navy border-2 border-white hover:bg-gray-100 text-base sm:text-lg font-bold px-6 sm:px-10 py-4 sm:py-5 rounded transition-all shadow-md"
             >
               <span>Dispatch Technician Now</span>
             </button>
