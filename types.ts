@@ -1,3 +1,4 @@
+
 import { LucideIcon } from "lucide-react";
 
 export interface ServiceItem {
@@ -94,4 +95,37 @@ export interface LocationPageData {
     name: string;
     id: string;
   }[];
+}
+
+// Blog Post Interfaces
+export type ContentBlockType = 'paragraph' | 'h2' | 'h3' | 'ul' | 'ol' | 'image' | 'cta' | 'alert' | 'quote';
+
+export interface ContentBlock {
+  type: ContentBlockType;
+  content?: string; // HTML string for text with bold/links
+  items?: string[]; // For lists
+  src?: string; // For images
+  alt?: string; // For images
+  caption?: string; // For images
+  url?: string; // For CTA
+  linkText?: string; // For CTA
+  title?: string; // For Alert/CTA headers
+}
+
+export interface BlogPost {
+    id: string;
+    title: string;
+    slug: string;
+    category: string;
+    keyword: string;
+    searchVolume: string;
+    intent: string;
+    image: string;
+    excerpt: string;
+    date: string;
+    readTime: string;
+    author: string;
+    authorRole: string;
+    content: ContentBlock[]; // Rich content structure
+    keyTakeaways: string[]; // For Featured Snippet optimization
 }

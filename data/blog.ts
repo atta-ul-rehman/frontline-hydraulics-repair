@@ -1,21 +1,5 @@
-export interface BlogPost {
-    id: string;
-    title: string;
-    slug: string;
-    category: string;
-    keyword: string;
-    searchVolume: string;
-    intent: string;
-    image: string;
-    excerpt: string;
-    date: string;
-    readTime: string;
-    author: string;
-    authorRole: string;
-    content: {
-        headings: string[];
-    };
-}
+
+import { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
     {
@@ -23,62 +7,165 @@ export const blogPosts: BlogPost[] = [
         title: "5 Signs Your Hydraulic Hose Needs Immediate Replacement",
         slug: "5-signs-hydraulic-hose-replacement",
         category: "Maintenance",
-        keyword: "hydraulic hose failure",
+        keyword: "hydraulic hose failure signs",
         searchVolume: "320",
         intent: "Info",
         image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        excerpt: "Don't wait for a blowout. Learn to spot the subtle warning signs—from weeping fittings to wire reinforcement exposure—that indicate your hose is about to fail.",
+        excerpt: "Don't wait for a blowout on the job site. Learn to spot the subtle warning signs—from weeping fittings to wire reinforcement exposure—that indicate your hose is about to fail.",
         date: "Jan 15, 2024",
         readTime: "5 min read",
         author: "Mike Stevens",
         authorRole: "Senior Lead Technician",
-        content: {
-            headings: [
-                "Introduction: The High Cost of Hydraulic Hose Failure",
-                "Sign 1: Visible Wire Reinforcement and Abrasion",
-                "Sign 2: Blisters, Bubbles, and Cover Damage",
-                "Sign 3: Weeping Fittings and Moisture at Crimps",
-                "Sign 4: Cracked or Weathered Outer Sheath",
-                "Sign 5: Kinks and Twist Damage from Poor Routing",
-                "Why Mobile Hydraulic Repair is Your Safest Option",
-                "Conclusion: Don't Wait for the Burst"
-            ]
-        }
+        keyTakeaways: [
+            "Inspect hoses daily for abrasion and wire exposure.",
+            "Blisters on the outer cover indicate inner tube failure.",
+            "Weeping fittings are an early warning sign of seal degradation.",
+            "Heat and sunlight accelerate hose aging, especially in Texas and Kern County.",
+            "Replace twisted or kinked hoses immediately to prevent burst."
+        ],
+        content: [
+            {
+                type: 'paragraph',
+                content: "Hydraulic hose failure is the number one cause of downtime for heavy equipment. Whether you are running a harvester in <strong>Lubbock</strong> or an excavator in <strong>Bakersfield</strong>, a blown line stops production instantly. But hoses rarely fail without warning. By spotting these five signs early, you can schedule a <a href='#' class='text-brand-orange font-bold hover:underline'>mobile repair technician</a> before you're stuck with a spill and a dead machine."
+            },
+            {
+                type: 'h2',
+                content: "1. Visible Wire Reinforcement (Abrasion)"
+            },
+            {
+                type: 'paragraph',
+                content: "The outer rubber cover of a hydraulic hose is designed to protect the steel wire reinforcement. Once that cover is worn away due to rubbing against frames or other hoses, the steel wires are exposed to moisture and rust. Rusted wires lose their tensile strength rapidly."
+            },
+            {
+                type: 'alert',
+                title: "Safety Warning",
+                content: "If you can see the metal wire braid, the hose is compromised. Do not touch a pressurized hose with bare hands, as pinhole leaks can inject fluid under the skin."
+            },
+            {
+                type: 'h2',
+                content: "2. Blisters or Bubbles on the Cover"
+            },
+            {
+                type: 'paragraph',
+                content: "A blister or bubble on the outer sheath means high-pressure oil has bypassed the inner tube and is trapped under the cover. This is a ticking time bomb. The outer cover is not designed to hold system pressure, and it will burst soon."
+            },
+            {
+                type: 'h2',
+                content: "3. Weeping Fittings and Moisture"
+            },
+            {
+                type: 'paragraph',
+                content: "If you see oil gathering at the crimp collar (where the metal fitting meets the hose), the seal has failed. This often happens due to heat cycling or vibration common in heavy construction equipment. In <strong>Wichita's</strong> variable climate, thermal expansion and contraction can loosen these joints over time."
+            },
+            {
+                type: 'image',
+                src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                alt: "Excavator hydraulic boom inspection",
+                caption: "Regular visual inspections of boom hoses can prevent 80% of failures."
+            },
+            {
+                type: 'h2',
+                content: "4. Cracked or Weathered Outer Sheath"
+            },
+            {
+                type: 'paragraph',
+                content: "UV radiation and heat destroy rubber. We see this constantly in the <strong>Kern County</strong> oil fields and the <strong>West Texas</strong> plains. If the outer cover looks like alligator skin or has deep cracks, it loses flexibility. When the machine moves, the brittle rubber cracks further, exposing the reinforcement."
+            },
+            {
+                type: 'h2',
+                content: "5. Kinks or Twisted Routing"
+            },
+            {
+                type: 'paragraph',
+                content: "Improper installation is a major killer. If a hose is twisted during installation (even by 7 degrees), it can reduce its lifespan by 90%. Kinks restrict flow, causing heat buildup and pump cavitation. Always ensure the layline of the hose is straight."
+            },
+            {
+                type: 'cta',
+                title: "See One of These Signs?",
+                content: "Don't risk a blowout. Our mobile technicians can fabricate a replacement hose on-site in under an hour.",
+                url: "service-emergency",
+                linkText: "Dispatch Mobile Tech"
+            }
+        ]
     },
     {
         id: 'blog-2',
         title: "How to Choose a Mobile Hydraulic Repair Service",
-        slug: "choose-mobile-hydraulic-repair-service",
+        slug: "how-to-choose-mobile-hydraulic-repair",
         category: "Guide",
-        keyword: "how to choose hydraulic repair",
-        searchVolume: "100-200",
+        keyword: "choose hydraulic repair service",
+        searchVolume: "150",
         intent: "Research",
         image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
-        excerpt: "Not all service trucks are created equal. Here are the 5 critical factors to consider when hiring a mobile repair service, from inventory depth to technician certification.",
+        excerpt: "Not all service trucks are created equal. Here are the critical factors to consider when hiring a mobile repair service, from inventory depth to technician certification.",
         date: "Jan 10, 2024",
         readTime: "7 min read",
         author: "Sarah Jenkins",
         authorRole: "Operations Manager",
-        content: {
-            headings: [
-                "Introduction: Not All Hydraulic Trucks Are Created Equal",
-                "Factor 1: 24/7 Availability and Response Time",
-                "Factor 2: Inventory Depth (Do They Have the Part?)",
-                "Factor 3: Technician Certification and Safety Training",
-                "Factor 4: On-Site Fabrication Capabilities",
-                "Factor 5: Local Reputation and Reviews",
-                "Questions to Ask Before You Call Dispatch",
-                "Conclusion: Value vs. Price in Emergency Repair"
-            ]
-        }
+        keyTakeaways: [
+            "Ensure they carry 4-wire and 6-wire hoses for high-pressure systems.",
+            "Verify they have metric and BSP fittings (common on Volvo/Komatsu).",
+            "Ask about response times for your specific location.",
+            "Check if they charge a flat trip fee or by mileage.",
+            "Confirm they offer projectile cleaning to remove debris."
+        ],
+        content: [
+            {
+                type: 'paragraph',
+                content: "When you have a dead machine blocking a haul road, you need help fast. But calling the first number on Google can lead to more downtime if the truck that shows up doesn't have the right parts. Here is how to vet a <a href='#' class='text-brand-orange font-bold hover:underline'>mobile hydraulic repair service</a>."
+            },
+            {
+                type: 'h2',
+                content: "1. Inventory Depth: Do They Have the Part?"
+            },
+            {
+                type: 'paragraph',
+                content: "A mobile truck is only useful if it's a warehouse on wheels. Many general mechanics carry basic 2-wire hoses but lack the high-pressure 4-wire or 6-wire spiral hoses used on modern excavators and drilling rigs. Ask specifically: <em>'Do you stock Code 62 flanges and metric fittings?'</em>"
+            },
+            {
+                type: 'quote',
+                content: "If they have to leave your job site to drive to a parts store, you are paying for their travel time twice."
+            },
+            {
+                type: 'h2',
+                content: "2. Technician Certification and Safety"
+            },
+            {
+                type: 'paragraph',
+                content: "Hydraulics operate at 3,000 to 6,000 PSI. An improperly crimped fitting can blow off like a bullet. Ensure the technician is certified in hose assembly safety. In industrial hubs like <strong>Wichita</strong> and <strong>Bakersfield</strong>, site safety requirements (PPE, LOTO) are strict—make sure your vendor complies."
+            },
+            {
+                type: 'h2',
+                content: "3. Cleanliness Standards"
+            },
+            {
+                type: 'paragraph',
+                content: "Cutting a hose generates rubber dust and metal shards. If this debris isn't removed, it goes straight into your hydraulic pump. Top-tier services use <strong>projectile cleaning</strong> (shooting a foam pellet through the hose) to ensure it's contaminant-free before installation."
+            },
+            {
+                type: 'h2',
+                content: "4. Local Availability"
+            },
+            {
+                type: 'paragraph',
+                content: "National call centers often route you to a sub-contractor hours away. Look for a service with local dispatch in your area. For example, Frontline has dedicated trucks staged in <strong>Lubbock</strong>, <strong>Bakersfield</strong>, and <strong>Wichita</strong> to cut travel time."
+            },
+            {
+                type: 'cta',
+                title: "We Check All The Boxes",
+                content: "Certified techs, huge inventory, and projectile cleaning on every job. We are the pros you can trust.",
+                url: "about",
+                linkText: "Why Choose Us"
+            }
+        ]
     },
     {
         id: 'blog-3',
         title: "Emergency Hydraulic Repair: What to Do When Equipment Fails",
         slug: "emergency-hydraulic-repair-guide",
         category: "Emergency",
-        keyword: "emergency hydraulic repair",
-        searchVolume: "10",
+        keyword: "emergency hydraulic repair guide",
+        searchVolume: "90",
         intent: "High Intent",
         image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
         excerpt: "Safety first. Step-by-step instructions on securing the scene, containing spills, and effectively calling for dispatch when a main line blows on site.",
@@ -86,207 +173,63 @@ export const blogPosts: BlogPost[] = [
         readTime: "4 min read",
         author: "Mike Stevens",
         authorRole: "Senior Lead Technician",
-        content: {
-            headings: [
-                "Introduction: Safety First During a Blowout",
-                "Step 1: Secure the Scene and Shut Down Power",
-                "Step 2: Contain the Spill (Environmental Safety)",
-                "Step 3: Relieve System Pressure Safely",
-                "Step 4: Identify the Failed Component",
-                "Step 5: Call a Mobile Hydraulic Repair Service",
-                "What Information to Have Ready for Dispatch",
-                "Conclusion: getting Back to Work Quickly"
-            ]
-        }
-    },
-    {
-        id: 'blog-4',
-        title: "Understanding Hydraulic Hose Specifications",
-        slug: "understanding-hydraulic-hose-specs",
-        category: "Technical",
-        keyword: "hydraulic hose specifications",
-        searchVolume: "590",
-        intent: "Info",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        excerpt: "Confused by the numbers on your hose? We break down the STAMPED method (Size, Temp, Application, Material, Pressure, Ends, Delivery) so you get the right part.",
-        date: "Dec 28, 2023",
-        readTime: "8 min read",
-        author: "David Chen",
-        authorRole: "Technical Director",
-        content: {
-            headings: [
-                "Introduction: The STAMPED Method",
-                "S - Size (ID, OD, and Length)",
-                "T - Temperature (Fluid and Ambient)",
-                "A - Application (Routing, Bend Radius)",
-                "M - Material (Compatibility with Fluids)",
-                "P - Pressure (Working vs. Burst Pressure)",
-                "E - Ends (Identifying Thread Types)",
-                "D - Delivery (Volume and Velocity)",
-                "Conclusion: Why Exact Specs Matter"
-            ]
-        }
-    },
-    {
-        id: 'blog-5',
-        title: "Mobile vs Shop Hydraulic Repair: Which Is Right?",
-        slug: "mobile-vs-shop-hydraulic-repair",
-        category: "Comparison",
-        keyword: "mobile vs shop repair",
-        searchVolume: "10-30",
-        intent: "Research",
-        image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2070&auto=format&fit=crop",
-        excerpt: "Should you haul it or call us? We analyze the cost-benefit of mobile fabrication versus taking your component to a bench shop.",
-        date: "Dec 15, 2023",
-        readTime: "6 min read",
-        author: "Sarah Jenkins",
-        authorRole: "Operations Manager",
-        content: {
-            headings: [
-                "Introduction: The Logistics of Heavy Equipment Repair",
-                "The Case for Mobile Repair: Speed and Convenience",
-                "The Case for Shop Repair: Major Rebuilds and Machining",
-                "Cost Comparison: Trip Charges vs. Towing Fees",
-                "Downtime Analysis: How Long Can You Wait?",
-                "When to Call a Mobile Technician",
-                "When to Send Cylinders to the Bench",
-                "Conclusion: Making the Right Choice for Your Fleet"
-            ]
-        }
-    },
-    {
-        id: 'blog-6',
-        title: "How Much Does Mobile Hydraulic Hose Repair Cost?",
-        slug: "mobile-hydraulic-repair-cost",
-        category: "Pricing",
-        keyword: "hydraulic repair cost",
-        searchVolume: "800-1,000",
-        intent: "Research",
-        image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=2070&auto=format&fit=crop",
-        excerpt: "Transparent pricing guide. Understand service call fees, hourly labor rates, and parts pricing for emergency hydraulic service.",
-        date: "Nov 30, 2023",
-        readTime: "5 min read",
-        author: "Sarah Jenkins",
-        authorRole: "Operations Manager",
-        content: {
-            headings: [
-                "Introduction: Understanding the Pricing Structure",
-                "The Service Call / Trip Charge Explained",
-                "Labor Rates: Emergency vs. Standard Hours",
-                "Parts Pricing: Hose, Fittings, and Adapters",
-                "Hidden Costs of Downtime (The Real Cost)",
-                "How Preventive Maintenance Lowers Total Cost",
-                "Getting a Quote: What to Expect",
-                "Conclusion: Investing in Uptime"
-            ]
-        }
-    },
-    {
-        id: 'blog-7',
-        title: "Preventive Hydraulic Maintenance for Fleets",
-        slug: "preventive-hydraulic-maintenance-fleets",
-        category: "Maintenance",
-        keyword: "preventive hydraulic maintenance",
-        searchVolume: "100-200",
-        intent: "Medium",
-        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        excerpt: "Stop chasing breakdowns. A guide to creating a hydraulic asset registry, scheduled inspections, and fluid analysis programs for fleet managers.",
-        date: "Nov 12, 2023",
-        readTime: "9 min read",
-        author: "David Chen",
-        authorRole: "Technical Director",
-        content: {
-            headings: [
-                "Introduction: Moving from Reactive to Proactive",
-                "Creating a Hydraulic Asset Registry",
-                "Scheduled Hose Inspections and Tagging",
-                "Fluid Analysis: The Blood Test for Your Machine",
-                "Filter Management Protocols",
-                "Training Operators on Daily Checks",
-                "The ROI of a Fleet Maintenance Program",
-                "Conclusion: Extending Equipment Lifecycle"
-            ]
-        }
-    },
-    {
-        id: 'blog-8',
-        title: "Common Hydraulic Problems in Construction Equipment",
-        slug: "common-hydraulic-problems-construction",
-        category: "Industry",
-        keyword: "hydraulic problems construction",
-        searchVolume: "400-600",
-        intent: "Info",
-        image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop",
-        excerpt: "From contamination to overheating, we explore the most frequent hydraulic failures on construction sites and how operators can prevent them.",
-        date: "Oct 25, 2023",
-        readTime: "6 min read",
-        author: "Mike Stevens",
-        authorRole: "Senior Lead Technician",
-        content: {
-            headings: [
-                "Introduction: The Harsh Reality of the Job Site",
-                "Issue 1: Contamination (Dirt and Water Ingress)",
-                "Issue 2: Overheating During Duty Cycles",
-                "Issue 3: Cavitation and Aeration in Pumps",
-                "Issue 4: Slow Operation and Cycle Times",
-                "Issue 5: External Leaks and Environmental Risks",
-                "Troubleshooting Tips for Operators",
-                "Conclusion: Keeping Yellow Iron Moving"
-            ]
-        }
-    },
-    {
-        id: 'blog-9',
-        title: "Hydraulic System Troubleshooting Guide",
-        slug: "hydraulic-system-troubleshooting-guide",
-        category: "Technical",
-        keyword: "hydraulic troubleshooting",
-        searchVolume: "400-600",
-        intent: "Info",
-        image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        excerpt: "A logical approach to diagnostics. How to use flow meters, pressure gauges, and thermal imaging to find the root cause of hydraulic failure.",
-        date: "Oct 10, 2023",
-        readTime: "10 min read",
-        author: "David Chen",
-        authorRole: "Technical Director",
-        content: {
-            headings: [
-                "Introduction: A Logical Approach to Diagnostics",
-                "Safety First: Never Search for Leaks with Hands",
-                "Symptom: No Pressure or Low Pressure",
-                "Symptom: Slow or Erratic Actuator Movement",
-                "Symptom: Excessive Noise (Whining vs. Knocking)",
-                "Symptom: High Fluid Temperature",
-                "Using Flow Meters and Pressure Gauges",
-                "Conclusion: When to Call a Professional"
-            ]
-        }
-    },
-    {
-        id: 'blog-10',
-        title: "Seasonal Hydraulic Maintenance: Winter Preparation",
-        slug: "seasonal-hydraulic-maintenance",
-        category: "Maintenance",
-        keyword: "hydraulic maintenance winter",
-        searchVolume: "200-400",
-        intent: "Info",
-        image: "https://images.unsplash.com/photo-1486713977507-68b20963332e?q=80&w=1974&auto=format&fit=crop",
-        excerpt: "Cold weather kills hoses. Prepare your fleet for freezing temperatures with proper fluid viscosity, seal checks, and warm-up procedures.",
-        date: "Sept 30, 2023",
-        readTime: "5 min read",
-        author: "Mike Stevens",
-        authorRole: "Senior Lead Technician",
-        content: {
-            headings: [
-                "Introduction: How Cold Affects Hydraulics",
-                "Viscosity Matters: Switching Fluid Grades",
-                "Checking Seals and Hoses for Cold Embrittlement",
-                "Warming Up Systems Properly",
-                "Water Removal to Prevent Freezing",
-                "Storing Equipment for the Season",
-                "Battery and Electrical Checks for Valves",
-                "Conclusion: Winterizing Your Fleet"
-            ]
-        }
+        keyTakeaways: [
+            "Stop the engine immediately to prevent pump damage.",
+            "Lower implements to the ground to relieve mechanical pressure.",
+            "Contain the spill with absorbent pads or dirt dikes.",
+            "Do not try to find the leak with your hands.",
+            "Identify the hose size and fitting type before calling dispatch."
+        ],
+        content: [
+            {
+                type: 'paragraph',
+                content: "A blown hydraulic hose is chaotic. Hot oil sprays everywhere, the machine loses power, and environmental concerns spike immediately. Panic leads to injuries. Follow this step-by-step guide to manage the situation safely."
+            },
+            {
+                type: 'h2',
+                content: "Step 1: Shut Down and Secure"
+            },
+            {
+                type: 'paragraph',
+                content: "Immediately turn off the engine. Running a hydraulic pump without fluid (cavitation) will destroy it in seconds, turning a $300 hose repair into a $5,000 pump replacement. Lower all buckets, blades, or booms to the ground to relieve trapped pressure."
+            },
+            {
+                type: 'h2',
+                content: "Step 2: Contain the Spill"
+            },
+            {
+                type: 'paragraph',
+                content: "Hydraulic fluid is an environmental hazard. Use your spill kit (pads, socks) to contain the oil. If you are in an agricultural field (like near <strong>Lubbock</strong>) or near a waterway, this is critical for compliance. Dig a small dike with a shovel if kits aren't available."
+            },
+            {
+                type: 'alert',
+                title: "Never Use Your Hands",
+                content: "Never run your hand along a hose to find a leak. High-pressure fluid injection injuries are medical emergencies that can lead to amputation."
+            },
+            {
+                type: 'h2',
+                content: "Step 3: Call for Mobile Service"
+            },
+            {
+                type: 'paragraph',
+                content: "When you call a <a href='#' class='text-brand-orange font-bold hover:underline'>24/7 hydraulic dispatch</a>, have this info ready to speed up the process:"
+            },
+            {
+                type: 'ul',
+                items: [
+                    "<strong>Location:</strong> GPS pin or nearest cross streets.",
+                    "<strong>Machine Type:</strong> Make and Model (e.g., Cat 320, John Deere 8R).",
+                    "<strong>Problem:</strong> Which hose blew? (e.g., Main boom cylinder line).",
+                    "<strong>Access:</strong> Can a service truck get within 50 feet?"
+                ]
+            },
+            {
+                type: 'cta',
+                title: "Need Help Now?",
+                content: "We have trucks ready to roll in Bakersfield, Wichita, and Lubbock.",
+                url: "contact",
+                linkText: "Call Dispatch Immediately"
+            }
+        ]
     }
 ];

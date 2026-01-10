@@ -1,7 +1,9 @@
+
 import React from 'react';
-import { BlogPost, blogPosts } from '../data/blog';
-import { Calendar, Clock, User, Tag, Share2, Facebook, Linkedin, Mail, Twitter, Phone, ArrowLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { blogPosts } from '../data/blog';
+import { Calendar, Clock, User, Share2, Facebook, Linkedin, Mail, Twitter, Phone, ArrowLeft, ChevronRight, ArrowRight, CheckCircle2, AlertTriangle, Lightbulb } from 'lucide-react';
 import SeoHead from './SeoHead';
+import { ContentBlock } from '../types';
 
 interface BlogPostPageProps {
   postSlug: string;
@@ -28,51 +30,89 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
     .filter(p => p.category === post.category && p.id !== post.id)
     .slice(0, 3);
 
-  // Helper to render dummy content since we only have headings in data
-  const renderContent = () => {
-    return (
-        <div className="prose prose-lg prose-slate max-w-none text-gray-600">
-            {post.content.headings.map((heading, idx) => (
-                <div key={idx} id={`heading-${idx}`}>
-                    {idx === 0 ? (
-                        <p className="lead text-xl text-gray-600 mb-8 font-medium">
-                           Hydraulic systems are the lifeblood of heavy machinery. When they fail, operations grind to a halt. In this guide, we'll explore exactly what you need to know about <span className="text-brand-navy font-bold">{post.keyword}</span> and how to prevent costly downtime.
-                        </p>
-                    ) : (
-                        <>
-                            <h2 className="text-2xl font-bold text-brand-navy mt-12 mb-6 scroll-mt-24">{heading}</h2>
-                            <p className="mb-4">
-                                This is a critical aspect of maintaining your equipment. According to industry standards, ignoring these signs can lead to catastrophic failure. Regular inspection of your hydraulic lines is not just recommended; it is mandatory for safety.
-                            </p>
-                            <p className="mb-6">
-                                Start by checking the pressure ratings. Ensure that the PSI matches your system requirements. If you notice any abrasion or leaks, immediate action is required.
-                            </p>
-                            {idx === 2 && (
-                                <blockquote className="border-l-4 border-brand-orange pl-6 italic text-gray-700 bg-gray-50 py-4 my-8 rounded-r">
-                                    "Preventive maintenance costs pennies compared to the dollars lost during unscheduled downtime."
-                                </blockquote>
-                            )}
-                             {idx === 4 && (
-                                <div className="my-8">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                                        alt="Hydraulic technician inspecting equipment" 
-                                        className="w-full h-auto rounded-lg shadow-sm"
-                                    />
-                                    <p className="text-sm text-gray-500 mt-2 italic text-center">Regular inspections prevent 80% of failures.</p>
-                                </div>
-                            )}
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Check for visible wear on the outer sheath.</li>
-                                <li>Verify tight connections at all fitting points.</li>
-                                <li>Monitor system temperature during operation.</li>
-                            </ul>
-                        </>
-                    )}
+  // Content Renderer
+  const renderBlock = (block: ContentBlock, index: number) => {
+    switch (block.type) {
+        case 'h2':
+            return <h2 key={index} id={`heading-${index}`} className="text-2xl md:text-3xl font-heading font-black text-brand-navy mt-12 mb-6 scroll-mt-24">{block.content}</h2>;
+        
+        case 'h3':
+            return <h3 key={index} className="text-xl font-bold text-brand-navy mt-8 mb-4">{block.content}</h3>;
+        
+        case 'paragraph':
+            return <p key={index} className="text-gray-700 text-lg leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: block.content || '' }}></p>;
+        
+        case 'ul':
+            return (
+                <ul key={index} className="list-none space-y-3 mb-8 ml-2">
+                    {block.items?.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-gray-700">
+                            <CheckCircle2 className="w-5 h-5 text-brand-orange mt-1 flex-shrink-0" />
+                            <span dangerouslySetInnerHTML={{ __html: item }}></span>
+                        </li>
+                    ))}
+                </ul>
+            );
+
+        case 'ol':
+            return (
+                <ol key={index} className="list-decimal list-outside space-y-3 mb-8 ml-6 text-gray-700 font-medium">
+                    {block.items?.map((item, i) => (
+                        <li key={i} className="pl-2" dangerouslySetInnerHTML={{ __html: item }}></li>
+                    ))}
+                </ol>
+            );
+
+        case 'quote':
+            return (
+                <blockquote key={index} className="border-l-4 border-brand-orange pl-6 italic text-gray-800 bg-gray-50 py-6 pr-6 my-10 rounded-r-lg text-lg font-medium shadow-sm">
+                    "{block.content}"
+                </blockquote>
+            );
+
+        case 'alert':
+            return (
+                <div key={index} className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8 rounded-r-lg flex items-start gap-4">
+                    <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
+                    <div>
+                        <h4 className="font-bold text-yellow-800 mb-1">{block.title || 'Important Note'}</h4>
+                        <p className="text-yellow-700 text-sm">{block.content}</p>
+                    </div>
                 </div>
-            ))}
-        </div>
-    );
+            );
+
+        case 'image':
+            return (
+                <figure key={index} className="my-10">
+                    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                        <img src={block.src} alt={block.alt} className="w-full h-auto object-cover" />
+                    </div>
+                    {block.caption && <figcaption className="text-center text-sm text-gray-500 mt-3 italic">{block.caption}</figcaption>}
+                </figure>
+            );
+
+        case 'cta':
+            return (
+                <div key={index} className="my-12 bg-brand-navy rounded-xl p-8 text-center text-white relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-brand-orange opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <h3 className="text-2xl font-bold mb-3">{block.title || 'Need Help?'}</h3>
+                    <p className="text-gray-300 mb-6 max-w-2xl mx-auto">{block.content}</p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="tel:8594624673" className="flex items-center gap-2 bg-brand-orange hover:bg-brand-darkOrange text-white font-bold py-3 px-6 rounded shadow-lg transition-colors">
+                            <Phone className="w-5 h-5" /> 859 462-4673
+                        </a>
+                        {block.url && (
+                            <button onClick={() => onNavigate(block.url!)} className="flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded hover:bg-white hover:text-brand-navy transition-colors">
+                                {block.linkText || 'Learn More'} <ArrowRight className="w-4 h-4" />
+                            </button>
+                        )}
+                    </div>
+                </div>
+            );
+
+        default:
+            return null;
+    }
   };
 
   // Structured Data for Blog Post
@@ -92,8 +132,12 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
         "url": "https://frontlinehydraulics.com/images/logo.jpg"
       }
     },
-    "datePublished": post.date, // Note: In real app, format to ISO 8601
-    "description": post.excerpt
+    "datePublished": new Date(post.date).toISOString(), // Formatting date
+    "description": post.excerpt,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://frontlinehydraulics.com/blog/${post.slug}/`
+    }
   };
 
   // Breadcrumbs
@@ -106,7 +150,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
   return (
     <div className="bg-white">
       <SeoHead 
-        title={post.title}
+        title={`${post.title} | Hydraulic Repair Blog`}
         description={post.excerpt}
         type="article"
         image={post.image}
@@ -163,11 +207,33 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
             
             {/* MAIN CONTENT COLUMN */}
             <div className="w-full lg:w-[70%]">
+                
+                {/* Feature Image */}
                 <div className="mb-10 rounded-xl overflow-hidden shadow-lg">
                     <img src={post.image} alt={post.title} className="w-full h-auto object-cover" />
                 </div>
 
-                {renderContent()}
+                {/* Key Takeaways Box (Featured Snippet Bait) */}
+                {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+                    <div className="bg-brand-light border-l-4 border-brand-orange p-8 rounded-r-lg mb-12">
+                        <h3 className="flex items-center gap-2 text-xl font-bold text-brand-navy mb-4">
+                            <Lightbulb className="w-6 h-6 text-brand-orange" /> Key Takeaways
+                        </h3>
+                        <ul className="space-y-3">
+                            {post.keyTakeaways.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></div>
+                                    <span className="text-gray-700 font-medium">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {/* Article Content */}
+                <article className="prose prose-lg prose-slate max-w-none">
+                    {post.content.map((block, idx) => renderBlock(block, idx))}
+                </article>
 
                 {/* Post Footer */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
@@ -178,29 +244,29 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                         <span className="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full">Hydraulics</span>
                     </div>
 
-                    <div className="flex justify-between items-center">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
                          <button onClick={() => onNavigate('blog')} className="flex items-center gap-2 text-brand-navy font-bold hover:text-brand-orange transition-colors">
                             <ArrowLeft className="w-4 h-4" /> Back to Articles
                          </button>
                          <div className="flex gap-4">
-                             <button className="text-gray-400 hover:text-brand-blue"><Facebook className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue"><Twitter className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue"><Linkedin className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue"><Mail className="w-5 h-5" /></button>
+                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Facebook className="w-5 h-5" /></button>
+                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Twitter className="w-5 h-5" /></button>
+                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Linkedin className="w-5 h-5" /></button>
+                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Mail className="w-5 h-5" /></button>
                          </div>
                     </div>
                 </div>
 
                 {/* Author Bio */}
                 <div className="mt-12 bg-gray-50 p-8 rounded-lg border border-gray-100 flex items-start gap-6">
-                    <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center text-white font-black text-xl flex-shrink-0">
+                    <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center text-white font-black text-xl flex-shrink-0 shadow-md">
                         {post.author.charAt(0)}
                     </div>
                     <div>
                         <h4 className="font-bold text-brand-navy text-lg mb-1">{post.author}</h4>
                         <p className="text-xs text-brand-orange font-bold uppercase mb-3">{post.authorRole}</p>
                         <p className="text-gray-600 text-sm">
-                            Expert in hydraulic systems with over 15 years of field experience. Dedicated to helping fleet managers reduce downtime and improve safety standards.
+                            Expert in hydraulic systems with over 15 years of field experience serving industries in Bakersfield, Wichita, and Lubbock. Dedicated to helping fleet managers reduce downtime.
                         </p>
                     </div>
                 </div>
@@ -213,7 +279,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm sticky top-24">
                     <h3 className="font-bold text-brand-navy uppercase tracking-wide mb-4 text-sm">Table of Contents</h3>
                     <nav className="space-y-3">
-                        {post.content.headings.map((heading, idx) => (
+                        {post.content.filter(b => b.type === 'h2').map((block, idx) => (
                             <a 
                                 key={idx} 
                                 href={`#heading-${idx}`}
@@ -224,25 +290,31 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                                         (el as any).scrollIntoView({ behavior: 'smooth' });
                                     }
                                 }}
-                                className="block text-sm text-gray-600 hover:text-brand-orange leading-snug transition-colors"
+                                className="block text-sm text-gray-600 hover:text-brand-orange leading-snug transition-colors border-l-2 border-transparent hover:border-brand-orange pl-3"
                             >
-                                {heading.split(':')[0]}
+                                {block.content}
                             </a>
                         ))}
                     </nav>
                 </div>
 
                 {/* Service CTA */}
-                <div className="bg-brand-navy text-white rounded-lg p-8 text-center border-b-8 border-brand-orange">
-                    <h3 className="font-heading font-bold text-xl mb-3">Broken Hose?</h3>
-                    <p className="text-gray-300 text-sm mb-6">We can be at your site in under 60 minutes.</p>
+                <div className="bg-brand-navy text-white rounded-lg p-8 text-center border-b-8 border-brand-orange shadow-lg">
+                    <h3 className="font-heading font-bold text-xl mb-3">Equipment Down?</h3>
+                    <p className="text-gray-300 text-sm mb-6">We provide 24/7 Mobile Hydraulic Repair in Bakersfield, Wichita & Lubbock.</p>
                     <a 
                         href="tel:8594624673" 
-                        className="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors"
+                        className="flex items-center justify-center gap-2 w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors shadow-lg"
                     >
                         <Phone className="w-4 h-4 fill-current" />
                         859 462-4673
                     </a>
+                    <button 
+                        onClick={onOpenContact}
+                        className="mt-4 text-sm text-brand-orange font-bold hover:text-white underline"
+                    >
+                        Request Online Quote
+                    </button>
                 </div>
 
                  {/* Related Posts */}
@@ -275,7 +347,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                  {/* Just showing the first 3 posts as suggestions for demo */}
                  {blogPosts.slice(0,3).map(p => (
-                     <div key={p.id} className="bg-white rounded-lg shadow-sm overflow-hidden group cursor-pointer" onClick={() => onNavigate(`blog/${p.slug}`)}>
+                     <div key={p.id} className="bg-white rounded-lg shadow-sm overflow-hidden group cursor-pointer border border-gray-100 hover:shadow-md transition-all" onClick={() => onNavigate(`blog/${p.slug}`)}>
                          <div className="h-48 overflow-hidden">
                              <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                          </div>
@@ -297,7 +369,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                 Need Expert Hydraulic Service?
              </h2>
              <p className="text-lg text-gray-600 mb-8">
-                Our team is standing by to help with emergency repairs, maintenance, and diagnostics.
+                Our team is standing by to help with emergency repairs, maintenance, and diagnostics in Bakersfield, Wichita, and Lubbock.
              </p>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 

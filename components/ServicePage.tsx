@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench, Settings } from 'lucide-react';
+import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench, Settings, Clock, Truck } from 'lucide-react';
 import { ServicePageData } from '../types';
 import SeoHead from './SeoHead';
 
@@ -16,10 +16,10 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  // Brands list
-  const brands = ["Caterpillar", "John Deere", "Komatsu", "Volvo", "Case", "Hitachi", "Bobcat", "Parker", "Eaton"];
+  // Brands list for Trust Signal
+  const brands = ["Caterpillar", "John Deere", "Komatsu", "Volvo", "Case", "Hitachi", "Bobcat", "Parker", "Eaton", "Kubota"];
 
-  // Enhanced Service Schema
+  // Enhanced Service Schema with Explicit Location Data
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -29,25 +29,17 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         "@type": "LocalBusiness",
         "name": "Frontline Hydraulic Services",
         "telephone": "+1-859-462-4673",
-        "url": "https://frontlinehydraulics.com"
+        "url": "https://frontlinehydraulics.com",
+        "priceRange": "$$"
     },
     "areaServed": [
-        {
-            "@type": "City",
-            "name": "Bakersfield"
-        },
-        {
-            "@type": "City",
-            "name": "Wichita"
-        },
-        {
-            "@type": "City",
-            "name": "Lubbock"
-        }
+        { "@type": "City", "name": "Bakersfield", "address": { "@type": "PostalAddress", "addressRegion": "CA" } },
+        { "@type": "City", "name": "Wichita", "address": { "@type": "PostalAddress", "addressRegion": "KS" } },
+        { "@type": "City", "name": "Lubbock", "address": { "@type": "PostalAddress", "addressRegion": "TX" } }
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": data.title,
+        "name": `${data.title} Services`,
         "itemListElement": data.features.map(feature => ({
             "@type": "Offer",
             "itemOffered": {
@@ -59,6 +51,10 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
     "description": data.subheading
   };
 
+  // SEO Optimized Title & Description
+  const seoTitle = `${data.title} | Mobile Service in Bakersfield, Wichita & Lubbock`;
+  const seoDesc = `24/7 ${data.title}. Mobile hydraulic service for ${data.industries.left[0]} and ${data.industries.right[0]}. We come to you in Bakersfield, Wichita, and Lubbock.`;
+
   // Breadcrumbs
   const breadcrumbs = [
     { name: "Home", item: "/" },
@@ -69,20 +65,20 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
   return (
     <div className="bg-white">
       <SeoHead 
-        title={data.title}
-        description={data.subheading}
+        title={seoTitle}
+        description={seoDesc}
         type="service"
         schema={serviceSchema}
         breadcrumbs={breadcrumbs}
       />
 
       {/* SECTION 1: HERO */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
-            alt={data.title} 
-            className="w-full h-full object-cover opacity-30"
+            alt={`${data.title} - Mobile Hydraulic Service Truck`} 
+            className="w-full h-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-brand-navy/60"></div>
         </div>
@@ -100,7 +96,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight leading-tight">
             {data.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed border-l-4 border-brand-orange pl-6 text-left md:text-center md:border-l-0 md:pl-0">
             {data.subheading}
           </p>
           
@@ -109,15 +105,24 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
               href="tel:8594624673" 
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-8 py-4 rounded shadow-lg transition-transform transform hover:-translate-y-1"
             >
-              <Phone className="w-5 h-5 fill-current" />
-              <span>859 462-4673</span>
+              <Phone className="w-5 h-5 fill-current animate-pulse" />
+              <span>CALL DISPATCH: 859 462-4673</span>
             </a>
             <button 
               onClick={onOpenContact}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-lg font-bold px-8 py-4 rounded transition-colors"
             >
-              <span>Dispatch Tech</span>
+              <span>Request Quote Online</span>
             </button>
+          </div>
+
+          {/* Local Trust Signal */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
+            <span className="flex items-center gap-1"><Truck className="w-4 h-4 text-brand-orange" /> Serving Bakersfield</span>
+            <span className="hidden md:inline text-gray-600">|</span>
+            <span className="flex items-center gap-1"><Truck className="w-4 h-4 text-brand-orange" /> Serving Wichita</span>
+            <span className="hidden md:inline text-gray-600">|</span>
+            <span className="flex items-center gap-1"><Truck className="w-4 h-4 text-brand-orange" /> Serving Lubbock</span>
           </div>
         </div>
       </section>
@@ -145,27 +150,27 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-10">
                 {data.description.paragraphs.map((para, idx) => (
-                  <p key={idx}>{para}</p>
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: para.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
                 ))}
               </div>
 
-              {/* INTEGRATED: Common Issues (Clean List Style) */}
-              <div className="mb-10">
+              {/* INTEGRATED: Common Issues */}
+              <div className="mb-10 bg-gray-50 p-6 rounded-lg border border-gray-100">
                 <h3 className="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
                   <Wrench className="w-5 h-5 text-brand-orange" />
-                  Common Issues We Resolve
+                  Common {data.title} Issues We Fix
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
                   {data.commonIssues.map((issue, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-orange flex-shrink-0"></div>
+                      <CheckCircle2 className="w-4 h-4 text-brand-orange mt-1 flex-shrink-0" />
                       <span className="text-gray-700 font-medium">{issue}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* INTEGRATED: Related Services (Subtle Navigation) */}
+              {/* INTEGRATED: Related Services */}
               <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row sm:items-baseline gap-4">
                 <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider flex-shrink-0">Related Services:</h4>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -173,7 +178,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                         <button 
                             key={idx}
                             onClick={() => onNavigate(service.id)}
-                            className="text-brand-navy font-bold text-sm hover:text-brand-orange transition-colors border-b border-gray-200 hover:border-brand-orange"
+                            className="text-brand-navy font-bold text-sm hover:text-brand-orange transition-colors border-b-2 border-transparent hover:border-brand-orange"
                         >
                             {service.title}
                         </button>
@@ -186,7 +191,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             {/* Right Column: Features Box */}
             <div className="w-full lg:w-1/3">
               <div className="bg-brand-light border-l-4 border-brand-orange p-8 rounded-r-lg shadow-sm sticky top-24">
-                <h3 className="text-xl font-bold text-brand-navy mb-6 uppercase tracking-wide">Why Choose Us</h3>
+                <h3 className="text-xl font-bold text-brand-navy mb-6 uppercase tracking-wide">Why Choose Frontline</h3>
                 <ul className="space-y-4 mb-8">
                   {data.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
@@ -196,15 +201,15 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                   ))}
                 </ul>
                 <div className="bg-white p-6 rounded border border-gray-200 text-center shadow-sm">
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">24/7 Dispatch</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">24/7 Mobile Dispatch</p>
                   <a href="tel:8594624673" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-4">
                     859 462-4673
                   </a>
                   <button 
                     onClick={onOpenContact}
-                    className="w-full bg-brand-orange text-white font-bold py-3 rounded text-sm hover:bg-brand-darkOrange transition-colors shadow-md"
+                    className="w-full bg-brand-orange text-white font-bold py-3 rounded text-sm hover:bg-brand-darkOrange transition-colors shadow-md flex items-center justify-center gap-2"
                   >
-                    Request Service Now
+                    <Clock className="w-4 h-4" /> Dispatch Technician
                   </button>
                 </div>
               </div>
@@ -218,9 +223,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       <section className="py-12 bg-gray-50 border-y border-gray-200">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Brands & Systems We Service</h3>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 opacity-60">
                 {brands.map((brand, idx) => (
-                    <span key={idx} className="text-xl font-bold text-gray-400 uppercase">{brand}</span>
+                    <span key={idx} className="text-xl font-bold text-brand-navy uppercase tracking-tight">{brand}</span>
                 ))}
             </div>
          </div>
@@ -231,10 +236,10 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
-              What's Included
+              What's Included in {data.title}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our comprehensive {data.title} service covers every step to ensure your equipment is back to full operational capacity.
+              Our comprehensive service process covers every step to ensure your equipment is back to full operational capacity.
             </p>
           </div>
 
@@ -258,7 +263,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Our {data.title} Process</h2>
             <div className="w-20 h-1 bg-brand-orange mx-auto"></div>
           </div>
 
@@ -268,7 +273,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 {idx < data.process.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 -z-10"></div>
                 )}
-                <div className="bg-white p-6 text-center rounded-lg shadow-sm border border-gray-100">
+                <div className="bg-white p-6 text-center rounded-lg shadow-sm border border-gray-100 h-full">
                   <div className="w-16 h-16 bg-brand-navy text-white rounded-full flex items-center justify-center text-xl font-black mx-auto mb-6 shadow-lg relative z-10 border-4 border-white">
                     {idx + 1}
                   </div>
@@ -287,10 +292,10 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="w-full lg:w-1/3">
               <h2 className="text-3xl md:text-4xl font-heading font-black mb-6">
-                Industries We Serve
+                Industries Utilizing {data.title}
               </h2>
               <p className="text-gray-300 text-lg mb-8">
-                We have deep experience dealing with the specific hydraulic challenges found in these sectors.
+                We have deep experience dealing with the specific hydraulic challenges found in these sectors across Bakersfield, Wichita, and Lubbock.
               </p>
               <button 
                 onClick={onOpenContact}
@@ -332,7 +337,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why Choose Frontline</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why Choose Frontline for {data.title}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {data.benefits.map((benefit, idx) => (
@@ -355,12 +360,12 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 Mobile Service Throughout The Region
               </h2>
               <p className="text-gray-600 text-lg mb-6">
-                We provide {data.title} to businesses and job sites throughout [City Name], [County], and surrounding areas. Our fully mobile fleet ensures we can reach even the most remote job sites.
+                We provide **{data.title}** to businesses and job sites throughout **Bakersfield**, **Wichita**, **Lubbock**, and surrounding counties. Our fully mobile fleet ensures we can reach even the most remote job sites.
               </p>
-              <div className="space-y-2 mb-8">
-                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Downtown Industrial District</div>
-                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> North County Construction Zones</div>
-                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Eastern Agricultural Belt</div>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Kern County, CA</div>
+                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Sedgwick County, KS</div>
+                <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Lubbock County, TX</div>
               </div>
               <button onClick={() => onNavigate('home')} className="text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
                 View Full Service Area Map
@@ -369,7 +374,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden border-4 border-gray-50 shadow-inner">
                <img 
                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80"
-                 alt="Service Area Map"
+                 alt="Service Area Map - Mobile Hydraulic Repair"
                  className="w-full h-full object-cover opacity-70 grayscale"
                />
             </div>
@@ -392,7 +397,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                   {openFaq === idx ? <ChevronUp className="text-brand-orange" /> : <ChevronDown className="text-gray-400" />}
                 </button>
                 {openFaq === idx && (
-                  <div className="px-6 pb-6 text-gray-600">
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
                     {faq.answer}
                   </div>
                 )}

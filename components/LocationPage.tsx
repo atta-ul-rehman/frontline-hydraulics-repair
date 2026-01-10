@@ -21,6 +21,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
     "@type": "LocalBusiness",
     "name": `Frontline Hydraulic Services - ${data.city}`,
     "telephone": data.localDetails.phone,
+    "url": `https://frontlinehydraulics.com/locations/${data.id.replace('location-', '')}/`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": data.city,
@@ -28,8 +29,29 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
       "addressCountry": "US"
     },
     "areaServed": {
-      "@type": "City",
-      "name": data.city
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "addressCountry": "US",
+        "addressLocality": data.city,
+        "addressRegion": data.state
+      },
+      "geoRadius": "80000" // ~50 miles in meters
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
     }
   };
 
@@ -40,32 +62,32 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
     { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}/` }
   ];
 
-  // Standard services list for the grid (static as per template, but linking to dynamic pages)
+  // Standard services list with DYNAMIC CITY INJECTION for Local SEO Anchor Text
   const standardServices = [
-    { title: "Emergency Hose Repair", desc: "24/7 emergency hydraulic hose replacement", icon: Timer, link: "service-emergency" },
-    { title: "Mobile Hose Fabrication", desc: "On-site custom hose assembly and crimping", icon: Factory, link: "service-fabrication" },
-    { title: "System Diagnostics", desc: "Hydraulic pressure testing and leak detection", icon: Zap, link: "service-diagnostics" },
-    { title: "Pump & Cylinder Repair", desc: "Component rebuilding and replacement", icon: Wrench, link: "service-cylinders" },
-    { title: "Fluid Services", desc: "Hydraulic oil changes and system flushing", icon: Droplet, link: "services" },
-    { title: "Fleet Maintenance", desc: `Scheduled maintenance programs for ${data.city} fleets`, icon: Truck, link: "service-fleet" }
+    { title: "Emergency Hose Repair", desc: `24/7 on-site hose replacement in ${data.city}`, icon: Timer, link: "service-emergency" },
+    { title: "Mobile Hose Fabrication", desc: `Custom assemblies crimped at your ${data.city} job site`, icon: Factory, link: "service-fabrication" },
+    { title: "System Diagnostics", desc: `Hydraulic troubleshooting for ${data.county} industries`, icon: Zap, link: "service-diagnostics" },
+    { title: "Pump & Cylinder Repair", desc: `Component rebuilds for ${data.city} equipment`, icon: Wrench, link: "service-cylinders" },
+    { title: "Fluid Services", desc: "Hydraulic oil cleaning and flushing", icon: Droplet, link: "service-fluid" },
+    { title: "Fleet Maintenance", desc: `Preventive programs for ${data.city} fleets`, icon: Truck, link: "service-fleet" }
   ];
 
   return (
     <div className="bg-white">
       <SeoHead 
-        title={`Mobile Hydraulic Repair in ${data.city}, ${data.state}`}
-        description={`24/7 on-site hydraulic hose repair and mobile service in ${data.city}, ${data.state}. Licensed, insured, and fast response time.`}
+        title={`Mobile Hydraulic Repair ${data.city}, ${data.state} | 24/7 Service`}
+        description={`Fast mobile hydraulic hose repair in ${data.city} and ${data.county}. We provide 24/7 on-site emergency service, system diagnostics, and cylinder repair. Licensed & Insured.`}
         type="local"
         schema={citySchema}
         breadcrumbs={breadcrumbs}
       />
 
       {/* SECTION 1: LOCAL HERO */}
-      <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
-            alt={`Mobile Hydraulic Repair in ${data.city}, ${data.state}`} 
+            alt={`Mobile Hydraulic Repair Truck in ${data.city}, ${data.state}`} 
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-brand-navy/40"></div>
@@ -86,7 +108,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
             <span className="text-brand-orange">in {data.city}, {data.state}</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
-            24/7 On-Site Hydraulic Hose Repair & Service Throughout {data.city} and {data.county}.
+            We bring the hose shop to you. 24/7 On-Site Hydraulic Service throughout <strong>{data.city}</strong> and <strong>{data.county}</strong>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -95,7 +117,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-darkOrange text-white text-lg font-black px-8 py-4 rounded shadow-lg transition-transform transform hover:-translate-y-1"
             >
               <Phone className="w-5 h-5 fill-current" />
-              <span>Call {data.city} Service</span>
+              <span>Call {data.city} Dispatch</span>
             </a>
             <button 
               onClick={onOpenContact}
@@ -111,7 +133,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
             <span className="hidden md:inline text-gray-600">|</span>
             <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-brand-orange" /> Licensed & Insured</span>
             <span className="hidden md:inline text-gray-600">|</span>
-            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-brand-orange" /> Serving {data.city} Area</span>
+            <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-brand-orange" /> Serving {data.county}</span>
           </div>
         </div>
       </section>
@@ -128,7 +150,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 {data.intro.paragraphs.map((para, idx) => (
-                  <p key={idx}>{para}</p>
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: para.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
                 ))}
               </div>
             </div>
@@ -150,7 +172,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                         <a href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`} className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors">
                             {data.localDetails.phone}
                         </a>
-                        <span className="text-sm text-gray-500">Call or text for service</span>
+                        <span className="text-sm text-gray-500">Central Dispatch for {data.city}</span>
                     </div>
                   </li>
 
@@ -193,7 +215,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                     href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`}
                     className="mt-8 w-full block text-center bg-brand-navy text-white font-bold py-3 rounded hover:bg-brand-gray transition-colors"
                 >
-                    Call Now for {data.city} Service
+                    Call {data.city} Techs
                 </a>
               </div>
             </div>
@@ -209,7 +231,10 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                 <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
                     Hydraulic Services in {data.city}
                 </h2>
-                <div className="w-20 h-1 bg-brand-orange mx-auto"></div>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                    From emergency hose replacement to preventative maintenance, we cover all hydraulic needs in {data.county}.
+                </p>
+                <div className="w-20 h-1 bg-brand-orange mx-auto mt-4"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -242,7 +267,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
                     Industries We Serve in {data.city}
                 </h2>
                 <p className="text-gray-300 max-w-2xl mx-auto">
-                    We specialize in the heavy equipment and industrial machinery that keeps {data.city}'s economy moving.
+                    We specialize in the heavy equipment and industrial machinery that keeps the {data.city} economy moving.
                 </p>
             </div>
 
@@ -268,7 +293,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data, onOpenContact, onNavi
             <div className="text-center mb-10">
                 <h2 className="text-3xl font-heading font-black text-brand-navy mb-4">Our {data.city} Service Area</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    We provide mobile hydraulic repair throughout {data.city}, {data.county}, and surrounding areas including:
+                    We provide mobile hydraulic repair throughout {data.city}, {data.county}, and surrounding areas. Our trucks are staged to reach you quickly.
                 </p>
             </div>
 

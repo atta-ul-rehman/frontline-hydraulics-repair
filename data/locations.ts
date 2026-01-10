@@ -1,5 +1,5 @@
 import { LocationPageData } from '../types';
-import { Droplet, Tractor, HardHat, Truck, Factory, Wrench } from 'lucide-react';
+import { Droplet, Tractor, HardHat, Truck, Factory, Wrench, Zap } from 'lucide-react';
 
 // 1. BAKERSFIELD, CA
 export const bakersfieldData: LocationPageData = {
@@ -9,11 +9,11 @@ export const bakersfieldData: LocationPageData = {
   county: "Kern County",
   heroImage: "https://images.unsplash.com/photo-1535091703666-4148b52f10d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   intro: {
-    heading: "Bakersfield's 24/7 Mobile Hydraulic Repair",
+    heading: "Bakersfield's Premier Mobile Hydraulic Repair Service",
     paragraphs: [
-      "In Kern County, if the equipment stops, the money stops. Whether you're drilling in Oildale, harvesting almonds in Lamont, or grading a site in Rosedale, you need a hydraulic shop that comes to you. Frontline is your local expert for **mobile hydraulic hose repair in Bakersfield**.",
-      "We know the heat, the dust, and the heavy demands you put on your machines. Our trucks are stocked to handle the oil patch and the ag fields alike. When a hose blows at 2 AM on a rig, we answer the phone.",
-      "Stop waiting for a tow. Call Frontline for **hydraulic repair in Bakersfield** and let us fix your yellow iron right where it sits."
+      "From the pump jacks in **Oildale** to the almond orchards in **Lamont**, Bakersfield runs on hydraulics. When a hose blows on Hwy 99 or a rig goes down in the **Kern River Oil Field**, you can't wait for a shop to open. Frontline provides 24/7 **mobile hydraulic hose repair in Bakersfield** and throughout Kern County.",
+      "We understand the unique demands of the San Joaquin Valley. Our trucks are stocked with the heavy-duty 4-wire and 6-wire hoses needed for oilfield applications, as well as the metric fittings common on agricultural harvesters. Whether you're stuck on the Grapevine or in a field in Shafter, we come to you.",
+      "Don't lose a day of production. Call Frontline for **Bakersfield hydraulic repair**. We are locally dispatched and know the area, ensuring the fastest response times to get your yellow iron back to work."
     ]
   },
   localDetails: {
@@ -21,27 +21,27 @@ export const bakersfieldData: LocationPageData = {
     hours: "24/7 Emergency Dispatch",
     responseTime: "60-Min Avg Response",
     serviceAreaShort: "Bakersfield & Kern Co.",
-    coverageAreas: ["Oildale / Oil Patch", "Rosedale / Industrial", "Lamont / Arvin Ag", "Shafter / Wasco"]
+    coverageAreas: ["Oildale", "Rosedale", "Lamont", "Shafter", "Wasco", "Arvin", "Tehachapi"]
   },
   localIndustries: [
     {
       title: "Oil & Gas",
-      description: "Rig hydraulics, tongs, and well-servicing units.",
+      description: "Supporting drilling rigs and workover units in Oildale, Belridge, and Elk Hills.",
       icon: Droplet
     },
     {
       title: "Agriculture",
-      description: "Harvesters, shakers, and tractors during crush season.",
+      description: " rapid repair for almond shakers, pistachio sweepers, and tomato harvesters.",
       icon: Tractor
     },
     {
       title: "Construction",
-      description: "Excavators and dozers on Hwy 99/58 projects.",
+      description: "Excavator and dozer repair for projects along Hwy 58 and the 99 corridor.",
       icon: HardHat
     },
     {
       title: "Logistics",
-      description: "Fleet repair for distribution centers.",
+      description: "Fleet maintenance for distribution centers in the Rosedale/7th Standard area.",
       icon: Truck
     }
   ],
@@ -60,20 +60,20 @@ export const bakersfieldData: LocationPageData = {
   },
   faqs: [
     {
-      question: "How fast can you get to the oil fields in Oildale?",
-      answer: "We are based locally. For Oildale and North Bakersfield, we can usually be on-site in under an hour."
+      question: "Do you service the Kern River Oil Field?",
+      answer: "Yes, our technicians are trained and equipped for oilfield environments. We carry the high-pressure hoses and safety gear required for rig sites."
     },
     {
-      question: "Do you carry fittings for oil field equipment?",
-      answer: "Yes, we stock the heavy-duty pressure fittings, hammer unions, and hoses common on rigs and well-service trucks."
+      question: "Can you fix a harvester in the field?",
+      answer: "Absolutely. During harvest season, we know every minute counts. We drive our mobile workshop directly to your row in Shafter, Arvin, or Lamont."
     },
     {
-      question: "Are you available weekends during harvest?",
-      answer: "Absolutely. We know ag doesn't stop for weekends. We run 24/7 shifts to keep your harvesters running."
+      question: "How fast can you get to the Grapevine?",
+      answer: "We treat roadside breakdowns on I-5 and Hwy 99 as priorities. Depending on traffic, we can usually reach the Tejon Pass area quickly."
     },
     {
-      question: "Do you go as far as Tehachapi?",
-      answer: "Yes, we service all of Kern County, including the pass."
+      question: "Do you stock metric fittings for John Deere/Kubota?",
+      answer: "Yes, we carry a full line of metric, BSP, and ORFS fittings common on modern agricultural equipment found in Kern County."
     }
   ],
   nearbyLocations: [
@@ -92,9 +92,9 @@ export const wichitaData: LocationPageData = {
     intro: {
         heading: "Wichita's Choice for Industrial & Mobile Hydraulics",
         paragraphs: [
-            "From the aircraft plants to the wheat fields, Wichita keeps moving. Frontline provides the **mobile hydraulic repair Wichita** businesses trust to keep production lines and farm equipment running. We are your local boots-on-the-ground support.",
-            "Our technicians are experts in both industrial plant maintenance and heavy equipment repair. Whether you have a press down in an aerospace shop or a combine stuck in a field in **Sedgwick County**, we have a truck ready to roll.",
-            "Don't lose a day of production. Call us for **hydraulic hose repair in Wichita** and get a certified technician to your site fast."
+            "Known as the Air Capital of the World, Wichita demands precision and reliability. Frontline provides expert **mobile hydraulic repair in Wichita** and Sedgwick County, serving the aerospace supply chain, heavy construction, and regional agriculture.",
+            "From the manufacturing plants along **Kellogg Avenue** to the wheat fields surrounding **Goddard** and **Derby**, our technicians are ready. We specialize in both industrial hydraulic systems (presses, injection molding) and mobile heavy equipment repair.",
+            "Whether you have a forklift down at a warehouse near **I-135** or a combine stuck in a field near **Valley Center**, call Frontline. We bring OEM-quality hose fabrication and system diagnostics directly to your location."
         ]
     },
     localDetails: {
@@ -102,22 +102,23 @@ export const wichitaData: LocationPageData = {
         hours: "24/7 Emergency Dispatch",
         responseTime: "60-Min Avg Response",
         serviceAreaShort: "Wichita & Sedgwick Co.",
-        coverageAreas: ["Downtown / Old Town", "Park City Industrial", "Spirit/Aircraft District", "Surrounding Ag Land"]
+        coverageAreas: ["Downtown", "Old Town", "Park City", "Derby", "Goddard", "Haysville"]
     },
     localIndustries: [
-        { title: "Aerospace Mfg", description: "Presses, lifts, and GSE maintenance.", icon: Factory },
-        { title: "Agriculture", description: "Combines and tractors during harvest.", icon: Tractor },
-        { title: "Construction", description: "Site prep and road crews.", icon: HardHat },
-        { title: "Industrial", description: "Plant conveyor and power unit repair.", icon: Wrench }
+        { title: "Aerospace Mfg", description: "Maintenance for presses and GSE at major aviation facilities.", icon: Factory },
+        { title: "Agriculture", description: "Combine and tractor repair during wheat harvest season.", icon: Tractor },
+        { title: "Construction", description: "Supporting road crews on I-35 and Kellogg expansion projects.", icon: HardHat },
+        { title: "Industrial", description: "Plant conveyor and power unit repair in the industrial districts.", icon: Wrench }
     ],
     serviceArea: {
         cities: ["Wichita", "Derby", "Newton", "El Dorado", "Haysville", "Andover", "Goddard", "Valley Center"],
         mapImage: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1933&q=80"
     },
     faqs: [
-        { question: "Do you have clearance for aircraft plants?", answer: "Yes, we work with major manufacturing facilities in Wichita and carry the necessary insurance and safety credentials." },
-        { question: "How far out of Wichita do you travel?", answer: "We cover all of Sedgwick County and neighboring areas like Newton and El Dorado." },
-        { question: "Can you fix farm equipment in the field?", answer: "Yes. Our trucks can drive right up to your combine to crimp a hose on the spot." }
+        { question: "Do you serve the aircraft plants?", answer: "Yes, we work with facilities across Wichita. We carry the necessary insurance and follow strict safety protocols for industrial sites." },
+        { question: "How far out of Wichita do you travel?", answer: "We cover all of Sedgwick County and frequently dispatch to Newton, El Dorado, and Wellington." },
+        { question: "Can you fix a forklift on site?", answer: "Yes, we repair mast hoses, tilt cylinders, and steering hydraulics for forklifts in warehouses and distribution centers." },
+        { question: "Do you offer 24/7 service?", answer: "Yes. Manufacturing lines and harvest crews don't stop at 5 PM, and neither do we." }
     ],
     nearbyLocations: [
         { name: "Topeka, KS", id: "location-topeka" },
@@ -133,11 +134,11 @@ export const lubbockData: LocationPageData = {
     county: "Lubbock County",
     heroImage: "https://images.unsplash.com/photo-1588696773516-6c5b9f93922d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     intro: {
-        heading: "Hub City's Toughest Hydraulic Repair",
+        heading: "Hub City's Toughest Hydraulic Repair Service",
         paragraphs: [
-            "It's dusty, it's hot, and the work doesn't stop. Frontline brings rugged **mobile hydraulic repair to Lubbock** and the South Plains. We support the cotton strippers, the oil rigs, and the construction crews that build West Texas.",
-            "Our **Lubbock hydraulic service** is built for speed. When a line blows during harvest or drilling operations, you can't afford to wait for parts. Our trucks are stocked to handle the specific needs of **Lubbock County** equipment.",
-            "Call us for **hydraulic repair in Lubbock**. We show up, we fix it, and we let you get back to work."
+            "It's dusty, it's hot, and the work never stops on the South Plains. Frontline brings rugged **mobile hydraulic repair to Lubbock**, supporting the cotton industry, oilfields, and construction crews that build West Texas.",
+            "Our service trucks are a common sight on **Loop 289** and the farm roads out to **Idalou** and **Slaton**. We understand that during cotton harvest, a blown stripper hose is a disaster. That's why we offer 24/7 emergency dispatch to get you back in the row fast.",
+            "We also support the **Permian Basin** overflow, providing hydraulic service for drilling rigs and well-service fleets operating in the region. From **Texas Tech** campus construction to the oil patch, Frontline is Lubbock's reliable partner."
         ]
     },
     localDetails: {
@@ -145,22 +146,23 @@ export const lubbockData: LocationPageData = {
         hours: "24/7 Emergency Dispatch",
         responseTime: "60-Min Metro Response",
         serviceAreaShort: "Lubbock & South Plains",
-        coverageAreas: ["Loop 289 Corridor", "Slaton Hwy Industrial", "Cotton Ag Belt", "Oilfield Sites"]
+        coverageAreas: ["Loop 289", "Slaton", "Levelland", "Wolfforth", "Shallowater"]
     },
     localIndustries: [
-        { title: "Cotton Ag", description: "Strippers, module builders, and gins.", icon: Tractor },
-        { title: "Oil & Gas", description: "Support for drilling and well service.", icon: Droplet },
-        { title: "Construction", description: "Heavy iron repair on site.", icon: HardHat },
-        { title: "Trucking", description: "Fleet repair for hauling operations.", icon: Truck }
+        { title: "Cotton Ag", description: "Expert repair for cotton strippers, module builders, and gin hydraulics.", icon: Tractor },
+        { title: "Oil & Gas", description: "Supporting drilling and well service trucks on the South Plains.", icon: Droplet },
+        { title: "Construction", description: "Heavy iron repair for road and infrastructure projects.", icon: HardHat },
+        { title: "Wind Energy", description: "Crane and hydraulic torque wrench support for wind farms.", icon: Zap }
     ],
     serviceArea: {
         cities: ["Lubbock", "Levelland", "Slaton", "Plainview", "Brownfield", "Tahoka", "Post", "Idalou"],
         mapImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1931&q=80"
     },
     faqs: [
-        { question: "Are you open during cotton harvest?", answer: "We never close. We know that's your money-making season, so we run 24/7 support for farmers." },
-        { question: "Do you have fittings for John Deere cotton strippers?", answer: "Yes, we stock the metric and standard fittings common on JD and Case equipment." },
-        { question: "Do you go out to Levelland or Post?", answer: "Yes, we service the entire South Plains region." }
+        { question: "Are you open during cotton harvest?", answer: "We never close. We know harvest is 'go time' for Lubbock. We run 24/7 shifts to keep strippers and boll buggies running." },
+        { question: "Do you have John Deere stripper fittings?", answer: "Yes, we stock the specific metric and standard fittings common on JD and Case cotton equipment." },
+        { question: "Do you go out to the oilfields?", answer: "Yes, we service equipment in Levelland, Brownfield, and Post. We are equipped for the oil patch." },
+        { question: "Can you build hoses for wind turbine cranes?", answer: "Yes, we can fabricate high-pressure assemblies for mobile cranes and support equipment used in wind energy." }
     ],
     nearbyLocations: [
         { name: "Amarillo, TX", id: "location-amarillo" },

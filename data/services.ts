@@ -6,14 +6,14 @@ export const emergencyRepairData: ServicePageData = {
   id: 'service-emergency',
   title: "Emergency Hydraulic Hose Repair",
   heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-  subheading: "When a hose blows, your project stops. We get you back to work fast in Bakersfield, Wichita, and Lubbock.",
+  subheading: "When a hose blows, your project stops. We get you back to work fast in Bakersfield, Wichita, and Lubbock with 24/7 on-site repair.",
   description: {
     heading: "We Don't Let Downtime Kill Your Profit",
     paragraphs: [
-      "You know the drill: a main boom hose bursts, hydraulic fluid sprays everywhere, and your entire crew is standing around waiting. Every minute that machine sits idle costs you money. You don't need a call center; you need a truck on-site, right now.",
-      "Frontline Hydraulic Services provides 24/7 **emergency mobile hydraulic hose repair** across **Bakersfield, Wichita, and Lubbock**. We don't work 'banking hours'—we work your hours. Nights, weekends, holidays—if you're working, we're ready to dispatch.",
-      "Our trucks are mobile workshops stocked with thousands of fittings and hoses. Whether you're stuck on a roadside in **Kern County**, a harvest field in **Sedgwick County**, or a drilling rig in **Lubbock**, we show up ready to crimp and install. No towing, no waiting for parts runs.",
-      "We handle everything from blown excavator lines to steering hoses on dump trucks. You make the call, we fix the leak, and your yellow iron gets back to moving dirt."
+      "You know the drill: a main boom hose bursts, hydraulic fluid sprays everywhere, and your entire crew is standing around waiting. Every minute that machine sits idle costs you money. You don't need a call center; you need a **mobile hydraulic repair truck** on-site, right now.",
+      "Frontline Hydraulic Services provides 24/7 **emergency mobile hydraulic hose repair** across **Bakersfield, CA**, **Wichita, KS**, and **Lubbock, TX**. We don't work 'banking hours'—we work your hours. Nights, weekends, holidays—if you're working, we're ready to dispatch. Our technicians are trained to handle high-pressure systems safely and efficiently.",
+      "Our trucks are mobile workshops stocked with thousands of fittings, adapters, and high-pressure hoses (2-wire, 4-wire, and 6-wire). Whether you're stuck on a roadside in **Kern County**, a harvest field in **Sedgwick County**, or a drilling rig in **Lubbock**, we show up ready to crimp and install. No towing, no waiting for parts runs.",
+      "We handle everything from blown excavator lines to steering hoses on dump trucks. We carry Code 61/62 flanges, JIC, ORFS, and BSP fittings to match Cat, Deere, Komatsu, and Volvo equipment. You make the call, we fix the leak, and your yellow iron gets back to moving dirt."
     ]
   },
   features: [
@@ -166,13 +166,13 @@ export const mobileFabricationData: ServicePageData = {
   id: 'service-fabrication',
   title: "Mobile Hydraulic Hose Fabrication",
   heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-  subheading: "Don't drive to the parts store. We build OEM-quality hoses right at your job site in Bakersfield, Wichita, and Lubbock.",
+  subheading: "Don't drive to the parts store. We build OEM-quality hydraulic hose assemblies right at your job site in Bakersfield, Wichita, and Lubbock.",
   description: {
     heading: "The Hose Shop That Comes to You",
     paragraphs: [
-      "Why pull a mechanic off the job to drive 45 minutes to a parts counter, only to find out they don't have the fitting? Our **mobile hose fabrication** service kills that wasted time. We bring a fully capable hose shop to your location.",
-      "We specialize in **custom hydraulic hose assembly** on the fly. Whether you're re-hosing an old tractor or need a specific high-pressure line for a press, we cut, clean, and crimp it right on our truck tailgate. We serve **Bakersfield, Wichita, and Lubbock**.",
-      "Frontline technicians match your old assembly exactly—checking pressure ratings, bend radius, and routing. You get a factory-quality hose installed without the headache of leaving the site."
+      "Why pull a mechanic off the job to drive 45 minutes to a parts counter, only to find out they don't have the fitting? Our **mobile hose fabrication** service kills that wasted time. We bring a fully capable hose shop directly to your location in **Bakersfield, Wichita, or Lubbock**.",
+      "We specialize in **custom hydraulic hose assembly** on the fly. Whether you're re-hosing an old tractor or need a specific high-pressure line for a press, we cut, clean, and crimp it right on our truck tailgate. We stock Parker and Eaton style fittings to ensure compatibility.",
+      "Frontline technicians match your old assembly exactly—checking pressure ratings, bend radius, and routing. You get a factory-quality hose installed without the headache of leaving the site. We fabricate 1/4\" to 2\" assemblies with pressure ratings up to 6,000 PSI."
     ]
   },
   features: [
@@ -325,19 +325,19 @@ export const diagnosticsData: ServicePageData = {
     id: 'service-diagnostics',
     title: "Hydraulic System Diagnostics",
     heroImage: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    subheading: "Stop throwing parts at the problem. We pinpoint the root cause of pressure loss and slow cycle times.",
+    subheading: "Stop throwing parts at the problem. We pinpoint the root cause of pressure loss and slow cycle times with advanced flow testing.",
     description: {
         heading: "Expert Troubleshooting for Complex Systems",
         paragraphs: [
-            "Is your excavator moving slow? Is your press losing tonnage? Don't just swap the pump and hope for the best—that gets expensive fast. You need **hydraulic system diagnostics** to find out what's actually wrong.",
-            "Our technicians use flow meters, pressure gauges, and thermal imaging to see what's happening inside your system. We serve **Bakersfield, Wichita, and Lubbock**, troubleshooting everything from cavitation issues to overheating valves.",
-            "We isolate the problem—whether it's a bypassing cylinder, a stuck relief valve, or a worn pump—so you fix only what's broken. Save your budget for the repairs that matter."
+            "Is your excavator moving slow? Is your press losing tonnage? Don't just swap the pump and hope for the best—that gets expensive fast. You need **hydraulic system diagnostics** to find out what's actually wrong. Our experts use digital flow meters and pressure transducers to look inside the circuit.",
+            "Our technicians use advanced flow meters, pressure gauges, and thermal imaging to see what's happening inside your system. We serve **Bakersfield, Wichita, and Lubbock**, troubleshooting everything from cavitation issues to overheating valves on construction and industrial equipment.",
+            "We isolate the problem—whether it's a bypassing cylinder piston seal, a stuck relief valve, or a worn pump rotating group—so you fix only what's broken. Save your budget for the repairs that matter."
         ]
     },
     features: [
         "On-Site Pressure Testing",
-        "Flow Meter Analysis",
-        "Leak Detection",
+        "Digital Flow Meter Analysis",
+        "Leak Detection & Tracing",
         "Thermal Heat Imaging",
         "Cycle Time Benchmarking",
         "Valve Logic Troubleshooting",
@@ -410,13 +410,13 @@ export const cylinderRepairData: ServicePageData = {
     id: 'service-cylinders',
     title: "Hydraulic Pump & Cylinder Repair",
     heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    subheading: "Don't replace it if you can rebuild it. Expert repair for cylinders, pumps, and motors.",
+    subheading: "Don't replace it if you can rebuild it. Expert repair for cylinders, pumps, and motors in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Restore Power to Your Hydraulics",
         paragraphs: [
-            "When a cylinder starts drifting or a pump starts whining, you're losing money. Frontline offers **hydraulic pump and cylinder repair** services that bring your components back to OEM specs. We serve **Bakersfield, Wichita, and Lubbock**.",
+            "When a cylinder starts drifting or a pump starts whining, you're losing money. Frontline offers **hydraulic pump and cylinder repair** services that bring your components back to OEM specs. We serve the heavy equipment markets in **Bakersfield, Wichita, and Lubbock**.",
             "For leaking cylinders, we can often perform **mobile resealing** right on the machine, saving you the hassle of removal. For major damage—scored rods, worn barrels, or blown pumps—we take them to our shop for a full rebuild, honing, and bench test.",
-            "We handle gear, vane, and piston pumps, as well as cylinders of all sizes. Don't buy new until you let us check if a rebuild can save you 50% of the cost."
+            "We handle gear, vane, and piston pumps (Rexroth, Parker, Vickers), as well as cylinders of all sizes. Don't buy new until you let us check if a rebuild can save you 50% of the cost."
         ]
     },
     features: [
@@ -471,13 +471,13 @@ export const fluidServicesData: ServicePageData = {
     id: 'service-fluid',
     title: "Hydraulic Oil & Fluid Services",
     heroImage: "https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    subheading: "Dirty oil destroys hydraulic systems. We flush, filter, and refill to keep your machines running cool.",
+    subheading: "Dirty oil destroys hydraulic systems. We flush, filter, and refill to keep your machines running cool in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Clean Oil Means Long Life",
         paragraphs: [
             "70% of hydraulic failures are caused by contaminated fluid. If you're running dirty oil, you're sandblasting your pumps and valves from the inside out. Frontline provides **mobile hydraulic fluid services** in **Bakersfield, Wichita, and Lubbock**.",
-            "We offer on-site **kidney loop filtration** to clean your oil without shutting you down, water removal for systems that have been sitting, and complete **system flushing** after a catastrophic pump failure.",
-            "Don't wait for a valve to stick or a pump to grenade. Let us sample your fluid and get it back to ISO cleanliness standards."
+            "We offer on-site **kidney loop filtration** to clean your oil without shutting you down, water removal for systems that have been sitting, and complete **system flushing** after a catastrophic pump failure. We target ISO 4406 cleanliness standards.",
+            "Don't wait for a valve to stick or a pump to grenade. Let us sample your fluid and get it back to spec."
         ]
     },
     features: [
@@ -485,7 +485,7 @@ export const fluidServicesData: ServicePageData = {
         "System Flushing",
         "Kidney-Loop Filtration",
         "Water Removal",
-        "Particle Counting",
+        "Particle Counting (ISO Code)",
         "Tank Cleaning",
         "Filter Cart Service",
         "Waste Oil Disposal"
@@ -530,7 +530,7 @@ export const fluidServicesData: ServicePageData = {
 // 6. HYDRAULIC SYSTEM MAINTENANCE
 export const maintenanceData: ServicePageData = {
     id: 'service-fleet',
-    title: "Hydraulic System Maintenance",
+    title: "Hydraulic Fleet Maintenance",
     heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     subheading: "Fix it before it breaks. Preventive maintenance programs for fleets in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -649,12 +649,12 @@ export const industrialData: ServicePageData = {
     ]
 };
 
-// 8. MOBILE EQUIPMENT HYDRAULIC REPAIR
+// 8. HEAVY EQUIPMENT HYDRAULIC REPAIR
 export const equipmentRepairData: ServicePageData = {
     id: 'service-equipment',
-    title: "Mobile Equipment Hydraulic Repair",
+    title: "Heavy Equipment Hydraulic Repair",
     heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    subheading: "If it's yellow and leaks, we fix it. Excavators, dozers, and loaders repaired on-site.",
+    subheading: "If it's yellow and leaks, we fix it. Excavators, dozers, and loaders repaired on-site in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Heavy Equipment Repair That Comes to the Dirt",
         paragraphs: [
