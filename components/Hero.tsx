@@ -30,8 +30,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           {/* H1 Optimized for: Mobile Hydraulic Repair [City] */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[0.95] mb-6 drop-shadow-lg">
             MOBILE HYDRAULIC HOSE REPAIR<br />
-            <span className="text-brand-orange">WE COME TO YOU 24/7</span>
-            <span className="block text-2xl md:text-4xl mt-2 text-gray-300">SERVING BAKERSFIELD, WICHITA & LUBBOCK</span>
+            <span className="text-brand-orange">WE GOT YOU 24/7</span>
+            <span className="block text-2xl md:text-4xl mt-2 text-gray-300">Serving Bakersfield, Wichita & Lubbock</span>
           </h1>
           
           {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
