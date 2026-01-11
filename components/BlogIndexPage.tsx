@@ -36,6 +36,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
       <SeoHead 
         title="Hydraulic Repair Blog & Tips"
         description="Expert advice on hydraulic maintenance, troubleshooting, and equipment care. Read our latest articles."
+        canonicalUrl="https://emergencyhydraulics.com/blog"
         type="website"
       />
 
@@ -80,6 +81,8 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                     src={featuredPost.image} 
                     alt={featuredPost.title} 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    width="800"
+                    height="400"
                   />
                   <div className="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold uppercase px-3 py-1 rounded">
                     Featured
@@ -115,6 +118,8 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                       src={post.image} 
                       alt={post.title} 
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      width="400"
+                      height="256"
                     />
                     <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
                   </div>
@@ -184,7 +189,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                     {recentPosts.map((post) => (
                         <div key={post.id} className="flex gap-4 group cursor-pointer" onClick={() => onNavigate(`blog/${post.slug}`)}>
                              <div className="w-20 h-20 flex-shrink-0 rounded overflow-hidden">
-                                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width="80" height="80" />
                              </div>
                              <div>
                                 <h4 className="font-bold text-sm text-brand-navy leading-tight mb-1 group-hover:text-brand-orange transition-colors line-clamp-2">

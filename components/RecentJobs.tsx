@@ -41,7 +41,7 @@ const RecentJobs: React.FC = () => {
             {jobs.map((job, idx) => (
                 <div key={idx} className="flex gap-4 p-4 rounded-lg border border-gray-100 bg-gray-50 shadow-sm">
                     <div className="w-16 h-16 flex-shrink-0 overflow-hidden rounded-md">
-                        <img src={job.image} alt={job.title} className="w-full h-full object-cover" />
+                        <img src={job.image} alt={job.title} className="w-full h-full object-cover" width="64" height="64" />
                     </div>
                     <div>
                         <h3 className="font-bold text-brand-navy text-sm mb-1">{job.title}</h3>

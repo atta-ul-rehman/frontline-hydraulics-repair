@@ -8,7 +8,7 @@ export const bakersfieldData: LocationPageData = {
   state: "CA",
   county: "Kern County",
   coords: [35.3733, -119.0187],
-  heroImage: "https://images.unsplash.com/photo-1535091703666-4148b52f10d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  heroImage: "https://images.unsplash.com/photo-1535091703666-4148b52f10d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
   intro: {
     heading: "Bakersfield's Premier Mobile Hydraulic Repair Service",
     paragraphs: [
@@ -57,7 +57,7 @@ export const bakersfieldData: LocationPageData = {
       "Arvin",
       "Tehachapi"
     ],
-    mapImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1931&q=80"
+    mapImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1931&q=80&fm=webp"
   },
   faqs: [
     {
@@ -90,7 +90,7 @@ export const wichitaData: LocationPageData = {
     state: "KS",
     county: "Sedgwick County",
     coords: [37.6872, -97.3301],
-    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80",
+    heroImage: "https://images.unsplash.com/photo-1760011604179-b75b048fd19f?auto=format&fit=crop&w=2000&q=80&fm=webp",
     intro: {
         heading: "Wichita's Choice for Industrial & Mobile Hydraulics",
         paragraphs: [
@@ -114,7 +114,7 @@ export const wichitaData: LocationPageData = {
     ],
     serviceArea: {
         cities: ["Wichita", "Derby", "Newton", "El Dorado", "Haysville", "Andover", "Goddard", "Valley Center"],
-        mapImage: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1933&q=80"
+        mapImage: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1933&q=80&fm=webp"
     },
     faqs: [
         { question: "Do you serve the aircraft plants?", answer: "Yes, we work with facilities across Wichita. We carry the necessary insurance and follow strict safety protocols for industrial sites." },
@@ -135,7 +135,7 @@ export const lubbockData: LocationPageData = {
     state: "TX",
     county: "Lubbock County",
     coords: [33.5779, -101.8552],
-    heroImage: "https://images.unsplash.com/photo-1588696773516-6c5b9f93922d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1760181925370-21ecb4560bee?auto=format&fit=crop&w=2000&q=80&fm=webp",
     intro: {
         heading: "Hub City's Toughest Hydraulic Repair Service",
         paragraphs: [
@@ -159,7 +159,7 @@ export const lubbockData: LocationPageData = {
     ],
     serviceArea: {
         cities: ["Lubbock", "Levelland", "Slaton", "Plainview", "Brownfield", "Tahoka", "Post", "Idalou"],
-        mapImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1931&q=80"
+        mapImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1931&q=80&fm=webp"
     },
     faqs: [
         { question: "Are you open during cotton harvest?", answer: "We never close. We know harvest is 'go time' for Lubbock. We run 24/7 shifts to keep strippers and boll buggies running." },

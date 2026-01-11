@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, Wrench, ShieldCheck, Truck } from 'lucide-react';
 import { servicesList } from '../data/services';
+import SeoHead from './SeoHead';
 
 interface ServicesListingPageProps {
   onOpenContact: () => void;
@@ -24,6 +25,12 @@ const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onOpenContact
   };
   return (
     <div className="bg-white">
+      <SeoHead
+        title="Hydraulic Services | Mobile Repair, Emergency Service & Maintenance"
+        description="Complete hydraulic services including emergency repair, mobile fabrication, diagnostics, cylinder repair, fluid services, fleet maintenance, and industrial plant service. 24/7 availability."
+        canonicalUrl="https://emergencyhydraulics.com/services"
+        type="website"
+      />
       {/* SECTION 1: HERO */}
       <section className="relative h-[300px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">

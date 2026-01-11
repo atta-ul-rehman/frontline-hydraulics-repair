@@ -104,13 +104,14 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
       <SeoHead 
         title={`Mobile Hydraulic Repair ${data.city}, ${data.state} | 24/7 Service`}
         description={`Fast mobile hydraulic hose repair in ${data.city} and ${data.county}. We provide 24/7 on-site emergency service, system diagnostics, and cylinder repair. Licensed & Insured.`}
+        canonicalUrl={`https://emergencyhydraulics.com/locations/${data.city.toLowerCase()}`}
         type="local"
         schema={citySchema}
         breadcrumbs={breadcrumbs}
       />
 
       {/* SECTION 1: LOCAL HERO */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+      <section className="relative pt-12 pb-8 sm:pt-0 sm:pb-0 sm:h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
             src={data.heroImage}
@@ -122,7 +123,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumb */}
-          <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
+          <div className="flex items-center justify-center gap-2 text-[8px] sm:text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
             <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-gray-300">Service Areas</span>
@@ -134,7 +135,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
             Mobile Hydraulic Repair <br />
             <span className="text-brand-orange">in {data.city}, {data.state}</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
+          <p className="text-s sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
             We bring the hose shop to you. 24/7 On-Site Hydraulic Service throughout <strong>{data.city}</strong> and <strong>{data.county}</strong>.
           </p>
           
@@ -409,7 +410,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
       </section>
 
       {/* SECTION 8: PROCESS (Using similar style to ServicePage) */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">How Our {data.city} Service Works</h2>
@@ -431,6 +432,138 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
                     <p className="text-gray-600 text-sm">{step.desc}</p>
                 </div>
              ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* SECTION 10: LOCAL SEO CONTENT */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="prose prose-lg max-w-none">
+            <h2 className="text-3xl font-heading font-black text-brand-navy mb-8">Mobile Hydraulic Hose Repair Along Key Industrial Routes in {data.city}</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {data.city === 'Bakersfield' && (
+                <>Heavy equipment breakdowns are a daily reality along {data.city}'s major industrial corridors. Whether you're hauling loads on Highway 99, pushing through the Grapevine on I-5, or working construction sites along Highway 58, hydraulic failures can bring operations to a complete halt. Our mobile hydraulic hose repair service covers these critical routes, ensuring your excavators, loaders, and haul trucks get back to work without towing delays.</>
+              )}
+              {data.city === 'Wichita' && (
+                <>From the aerospace manufacturing plants along I-135 to the agricultural operations on Highway 400, Wichita's industrial routes demand reliable heavy equipment. Hydraulic failures on combines, loaders, and industrial machinery are common due to the demanding workloads and variable conditions. Our mobile hydraulic hose repair trucks are strategically positioned to serve these key corridors, providing emergency on-site service when you need it most.</>
+              )}
+              {data.city === 'Lubbock' && (
+                <>Lubbock's industrial landscape spans from the cotton fields along Highway 84 to the logistics hubs near Loop 289. Heavy equipment operating in these areas faces constant hydraulic stress from dust, heat, and heavy loads. Our mobile hydraulic hose repair service covers these critical routes, ensuring that breakdowns on combines, loaders, and industrial vehicles don't turn into costly downtime.</>
+              )}
+            </p>
+
+            <h2 className="text-3xl font-heading font-black text-brand-navy mb-8 mt-12">Serving Industrial Areas & Hotspots in {data.city}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {data.city === 'Bakersfield' && (
+                <>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Oil Fields & Energy Sector</h3>
+                    <p className="text-gray-700">Oildale, Belridge, and Elk Hills oil fields rely on hydraulic drilling rigs, workover units, and support equipment that operate 24/7 in harsh conditions.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Agricultural Heartland</h3>
+                    <p className="text-gray-700">Lamont, Shafter, and Wasco areas feature almond shakers, pistachio harvesters, and tomato processing equipment with complex hydraulic systems.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Highway 58 Corridor</h3>
+                    <p className="text-gray-700">Construction and mining operations along Highway 58 use excavators, bulldozers, and haul trucks that require reliable hydraulic maintenance.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Logistics & Distribution</h3>
+                    <p className="text-gray-700">Rosedale and 7th Standard industrial areas serve regional distribution with forklifts, pallet jacks, and loading equipment.</p>
+                  </div>
+                </>
+              )}
+              {data.city === 'Wichita' && (
+                <>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Aerospace & Manufacturing</h3>
+                    <p className="text-gray-700">Kellogg Avenue industrial corridor features precision hydraulic systems in aircraft manufacturing and industrial presses.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Agricultural Operations</h3>
+                    <p className="text-gray-700">Valley Center and Derby areas serve wheat farming with combines, planters, and irrigation equipment requiring regular hydraulic service.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">I-135 Industrial Zone</h3>
+                    <p className="text-gray-700">Manufacturing and logistics facilities along I-135 use hydraulic forklifts, conveyor systems, and material handling equipment.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Sedgwick County Agriculture</h3>
+                    <p className="text-gray-700">Regional farming operations rely on hydraulic tractors, sprayers, and harvesting equipment throughout the county.</p>
+                  </div>
+                </>
+              )}
+              {data.city === 'Lubbock' && (
+                <>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Cotton Farming Districts</h3>
+                    <p className="text-gray-700">Plainview and Brownfield areas feature cotton strippers, module builders, and irrigation systems with heavy hydraulic demands.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Oil & Gas Operations</h3>
+                    <p className="text-gray-700">Levelland and Brownfield oil fields use hydraulic drilling rigs, workover units, and support vehicles in challenging conditions.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Loop 289 Logistics Hub</h3>
+                    <p className="text-gray-700">Distribution centers and warehouses use hydraulic forklifts, pallet jacks, and loading dock equipment for regional commerce.</p>
+                  </div>
+                  <div className="bg-brand-light p-6 rounded-lg border-l-4 border-brand-orange">
+                    <h3 className="font-bold text-brand-navy mb-2">Highway 84 Corridor</h3>
+                    <p className="text-gray-700">Transportation and construction operations along Highway 84 rely on hydraulic dump trucks, excavators, and service vehicles.</p>
+                  </div>
+                </>
+              )}
+            </div>
+
+            <h2 className="text-3xl font-heading font-black text-brand-navy mb-8 mt-12">Common Hydraulic Failures We Fix On-Site in These Areas</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Our mobile hydraulic hose repair technicians encounter these failures daily across {data.city}'s industrial landscape:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-8">
+              <li><strong>Burst hydraulic hoses</strong> on excavator booms and loader arms from pressure spikes and abrasion</li>
+              <li><strong>Leaking fittings and O-rings</strong> caused by vibration, heat cycling, and contamination</li>
+              <li><strong>Excavator hydraulic failures</strong> including swing motors, travel motors, and attachment circuits</li>
+              <li><strong>Skid steer and loader issues</strong> with lift cylinders, tilt functions, and auxiliary hydraulics</li>
+              <li><strong>Combine and harvester breakdowns</strong> during critical harvest seasons with header and unloading systems</li>
+              <li><strong>Rig and drilling equipment</strong> hydraulic problems in oil field operations</li>
+              <li><strong>Forklift and material handling</strong> failures in warehouses and distribution centers</li>
+              <li><strong>Dump truck and haul vehicle</strong> issues with lift gates, steering, and brake systems</li>
+            </ul>
+
+            <h2 className="text-3xl font-heading font-black text-brand-navy mb-8 mt-12">Why Fast Emergency Hydraulic Service Matters in {data.city}'s Industrial Zones</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              In {data.city}'s fast-paced industrial environment, hydraulic failures don't just cause inconvenience—they create significant financial impact. Every hour of downtime on a $500,000 excavator costs hundreds of dollars in lost productivity. Our 24/7 emergency mobile hydraulic repair service eliminates towing delays and shop wait times, getting your equipment back online faster.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              We understand that {data.city} businesses can't afford extended downtime. That's why we maintain local staging areas and carry comprehensive inventories of hoses, fittings, and parts. When you call for mobile hydraulic hose repair in {data.city}, you're not just getting a technician—you're getting a complete mobile workshop that arrives ready to work.
+            </p>
+
+            <h2 className="text-3xl font-heading font-black text-brand-navy mb-8 mt-12">Emergency Mobile Hydraulic Repair Near You in {data.city}</h2>
+            <div className="bg-brand-light p-8 rounded-lg border-l-4 border-brand-orange">
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Don't let a hydraulic failure disrupt your {data.city} operations. Our mobile hydraulic hose repair service provides emergency on-site repairs throughout {data.city} and {data.county}, with response times typically under 60 minutes for most locations.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Contact our {data.city} dispatch team at <strong>{data.localDetails.phone}</strong> for immediate assistance. We serve the industrial corridors, agricultural districts, and commercial zones that keep {data.city} moving. Emergency mobile hydraulic repair near me—when you need it most.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`}
+                  className="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-darkOrange text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call {data.city} Dispatch Now
+                </a>
+                <Link 
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-gray text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Request Service Quote
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

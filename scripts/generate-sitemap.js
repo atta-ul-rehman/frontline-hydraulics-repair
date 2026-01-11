@@ -2,9 +2,22 @@ import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { readFileSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Import blog data dynamically
+const blogDataPath = join(dirname(__filename), '..', 'data', 'blog.ts');
+const blogContent = readFileSync(blogDataPath, 'utf-8');
+
+// Extract blog posts from the TypeScript file (simple regex approach)
+const blogSlugRegex = /slug:\s*["']([^"']+)["']/g;
+const blogSlugs = [];
+let match;
+while ((match = blogSlugRegex.exec(blogContent)) !== null) {
+  blogSlugs.push(match[1]);
+}
 
 // Define your routes with metadata
 const routes = [
@@ -20,7 +33,18 @@ const routes = [
     priority: 0.7,
     lastmod: new Date().toISOString()
   },
-
+  {
+    url: '/contact',
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  },
+  {
+    url: '/service-map',
+    changefreq: 'monthly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  },
   {
     url: '/services',
     changefreq: 'monthly',
@@ -100,6 +124,16 @@ const routes = [
     lastmod: new Date().toISOString()
   }
 ];
+
+// Dynamically add blog post routes
+blogSlugs.forEach(slug => {
+  routes.push({
+    url: `/blog/${slug}`,
+    changefreq: 'monthly',
+    priority: 0.6,
+    lastmod: new Date().toISOString()
+  });
+});
 
 async function generateSitemap() {
   try {

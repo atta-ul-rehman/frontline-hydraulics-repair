@@ -23,13 +23,13 @@ const SeoHead: React.FC<SeoHeadProps> = ({
   canonicalUrl,
   type = 'website',
   keywords = "mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Kern County, Wichita, Lubbock",
-  image = "https://frontlinehydraulics.com/images/og-image.jpg",
+  image = "https://emergencyhydraulics.com/images/og-image.jpg",
   schema,
   breadcrumbs
 }) => {
   const siteName = "Frontline Hydraulic Services";
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
-  const resolvedCanonical = canonicalUrl ?? (typeof window !== 'undefined' ? window.location.href : 'https://frontlinehydraulics.com');
+  const resolvedCanonical = canonicalUrl ?? (typeof window !== 'undefined' ? window.location.href : 'https://emergencyhydraulics.com');
 
   // Enhanced Multi-Location Schema (Homepage Default)
   const defaultSchema = {
@@ -37,8 +37,8 @@ const SeoHead: React.FC<SeoHeadProps> = ({
     "@type": "GeneralContractor",
     "name": "Frontline Hydraulic Services",
     "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
-    "@id": "https://frontlinehydraulics.com",
-    "url": "https://frontlinehydraulics.com",
+    "@id": "https://emergencyhydraulics.com",
+    "url": "https://emergencyhydraulics.com",
     "telephone": "+1-859-462-4673",
     "priceRange": "$$",
     "description": "Nationwide network for mobile hydraulic hose repair and emergency heavy equipment service.",

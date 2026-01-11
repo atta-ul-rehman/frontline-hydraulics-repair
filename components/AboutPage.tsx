@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock, Wrench, Truck, CheckCircle2, Phone, ShieldCheck, MapPin, Award, Users } from 'lucide-react';
 import { HardHat, Factory, Tractor, Droplet } from 'lucide-react';
+import SeoHead from './SeoHead';
 
 interface AboutPageProps {
   onOpenContact: () => void;
@@ -10,13 +11,20 @@ interface AboutPageProps {
 const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) => {
   return (
     <div className="bg-white">
+      <SeoHead
+        title="About Frontline Hydraulic Services | Mobile Hydraulic Repair Network"
+        description="Learn about Frontline Hydraulic Services - a nationwide network of certified mobile hydraulic technicians providing 24/7 emergency repair services in Bakersfield, Wichita, and Lubbock."
+        canonicalUrl="https://emergencyhydraulics.com/about"
+        type="website"
+      />
       {/* SECTION 1: HERO */}
       <section className="relative pt-12 pb-4 sm:pt-0 sm:pb-0 sm:h-[350px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp" 
             alt="Industrial warehouse background" 
             className="w-full h-full object-cover opacity-20"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
         </div>
@@ -73,9 +81,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
             <div className="w-full lg:w-2/5 relative">
               <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-gray-100">
                 <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" 
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80&fm=webp" 
                   alt="Technician repairing hydraulic equipment" 
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  width="1770"
+                  height="1180"
                 />
               </div>
               

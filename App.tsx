@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Eagerly load critical components
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -12,18 +14,20 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import FloatingCallButton from './components/FloatingCallButton';
-import AboutPage from './components/AboutPage';
-import ContactPage from './components/ContactPage';
-import ServicePage from './components/ServicePage';
-import ServicesListingPage from './components/ServicesListingPage';
-import LocationPage from './components/LocationPage';
-import BlogIndexPage from './components/BlogIndexPage';
-import BlogPostPage from './components/BlogPostPage';
-import RecentJobs from './components/RecentJobs';
-import CommercialAccounts from './components/CommercialAccounts';
-import Testimonials from './components/Testimonials';
-import ServiceMapPage from './components/ServiceMapPage';
-import SeoHead from './components/SeoHead';
+
+// Lazy load page components
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const ContactPage = lazy(() => import('./components/ContactPage'));
+const ServicePage = lazy(() => import('./components/ServicePage'));
+const ServicesListingPage = lazy(() => import('./components/ServicesListingPage'));
+const LocationPage = lazy(() => import('./components/LocationPage'));
+const BlogIndexPage = lazy(() => import('./components/BlogIndexPage'));
+const BlogPostPage = lazy(() => import('./components/BlogPostPage'));
+const RecentJobs = lazy(() => import('./components/RecentJobs'));
+const CommercialAccounts = lazy(() => import('./components/CommercialAccounts'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const ServiceMapPage = lazy(() => import('./components/ServiceMapPage'));
+const SeoHead = lazy(() => import('./components/SeoHead'));
 import {
   emergencyRepairData,
   mobileFabricationData,
@@ -52,6 +56,7 @@ const HomePage: React.FC = () => {
       <SeoHead
         title="Mobile Hydraulic Repair Bakersfield | 24/7 Emergency Service | Frontline Hydraulics"
         description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call 859 462-4673 for immediate response."
+        canonicalUrl="https://emergencyhydraulics.com/"
         type="website"
       />
       <Hero onOpenContact={openModal} />
@@ -94,7 +99,8 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="font-sans text-gray-900 bg-white selection:bg-brand-orange selection:text-white">
-          <Routes>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-brand-orange"></div></div>}>
+            <Routes>
             {/* Home Page */}
             <Route path="/" element={<Layout><HomePage /></Layout>} />
 
@@ -235,6 +241,7 @@ function App() {
               </Layout>
             } />
           </Routes>
+          </Suspense>
         </div>
       </Router>
     </HelmetProvider>

@@ -5,7 +5,7 @@ import { ServicePageData } from '../types';
 export const emergencyRepairData: ServicePageData = {
   id: 'service-emergency',
   title: "Emergency Hydraulic Hose Repair",
-  heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
+  heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80&fm=webp",
   subheading: "When a hose blows, your project stops. We get you back to work fast in Bakersfield, Wichita, and Lubbock with 24/7 on-site repair.",
   description: {
     heading: "We Don't Let Downtime Kill Your Profit",
@@ -165,7 +165,7 @@ export const emergencyRepairData: ServicePageData = {
 export const mobileFabricationData: ServicePageData = {
   id: 'service-fabrication',
   title: "Mobile Hydraulic Hose Fabrication",
-  heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
   subheading: "Don't drive to the parts store. We build OEM-quality hydraulic hose assemblies right at your job site in Bakersfield, Wichita, and Lubbock.",
   description: {
     heading: "The Hose Shop That Comes to You",
@@ -324,7 +324,7 @@ export const mobileFabricationData: ServicePageData = {
 export const diagnosticsData: ServicePageData = {
     id: 'service-diagnostics',
     title: "Hydraulic System Diagnostics",
-    heroImage: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Stop throwing parts at the problem. We pinpoint the root cause of pressure loss and slow cycle times with advanced flow testing.",
     description: {
         heading: "Expert Troubleshooting for Complex Systems",
@@ -409,7 +409,7 @@ export const diagnosticsData: ServicePageData = {
 export const cylinderRepairData: ServicePageData = {
     id: 'service-cylinders',
     title: "Hydraulic Pump & Cylinder Repair",
-    heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Don't replace it if you can rebuild it. Expert repair for cylinders, pumps, and motors in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Restore Power to Your Hydraulics",
@@ -470,7 +470,7 @@ export const cylinderRepairData: ServicePageData = {
 export const fluidServicesData: ServicePageData = {
     id: 'service-fluid',
     title: "Hydraulic Oil & Fluid Services",
-    heroImage: "https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Dirty oil destroys hydraulic systems. We flush, filter, and refill to keep your machines running cool in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Clean Oil Means Long Life",
@@ -531,7 +531,7 @@ export const fluidServicesData: ServicePageData = {
 export const maintenanceData: ServicePageData = {
     id: 'service-fleet',
     title: "Hydraulic Fleet Maintenance",
-    heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Fix it before it breaks. Preventive maintenance programs for fleets in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Stop Chasing Breakdowns",
@@ -592,7 +592,7 @@ export const maintenanceData: ServicePageData = {
 export const industrialData: ServicePageData = {
     id: 'service-industrial',
     title: "Industrial Hydraulic Services",
-    heroImage: "https://images.unsplash.com/photo-1565435967962-d2279c6b5420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1565435967962-d2279c6b5420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Keep the line moving. Specialized hydraulic repair for factories, presses, and plants in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Plant Maintenance & Repair",
@@ -653,7 +653,7 @@ export const industrialData: ServicePageData = {
 export const equipmentRepairData: ServicePageData = {
     id: 'service-equipment',
     title: "Heavy Equipment Hydraulic Repair",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "If it's yellow and leaks, we fix it. Excavators, dozers, and loaders repaired on-site in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Heavy Equipment Repair That Comes to the Dirt",

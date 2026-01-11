@@ -35,9 +35,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           <div className="flex-shrink-0 flex items-center cursor-pointer">
             <Link to="/" onClick={handleNavClick}>
               <img 
-                src="/assets/FrontLine-Logo.png" 
+                src="/assets/logo.png" 
                 alt="Frontline Hydraulic Services Logo"
-                className={`transition-all ${isScrolled ? 'h-12 w-auto' : 'h-16 w-auto'}`}
+                className={`transition-all ${isScrolled ? 'h-24 w-auto' : 'h-32 w-auto'}`}
               />
             </Link>
           </div>

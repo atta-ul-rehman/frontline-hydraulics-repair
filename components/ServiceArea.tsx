@@ -11,9 +11,11 @@ const ServiceArea: React.FC = () => {
              {/* Abstract Map Representation since we don't have an API Key */}
              <div className="relative w-full h-[400px] bg-gray-200 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                 <img 
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1774&q=80" 
+                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1774&q=80&fm=webp" 
                     alt="Map of service area" 
                     className="w-full h-full object-cover opacity-60 grayscale"
+                    width="1774"
+                    height="1183"
                 />
                 
                 {/* Simulated Pins */}

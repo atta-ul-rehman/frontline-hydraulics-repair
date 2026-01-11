@@ -85,7 +85,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
             return (
                 <figure key={index} className="my-10">
                     <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                        <img src={block.src} alt={block.alt} className="w-full h-auto object-cover" />
+                        <img src={block.src} alt={block.alt} className="w-full h-auto object-cover" width="800" height="600" />
                     </div>
                     {block.caption && <figcaption className="text-center text-sm text-gray-500 mt-3 italic">{block.caption}</figcaption>}
                 </figure>
@@ -152,6 +152,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
       <SeoHead 
         title={`${post.title} | Hydraulic Repair Blog`}
         description={post.excerpt}
+        canonicalUrl={`https://emergencyhydraulics.com/blog/${post.slug}`}
         type="article"
         image={post.image}
         schema={blogSchema}
@@ -210,7 +211,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                 
                 {/* Feature Image */}
                 <div className="mb-10 rounded-xl overflow-hidden shadow-lg">
-                    <img src={post.image} alt={post.title} className="w-full h-auto object-cover" />
+                    <img src={post.image} alt={post.title} className="w-full h-auto object-cover" width="800" height="500" />
                 </div>
 
                 {/* Key Takeaways Box (Featured Snippet Bait) */}

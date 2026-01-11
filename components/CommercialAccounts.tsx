@@ -61,9 +61,11 @@ const CommercialAccounts: React.FC = () => {
             <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange/20 rounded-lg transform rotate-2"></div>
                 <img 
-                    src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" 
+                    src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80&fm=webp" 
                     alt="Fleet manager reviewing paperwork" 
                     className="relative rounded-lg shadow-2xl w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    width="1770"
+                    height="1180"
                 />
             </div>
 

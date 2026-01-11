@@ -67,6 +67,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       <SeoHead 
         title={seoTitle}
         description={seoDesc}
+        canonicalUrl={`https://emergencyhydraulics.com/services/${data.id.replace('service-', '')}`}
         type="service"
         schema={serviceSchema}
         breadcrumbs={breadcrumbs}
@@ -79,6 +80,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             src={data.heroImage}
             alt={`${data.title} - Mobile Hydraulic Service Truck`} 
             className="w-full h-full object-cover opacity-25"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-brand-navy/60"></div>
         </div>
@@ -373,9 +375,12 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
             </div>
             <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden border-4 border-gray-50 shadow-inner">
                <img 
-                 src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80"
+                 src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80&fm=webp"
                  alt="Service Area Map - Mobile Hydraulic Repair"
                  className="w-full h-full object-cover opacity-70 grayscale"
+                 loading="lazy"
+                 width="2021"
+                 height="1354"
                />
             </div>
           </div>

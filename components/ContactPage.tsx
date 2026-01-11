@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, AlertTriangle, CheckCircle2, HelpCircle, ChevronRight, Loader2, Send, ShieldCheck, Truck } from 'lucide-react';
+import SeoHead from './SeoHead';
 
 interface ContactPageProps {
   onNavigateHome: () => void;
@@ -37,6 +38,12 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
 
   return (
     <div className="bg-white">
+      <SeoHead
+        title="Contact Frontline Hydraulic Services | 24/7 Emergency Dispatch"
+        description="Contact Frontline Hydraulic Services for 24/7 emergency hydraulic repair dispatch. Call 859 462-4673 or fill out our contact form for immediate service in Bakersfield, Wichita, and Lubbock."
+        canonicalUrl="https://emergencyhydraulics.com/contact"
+        type="website"
+      />
       {/* SECTION 1: HERO */}
       <section className="relative h-[250px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">

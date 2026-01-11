@@ -30,9 +30,11 @@ const WhyChooseUs: React.FC = () => {
           <div className="w-full lg:w-1/2 relative group">
             <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" 
+                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80&fm=webp" 
                 alt="Hydraulic repair technician working on heavy machinery" 
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                width="1770"
+                height="1180"
               />
               <div className="absolute inset-0 bg-brand-navy/20 mix-blend-multiply"></div>
             </div>

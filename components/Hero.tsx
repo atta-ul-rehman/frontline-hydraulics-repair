@@ -11,9 +11,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp" 
           alt="Mobile hydraulic hose repair technician truck on site" 
           className="w-full h-full object-cover object-center"
+          loading="lazy"
         />
         {/* Heavy Industrial Overlay */}
         <div className="absolute inset-0 bg-brand-navy/85 mix-blend-multiply"></div>

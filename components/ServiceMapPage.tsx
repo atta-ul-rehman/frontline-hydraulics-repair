@@ -2,6 +2,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SeoHead from './SeoHead';
 import L from 'leaflet';
 
@@ -21,7 +22,6 @@ const customIcon = new L.Icon({
 });
 
 interface ServiceMapPageProps {
-  onNavigate: (page: string) => void;
   onOpenContact: () => void;
 }
 
@@ -31,52 +31,64 @@ const locations = [
     name: "Bakersfield, CA",
     coords: [35.3733, -119.0187] as [number, number],
     phone: "859 462-4673",
-    description: "Serving Kern County oil fields and agriculture."
+    description: "Serving Kern County oil fields and agriculture.",
+    location: '/locations/bakersfield'
   },
   {
     id: 'location-wichita',
     name: "Wichita, KS",
     coords: [37.6872, -97.3301] as [number, number],
     phone: "859 462-4673",
-    description: "Serving aviation and industrial manufacturing."
+    description: "Serving aviation and industrial manufacturing.",
+    location: '/locations/wichita'
   },
   {
     id: 'location-lubbock',
     name: "Lubbock, TX",
     coords: [33.5779, -101.8552] as [number, number],
     phone: "859 462-4673",
-    description: "Serving West Texas cotton and oil industries."
+    description: "Serving West Texas cotton and oil industries.",
+    location: '/locations/lubbock'
   }
 ];
 
-const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onNavigate, onOpenContact }) => {
+const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onOpenContact }) => {
   return (
     <div className="bg-white">
       <SeoHead 
         title="Service Area Map | Frontline Hydraulic Services"
         description="View our full service area map. 24/7 mobile hydraulic repair available in Bakersfield CA, Wichita KS, and Lubbock TX."
+        canonicalUrl="https://emergencyhydraulics.com/service-map"
         type="website"
       />
 
       {/* Hero Section */}
-      <section className="bg-brand-navy py-12 border-b-8 border-brand-orange">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-             <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-                <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+     <section className="relative pt-12 pb-8 sm:pt-0 sm:pb-0 sm:h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
+           <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1641604570736-20db3310dbe8?auto=format&fit=crop&w=2000&q=80&fm=webp"
+            alt={`Mobile Hydraulic Repair Truck in Bakersfield, CA`} 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-brand-navy/40"></div>
+        </div>
+           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+             <div className="flex items-center justify-center gap-2 text-[8px] sm:text-xs md:text-sm font-bold tracking-widest text-gray-400 mb-6">
+                <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
                 <span className="text-brand-orange">/</span>
                 <span className="text-white">Service Map</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 uppercase tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 tracking-tight">
                 Our Service Network
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto font-medium">
+            <p className="text-[14px] sm:text-xl text-gray-300 max-w-2xl mx-auto font-medium">
                 We provide mobile hydraulic repair across three major industrial hubs. Find the dispatch center nearest you.
             </p>
         </div>
       </section>
 
       {/* Map Section */}
-      <section className="h-[600px] w-full relative z-0">
+      <section className="h-[250px] sm:h-[600px] w-full relative z-0">
         <MapContainer 
             center={[35.5, -108.0]} 
             zoom={5} 
@@ -93,12 +105,12 @@ const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onNavigate, onOpenConta
                         <div className="text-center p-2">
                             <h3 className="font-bold text-brand-navy text-lg mb-1">{loc.name}</h3>
                             <p className="text-sm text-gray-600 mb-2">{loc.description}</p>
-                            <button 
-                                onClick={() => onNavigate(loc.id)}
+                            <Link 
+                                to={loc.location}
                                 className="text-brand-orange font-bold text-sm underline"
                             >
                                 View Location Details
-                            </button>
+                            </Link>
                         </div>
                     </Popup>
                 </Marker>
@@ -148,12 +160,12 @@ const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onNavigate, onOpenConta
                             >
                                 <Phone className="w-4 h-4" /> Call Dispatch
                             </a>
-                            <button 
-                                onClick={() => onNavigate(loc.id)}
+                            <Link 
+                                to={loc.location}
                                 className="flex items-center justify-center gap-2 w-full border border-gray-300 text-brand-navy font-bold py-3 rounded hover:bg-gray-50 transition-colors"
                             >
                                 Location Page <ArrowRight className="w-4 h-4" />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}
