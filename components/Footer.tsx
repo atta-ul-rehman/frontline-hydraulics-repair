@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <Link to="/" className="mb-6 cursor-pointer inline-block">
                 <img 
-                  src="/assets/FrontLine-Logo.png" 
+                  src="/assets/FrontLine-Logo.webp" 
                   alt="Frontline Hydraulic Services Logo"
                   className="h-12 w-auto"
                 />
