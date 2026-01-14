@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Eagerly load critical components
 import Header from './components/Header';
 import Hero from './components/Hero';
+import TrustBar from './components/TrustBar';
 import Services from './components/Services';
+import TechnicalCapabilities from './components/TechnicalCapabilities';
 import WhyChooseUs from './components/WhyChooseUs';
 import Industries from './components/Industries';
 import ServiceArea from './components/ServiceArea';
@@ -60,8 +62,10 @@ const HomePage: React.FC = () => {
         type="website"
       />
       <Hero onOpenContact={openModal} />
+      <TrustBar />
       <RecentJobs />
       <Services />
+      <TechnicalCapabilities />
       <WhyChooseUs />
       <CommercialAccounts />
       <Industries />

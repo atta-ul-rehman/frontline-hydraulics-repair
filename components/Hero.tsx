@@ -30,8 +30,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           
           {/* H1 Optimized for: Mobile Hydraulic Repair [City] */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-[1.09em] tracking-wide mb-6 drop-shadow-lg">
-            MOBILE HYDRAULIC HOSE REPAIR<br />
-            <span className="text-brand-orange">WE GOT YOU 24/7</span>
+            HYDRAULIC FAILURE?<br />
+            <span className="text-brand-orange">WE DISPATCH NOW</span>
             <span className="inline-flex items-center gap-2 mt-4 px-0 sm:px-4 py-2 text-base md:text-2xl mt-2 text-gray-300"> <svg
     xmlns="http://www.w3.org/2000/svg"
     className="h-6 w-6 text-white"
@@ -46,8 +46,14 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           
           {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
           <p className="text-base md:text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
-            <strong>Downtime costs you money.</strong> When a line blows, you need a truck on-site, fast. We bring the hose shop to you—24/7, no excuses.
+            <strong>Every minute of downtime costs you $50-200.</strong> Don't wait for ETA quotes. We dispatch licensed technicians with full truck inventory—arriving in under 60 minutes.
           </p>
+          
+          {/* Live Status Indicator */}
+          <div className="mb-8 inline-flex items-center gap-3 bg-green-600 text-white px-4 py-2 rounded-full font-bold text-sm animate-pulse">
+            <div className="w-3 h-3 bg-white rounded-full animate-ping"></div>
+            <span>🟢 TECHNICIANS AVAILABLE: Bakersfield, Wichita, Lubbock</span>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 

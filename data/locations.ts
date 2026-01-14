@@ -94,7 +94,7 @@ export const wichitaData: LocationPageData = {
     intro: {
         heading: "Wichita's Choice for Industrial & Mobile Hydraulics",
         paragraphs: [
-            "Known as the Air Capital of the World, Wichita demands precision and reliability. Frontline provides expert **mobile hydraulic repair in Wichita** and Sedgwick County, serving the aerospace supply chain, heavy construction, and regional agriculture.",
+            "Known as the Air Capital of the World, Wichita demands precision and reliability. Frontline provides expert **mobile hydraulic repair in Wichita** and Sedgwick County, serving aviation manufacturing support, heavy construction, and regional industrial plants.",
             "From the manufacturing plants along **Kellogg Avenue** to the wheat fields surrounding **Goddard** and **Derby**, our technicians are ready. We specialize in both industrial hydraulic systems (presses, injection molding) and mobile heavy equipment repair.",
             "Whether you have a forklift down at a warehouse near **I-135** or a combine stuck in a field near **Valley Center**, call Frontline. We bring OEM-quality hose fabrication and system diagnostics directly to your location."
         ]
@@ -139,7 +139,7 @@ export const lubbockData: LocationPageData = {
     intro: {
         heading: "Hub City's Toughest Hydraulic Repair Service",
         paragraphs: [
-            "It's dusty, it's hot, and the work never stops on the South Plains. Frontline brings rugged **mobile hydraulic repair to Lubbock**, supporting the cotton industry, oilfields, and construction crews that build West Texas.",
+            "It's dusty, it's hot, and the work never stops on the South Plains. Frontline brings rugged **mobile hydraulic repair to Lubbock**, supporting West Texas oilfield equipment and cotton/ag machinery that build the region.",
             "Our service trucks are a common sight on **Loop 289** and the farm roads out to **Idalou** and **Slaton**. We understand that during cotton harvest, a blown stripper hose is a disaster. That's why we offer 24/7 emergency dispatch to get you back in the row fast.",
             "We also support the **Permian Basin** overflow, providing hydraulic service for drilling rigs and well-service fleets operating in the region. From **Texas Tech** campus construction to the oil patch, Frontline is Lubbock's reliable partner."
         ]

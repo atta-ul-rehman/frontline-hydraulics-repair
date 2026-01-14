@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.emergencyhydraulics.com/:path*",
-      "statusCode": 301,
-      "has": [
-        {
-          "type": "host",
-          "value": "emergencyhydraulics.com"
-        }
-      ]
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!assets|sitemap.xml|robots.txt).*)",
