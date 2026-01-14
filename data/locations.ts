@@ -5,10 +5,10 @@ import { Droplet, Tractor, HardHat, Truck, Factory, Wrench, Zap } from 'lucide-r
 export const bakersfieldData: LocationPageData = {
   id: 'location-bakersfield',
   city: "Bakersfield",
-  state: "CA",
+  state: "CA",    
   county: "Kern County",
   coords: [35.3733, -119.0187],
-  heroImage: "https://images.unsplash.com/photo-1535091703666-4148b52f10d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
+heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=format&fit=crop&w=2000&q=80&fm=webp",
   intro: {
     heading: "Bakersfield's Premier Mobile Hydraulic Repair Service",
     paragraphs: [
