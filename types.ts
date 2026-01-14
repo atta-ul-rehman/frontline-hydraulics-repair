@@ -21,6 +21,8 @@ export interface BenefitItem {
 export interface ServicePageData {
   id: string;
   title: string;
+  seoTitle: string;
+  seoDesc: string;
   heroImage: string;
   subheading: string;
   description: {
@@ -68,6 +70,8 @@ export interface LocationPageData {
   county: string;
   coords: [number, number];
   heroImage: string;
+  seoTitle: string;
+  seoDesc: string;
   intro: {
     heading: string;
     paragraphs: string[];
@@ -123,6 +127,8 @@ export interface BlogPost {
     intent: string;
     image: string;
     excerpt: string;
+    seoTitle: string;
+    seoDesc: string;
     date: string;
     readTime: string;
     author: string;

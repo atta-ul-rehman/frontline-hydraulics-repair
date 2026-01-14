@@ -28,12 +28,12 @@ const SeoHead: React.FC<SeoHeadProps> = ({
   breadcrumbs
 }) => {
   const siteName = "Frontline Hydraulic Services";
-  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullTitle = title; 
   const resolvedCanonical = canonicalUrl ?? (typeof window !== 'undefined' ? window.location.href : 'https://emergencyhydraulics.com');
 
   // Enhanced Multi-Location Schema (Homepage Default)
   const defaultSchema = {
-    "@context": "https://schema.org",
+    "@context": "https://schema.org", 
     "@type": "GeneralContractor",
     "name": "Frontline Hydraulic Services",
     "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",

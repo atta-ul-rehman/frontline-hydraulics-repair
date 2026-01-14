@@ -52,8 +52,8 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
   };
 
   // SEO Optimized Title & Description
-  const seoTitle = `${data.title} | Mobile Service in Bakersfield, Wichita & Lubbock`;
-  const seoDesc = `24/7 ${data.title}. Mobile hydraulic service for ${data.industries.left[0]} and ${data.industries.right[0]}. We come to you in Bakersfield, Wichita, and Lubbock.`;
+  const seoTitle = data.seoTitle;
+  const seoDesc = data.seoDesc;
 
   // Breadcrumbs
   const breadcrumbs = [

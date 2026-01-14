@@ -102,8 +102,8 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
   return (
     <div className="bg-white">
       <SeoHead 
-        title={`Mobile Hydraulic Repair ${data.city}, ${data.state} | 24/7 Service`}
-        description={`Fast mobile hydraulic hose repair in ${data.city} and ${data.county}. We provide 24/7 on-site emergency service, system diagnostics, and cylinder repair. Licensed & Insured.`}
+        title={data.seoTitle}
+        description={data.seoDesc}
         canonicalUrl={`https://emergencyhydraulics.com/locations/${data.city.toLowerCase()}`}
         type="local"
         schema={citySchema}

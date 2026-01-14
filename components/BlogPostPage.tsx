@@ -150,8 +150,8 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
   return (
     <div className="bg-white">
       <SeoHead 
-        title={`${post.title} | Hydraulic Repair Blog`}
-        description={post.excerpt}
+        title={post.seoTitle}
+        description={post.seoDesc}
         canonicalUrl={`https://emergencyhydraulics.com/blog/${post.slug}`}
         type="article"
         image={post.image}

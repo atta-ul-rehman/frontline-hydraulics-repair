@@ -3,8 +3,10 @@ import { ServicePageData } from '../types';
 
 // 1. EMERGENCY HYDRAULIC HOSE REPAIR (Money Page)
 export const emergencyRepairData: ServicePageData = {
-  id: 'service-emergency',
+  id: 'service-emergency-repair',   // matches /services/emergency-repair
   title: "Emergency Hydraulic Hose Repair",
+  seoTitle: "Emergency Hydraulic Hose Repair | 24/7 Mobile Service",
+  seoDesc: "24/7 emergency hydraulic hose repair in Bakersfield, Wichita & Lubbock. Mobile technicians dispatch within 60 minutes. We fix blown lines on-site.",
   heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80&fm=webp",
   subheading: "When a hose blows, your project stops. We get you back to work fast in Bakersfield, Wichita, and Lubbock with 24/7 on-site repair.",
   description: {
@@ -163,8 +165,10 @@ export const emergencyRepairData: ServicePageData = {
 
 // 2. MOBILE HYDRAULIC HOSE FABRICATION
 export const mobileFabricationData: ServicePageData = {
-  id: 'service-fabrication',
+  id: 'service-mobile-fabrication',  // matches /services/mobile-fabrication
   title: "Mobile Hydraulic Hose Fabrication",
+  seoTitle: "Mobile Hydraulic Hose Fabrication | On-Site Assembly",
+  seoDesc: "Custom hydraulic hose fabrication on your truck or job site. We build OEM-quality assemblies in Bakersfield, Wichita & Lubbock. No shop visits required.",
   heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
   subheading: "Don't drive to the parts store. We build OEM-quality hydraulic hose assemblies right at your job site in Bakersfield, Wichita, and Lubbock.",
   description: {
@@ -323,7 +327,9 @@ export const mobileFabricationData: ServicePageData = {
 // 3. HYDRAULIC SYSTEM DIAGNOSTICS
 export const diagnosticsData: ServicePageData = {
     id: 'service-diagnostics',
-    title: "Hydraulic System Diagnostics",
+    title: "Hydraulic System Diagnostics",    
+    seoTitle: "Hydraulic System Diagnostics | Pressure Testing Service",
+    seoDesc: "Advanced hydraulic diagnostics with flow meters & pressure testing. Find root causes of slow cycles and leaks in Bakersfield, Wichita & Lubbock.",
     heroImage: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Stop throwing parts at the problem. We pinpoint the root cause of pressure loss and slow cycle times with advanced flow testing.",
     description: {
@@ -407,8 +413,10 @@ export const diagnosticsData: ServicePageData = {
 
 // 4. HYDRAULIC PUMP & CYLINDER REPAIR
 export const cylinderRepairData: ServicePageData = {
-    id: 'service-cylinders',
+    id: 'service-cylinder-repair',    // matches /services/cylinder-repair
     title: "Hydraulic Pump & Cylinder Repair",
+    seoTitle: "Hydraulic Pump & Cylinder Repair | Mobile Rebuild Service",
+    seoDesc: "Mobile hydraulic pump and cylinder repair. We rebuild leaking cylinders and failing pumps on-site in Bakersfield, Wichita & Lubbock. Save on OEM costs.",
     heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Don't replace it if you can rebuild it. Expert repair for cylinders, pumps, and motors in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -468,8 +476,10 @@ export const cylinderRepairData: ServicePageData = {
 
 // 5. HYDRAULIC OIL & FLUID SERVICES
 export const fluidServicesData: ServicePageData = {
-    id: 'service-fluid',
+    id: 'service-fluid-services',     // matches /services/fluid-services
     title: "Hydraulic Oil & Fluid Services",
+    seoTitle: "Hydraulic Oil & Fluid Services | Mobile Filtration",
+    seoDesc: "Mobile hydraulic fluid services: flushing, filtration & oil changes. Clean contaminated systems in Bakersfield, Wichita & Lubbock. ISO cleanliness standards.",
     heroImage: "https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Dirty oil destroys hydraulic systems. We flush, filter, and refill to keep your machines running cool in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -529,8 +539,10 @@ export const fluidServicesData: ServicePageData = {
 
 // 6. HYDRAULIC SYSTEM MAINTENANCE
 export const maintenanceData: ServicePageData = {
-    id: 'service-fleet',
+    id: 'service-fleet-maintenance',  // matches /services/fleet-maintenance
     title: "Hydraulic Fleet Maintenance",
+    seoTitle: "Hydraulic Fleet Maintenance | Preventive Service Plans",
+    seoDesc: "Preventive hydraulic maintenance for fleets. Scheduled inspections, filter changes & hose tagging in Bakersfield, Wichita & Lubbock. Reduce breakdowns.",
     heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Fix it before it breaks. Preventive maintenance programs for fleets in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -590,8 +602,10 @@ export const maintenanceData: ServicePageData = {
 
 // 7. INDUSTRIAL HYDRAULIC SERVICES
 export const industrialData: ServicePageData = {
-    id: 'service-industrial',
+    id: 'service-industrial-plant',   // matches /services/industrial-plant-service
     title: "Industrial Hydraulic Services",
+    seoTitle: "Industrial Hydraulic Services | Plant Maintenance",
+    seoDesc: "Specialized hydraulic repair for factories & plants. Press cylinders, HPUs & conveyor systems in Bakersfield, Wichita & Lubbock. OSHA compliant service.",
     heroImage: "https://images.unsplash.com/photo-1565435967962-d2279c6b5420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Keep the line moving. Specialized hydraulic repair for factories, presses, and plants in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -651,8 +665,10 @@ export const industrialData: ServicePageData = {
 
 // 8. HEAVY EQUIPMENT HYDRAULIC REPAIR
 export const equipmentRepairData: ServicePageData = {
-    id: 'service-equipment',
+    id: 'service-heavy-equipment',    // matches /services/heavy-equipment-repair
     title: "Heavy Equipment Hydraulic Repair",
+    seoTitle: "Heavy Equipment Hydraulic Repair | Excavator Service",
+    seoDesc: "Mobile hydraulic repair for excavators, dozers & loaders. Boom cylinders, travel motors & pumps fixed on-site in Bakersfield, Wichita & Lubbock.",
     heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "If it's yellow and leaks, we fix it. Excavators, dozers, and loaders repaired on-site in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -713,49 +729,49 @@ export const equipmentRepairData: ServicePageData = {
 // Updated list for the Services Listing Page
 export const servicesList = [
     {
-        id: 'service-emergency',
+        id: 'service-emergency-repair',   // matches /services/emergency-repair
         title: "Emergency Hose Repair",
         description: "24/7 on-site replacement. We come to you.",
         icon: Timer
     },
     {
-        id: 'service-fabrication',
+        id: 'service-mobile-fabrication',  // matches /services/mobile-fabrication
         title: "Mobile Hose Fabrication",
         description: "Custom assemblies built on our truck.",
         icon: Settings
     },
     {
-        id: 'service-diagnostics',
+        id: 'service-diagnostics',        // matches /services/diagnostics
         title: "Hydraulic Diagnostics",
         description: "Find the root cause of pressure loss.",
         icon: Zap
     },
     {
-        id: 'service-fleet',
+        id: 'service-fleet-maintenance',  // matches /services/fleet-maintenance
         title: "Fleet Maintenance",
         description: "Prevent failures with scheduled service.",
         icon: ClipboardCheck
     },
     {
-        id: 'service-cylinders',
+        id: 'service-cylinder-repair',    // matches /services/cylinder-repair
         title: "Pump & Cylinder Repair",
         description: "Rebuilds and resealing to save money.",
         icon: Wrench
     },
     {
-        id: 'service-fluid',
+        id: 'service-fluid-services',     // matches /services/fluid-services
         title: "Fluid Services",
         description: "Flushing, filtering, and cleaning oil.",
         icon: Droplet
     },
     {
-        id: 'service-industrial',
+        id: 'service-industrial-plant',   // matches /services/industrial-plant-service
         title: "Industrial Plant Service",
         description: "Press and conveyor hydraulic repair.",
         icon: Factory
     },
     {
-        id: 'service-equipment',
+        id: 'service-heavy-equipment',    // matches /services/heavy-equipment-repair
         title: "Heavy Equipment Repair",
         description: "Excavator and loader hydraulics.",
         icon: Tractor
