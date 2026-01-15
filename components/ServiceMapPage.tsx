@@ -56,10 +56,11 @@ const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onOpenContact }) => {
   return (
     <div className="bg-white">
       <SeoHead 
-        title="Service Area Map | Frontline Hydraulic Services"
-        description="View our full service area map. 24/7 mobile hydraulic repair available in Bakersfield CA, Wichita KS, and Lubbock TX."
+        title="Service Map - Coverage Areas | Frontline Hydraulic Services"
+        description="View our service map and coverage areas. 24/7 emergency mobile hydraulic repair available in Bakersfield CA, Wichita KS, and Lubbock TX. Contact dispatch now."
         canonicalUrl="https://emergencyhydraulics.com/service-map"
         type="website"
+        keywords="service map, coverage area, hydraulic repair near me, Bakersfield hydraulic repair, Wichita hydraulic repair, Lubbock hydraulic repair, mobile repair"
       />
 
       {/* Hero Section */}
