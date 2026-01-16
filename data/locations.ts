@@ -12,11 +12,11 @@ heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=fo
   seoTitle: "Mobile Hydraulic Repair Bakersfield CA | 24/7 Emergency Service",
   seoDesc: "24/7 mobile hydraulic repair in Bakersfield & Kern County. Emergency hose repair, diagnostics & cylinder service for oilfield, agriculture & construction equipment.",
   intro: {
-    heading: "Bakersfield's Premier Mobile Hydraulic Repair Service",
+    heading: "Bakersfield's Mobile Hydraulic Repair Leader",
     paragraphs: [
-      "From the pump jacks in **Oildale** to the almond orchards in **Lamont**, Bakersfield runs on hydraulics. When a hose blows on Hwy 99 or a rig goes down in the **Kern River Oil Field**, you can't wait for a shop to open. Frontline provides 24/7 **mobile hydraulic hose repair in Bakersfield** and throughout Kern County.",
-      "We understand the unique demands of the San Joaquin Valley. Our trucks are stocked with the heavy-duty 4-wire and 6-wire hoses needed for oilfield applications, as well as the metric fittings common on agricultural harvesters. Whether you're stuck on the Grapevine or in a field in Shafter, we come to you.",
-      "Don't lose a day of production. Call Frontline for **Bakersfield hydraulic repair**. We are locally dispatched and know the area, ensuring the fastest response times to get your yellow iron back to work."
+      "From the pump jacks in **Oildale** to the almond orchards in **Lamont**, Bakersfield runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the **Kern River Oil Field**, you need immediate emergency hydraulic repair. Frontline delivers 24/7 **mobile hydraulic hose repair in Bakersfield** with certified technicians and on-site fabrication capability throughout Kern County.",
+      "We specialize in the unique hydraulic challenges of the San Joaquin Valley. Our certified mobile trucks carry heavy-duty 4-wire and 6-wire hoses for oilfield applications, metric fittings for agricultural harvesters, and complete diagnostic equipment for OEM troubleshooting. Whether you're stranded on the Grapevine or in a field near Shafter, we dispatch to you with high-pressure hose assembly capability.",
+      "Don't lose a production day. Call Frontline for fast **Bakersfield emergency hydraulic repair and on-site hose fabrication**. Our locally dispatched, certified technicians know the area and deliver 60-minute average emergency response to get your equipment back to work."
     ]
   },
   localDetails: {
@@ -28,23 +28,23 @@ heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=fo
   },
   localIndustries: [
     {
-      title: "Oil & Gas",
-      description: "Supporting drilling rigs and workover units in Oildale, Belridge, and Elk Hills.",
+      title: "Oil & Gas Operations",
+      description: "Emergency hydraulic repair for drilling rigs, workover units, and well-service equipment in Oildale, Belridge, and Elk Hills oilfield operations.",
       icon: Droplet
     },
     {
-      title: "Agriculture",
-      description: " rapid repair for almond shakers, pistachio sweepers, and tomato harvesters.",
+      title: "Agricultural Equipment",
+      description: "Fast on-site hose fabrication and emergency repair for almond shakers, pistachio sweepers, and cotton harvesters requiring high-pressure hydraulic service.",
       icon: Tractor
     },
     {
-      title: "Construction",
-      description: "Excavator and dozer repair for projects along Hwy 58 and the 99 corridor.",
+      title: "Heavy Construction",
+      description: "Mobile hydraulic repair for excavators, dozers, and heavy equipment on Hwy 58 and the 99 corridor construction projects.",
       icon: HardHat
     },
     {
-      title: "Logistics",
-      description: "Fleet maintenance for distribution centers in the Rosedale/7th Standard area.",
+      title: "Trucking & Fleet",
+      description: "Hydraulic maintenance programs for distribution fleets and dump trucks in the Rosedale and 7th Standard industrial areas.",
       icon: Truck
     }
   ],
@@ -96,11 +96,11 @@ export const wichitaData: LocationPageData = {
     seoTitle: "Mobile Hydraulic Repair Wichita KS | 24/7 Emergency Service",
     seoDesc: "24/7 mobile hydraulic repair in Wichita & Sedgwick County. Emergency hose repair, diagnostics & cylinder service for aerospace, construction & industrial equipment.",
     intro: {
-        heading: "Wichita's Choice for Industrial & Mobile Hydraulics",
+        heading: "Wichita's Industrial & Mobile Hydraulic Repair Experts",
         paragraphs: [
-            "Known as the Air Capital of the World, Wichita demands precision and reliability. Frontline provides expert **mobile hydraulic repair in Wichita** and Sedgwick County, serving aviation manufacturing support, heavy construction, and regional industrial plants.",
-            "From the manufacturing plants along **Kellogg Avenue** to the wheat fields surrounding **Goddard** and **Derby**, our technicians are ready. We specialize in both industrial hydraulic systems (presses, injection molding) and mobile heavy equipment repair.",
-            "Whether you have a forklift down at a warehouse near **I-135** or a combine stuck in a field near **Valley Center**, call Frontline. We bring OEM-quality hose fabrication and system diagnostics directly to your location."
+            "As the Air Capital of the World, Wichita demands precision in emergency hydraulic repair. Frontline provides expert **mobile hydraulic repair and on-site fabrication in Wichita** and Sedgwick County, serving aerospace manufacturing support, heavy construction, and regional industrial facilities with certified technicians.",
+            "From manufacturing plants along **Kellogg Avenue** to wheat fields near **Goddard** and **Derby**, our certified mobile hydraulic trucks are positioned for rapid emergency response. We specialize in industrial hydraulic systems (presses, injection molding) and OEM diagnostics for mobile heavy equipment repair.",
+            "Whether you have a forklift hydraulic failure at a warehouse near **I-135** or a combine stuck in a field near **Valley Center**, call Frontline. We deliver OEM-quality hose fabrication, high-pressure assembly, and hydraulic system diagnostics directly on-site."
         ]
     },
     localDetails: {
@@ -111,10 +111,10 @@ export const wichitaData: LocationPageData = {
         coverageAreas: ["Downtown", "Old Town", "Park City", "Derby", "Goddard", "Haysville"]
     },
     localIndustries: [
-        { title: "Aerospace Mfg", description: "Maintenance for presses and GSE at major aviation facilities.", icon: Factory },
-        { title: "Agriculture", description: "Combine and tractor repair during wheat harvest season.", icon: Tractor },
-        { title: "Construction", description: "Supporting road crews on I-35 and Kellogg expansion projects.", icon: HardHat },
-        { title: "Industrial", description: "Plant conveyor and power unit repair in the industrial districts.", icon: Wrench }
+        { title: "Aerospace Manufacturing", description: "Emergency hydraulic maintenance for industrial presses, ground support equipment, and GSE at major aviation facilities with OEM diagnostics.", icon: Factory },
+        { title: "Agricultural Equipment", description: "Fast mobile hydraulic repair and emergency hose fabrication for combine equipment and tractors during wheat harvest season.", icon: Tractor },
+        { title: "Heavy Construction", description: "On-site hydraulic repair for excavators and road equipment on I-35 and Kellogg expansion construction projects.", icon: HardHat },
+        { title: "Industrial & Manufacturing", description: "Plant conveyor and hydraulic power unit repair with certified technicians in industrial districts.", icon: Wrench }
     ],
     serviceArea: {
         cities: ["Wichita", "Derby", "Newton", "El Dorado", "Haysville", "Andover", "Goddard", "Valley Center"],
@@ -143,11 +143,11 @@ export const lubbockData: LocationPageData = {
     seoTitle: "Mobile Hydraulic Repair Lubbock TX | 24/7 Emergency Service",
     seoDesc: "24/7 mobile hydraulic repair in Lubbock & South Plains. Emergency hose repair, diagnostics & cylinder service for oilfield, cotton & construction equipment.",
     intro: {
-        heading: "Hub City's Toughest Hydraulic Repair Service",
+        heading: "Hub City's Most Trusted Emergency Hydraulic Repair Service",
         paragraphs: [
-            "It's dusty, it's hot, and the work never stops on the South Plains. Frontline brings rugged **mobile hydraulic repair to Lubbock**, supporting West Texas oilfield equipment and cotton/ag machinery that build the region.",
-            "Our service trucks are a common sight on **Loop 289** and the farm roads out to **Idalou** and **Slaton**. We understand that during cotton harvest, a blown stripper hose is a disaster. That's why we offer 24/7 emergency dispatch to get you back in the row fast.",
-            "We also support the **Permian Basin** overflow, providing hydraulic service for drilling rigs and well-service fleets operating in the region. From **Texas Tech** campus construction to the oil patch, Frontline is Lubbock's reliable partner."
+            "The South Plains demand tough, dependable **emergency mobile hydraulic repair in Lubbock**. Frontline delivers 24/7 certified technicians with complete mobile fabrication labs, supporting West Texas oilfield equipment and cotton/ag machinery that power the region's economy.",
+            "Our certified mobile hydraulic repair trucks are a familiar sight on **Loop 289** and farm roads to **Idalou** and **Slaton**. During cotton harvest season, a blown stripper hose is a disaster. That's why we provide 24/7 emergency dispatch with on-site hose fabrication to get you back in the row fast with high-pressure assemblies.",
+            "We also support **Permian Basin overflow**, providing industrial hydraulic repair for drilling rigs and well-service fleets in the region. From **Texas Tech** campus construction to the oil patch, Frontline is Lubbock's certified partner for emergency hydraulic service and OEM diagnostics."
         ]
     },
     localDetails: {
@@ -158,10 +158,10 @@ export const lubbockData: LocationPageData = {
         coverageAreas: ["Loop 289", "Slaton", "Levelland", "Wolfforth", "Shallowater"]
     },
     localIndustries: [
-        { title: "Cotton Ag", description: "Expert repair for cotton strippers, module builders, and gin hydraulics.", icon: Tractor },
-        { title: "Oil & Gas", description: "Supporting drilling and well service trucks on the South Plains.", icon: Droplet },
-        { title: "Construction", description: "Heavy iron repair for road and infrastructure projects.", icon: HardHat },
-        { title: "Wind Energy", description: "Crane and hydraulic torque wrench support for wind farms.", icon: Zap }
+        { title: "Cotton Ag Equipment", description: "Expert emergency repair and on-site fabrication for cotton strippers, module builders, and gin hydraulic systems requiring certified technicians.", icon: Tractor },
+        { title: "Oil & Gas Operations", description: "Emergency mobile hydraulic repair and diagnostics for drilling equipment and well-service trucks on the South Plains.", icon: Droplet },
+        { title: "Heavy Construction", description: "Mobile hydraulic repair for excavators and heavy equipment on road and infrastructure projects.", icon: HardHat },
+        { title: "Wind Energy", description: "Emergency hydraulic crane and torque wrench support for wind turbine installation and maintenance.", icon: Zap }
     ],
     serviceArea: {
         cities: ["Lubbock", "Levelland", "Slaton", "Plainview", "Brownfield", "Tahoka", "Post", "Idalou"],

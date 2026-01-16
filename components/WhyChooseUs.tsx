@@ -4,19 +4,19 @@ import { CheckCircle2, MapPin } from 'lucide-react';
 const benefits = [
   {
     title: "Mobile Fabrication Lab",
-    description: "We don't just carry hoses. We carry crimpers, saws, and thousands of fittings to build custom **hydraulic hose assemblies** exactly what you need, right in your parking lot."
+    description: "On-site mobile hydraulic hose fabrication using industrial crimpers and certified fittings."
   },
   {
-    title: "Fast Response Times",
-    description: "We dispatch the closest truck immediately. No waiting around for hours while your machine sits idle."
+    title: "60-Minute Emergency Response",
+    description: "24/7 emergency mobile hydraulic hose repair with technicians dispatched within 60 minutes."
   },
   {
-    title: "Local Technicians",
-    description: "You speak to a local dispatcher who knows the area and understands heavy equipment, not a call center script."
+    title: "Local Expert Technicians",
+    description: "Manufacturer-trained local technicians providing fast mobile hydraulic repair on-site."
   },
   {
-    title: "All Makes & Models",
-    description: "Caterpillar, John Deere, Komatsu, Bobcat, Volvo—if it has hydraulics, we can fix it."
+    title: "OEM Equipment Expertise",
+    description: "Emergency hydraulic repair for Caterpillar, John Deere, and all major OEM equipment."
   }
 ];
 
@@ -52,9 +52,9 @@ const WhyChooseUs: React.FC = () => {
                 <h2 className="text-brand-gray font-bold tracking-wider uppercase text-sm">Locally Owned & Operated</h2>
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-6">Why Fleets Trust Frontline</h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-6">Why Industries Choose Local Hydraulic Experts</h3>
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              When a hose bursts, your project bleeds money. You don't need a middleman; you need a local truck with the right parts, right now.
+              When industrial hydraulic systems fail, every minute costs thousands in downtime. You need certified local hydraulic technicians with emergency repair expertise and the right parts in-truck, right now. No call center middleman—just expert mobile hydraulic service.
             </p>
 
             <div className="space-y-6">

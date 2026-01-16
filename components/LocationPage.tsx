@@ -136,7 +136,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
             <span className="text-brand-orange">in {data.city}, {data.state}</span>
           </h1>
           <p className="text-s sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
-            We bring the hose shop to you. 24/7 On-Site Hydraulic Service throughout <strong>{data.city}</strong> and <strong>{data.county}</strong>.
+            Emergency mobile hydraulic repair with certified technicians. 24/7 On-Site Hose Fabrication throughout <strong>{data.city}</strong> and <strong>{data.county}</strong>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -187,7 +187,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
             <div className="w-full lg:w-2/5">
               <div className="bg-brand-light border border-gray-200 rounded-lg p-8 shadow-sm h-full">
                 <h3 className="text-xl font-bold text-brand-navy mb-6 uppercase tracking-wide border-b border-gray-200 pb-4">
-                  {data.city} Service Details
+                  Emergency Hydraulic Service in {data.city}
                 </h3>
                 
                 <ul className="space-y-6">
@@ -257,10 +257,10 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
-                    Hydraulic Services in {data.city}
+                    Emergency Hydraulic Services in {data.city}
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    From emergency hose replacement to preventative maintenance, we cover all hydraulic needs in {data.county}.
+                    Mobile hose repair, on-site fabrication, and OEM diagnostics for all industrial hydraulic needs in {data.county}. Certified technicians available 24/7.
                 </p>
                 <div className="w-20 h-1 bg-brand-orange mx-auto mt-4"></div>
             </div>
@@ -292,10 +292,10 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-heading font-black mb-4">
-                    Industries We Serve in {data.city}
+                    Industries Using {data.city} Mobile Hydraulic Repair
                 </h2>
                 <p className="text-gray-300 max-w-2xl mx-auto">
-                    We specialize in the heavy equipment and industrial machinery that keeps the {data.city} economy moving.
+                    Emergency certified mobile hydraulic service for the heavy equipment and industrial machinery that drives the {data.city} economy.
                 </p>
             </div>
 
@@ -319,9 +319,9 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-                <h2 className="text-3xl font-heading font-black text-brand-navy mb-4">Our {data.city} Service Area</h2>
+                <h2 className="text-3xl font-heading font-black text-brand-navy mb-4">Fast Mobile Hydraulic Repair Coverage in {data.city}</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    We provide mobile hydraulic repair throughout {data.city}, {data.county}, and surrounding areas. Our trucks are staged to reach you quickly.
+                    Certified technicians provide emergency hydraulic repair and on-site fabrication throughout {data.city}, {data.county}, and surrounding areas. Our mobile trucks are strategically positioned for rapid emergency response.
                 </p>
             </div>
 
@@ -387,7 +387,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
       <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why {data.city} Businesses Choose Frontline</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why {data.city} Trusts Frontline for Hydraulic Repair</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-white rounded-lg shadow-sm border-b-4 border-brand-orange">

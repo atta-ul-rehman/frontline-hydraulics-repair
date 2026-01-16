@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Search, ChevronRight, Clock, Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import SeoHead from './SeoHead';
 
 interface BlogIndexPageProps {
-  onNavigate: (page: string) => void;
   onOpenContact: () => void;
 }
 
-const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact }) => {
+const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onOpenContact }) => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   
   // Filter logic (simple search)
@@ -53,7 +54,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-white">Blog</span>
           </div>
@@ -75,7 +76,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
             
             {/* SECTION 2: FEATURED POST */}
             {filteredPosts.includes(featuredPost) && (
-              <div className="mb-16 group cursor-pointer" onClick={() => onNavigate(`blog/${featuredPost.slug}`)}>
+              <Link to={`/blog/${featuredPost.slug}`} className="mb-16 group cursor-pointer block">
                 <div className="relative h-[400px] rounded-xl overflow-hidden mb-6 shadow-md">
                   <img 
                     src={featuredPost.image} 
@@ -106,13 +107,13 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                     Read Article <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-              </div>
+              </Link>
             )}
 
             {/* SECTION 3: BLOG POST GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
               {remainingPosts.map((post) => (
-                <div key={post.id} className="group cursor-pointer flex flex-col h-full" onClick={() => onNavigate(`blog/${post.slug}`)}>
+                <Link key={post.id} to={`/blog/${post.slug}`} className="group cursor-pointer flex flex-col h-full block">
                   <div className="relative h-64 rounded-lg overflow-hidden mb-5 shadow-sm">
                     <img 
                       src={post.image} 
@@ -143,7 +144,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                       Read More <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -187,7 +188,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                 <h3 className="font-bold text-brand-navy uppercase tracking-wide mb-6 text-sm">Recent Articles</h3>
                 <div className="space-y-6">
                     {recentPosts.map((post) => (
-                        <div key={post.id} className="flex gap-4 group cursor-pointer" onClick={() => onNavigate(`blog/${post.slug}`)}>
+                        <Link key={post.id} to={`/blog/${post.slug}`} className="flex gap-4 group cursor-pointer block">
                              <div className="w-20 h-20 flex-shrink-0 rounded overflow-hidden">
                                 <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width="80" height="80" />
                              </div>
@@ -197,7 +198,7 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onNavigate, onOpenContact
                                 </h4>
                                 <span className="text-xs text-gray-400">{post.date}</span>
                              </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

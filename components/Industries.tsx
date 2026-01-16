@@ -15,8 +15,8 @@ const Industries: React.FC = () => {
     <section id="industries" className="py-20 bg-white border-b-8 border-brand-orange">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-brand-navy mb-4">Industries We Serve with Mobile Hydraulic Repair</h3>
-                <p className="text-gray-600 max-w-2xl mx-auto">From excavators to oil field equipment, we service hydraulic systems across all industries.</p>
+                <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-brand-navy mb-4">Mobile Hydraulic Service Across All Industries</h3>
+                <p className="text-gray-600 max-w-4xl mx-auto">Emergency hydraulic repair for construction equipment, oil & gas operations, agriculture, commercial fleets, and industrial manufacturing. Specialized expertise in excavator repair, backhoe service, tractor maintenance, dump truck hydraulics, and oilfield equipment support.</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6">

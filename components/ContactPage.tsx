@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, AlertTriangle, CheckCircle2, HelpCircle, ChevronRight, Loader2, Send, ShieldCheck, Truck } from 'lucide-react';
 import SeoHead from './SeoHead';
+import {Link} from 'react-router-dom';
 
 interface ContactPageProps {
-  onNavigateHome: () => void;
 }
 
-const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
+const ContactPage: React.FC<ContactPageProps> = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -58,7 +58,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
          {/* Breadcrumbs */}
           <div className="mb-6 flex items-center justify-center gap-2 text-[8px] sm:text-sm font-bold uppercase tracking-widest text-gray-400">
-            <button onClick={onNavigateHome} className="hover:text-brand-orange transition-colors">Home</button>
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-white">Contact</span>
           </div>
@@ -66,7 +66,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
             Contact Frontline
           </h1>
           <p className="sm:text-lg text-gray-300 max-w-2xl mx-auto font-medium">
-            Get fast mobile hydraulic repair — call now or request service online.
+            Get fast emergency mobile hydraulic repair and on-site fabrication — call now or request service online.
           </p>
           
         </div>
@@ -79,7 +79,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 <AlertTriangle className="w-8 h-8 text-brand-orange" />
             </div>
             <div>
-                <span className="block text-white font-black text-xl uppercase tracking-wide">Hydraulic Emergency? Call Now for 24/7 Service</span>
+                <span className="block text-white font-black text-xl uppercase tracking-wide">Emergency Hydraulic Failure? Call Now 24/7</span>
             </div>
             <a 
                 href="tel:8594624673" 
@@ -107,9 +107,9 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                     <Phone className="w-6 h-6 text-brand-orange" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 uppercase text-sm tracking-wide mb-1">Call or Text</h4>
+                                    <h4 className="font-bold text-gray-900 uppercase text-sm tracking-wide mb-1">Emergency Dispatch</h4>
                                     <a href="tel:8594624673" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-1">859 462-4673</a>
-                                    <span className="inline-block bg-brand-orange/10 text-brand-orange text-xs font-bold px-2 py-1 rounded">24/7 Emergency Service</span>
+                                    <span className="inline-block bg-brand-orange/10 text-brand-orange text-xs font-bold px-2 py-1 rounded">Mobile Hydraulic Repair 24/7</span>
                                 </div>
                             </div>
 
@@ -132,8 +132,9 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 uppercase text-sm tracking-wide mb-1">Service Area</h4>
-                                    <p className="text-gray-700 mb-2">Serving [City Name], [County], and surrounding areas.</p>
-                                    <button className="text-brand-orange font-bold text-sm underline hover:text-brand-navy transition-colors">View Service Area Map</button>
+                                    <p className="text-gray-700 mb-2 text-sm">Serving Bakersfield, Wichita, Lubbock and surrounding areas.</p>
+                                   
+                                    <Link to="/service-map" className="text-brand-orange font-bold text-sm underline hover:text-brand-navy transition-colors">View Service Area Map</Link>
                                 </div>
                             </div>
 
@@ -159,13 +160,14 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                         <div className="relative z-10">
                             <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
                                 <Truck className="text-brand-orange" />
-                                We Are a Mobile Service
+                                Mobile Hydraulic Service
                             </h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                                We come directly to your job site or facility. Our fully equipped service vehicles handle repairs on-location, eliminating the need for you to visit a shop.
+                               We dispatch fully equipped mobile hydraulic repair trucks directly to your job site or facility.
+                               Our technicians perform on-site emergency hydraulic hose repair and fabrication, eliminating towing and downtime.
                             </p>
                             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-orange">
-                                <CheckCircle2 size={16} /> Fully Equipped Mobile Units
+                                <CheckCircle2 size={16} /> Mobile Fabrication Units
                             </div>
                         </div>
                     </div>
@@ -175,8 +177,8 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                 <div className="w-full lg:w-3/5">
                     <div className="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden">
                         <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
-                            <h2 className="text-2xl font-heading font-bold text-brand-navy">Request Service or Quote</h2>
-                            <p className="text-gray-500 text-sm mt-1">Fill out the form below and we'll get back to you immediately.</p>
+                            <h2 className="text-2xl font-heading font-bold text-brand-navy">Request Hydraulic Service</h2>
+                            <p className="text-gray-500 text-sm mt-1">Describe your emergency or scheduled mobile hydraulic repair need. Certified technicians respond immediately.</p>
                         </div>
                         
                         <div className="p-8">
@@ -266,7 +268,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                                 type="text" 
                                                 name="equipmentType" 
                                                 id="equipmentType" 
-                                                placeholder="E.g., Excavator, dump truck"
+                                                placeholder="E.g., Excavator, dump truck, hydraulic pump"
                                                 className="block w-full bg-white border border-gray-300 rounded-md py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
                                                 value={formData.equipmentType}
                                                 onChange={handleChange}
@@ -279,7 +281,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                                 type="text" 
                                                 name="location" 
                                                 id="location" 
-                                                placeholder="City or Address"
+                                                placeholder="City, job site, or facility address"
                                                 className="block w-full bg-white border border-gray-300 rounded-md py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
                                                 value={formData.location}
                                                 onChange={handleChange}
@@ -295,7 +297,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                                             rows={4} 
                                             required
                                             className="block w-full bg-white border border-gray-300 rounded-md py-3 px-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
-                                            placeholder="Describe your hydraulic repair needs or question..."
+                                            placeholder="Describe your industrial hydraulic repair needs, equipment type, or emergency situation..."
                                             value={formData.message}
                                             onChange={handleChange}
                                         ></textarea>
@@ -340,9 +342,9 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
       <section className="bg-brand-light py-20 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-                <h2 className="text-3xl font-heading font-bold text-brand-navy mb-4">Our Service Area</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                    Providing mobile hydraulic repair throughout [City Name], [County], and surrounding communities.
+                <h2 className="text-3xl font-heading font-bold text-brand-navy mb-4\">Emergency Response Coverage</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto mt-3">
+                    Fast mobile hydraulic repair and on-site fabrication throughout Bakersfield, Wichita, Lubbock and surrounding regions. Certified technicians available 24/7.
                 </p>
             </div>
 
@@ -416,7 +418,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
 
       {/* SECTION 6: FAQ */}
       <section className="py-20 bg-gray-50 border-t border-gray-200">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-heading font-bold text-brand-navy mb-10 text-center">Common Questions</h2>
             
             <div className="space-y-4">

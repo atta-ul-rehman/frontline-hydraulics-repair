@@ -1,14 +1,14 @@
 import React from 'react';
 import { Clock, Wrench, Truck, CheckCircle2, Phone, ShieldCheck, MapPin, Award, Users } from 'lucide-react';
 import { HardHat, Factory, Tractor, Droplet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SeoHead from './SeoHead';
 
 interface AboutPageProps {
   onOpenContact: () => void;
-  onNavigateHome: () => void;
 }
 
-const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) => {
+const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
   return (
     <div className="bg-white">
       <SeoHead
@@ -32,7 +32,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
          {/* Breadcrumbs */}
           <div className="mb-8 flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400">
-            <button onClick={onNavigateHome} className="hover:text-brand-orange transition-colors">Home</button>
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-white">About Us</span>
           </div>
@@ -62,13 +62,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
               
               <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
                 <p>
-                  <span className="font-bold text-brand-navy">Frontline Hydraulic Services</span> operates as a premier dispatch network connecting commercial clients with certified, independent mobile hydraulic technicians. We were founded on a simple truth: downtime destroys profit.
+                  <span className="font-bold text-brand-navy">Frontline Hydraulic Services</span> operates as a premier emergency dispatch network connecting commercial clients with certified, independent mobile hydraulic technicians and on-site fabrication specialists. We were founded on a simple truth: industrial downtime destroys profit.
                 </p>
                 <p>
-                  When your equipment breaks, you don't care about corporate structure—you care about speed. We leverage a network of local, owner-operated service trucks to ensure faster response times than centralized dealerships.
+                  When your equipment breaks, you don't care about corporate structure—you care about fast emergency response. We leverage a network of local, owner-operated mobile hydraulic repair trucks to ensure faster 60-minute response times than centralized dealerships and parts-store solutions.
                 </p>
                 <p>
-                  Every technician in our network is vetted for certification, insurance, and inventory depth. We coordinate the dispatch, so you make one call and get one invoice, while a local expert handles the repair.
+                  Every certified technician in our network is vetted for manufacturer training, insurance, mobile fabrication equipment, and inventory depth. We coordinate the emergency dispatch, so you make one call and get one consolidated invoice, while a local hydraulic expert handles the on-site repair or hose assembly.
                 </p>
                 <p className="flex items-center gap-2 font-bold text-brand-navy">
                   <MapPin className="text-brand-orange w-5 h-5" />
@@ -96,19 +96,19 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <Clock className="w-5 h-5 text-brand-orange mr-3" />
-                    24/7 Central Dispatch
+                    24/7 Emergency Dispatch
                   </li>
                   <li className="flex items-center text-gray-300">
                     <Users className="w-5 h-5 text-brand-orange mr-3" />
-                    Vetted Local Techs
+                    Certified Mobile Technicians
                   </li>
                   <li className="flex items-center text-gray-300">
                     <Wrench className="w-5 h-5 text-brand-orange mr-3" />
-                    Cat, Deere, Komatsu Expert
+                    OEM Equipment Specialist
                   </li>
                   <li className="flex items-center text-gray-300">
                     <ShieldCheck className="w-5 h-5 text-brand-orange mr-3" />
-                    Fully Insured Partners
+                    Insurance & Warranty Backed
                   </li>
                 </ul>
               </div>
@@ -123,10 +123,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">
-              Why Fleets Choose Frontline
+              Why Industries Trust Frontline
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We are built for speed and reliability. Here is how we keep your operations moving.
+              Built for emergency speed and mobile repair reliability. How we keep your operations moving without costly downtime.
             </p>
           </div>
 
@@ -136,9 +136,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
               <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6">
                 <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-navy mb-3">Fast Response Time</h3>
+              <h3 className="text-xl font-bold text-brand-navy mb-3">Fast Emergency Response</h3>
               <p className="text-gray-600 leading-relaxed">
-                We track our network trucks in real-time. When you call, we send the closest unit to you immediately.
+                Real-time dispatch tracking for our mobile hydraulic repair network. Call for emergency service and we send the closest certified technician to you immediately—typically within 60 minutes.
               </p>
             </div>
 
@@ -147,9 +147,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
               <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-navy mb-3">Parts On Board</h3>
+              <h3 className="text-xl font-bold text-brand-navy mb-3">Certified Fittings</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our partners stock thousands of fittings on every truck. We don't have to leave your site to find parts.
+                Every mobile unit stocks 1,000+ certified hydraulic fittings (Parker, Gates, Weatherhead standards). We don't have to leave your job site to find hydraulic components—we build hose assemblies on-location.
               </p>
             </div>
 
@@ -158,9 +158,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
               <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center mb-6">
                 <Truck className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-navy mb-3">Fully Equipped</h3>
+              <h3 className="text-xl font-bold text-brand-navy mb-3">Mobile Fabrication</h3>
               <p className="text-gray-600 leading-relaxed">
-                Trucks have crimpers, saws, welders, and compressors. It's a full shop on wheels.
+                Fully equipped mobile hydraulic repair trucks with crimpers, saws, welders, and compressors. Complete on-site high-pressure hose fabrication up to 2-inch 6-wire, 10,000+ PSI assemblies.
               </p>
             </div>
           </div>
@@ -171,13 +171,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact, onNavigateHome }) 
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-20 h-1 bg-brand-orange mx-auto mb-8"></div>
-          <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-8">Our Service Guarantee</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-8">Our Repair Guarantee</h2>
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 md:p-8 mb-8">
              <div className="flex flex-col items-center justify-center gap-4">
                 <Award className="w-12 h-12 text-brand-orange" />
-                <h3 className="text-2xl font-bold text-brand-navy">No-Fix, No-Pay Guarantee</h3>
+                <h3 className="text-2xl font-bold text-brand-navy">No-Fix, No-Pay Promise</h3>
                 <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                    If our technician cannot fix your hydraulic issue on-site due to lack of expertise or standard tooling, you don't pay for the labor. We stand by the quality of our network.
+                    If our certified technician cannot repair your industrial hydraulic system on-site due to lack of manufacturer expertise or specialized equipment, you don't pay for labor. We guarantee qualified emergency hydraulic repair or we don't charge. Standing by our network quality.
                 </p>
              </div>
           </div>

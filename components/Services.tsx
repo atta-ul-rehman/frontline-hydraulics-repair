@@ -1,5 +1,6 @@
 import React from 'react';
 import { Wrench, Zap, Timer, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
@@ -39,12 +40,11 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-20 bg-brand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-brand-orange font-black tracking-widest uppercase text-sm mb-3">Don't Let A Blown Hose Stop The Job</h2>
-          <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Complete On-Site Hydraulic Solutions</h3>
+          <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Emergency Repair & Mobile Fabrication</h3>
           <p className="text-gray-600 text-normal md:text-lg leading-relaxed">
-            We provide expert <strong>mobile hydraulic hose repair</strong> directly at your location. 
-            Our trucks are mobile workshops equipped to handle 95% of hydraulic failures on the first trip. You focus on the project; we'll handle the pressure.
+            Expert <strong>mobile hydraulic hose repair and on-site fabrication</strong> directly at your job site. Our hydraulic repair trucks are mobile workshops equipped to diagnose and resolve 95% of emergency failures on the first trip. We handle high-pressure hose assembly, emergency replacements, and hydraulic system troubleshooting. You focus on operations; we handle the hydraulics.
           </p>
         </div>
 
@@ -67,18 +67,14 @@ const Services: React.FC = () => {
                   ))}
                 </ul>
 
-                {/* Specific link for the first service to demonstrate the template */}
+                {/* Link to service detail page */}
                 {index === 0 ? (
-                    <button 
-                        onClick={() => {
-                           // Dispatching a custom event to bubble up to App
-                           const event = new CustomEvent('navigate', { detail: 'service-emergency' });
-                           window.dispatchEvent(event);
-                        }}
+                    <Link 
+                        to="/services/emergency-repair"
                         className="inline-flex items-center text-brand-navy font-bold text-sm uppercase tracking-wide group-hover:text-brand-orange transition-colors"
                     >
                         View Emergency Repair Services <ChevronRight className="w-4 h-4 ml-1" />
-                    </button>
+                    </Link>
                 ) : (
                     <a href="#contact" className="inline-flex items-center text-brand-navy font-bold text-sm uppercase tracking-wider group-hover:text-brand-orange transition-colors">
                         Request This Service <ChevronRight className="w-4 h-4 ml-1" />
@@ -91,9 +87,9 @@ const Services: React.FC = () => {
 
         {/* Equipment We Service - SEO Block */}
         <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm text-center">
-            <h4 className="text-lg font-bold text-brand-navy mb-4 uppercase tracking-wide">Equipment We Service</h4>
+            <h4 className="text-lg font-bold text-brand-navy mb-4 uppercase tracking-wide">Hydraulic Repair for All Equipment</h4>
             <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                We repair hydraulics on: <span className="font-bold text-brand-navy">Excavators</span>, <span className="font-bold text-brand-navy">Backhoes</span>, <span className="font-bold text-brand-navy">Skid Steers</span>, <span className="font-bold text-brand-navy">Forklifts</span>, <span className="font-bold text-brand-navy">Dump Trucks</span>, <span className="font-bold text-brand-navy">Ag Tractors</span>, <span className="font-bold text-brand-navy">Cotton Strippers</span>, <span className="font-bold text-brand-navy">Oil Rigs</span>, and <span className="font-bold text-brand-navy">Industrial Presses</span>.
+                Heavy equipment hydraulic service for: <span className="font-bold text-brand-navy">Excavators</span>, <span className="font-bold text-brand-navy">Backhoes</span>, <span className="font-bold text-brand-navy">Skid Steers</span>, <span className="font-bold text-brand-navy">Forklifts</span>, <span className="font-bold text-brand-navy">Dump Trucks</span>, <span className="font-bold text-brand-navy">Agricultural Tractors</span>, <span className="font-bold text-brand-navy">Cotton Strippers</span>, <span className="font-bold text-brand-navy">Oil Rig Equipment</span>, and <span className="font-bold text-brand-navy">Industrial Presses</span>. All makes and models including Caterpillar, John Deere, Komatsu, and Bobcat equipment.
             </p>
         </div>
       </div>

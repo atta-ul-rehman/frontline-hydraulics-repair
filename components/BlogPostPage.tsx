@@ -1,26 +1,28 @@
 
 import React from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import { Calendar, Clock, User, Share2, Facebook, Linkedin, Mail, Twitter, Phone, ArrowLeft, ChevronRight, ArrowRight, CheckCircle2, AlertTriangle, Lightbulb } from 'lucide-react';
 import SeoHead from './SeoHead';
 import { ContentBlock } from '../types';
 
 interface BlogPostPageProps {
-  postSlug: string;
-  onNavigate: (page: string) => void;
   onOpenContact: () => void;
 }
 
-const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpenContact }) => {
+const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenContact }) => {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  
   // Find the post
-  const post = blogPosts.find(p => p.slug === postSlug);
+  const post = blogPosts.find(p => p.slug === slug);
   
   // If not found (in a real app, this would be a 404 page)
   if (!post) {
       return (
           <div className="min-h-screen flex items-center justify-center flex-col">
               <h1 className="text-4xl font-bold text-brand-navy mb-4">Article Not Found</h1>
-              <button onClick={() => onNavigate('blog')} className="text-brand-orange font-bold hover:underline">Return to Blog</button>
+              <Link to="/blog" className="text-brand-orange font-bold hover:underline">Return to Blog</Link>
           </div>
       );
   }
@@ -102,9 +104,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                             <Phone className="w-5 h-5" /> 859 462-4673
                         </a>
                         {block.url && (
-                            <button onClick={() => onNavigate(block.url!)} className="flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded hover:bg-white hover:text-brand-navy transition-colors">
+                            <Link to={block.url} className="flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded hover:bg-white hover:text-brand-navy transition-colors">
                                 {block.linkText || 'Learn More'} <ArrowRight className="w-4 h-4" />
-                            </button>
+                            </Link>
                         )}
                     </div>
                 </div>
@@ -171,9 +173,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
             <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">
-                <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+                <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
                 <ChevronRight className="w-3 h-3 text-brand-orange" />
-                <button onClick={() => onNavigate('blog')} className="hover:text-brand-orange transition-colors">Blog</button>
+                <Link to="/blog" className="hover:text-brand-orange transition-colors">Blog</Link>
                 <ChevronRight className="w-3 h-3 text-brand-orange" />
                 <span className="text-white text-opacity-80 truncate max-w-[200px]">{post.category}</span>
             </div>
@@ -246,9 +248,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-                         <button onClick={() => onNavigate('blog')} className="flex items-center gap-2 text-brand-navy font-bold hover:text-brand-orange transition-colors">
+                         <Link to="/blog" className="flex items-center gap-2 text-brand-navy font-bold hover:text-brand-orange transition-colors">
                             <ArrowLeft className="w-4 h-4" /> Back to Articles
-                         </button>
+                         </Link>
                          <div className="flex gap-4">
                              <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Facebook className="w-5 h-5" /></button>
                              <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Twitter className="w-5 h-5" /></button>
@@ -323,14 +325,14 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                     <h3 className="font-bold text-brand-navy uppercase tracking-wide mb-6 text-sm">Related Articles</h3>
                     <div className="space-y-6">
                         {relatedPosts.length > 0 ? relatedPosts.map((rp) => (
-                            <div key={rp.id} className="group cursor-pointer" onClick={() => onNavigate(`blog/${rp.slug}`)}>
+                            <Link key={rp.id} to={`/blog/${rp.slug}`} className="group cursor-pointer block">
                                 <h4 className="font-bold text-sm text-brand-navy leading-snug mb-2 group-hover:text-brand-orange transition-colors">
                                     {rp.title}
                                 </h4>
                                 <span className="text-xs text-gray-500 flex items-center gap-1">
                                     <Clock className="w-3 h-3" /> {rp.readTime}
                                 </span>
-                            </div>
+                            </Link>
                         )) : (
                             <p className="text-sm text-gray-500">No related articles found.</p>
                         )}
@@ -348,7 +350,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                  {/* Just showing the first 3 posts as suggestions for demo */}
                  {blogPosts.slice(0,3).map(p => (
-                     <div key={p.id} className="bg-white rounded-lg shadow-sm overflow-hidden group cursor-pointer border border-gray-100 hover:shadow-md transition-all" onClick={() => onNavigate(`blog/${p.slug}`)}>
+                     <Link key={p.id} to={`/blog/${p.slug}`} className="bg-white rounded-lg shadow-sm overflow-hidden group cursor-pointer border border-gray-100 hover:shadow-md transition-all block">
                          <div className="h-48 overflow-hidden">
                              <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                          </div>
@@ -357,7 +359,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ postSlug, onNavigate, onOpe
                              <h3 className="font-bold text-brand-navy mb-3 line-clamp-2 group-hover:text-brand-orange transition-colors">{p.title}</h3>
                              <button className="text-sm font-bold text-gray-500 flex items-center gap-1 mt-auto">Read <ArrowRight className="w-3 h-3" /></button>
                          </div>
-                     </div>
+                     </Link>
                  ))}
             </div>
          </div>

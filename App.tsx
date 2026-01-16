@@ -2,6 +2,9 @@ import React, { useState, Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+// Import ScrollToTop component
+import ScrollToTop from './components/ScrollToTop';
+
 // Eagerly load critical components
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -102,114 +105,97 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className="font-sans text-gray-900 bg-white selection:bg-brand-orange selection:text-white">
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-brand-orange"></div></div>}>
             <Routes>
             {/* Home Page */}
             <Route path="/" element={<Layout><HomePage /></Layout>} />
 
+
             {/* About Page */}
             <Route path="/about" element={
               <Layout>
-                <AboutPage
-                  onOpenContact={() => {}}
-                  onNavigateHome={() => {}}
-                />
+                <AboutPage />
               </Layout>
             } />
 
             {/* Contact Page */}
             <Route path="/contact" element={
               <Layout>
-                <ContactPage onNavigateHome={() => {}} />
+                <ContactPage />
               </Layout>
             } />
+
 
             {/* Service Map Page */}
             <Route path="/service-map" element={
               <Layout>
-                <ServiceMapPage onOpenContact={() => {}} />
+                <ServiceMapPage />
               </Layout>
             } />
+
 
             {/* Services Pages */}
             <Route path="/services" element={
               <Layout>
-                <ServicesListingPage
-                  onOpenContact={() => {}}
-                />
+                <ServicesListingPage />
               </Layout>
             } />
+
 
             <Route path="/services/emergency-repair" element={
               <Layout>
-                <ServicePage
-                  data={emergencyRepairData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={emergencyRepairData} />
               </Layout>
             } />
+
 
             <Route path="/services/mobile-fabrication" element={
               <Layout>
-                <ServicePage
-                  data={mobileFabricationData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={mobileFabricationData} />
               </Layout>
             } />
+
 
             <Route path="/services/diagnostics" element={
               <Layout>
-                <ServicePage
-                  data={diagnosticsData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={diagnosticsData} />
               </Layout>
             } />
+
 
             <Route path="/services/cylinder-repair" element={
               <Layout>
-                <ServicePage
-                  data={cylinderRepairData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={cylinderRepairData} />
               </Layout>
             } />
+
 
             <Route path="/services/fluid-services" element={
               <Layout>
-                <ServicePage
-                  data={fluidServicesData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={fluidServicesData} />
               </Layout>
             } />
+
 
             <Route path="/services/fleet-maintenance" element={
               <Layout>
-                <ServicePage
-                  data={maintenanceData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={maintenanceData} />
               </Layout>
             } />
+
 
             <Route path="/services/industrial-plant-service" element={
               <Layout>
-                <ServicePage
-                  data={industrialData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={industrialData} />
               </Layout>
             } />
 
+
             <Route path="/services/heavy-equipment-repair" element={
               <Layout>
-                <ServicePage
-                  data={equipmentRepairData}
-                  onNavigateHome={() => {}}
-                />
+                <ServicePage data={equipmentRepairData} />
               </Layout>
             } />
 
@@ -235,13 +221,17 @@ function App() {
             {/* Blog Pages */}
             <Route path="/blog" element={
               <Layout>
-                <BlogIndexPage />
+                <BlogIndexPage
+                  onOpenContact={() => {}}
+                />
               </Layout>
             } />
 
             <Route path="/blog/:slug" element={
               <Layout>
-                <BlogPostPage />
+                <BlogPostPage
+                  onOpenContact={() => {}}
+                />
               </Layout>
             } />
           </Routes>

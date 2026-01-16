@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Navigation } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServiceArea: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const ServiceArea: React.FC = () => {
             <h2 className="text-brand-orange font-bold tracking-wider uppercase text-sm mb-3">Service Coverage</h2>
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-6">Serving Bakersfield, Wichita & Lubbock</h3>
             <p className="text-gray-600 mb-8 text-lg">
-                Our fleet is positioned to reach your job site fast. Whether you are in the <strong>Kern County oil fields</strong>, the <strong>Kansas aviation district</strong>, or the <strong>Texas cotton belt</strong>, we have a truck nearby.
+                Our mobile hydraulic repair fleet is positioned for fast emergency response. Operating in <strong>Bakersfield & Kern County oil fields</strong>, <strong>Wichita & Kansas aviation district</strong>, and <strong>Lubbock & Texas cotton belt</strong>—we have certified technicians nearby. Emergency response within 60 minutes of dispatch for industrial hydraulic failures.
             </p>
 
             <ul className="space-y-4 mb-8">
@@ -59,17 +60,13 @@ const ServiceArea: React.FC = () => {
                 </li>
             </ul>
 
-            <button 
-                onClick={() => {
-                    // Dispatch custom event to navigate to service-map
-                    const event = new CustomEvent('navigate', { detail: 'service-map' });
-                    window.dispatchEvent(event);
-                }}
+            <Link 
+                to="/service-map"
                 className="flex items-center text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors"
             >
                 <Navigation className="w-4 h-4 mr-2" />
                 View Detailed Maps
-            </button>
+            </Link>
           </div>
 
         </div>
