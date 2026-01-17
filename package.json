@@ -24,6 +24,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^22.19.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "chrome-aws-lambda": "^10.1.0",
     "puppeteer": "^24.35.0",
     "sirv": "^3.0.2",
     "sitemap": "^8.0.2",
