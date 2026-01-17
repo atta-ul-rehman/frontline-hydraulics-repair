@@ -29,7 +29,7 @@ async function prerender() {
   const assets = sirv(DIST_PATH, { single: true });
   const server = http.createServer(assets).listen(5000);
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: true }, ['--no-sandbox', '--disable-setuid-sandbox']);
   const page = await browser.newPage();
 
   for (const route of routes) {
