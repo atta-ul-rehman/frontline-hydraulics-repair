@@ -21,10 +21,6 @@ const customIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-interface ServiceMapPageProps {
-  onOpenContact: () => void;
-}
-
 const locations = [
   {
     id: 'location-bakersfield',
@@ -52,7 +48,7 @@ const locations = [
   }
 ];
 
-const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onOpenContact }) => {
+const ServiceMapPage: React.FC = ({  }) => {
   return (
     <div className="bg-white">
       <SeoHead 
@@ -182,12 +178,12 @@ const ServiceMapPage: React.FC<ServiceMapPageProps> = ({ onOpenContact }) => {
                 We frequently travel to surrounding counties and neighboring states for fleet projects and major repairs. 
                 Contact us to check availability for your location.
             </p>
-            <button 
-                onClick={onOpenContact}
+            <Link 
+                to="/contect"
                 className="bg-brand-orange text-white font-bold py-3 px-8 rounded hover:bg-brand-darkOrange transition-colors"
             >
                 Check Coverage Availability
-            </button>
+            </Link>
          </div>
       </section>
     </div>

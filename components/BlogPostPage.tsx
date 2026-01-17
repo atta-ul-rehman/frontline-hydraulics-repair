@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
@@ -6,11 +5,7 @@ import { Calendar, Clock, User, Share2, Facebook, Linkedin, Mail, Twitter, Phone
 import SeoHead from './SeoHead';
 import { ContentBlock } from '../types';
 
-interface BlogPostPageProps {
-  onOpenContact: () => void;
-}
-
-const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenContact }) => {
+const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
@@ -312,12 +307,12 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenContact }) => {
                         <Phone className="w-4 h-4 fill-current" />
                         859 462-4673
                     </a>
-                    <button 
-                        onClick={onOpenContact}
-                        className="mt-4 text-sm text-brand-orange font-bold hover:text-white underline"
+                    <Link 
+                        to="/contact"
+                        className="mt-4 inline-block text-sm text-brand-orange font-bold hover:text-white underline"
                     >
                         Request Online Quote
-                    </button>
+                    </Link>
                 </div>
 
                  {/* Related Posts */}
@@ -382,13 +377,13 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenContact }) => {
                     <Phone className="w-5 h-5 fill-current" />
                     Call Now
                 </a>
-                <button 
-                    onClick={onOpenContact}
+                <Link 
+                    to="/contact"
                     className="flex items-center gap-2 border-2 border-brand-navy text-brand-navy text-lg font-bold px-10 py-4 rounded hover:bg-brand-navy hover:text-white transition-colors"
                 >
                     <Mail className="w-5 h-5" />
                     Request Quote
-                </button>
+                </Link>
              </div>
         </div>
       </section>

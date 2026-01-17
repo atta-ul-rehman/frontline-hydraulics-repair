@@ -38,7 +38,27 @@ async function prerender() {
     
     await page.goto(url, { waitUntil: 'networkidle0' });
 
-    await page.evaluate((bundleName) => {
+    const getCssName = () => {
+    const files = readdirSync(join(DIST_PATH, 'assets'));
+    return files.find(f => f.startsWith('index-') && f.endsWith('.css'));
+    };
+
+    // ... inside the loop ...
+    const bundleCSS = getCssName();
+
+    await page.evaluate((bundleName, cssName) => {
+
+        const oldLink = document.querySelector('link[href="/index.css"]');
+        if (oldLink) oldLink.remove();
+
+        // 2. Inject the REAL production CSS
+        if (cssName) {
+            const head = document.head;
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = `/assets/${cssName}`;
+            head.appendChild(link);
+        }
       // 1. Remove Dev scripts & vite client
       const scripts = document.querySelectorAll('script');
       scripts.forEach(s => {
@@ -61,7 +81,9 @@ async function prerender() {
       mainScript.type = 'module';
       mainScript.src = `/assets/${bundleName}`; 
       document.body.appendChild(mainScript);
-    }, bundleJS);
+
+      
+    }, bundleJS, bundleCSS);
 
     const html = await page.content();
     const targetDir = join(DIST_PATH, route === '/' ? '' : route);

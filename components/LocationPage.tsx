@@ -198,7 +198,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
                     </div>
                     <div>
                         <span className="block font-bold text-brand-navy text-sm uppercase">Phone</span>
-                        <a href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`} className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors">
+                        <a href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`} className="block text-lg md:text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors">
                             {data.localDetails.phone}
                         </a>
                         <span className="text-sm text-gray-500">Central Dispatch for {data.city}</span>

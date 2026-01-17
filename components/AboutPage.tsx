@@ -4,11 +4,10 @@ import { HardHat, Factory, Tractor, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SeoHead from './SeoHead';
 
-interface AboutPageProps {
-  onOpenContact: () => void;
-}
 
-const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
+
+
+const AboutPage: React.FC = ({  }) => {
   return (
     <div className="bg-white">
       <SeoHead
@@ -199,12 +198,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 <Phone className="w-6 h-6 fill-current" />
                 Call Now: 859 462-4673
             </a>
-            <button 
-                onClick={onOpenContact}
+            <Link
+               to="/contact"
                 className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy sm:text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 Dispatch Technician Now
-            </button>
+            </Link>
           </div>
         </div>
       </section>

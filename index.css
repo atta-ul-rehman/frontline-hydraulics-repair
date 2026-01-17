@@ -1,10 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Global Typography & Styles based on Premium Design System */
+@theme {
+  /* This replaces your old tailwind.config.js */
+  --color-brand-navy: #1f2937;
+  --color-brand-blue: #374151;
+  --color-brand-orange: #d35400;
+  --color-brand-dark-orange: #a04000;
+  --color-brand-gray: #2d3748;
+  --color-brand-light: #f8f8f8;
+  
+  --font-sans: "Inter", "sans-serif";
+  --font-heading: "Montserrat", "sans-serif";
+}
 
-/* 1. Font Families */
+@layer base {
 /* Headings (H1–H6) */
 h1,
 h2,
@@ -65,12 +74,12 @@ button,
 }
 
 /* 3. Letter Spacing (Tracking) */
-h1,
-h2 {
+h1{
   letter-spacing: 0.01em;
   /* tracking-wider */
 }
 
+h2,
 h3,
 h4,
 h5,
@@ -208,4 +217,5 @@ button {
   }
 
   /* text-sm */
+}
 }

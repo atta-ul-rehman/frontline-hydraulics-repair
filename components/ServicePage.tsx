@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench, Settings, Clock, Truck } from 'lucide-react';
 import { ServicePageData } from '../types';
 import SeoHead from './SeoHead';
+import { Link } from "react-router-dom";
+
 
 interface ServicePageProps {
   data: ServicePageData;
@@ -111,12 +113,12 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
               <Phone className="w-5 h-5 fill-current animate-pulse" />
               <span>CALL NOW!: 859 462-4673</span>
             </a>
-            <button 
-              onClick={onOpenContact}
+            <Link
+              to="/contact"
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-lg font-bold px-8 py-4 rounded transition-colors"
             >
               <span>Request Quote Online</span>
-            </button>
+            </Link>
           </div>
 
           {/* Local Trust Signal */}
@@ -132,7 +134,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
 
       {/* SCARCITY BANNER */}
       <div className="bg-green-100 border-b border-green-200 py-3 text-center">
-         <p className="text-green-800 text-sm font-bold flex items-center justify-center gap-2">
+         <p className="text-green-800 text-sm font-bold flex items-center justify-center gap-2 ml-3 md:ml-0">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -205,15 +207,16 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 </ul>
                 <div className="bg-white p-6 rounded border border-gray-200 text-center shadow-sm">
                   <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">24/7 Mobile Dispatch</p>
-                  <a href="tel:8594624673" className="block text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-4">
+                  <a href="tel:8594624673" className="block text-sm md:text-2xl font-black text-brand-navy hover:text-brand-orange transition-colors mb-4">
                     859 462-4673
                   </a>
-                  <button 
-                    onClick={onOpenContact}
-                    className="w-full bg-brand-orange text-white font-bold py-3 rounded text-sm hover:bg-brand-darkOrange transition-colors shadow-md flex items-center justify-center gap-2"
-                  >
-                    <Clock className="w-4 h-4" /> Dispatch Technician
-                  </button>
+                <Link
+                    to="/contact"
+                      className="w-full bg-brand-orange text-white font-bold py-3 rounded text-sm hover:bg-brand-darkOrange transition-colors shadow-md flex items-center justify-center gap-2"
+                    >
+                      <Clock className="w-4 h-4" /> Dispatch Technician
+                    </Link>
+
                 </div>
               </div>
             </div>
@@ -300,12 +303,12 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
               <p className="text-gray-300 text-lg mb-8">
                 We have deep experience dealing with the specific hydraulic challenges found in these sectors across Bakersfield, Wichita, and Lubbock.
               </p>
-              <button 
-                onClick={onOpenContact}
+              <Link
+                to="/contact"
                 className="bg-brand-orange hover:bg-brand-darkOrange text-white font-bold py-3 px-8 rounded shadow-lg transition-colors"
               >
                 Get Industry Service
-              </button>
+             </Link>
             </div>
             
             <div className="w-full lg:w-2/3">
@@ -340,7 +343,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why Choose Frontline for {data.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Why Choose  Us!</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {data.benefits.map((benefit, idx) => (
@@ -363,7 +366,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 Mobile Service Throughout The Region
               </h2>
               <p className="text-gray-600 text-lg mb-6">
-                We provide **{data.title}** to businesses and job sites throughout **Bakersfield**, **Wichita**, **Lubbock**, and surrounding counties. Our fully mobile fleet ensures we can reach even the most remote job sites.
+                We provide <strong>{data.title}</strong> to businesses and job sites throughout <strong>Bakersfield</strong>, <strong>Wichita</strong>, <strong>Lubbock</strong>, and surrounding counties. Our fully mobile fleet ensures we can reach even the most remote job sites.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Kern County, CA</div>
@@ -447,13 +450,13 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 <PhoneCall className="w-6 h-6 fill-current" />
                 Call Now
             </a>
-            <button 
-                onClick={onOpenContact}
+             <Link
+                to="/contact"
                 className="hidden md:inline-flex items-center gap-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-navy text-xl font-bold px-10 py-5 rounded-md transition-colors"
             >
                 <Calendar className="w-6 h-6" />
                 Request Service Online
-            </button>
+            </Link>
           </div>
         </div>
       </section>

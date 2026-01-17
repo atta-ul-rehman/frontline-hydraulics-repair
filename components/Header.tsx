@@ -46,14 +46,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             
             {/* Services Dropdown */}
-            <div 
-                className="relative group h-full flex items-center"
+            <div className="relative group h-full flex items-center"
                 onMouseEnter={() => setIsServicesDropdownOpen(true)}
                 onMouseLeave={() => setIsServicesDropdownOpen(false)}
             >
                 <Link 
                   to="/services"
-                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/services') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors tracking-[0em] ${location.pathname.startsWith('/services') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
                   onClick={handleNavClick}
                 >
                   Services <ChevronDown className="w-4 h-4" />
@@ -62,28 +61,27 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 w-80 bg-white shadow-xl border-t-4 border-brand-orange transform transition-all duration-200 origin-top ${isServicesDropdownOpen ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}>
                     <div className="py-2">
-                        <Link to="/services/emergency-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Emergency Repair</Link>
-                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Mobile Fabrication</Link>
-                        <Link to="/services/diagnostics" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Diagnostics & Testing</Link>
-                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Pump & Cylinder Repair</Link>
-                        <Link to="/services/fluid-services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Oil & Fluid Services</Link>
-                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Fleet Maintenance</Link>
-                        <Link to="/services/industrial-plant-service" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Industrial Plant Service</Link>
-                        <Link to="/services/heavy-equipment-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Heavy Equipment Repair</Link>
-                        <Link to="/services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-orange hover:bg-gray-50 transition-colors">View All Services</Link>
+                        <Link to="/services/emergency-repair" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/services/emergency-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Emergency Repair</Link>
+                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/services/mobile-fabrication' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Mobile Fabrication</Link>
+                        <Link to="/services/diagnostics" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/diagnostics' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Diagnostics & Testing</Link>
+                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/cylinder-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Pump & Cylinder Repair</Link>
+                        <Link to="/services/fluid-services" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/fluid-services' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Oil & Fluid Services</Link>
+                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/fleet-maintenance' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Fleet Maintenance</Link>
+                        <Link to="/services/industrial-plant-service" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/industrial-plant-service' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Industrial Plant Service</Link>
+                        <Link to="/services/heavy-equipment-repair" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/heavy-equipment-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>Heavy Equipment Repair</Link>
+                        <Link to="/services" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/services' ? 'text-brand-orange font-bold' : 'text-brand-orange hover:bg-gray-50'}`}>View All Services</Link>
                     </div>
                 </div>
             </div>
 
             {/* Locations Dropdown */}
-            <div 
-                className="relative group h-full flex items-center"
+            <div className="relative group h-full flex items-center"
                 onMouseEnter={() => setIsLocationsDropdownOpen(true)}
                 onMouseLeave={() => setIsLocationsDropdownOpen(false)}
             >
                 <Link 
                   to="/"
-                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/locations') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/locations') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.getElementById('service-area');
@@ -99,34 +97,10 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 w-60 bg-white shadow-xl border-t-4 border-brand-orange transform transition-all duration-200 origin-top ${isLocationsDropdownOpen ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}>
                     <div className="py-2">
-                        <Link 
-                            to="/locations/bakersfield"
-                            onClick={handleNavClick}
-                            className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
-                        >
-                            Bakersfield, CA
-                        </Link>
-                        <Link 
-                            to="/locations/wichita"
-                            onClick={handleNavClick}
-                            className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
-                        >
-                            Wichita, KS
-                        </Link>
-                        <Link 
-                            to="/locations/lubbock"
-                            onClick={handleNavClick}
-                            className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-navy hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100"
-                        >
-                            Lubbock, TX
-                        </Link>
-                        <Link 
-                            to="/service-map"
-                           onClick={handleNavClick}
-                            className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-brand-orange transition-colors"
-                        >
-                            View Full Map
-                        </Link>
+                        <Link to="/locations/bakersfield" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/bakersfield' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-50 hover:text-brand-orange'}`}>Bakersfield, CA</Link>
+                        <Link to="/locations/wichita" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/wichita' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-50 hover:text-brand-orange'}`}>Wichita, KS</Link>
+                        <Link to="/locations/lubbock" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/lubbock' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-50 hover:text-brand-orange'}`}>Lubbock, TX</Link>
+                        <Link to="/service-map" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-brand-orange transition-colors">View Full Map</Link>
                     </div>
                 </div>
             </div>
@@ -134,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <Link 
               to="/blog"
               onClick={handleNavClick}
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/blog') ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/blog') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
             >
               Blog
             </Link>
@@ -142,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <Link 
               to="/about"
               onClick={handleNavClick}
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/about' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/about' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
             >
               About
             </Link>
@@ -150,7 +124,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <Link 
               to="/contact"
               onClick={handleNavClick}
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/contact' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
+              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/contact' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
             >
               Contact
             </Link>
@@ -195,7 +169,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <div className="border-b border-gray-100 pb-2">
                 <button 
                     onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange"
+                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange tracking-[0em]"
                 >
                     Services 
                     <ChevronDown className={`w-5 h-5 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
@@ -203,12 +177,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 
                 {isServicesDropdownOpen && (
                     <div className="bg-gray-50 rounded-md mb-2 overflow-hidden">
-                        <Link to="/services/emergency-repair" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Emergency Repair</Link>
-                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 border-b border-gray-100">Mobile Fabrication</Link>
-                        <Link to="/services/diagnostics" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Diagnostics</Link>
-                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Cylinder Repair</Link>
-                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 border-b border-gray-100">Fleet Maintenance</Link>
-                        <Link to="/services" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-medium text-gray-500 hover:bg-gray-100">View All Services</Link>
+                        <Link to="/services/emergency-repair" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base transition-colors border-b border-gray-100 ${location.pathname === '/services/emergency-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Emergency Repair</Link>
+                        <Link to="/services/mobile-fabrication" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base transition-colors border-b border-gray-100 ${location.pathname === '/services/mobile-fabrication' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Mobile Fabrication</Link>
+                        <Link to="/services/diagnostics" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/diagnostics' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Diagnostics</Link>
+                        <Link to="/services/cylinder-repair" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/cylinder-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Cylinder Repair</Link>
+                        <Link to="/services/fleet-maintenance" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/fleet-maintenance' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Fleet Maintenance</Link>
+                        <Link to="/services/industrial-plant-service" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/industrial-plant-service' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Industrial Plant Service</Link>
+                        <Link to="/services/heavy-equipment-repair" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services/heavy-equipment-repair' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>Heavy Equipment Repair</Link>
+                        <Link to="/services" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-medium transition-colors border-b border-gray-100 ${location.pathname === '/services' ? 'text-brand-orange font-bold' : 'text-gray-500 hover:bg-gray-100'}`}>View All Services</Link>
                     </div>
                 )}
             </div>
@@ -217,7 +193,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <div className="border-b border-gray-100 pb-2">
                 <button 
                     onClick={() => setIsLocationsDropdownOpen(!isLocationsDropdownOpen)}
-                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange"
+                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange tracking-[0em]"
                 >
                     Locations
                     <ChevronDown className={`w-5 h-5 transition-transform ${isLocationsDropdownOpen ? 'rotate-180' : ''}`} />
@@ -225,16 +201,16 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 
                 {isLocationsDropdownOpen && (
                     <div className="bg-gray-50 rounded-md mb-2 overflow-hidden">
-                        <Link to="/locations/bakersfield" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Bakersfield, CA</Link>
-                        <Link to="/locations/wichita" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Wichita, KS</Link>
-                        <Link to="/locations/lubbock" onClick={handleNavClick} className="w-full text-left block px-6 py-3 text-base font-bold text-brand-navy hover:bg-gray-100 hover:text-brand-orange border-b border-gray-100">Lubbock, TX</Link>
+                        <Link to="/locations/bakersfield" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/bakersfield' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-100'}`}>Bakersfield, CA</Link>
+                        <Link to="/locations/wichita" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/wichita' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-100'}`}>Wichita, KS</Link>
+                        <Link to="/locations/lubbock" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base font-bold transition-colors border-b border-gray-100 ${location.pathname === '/locations/lubbock' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:bg-gray-100'}`}>Lubbock, TX</Link>
                     </div>
                 )}
             </div>
 
-            <Link to="/blog" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">Blog</Link>
-            <Link to="/about" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">About Us</Link>
-            <Link to="/contact" onClick={handleNavClick} className="w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold text-brand-navy hover:text-brand-orange">Contact</Link>
+            <Link to="/blog" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname.startsWith('/blog') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>Blog</Link>
+            <Link to="/about" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname === '/about' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>About Us</Link>
+            <Link to="/contact" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname === '/contact' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>Contact</Link>
             <button 
               onClick={() => {
                 setIsMenuOpen(false);

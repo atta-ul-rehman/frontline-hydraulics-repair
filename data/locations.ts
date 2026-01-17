@@ -14,9 +14,9 @@ heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=fo
   intro: {
     heading: "Bakersfield's Mobile Hydraulic Repair Leader",
     paragraphs: [
-      "From the pump jacks in **Oildale** to the almond orchards in **Lamont**, Bakersfield runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the **Kern River Oil Field**, you need immediate emergency hydraulic repair. Frontline delivers 24/7 **mobile hydraulic hose repair in Bakersfield** with certified technicians and on-site fabrication capability throughout Kern County.",
+      "From the pump jacks in Oildale to the almond orchards in Lamont, Bakersfield runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the Kern River Oil Field, you need immediate emergency hydraulic repair. Frontline delivers 24/7 mobile hydraulic hose repair in Bakersfield with certified technicians and on-site fabrication capability throughout Kern County.",
       "We specialize in the unique hydraulic challenges of the San Joaquin Valley. Our certified mobile trucks carry heavy-duty 4-wire and 6-wire hoses for oilfield applications, metric fittings for agricultural harvesters, and complete diagnostic equipment for OEM troubleshooting. Whether you're stranded on the Grapevine or in a field near Shafter, we dispatch to you with high-pressure hose assembly capability.",
-      "Don't lose a production day. Call Frontline for fast **Bakersfield emergency hydraulic repair and on-site hose fabrication**. Our locally dispatched, certified technicians know the area and deliver 60-minute average emergency response to get your equipment back to work."
+      "Don't lose a production day. Call Frontline for fast Bakersfield emergency hydraulic repair and on-site hose fabrication. Our locally dispatched, certified technicians know the area and deliver 60-minute average emergency response to get your equipment back to work."
     ]
   },
   localDetails: {
@@ -98,9 +98,9 @@ export const wichitaData: LocationPageData = {
     intro: {
         heading: "Wichita's Industrial & Mobile Hydraulic Repair Experts",
         paragraphs: [
-            "As the Air Capital of the World, Wichita demands precision in emergency hydraulic repair. Frontline provides expert **mobile hydraulic repair and on-site fabrication in Wichita** and Sedgwick County, serving aerospace manufacturing support, heavy construction, and regional industrial facilities with certified technicians.",
-            "From manufacturing plants along **Kellogg Avenue** to wheat fields near **Goddard** and **Derby**, our certified mobile hydraulic trucks are positioned for rapid emergency response. We specialize in industrial hydraulic systems (presses, injection molding) and OEM diagnostics for mobile heavy equipment repair.",
-            "Whether you have a forklift hydraulic failure at a warehouse near **I-135** or a combine stuck in a field near **Valley Center**, call Frontline. We deliver OEM-quality hose fabrication, high-pressure assembly, and hydraulic system diagnostics directly on-site."
+            "As the Air Capital of the World, Wichita demands precision in emergency hydraulic repair. Frontline provides expert mobile hydraulic repair and on-site fabrication in Wichita and Sedgwick County, serving aerospace manufacturing support, heavy construction, and regional industrial facilities with certified technicians.",
+            "From manufacturing plants along Kellogg Avenue to wheat fields near Goddard and Derby, our certified mobile hydraulic trucks are positioned for rapid emergency response. We specialize in industrial hydraulic systems (presses, injection molding) and OEM diagnostics for mobile heavy equipment repair.",
+            "Whether you have a forklift hydraulic failure at a warehouse near I-135 or a combine stuck in a field near Valley Center, call Frontline. We deliver OEM-quality hose fabrication, high-pressure assembly, and hydraulic system diagnostics directly on-site."
         ]
     },
     localDetails: {
@@ -145,9 +145,9 @@ export const lubbockData: LocationPageData = {
     intro: {
         heading: "Hub City's Most Trusted Emergency Hydraulic Repair Service",
         paragraphs: [
-            "The South Plains demand tough, dependable **emergency mobile hydraulic repair in Lubbock**. Frontline delivers 24/7 certified technicians with complete mobile fabrication labs, supporting West Texas oilfield equipment and cotton/ag machinery that power the region's economy.",
-            "Our certified mobile hydraulic repair trucks are a familiar sight on **Loop 289** and farm roads to **Idalou** and **Slaton**. During cotton harvest season, a blown stripper hose is a disaster. That's why we provide 24/7 emergency dispatch with on-site hose fabrication to get you back in the row fast with high-pressure assemblies.",
-            "We also support **Permian Basin overflow**, providing industrial hydraulic repair for drilling rigs and well-service fleets in the region. From **Texas Tech** campus construction to the oil patch, Frontline is Lubbock's certified partner for emergency hydraulic service and OEM diagnostics."
+            "The South Plains demand tough, dependable emergency mobile hydraulic repair in Lubbock. Frontline delivers 24/7 certified technicians with complete mobile fabrication labs, supporting West Texas oilfield equipment and cotton/ag machinery that power the region's economy.",
+            "Our certified mobile hydraulic repair trucks are a familiar sight on Loop 289 and farm roads to Idalou and Slaton. During cotton harvest season, a blown stripper hose is a disaster. That's why we provide 24/7 emergency dispatch with on-site hose fabrication to get you back in the row fast with high-pressure assemblies.",
+            "We also support Permian Basin overflow, providing industrial hydraulic repair for drilling rigs and well-service fleets in the region. From Texas Tech campus construction to the oil patch, Frontline is Lubbock's certified partner for emergency hydraulic service and OEM diagnostics."
         ]
     },
     localDetails: {

@@ -4,11 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import SeoHead from './SeoHead';
 
-interface BlogIndexPageProps {
-  onOpenContact: () => void;
-}
-
-const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onOpenContact }) => {
+const BlogIndexPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -209,12 +205,12 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onOpenContact }) => {
                 <h3 className="text-xl font-heading font-bold text-white mb-2">Need Hydraulic Repair?</h3>
                 <p className="text-gray-300 text-sm mb-6">Our mobile technicians are available 24/7 for emergency service.</p>
                 <div className="text-2xl font-black text-brand-orange mb-6">859 462-4673</div>
-                <button 
-                    onClick={onOpenContact}
-                    className="w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors shadow-lg"
+                <Link
+                  to="/contact"
+                  className="w-full bg-brand-orange text-white font-bold py-3 rounded hover:bg-brand-darkOrange transition-colors shadow-lg text-center block"
                 >
-                    Call Now
-                </button>
+                  Call Now
+                </Link>
             </div>
           </div>
 
@@ -230,12 +226,12 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onOpenContact }) => {
              <p className="text-lg text-gray-600 mb-8">
                 Our team is happy to answer technical questions or provide a quote for your fleet.
              </p>
-             <button 
-                onClick={onOpenContact}
-                className="bg-brand-navy text-white text-lg font-bold px-10 py-4 rounded hover:bg-brand-gray transition-colors"
+             <Link
+               to="/contact"
+               className="bg-brand-navy text-white text-lg font-bold px-10 py-4 rounded hover:bg-brand-gray transition-colors inline-block"
              >
-                Get In Touch
-             </button>
+               Get In Touch
+             </Link>
         </div>
       </section>
 

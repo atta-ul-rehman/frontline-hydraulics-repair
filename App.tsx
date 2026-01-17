@@ -33,6 +33,7 @@ const CommercialAccounts = lazy(() => import('./components/CommercialAccounts'))
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const ServiceMapPage = lazy(() => import('./components/ServiceMapPage'));
 const SeoHead = lazy(() => import('./components/SeoHead'));
+const TermsOfService = lazy(() => import('./components/TermsOfService'));
 import {
   emergencyRepairData,
   mobileFabricationData,
@@ -232,6 +233,13 @@ function App() {
                 <BlogPostPage
                   onOpenContact={() => {}}
                 />
+              </Layout>
+            } />
+
+            {/* Terms of Service Page */}
+            <Route path="/terms" element={
+              <Layout>
+                <TermsOfService />
               </Layout>
             } />
           </Routes>

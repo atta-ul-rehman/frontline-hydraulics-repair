@@ -14,7 +14,7 @@ const TrustBar: React.FC = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-brand-navy text-sm uppercase tracking-wide">Licensed & Insured</h3>
+              <h5 className="font-bold text-brand-navy text-sm uppercase tracking-wide">Licensed & Insured</h5>
               <p className="text-gray-600 text-xs">Full commercial liability coverage for fleet operations</p>
             </div>
           </div>
@@ -27,7 +27,7 @@ const TrustBar: React.FC = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-brand-navy text-sm uppercase tracking-wide">Net-30 Billing Available</h3>
+              <h5 className="font-bold text-brand-navy text-sm uppercase tracking-wide">Net-30 Billing Available</h5>
               <p className="text-gray-600 text-xs">Flexible payment terms for commercial fleets</p>
             </div>
           </div>
@@ -40,7 +40,7 @@ const TrustBar: React.FC = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-brand-navy text-sm uppercase tracking-wide">OSHA/Safety Compliant</h3>
+              <h5 className="font-bold text-brand-navy text-sm uppercase tracking-wide">OSHA/Safety Compliant</h5>
               <p className="text-gray-600 text-xs">Certified technicians following industry safety standards</p>
             </div>
           </div>
