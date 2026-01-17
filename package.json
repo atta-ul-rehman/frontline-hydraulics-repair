@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run sitemap && vite build",
-    "preview": "vite preview",
-    "sitemap": "node scripts/generate-sitemap.js"
+    "build": "vite build && npx tsx scripts/prerender.ts && npx tsx scripts/generate-sitemap.ts",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
@@ -20,9 +19,12 @@
     "react-router-dom": "^7.12.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.19.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "puppeteer": "^24.35.0",
+    "sirv": "^3.0.2",
     "sitemap": "^8.0.2",
+    "tsx": "^4.19.2",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

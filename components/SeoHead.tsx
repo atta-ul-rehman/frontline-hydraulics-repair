@@ -23,7 +23,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
   canonicalUrl,
   type = 'website',
   keywords = "mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Kern County, Wichita, Lubbock",
-  image = "https://emergencyhydraulics.com/images/og-image.jpg",
+  image = "https://emergencyhydraulics.com/assets/logo.webp",
   schema,
   breadcrumbs
 }) => {
@@ -36,7 +36,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
     "@context": "https://schema.org", 
     "@type": "GeneralContractor",
     "name": "Frontline Hydraulic Services",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
+    "image": "https://emergencyhydraulics.com/assets/logo.webp",
     "@id": "https://emergencyhydraulics.com",
     "url": "https://emergencyhydraulics.com",
     "telephone": "+1-859-462-4673",
@@ -85,7 +85,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
         "@type": "ListItem",
         "position": index + 1,
         "name": crumb.name,
-        "item": crumb.item.startsWith('http') ? crumb.item : `https://frontlinehydraulics.com${crumb.item}`
+        "item": crumb.item.startsWith('http') ? crumb.item : `https://emergencyhydraulics.com${crumb.item}`
       }))
     };
   }

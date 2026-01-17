@@ -29,7 +29,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         "@type": "LocalBusiness",
         "name": "Frontline Hydraulic Services",
         "telephone": "+1-859-462-4673",
-        "url": "https://frontlinehydraulics.com",
+        "url": "https://emergencyhydraulics.com",
         "priceRange": "$$"
     },
     "areaServed": [
@@ -96,6 +96,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
           </div>
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 tracking-wide leading-tight">
+            <span className="sr-only">Mobile Hydraulic Repair: </span>
             {data.title}
           </h1>
           <p className="text-normal sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed border-l-4 border-brand-orange pl-6 text-left md:text-center md:border-l-0 md:pl-0">

@@ -12,8 +12,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
   return (
     <div className="bg-white">
       <SeoHead
-        title="About Frontline Hydraulic Services | Mobile Hydraulic Repair Network"
-        description="Learn about Frontline Hydraulic Services - a nationwide network of certified mobile hydraulic technicians providing 24/7 emergency repair services in Bakersfield, Wichita, and Lubbock."
+        title="About Frontline Hydraulic Services | Our Mobile Network"
+        description="Discover Frontline Hydraulic Services: certified mobile hydraulic techs, 24/7 emergency repair, and fast dispatch in Bakersfield, Wichita, and Lubbock."
         canonicalUrl="https://emergencyhydraulics.com/about"
         type="website"
       />
@@ -37,6 +37,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
             <span className="text-white">About Us</span>
           </div>
           <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 tracking-wide">
+           <span className="sr-only">Frontline: Expert </span>
             About Frontline <span className="text-brand-orange">Hydraulic Network</span>
           </h1>
           <p className="md:text-xl text-gray-300 max-w-2xl mx-auto font-medium">

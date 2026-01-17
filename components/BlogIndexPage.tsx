@@ -35,8 +35,8 @@ const BlogIndexPage: React.FC<BlogIndexPageProps> = ({ onOpenContact }) => {
   return (
     <div className="bg-white">
       <SeoHead 
-        title="Hydraulic Repair Blog & Tips"
-        description="Expert advice on hydraulic maintenance, troubleshooting, and equipment care. Read our latest articles."
+        title="Hydraulic Repair Blog | Maintenance & Troubleshooting Tips"
+        description="Read expert hydraulic repair tips, maintenance advice, and troubleshooting guides from Frontline Hydraulics. Stay up to date with our latest articles."
         canonicalUrl="https://emergencyhydraulics.com/blog"
         type="website"
       />

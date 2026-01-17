@@ -22,7 +22,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
     "@type": "LocalBusiness",
     "name": `Frontline Hydraulic Services - ${data.city}`,
     "telephone": data.localDetails.phone,
-    "url": `https://frontlinehydraulics.com/locations/${data.id.replace('location-', '')}/`,
+    "url": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}/`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": data.city,
@@ -132,6 +132,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
           </div>
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 tracking-wide drop-shadow-lg">
+           <span className="sr-only">Mobile Hydraulic Repair in </span>  
             Mobile Hydraulic Repair <br />
             <span className="text-brand-orange">in {data.city}, {data.state}</span>
           </h1>

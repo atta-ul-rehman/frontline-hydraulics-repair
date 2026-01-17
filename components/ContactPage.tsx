@@ -38,12 +38,12 @@ const ContactPage: React.FC<ContactPageProps> = () => {
 
   return (
     <div className="bg-white">
-      <SeoHead
-        title="Contact Frontline Hydraulic Services | 24/7 Emergency Dispatch"
-        description="Contact Frontline Hydraulic Services for 24/7 emergency hydraulic repair dispatch. Call 859 462-4673 or fill out our contact form for immediate service in Bakersfield, Wichita, and Lubbock."
-        canonicalUrl="https://emergencyhydraulics.com/contact"
-        type="website"
-      />
+            <SeoHead
+                title="Contact Frontline Hydraulics | 24/7 Emergency Dispatch"
+                description="Contact Frontline Hydraulics for 24/7 emergency repair. Call 859-462-4673 or use our form for fast service in Bakersfield, Wichita, and Lubbock."
+                canonicalUrl="https://emergencyhydraulics.com/contact"
+                type="website"
+            />
       {/* SECTION 1: HERO */}
       <section className="relative h-[250px] flex items-center justify-center overflow-hidden bg-brand-navy border-b-8 border-brand-orange">
         <div className="absolute inset-0 z-0">
@@ -63,6 +63,7 @@ const ContactPage: React.FC<ContactPageProps> = () => {
             <span className="text-white">Contact</span>
           </div>
           <h1 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 tracking-wide">
+           <span className="sr-only">24/7 Emergency Dispatch: </span>
             Contact Frontline
           </h1>
           <p className="sm:text-lg text-gray-300 max-w-2xl mx-auto font-medium">
@@ -145,7 +146,7 @@ const ContactPage: React.FC<ContactPageProps> = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 uppercase text-sm tracking-wide mb-1">Email</h4>
-                                    <a href="mailto:service@frontlinehydraulics.com" className="text-brand-navy font-bold hover:text-brand-orange transition-colors">service@frontlinehydraulics.com</a>
+                                    <a href="mailto:service@emergencyhydraulics.com" className="text-brand-navy font-bold hover:text-brand-orange transition-colors">service@emergencyhydraulics.com</a>
                                     <p className="text-gray-400 text-xs mt-1">For non-emergency inquiries</p>
                                 </div>
                             </div>

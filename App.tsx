@@ -59,8 +59,8 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Mobile Hydraulic Repair Bakersfield | 24/7 Emergency Service | Frontline Hydraulics"
-        description="Fast mobile hydraulic hose repair in Bakersfield & Kern County. Emergency on-site service available 24/7. Call 859 462-4673 for immediate response."
+        title="24/7 Mobile Hydraulic Repair in Bakersfield, CA"
+        description="Emergency hydraulic hose repair in Bakersfield. Fast mobile service, certified techs, and 24/7 dispatch. Call now for immediate response."
         canonicalUrl="https://emergencyhydraulics.com/"
         type="website"
       />

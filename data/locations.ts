@@ -9,8 +9,8 @@ export const bakersfieldData: LocationPageData = {
   county: "Kern County",
   coords: [35.3733, -119.0187],
 heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=format&fit=crop&w=2000&q=80&fm=webp",
-  seoTitle: "Mobile Hydraulic Repair Bakersfield CA | 24/7 Emergency Service",
-  seoDesc: "24/7 mobile hydraulic repair in Bakersfield & Kern County. Emergency hose repair, diagnostics & cylinder service for oilfield, agriculture & construction equipment.",
+  seoTitle: "24/7 Mobile Hydraulic Repair in Bakersfield, CA",
+  seoDesc: "Emergency hydraulic hose repair in Bakersfield and Kern County. 24/7 mobile service for oilfield, agriculture, and construction equipment.",
   intro: {
     heading: "Bakersfield's Mobile Hydraulic Repair Leader",
     paragraphs: [
@@ -93,8 +93,8 @@ export const wichitaData: LocationPageData = {
     county: "Sedgwick County",
     coords: [37.6872, -97.3301],
     heroImage: "https://images.unsplash.com/photo-1760011604179-b75b048fd19f?auto=format&fit=crop&w=2000&q=80&fm=webp",
-    seoTitle: "Mobile Hydraulic Repair Wichita KS | 24/7 Emergency Service",
-    seoDesc: "24/7 mobile hydraulic repair in Wichita & Sedgwick County. Emergency hose repair, diagnostics & cylinder service for aerospace, construction & industrial equipment.",
+    seoTitle: "24/7 Mobile Hydraulic Repair in Wichita, KS",
+    seoDesc: "Emergency hydraulic hose repair in Wichita and Sedgwick County. 24/7 mobile service for aerospace, construction, and industrial equipment.",
     intro: {
         heading: "Wichita's Industrial & Mobile Hydraulic Repair Experts",
         paragraphs: [
@@ -140,8 +140,8 @@ export const lubbockData: LocationPageData = {
     county: "Lubbock County",
     coords: [33.5779, -101.8552],
     heroImage: "https://images.unsplash.com/photo-1760181925370-21ecb4560bee?auto=format&fit=crop&w=2000&q=80&fm=webp",
-    seoTitle: "Mobile Hydraulic Repair Lubbock TX | 24/7 Emergency Service",
-    seoDesc: "24/7 mobile hydraulic repair in Lubbock & South Plains. Emergency hose repair, diagnostics & cylinder service for oilfield, cotton & construction equipment.",
+    seoTitle: "24/7 Mobile Hydraulic Repair in Lubbock, TX",
+    seoDesc: "Emergency hydraulic hose repair in Lubbock and South Plains. 24/7 mobile service for oilfield, cotton, and construction equipment.",
     intro: {
         heading: "Hub City's Most Trusted Emergency Hydraulic Repair Service",
         paragraphs: [

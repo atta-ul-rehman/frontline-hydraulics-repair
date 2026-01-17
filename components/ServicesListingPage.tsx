@@ -26,8 +26,8 @@ const ServicesListingPage: React.FC<ServicesListingPageProps> = ({ onOpenContact
   return (
     <div className="bg-white">
       <SeoHead
-        title="Hydraulic Services | Mobile Repair, Emergency Service & Maintenance"
-        description="Complete hydraulic services including emergency repair, mobile fabrication, diagnostics, cylinder repair, fluid services, fleet maintenance, and industrial plant service. 24/7 availability."
+        title="Hydraulic Services | Mobile Repair & Maintenance Near You"
+        description="Explore all hydraulic services: emergency repair, mobile fabrication, diagnostics, cylinder repair, fluid services, and more. 24/7 mobile service available."
         canonicalUrl="https://emergencyhydraulics.com/services"
         type="website"
       />

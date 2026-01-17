@@ -2,7 +2,10 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://frontlinehydraulics.com/sitemap.xml
+Sitemap: https://emergencyhydraulics.com/sitemap.xml
+
+# Host
+Host: https://emergencyhydraulics.com
 
 # Disallow admin/utility pages
 Disallow: /admin/

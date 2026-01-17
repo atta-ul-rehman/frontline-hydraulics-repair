@@ -5,8 +5,8 @@ import { ServicePageData } from '../types';
 export const emergencyRepairData: ServicePageData = {
   id: 'service-emergency-repair',   // matches /services/emergency-repair
   title: "Emergency Hydraulic Hose Repair",
-  seoTitle: "Emergency Hydraulic Hose Repair | 24/7 Mobile Service",
-  seoDesc: "24/7 emergency hydraulic hose repair in Bakersfield, Wichita & Lubbock. Mobile technicians dispatch within 60 minutes. We fix blown lines on-site.",
+  seoTitle: "24/7 Emergency Hydraulic Hose Repair Near You | Mobile Service",
+  seoDesc: "Fast emergency hydraulic hose repair in Bakersfield, Wichita, and Lubbock. Mobile techs dispatched in 60 minutes. On-site hose fixes for all equipment.",
   heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80&fm=webp",
   subheading: "When a hydraulic hose fails, every minute costs thousands. We dispatch certified mobile technicians within 60 minutes for 24/7 emergency hose repair and on-site fabrication in Bakersfield, Wichita, and Lubbock.",
   description: {
@@ -167,8 +167,8 @@ export const emergencyRepairData: ServicePageData = {
 export const mobileFabricationData: ServicePageData = {
   id: 'service-mobile-fabrication',  // matches /services/mobile-fabrication
   title: "Mobile Hydraulic Hose Fabrication",
-  seoTitle: "Mobile Hydraulic Hose Fabrication | On-Site Assembly",
-  seoDesc: "Custom hydraulic hose fabrication on your truck or job site. We build OEM-quality assemblies in Bakersfield, Wichita & Lubbock. No shop visits required.",
+  seoTitle: "Mobile Hydraulic Hose Fabrication | On-Site Service",
+  seoDesc: "On-site hydraulic hose fabrication in Bakersfield, Wichita, and Lubbock. OEM-quality assemblies built at your job site. No shop visits needed.",
   heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
   subheading: "Custom OEM-quality hydraulic hose fabrication at your job site. No more trips to parts stores. Certified on-site assembly with pressure testing in Bakersfield, Wichita, and Lubbock.",
   description: {
@@ -328,8 +328,8 @@ export const mobileFabricationData: ServicePageData = {
 export const diagnosticsData: ServicePageData = {
     id: 'service-diagnostics',
     title: "Hydraulic System Diagnostics",    
-    seoTitle: "Hydraulic System Diagnostics | Pressure Testing Service",
-    seoDesc: "Advanced hydraulic diagnostics with flow meters & pressure testing. Find root causes of slow cycles and leaks in Bakersfield, Wichita & Lubbock.",
+    seoTitle: "Hydraulic System Diagnostics & Pressure Testing Service",
+    seoDesc: "Hydraulic diagnostics with flow meters and pressure testing. Find root causes of leaks and slow cycles in Bakersfield, Wichita, and Lubbock.",
     heroImage: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Advanced hydraulic system diagnostics with pressure testing and flow analysis. Stop guessing at repairs. Certified technicians find root causes of performance issues in Bakersfield, Wichita & Lubbock.",
     description: {
@@ -415,8 +415,8 @@ export const diagnosticsData: ServicePageData = {
 export const cylinderRepairData: ServicePageData = {
     id: 'service-cylinder-repair',    // matches /services/cylinder-repair
     title: "Hydraulic Pump & Cylinder Repair",
-    seoTitle: "Hydraulic Pump & Cylinder Repair | Mobile Rebuild Service",
-    seoDesc: "Mobile hydraulic pump and cylinder repair. We rebuild leaking cylinders and failing pumps on-site in Bakersfield, Wichita & Lubbock. Save on OEM costs.",
+    seoTitle: "Hydraulic Pump & Cylinder Repair | Mobile Rebuilds",
+    seoDesc: "Mobile hydraulic pump and cylinder repair in Bakersfield, Wichita, and Lubbock. On-site rebuilds and seal replacement. Save on OEM costs.",
     heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Hydraulic cylinder rebuild and seal repair at your site or in our facility. We stock OEM-equivalent rods, seals, and buckets for fast same-day restoration.",
     description: {
@@ -479,7 +479,7 @@ export const fluidServicesData: ServicePageData = {
     id: 'service-fluid-services',     // matches /services/fluid-services
     title: "Hydraulic Oil & Fluid Services",
     seoTitle: "Hydraulic Oil & Fluid Services | Mobile Filtration",
-    seoDesc: "Mobile hydraulic fluid services: flushing, filtration & oil changes. Clean contaminated systems in Bakersfield, Wichita & Lubbock. ISO cleanliness standards.",
+    seoDesc: "Mobile hydraulic fluid flushing, filtration, and oil changes in Bakersfield, Wichita, and Lubbock. Clean systems to ISO standards. Water removal and more.",
     heroImage: "https://images.unsplash.com/photo-1615900119312-2acd3a71f3aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Mobile hydraulic fluid flushing and filtration to ISO 4406 standards. Clean contaminated systems without downtime. Water removal and sludge elimination in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -542,7 +542,7 @@ export const maintenanceData: ServicePageData = {
     id: 'service-fleet-maintenance',  // matches /services/fleet-maintenance
     title: "Hydraulic Fleet Maintenance",
     seoTitle: "Hydraulic Fleet Maintenance | Preventive Service Plans",
-    seoDesc: "Preventive hydraulic maintenance for fleets. Scheduled inspections, filter changes & hose tagging in Bakersfield, Wichita & Lubbock. Reduce breakdowns.",
+    seoDesc: "Preventive hydraulic maintenance for fleets in Bakersfield, Wichita, and Lubbock. Scheduled inspections, filter changes, and hose tagging. Reduce breakdowns.",
     heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Preventive hydraulic maintenance stops costly emergency repairs. Scheduled inspections, filter changes, fluid analysis & hose tagging for fleets in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -602,10 +602,10 @@ export const maintenanceData: ServicePageData = {
 
 // 7. INDUSTRIAL HYDRAULIC SERVICES
 export const industrialData: ServicePageData = {
-    id: 'service-industrial-plant',   // matches /services/industrial-plant-service
+    id: 'industrial-plant-service',   // matches /services/industrial-plant-service
     title: "Industrial Hydraulic Services",
     seoTitle: "Industrial Hydraulic Services | Plant Maintenance",
-    seoDesc: "Specialized hydraulic repair for factories & plants. Press cylinders, HPUs & conveyor systems in Bakersfield, Wichita & Lubbock. OSHA compliant service.",
+    seoDesc: "Hydraulic repair for factories and plants in Bakersfield, Wichita, and Lubbock. Press cylinders, HPUs, and conveyor systems. OSHA-compliant service.",
     heroImage: "https://images.unsplash.com/photo-1565435967962-d2279c6b5420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Specialized hydraulic repair for injection presses, HPUs, and conveyor systems. OSHA-compliant service with on-site troubleshooting in Bakersfield, Wichita, and Lubbock.",
     description: {
@@ -665,10 +665,10 @@ export const industrialData: ServicePageData = {
 
 // 8. HEAVY EQUIPMENT HYDRAULIC REPAIR
 export const equipmentRepairData: ServicePageData = {
-    id: 'service-heavy-equipment',    // matches /services/heavy-equipment-repair
+    id: 'heavy-equipment-repair',    // matches /services/heavy-equipment-repair
     title: "Heavy Equipment Hydraulic Repair",
     seoTitle: "Heavy Equipment Hydraulic Repair | Excavator Service",
-    seoDesc: "Mobile hydraulic repair for excavators, dozers & loaders. Boom cylinders, travel motors & pumps fixed on-site in Bakersfield, Wichita & Lubbock.",
+    seoDesc: "Mobile hydraulic repair for excavators, dozers, and loaders in Bakersfield, Wichita, and Lubbock. On-site boom cylinders, travel motors, and pumps fixed.",
     heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Heavy equipment hydraulic repair on-site without trailer fees or dealer delays. Boom cylinders, travel motors, and main pump diagnostics in Bakersfield, Wichita, and Lubbock.",
     description: {

@@ -131,14 +131,14 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenContact }) => {
       "name": "Frontline Hydraulic Services",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://frontlinehydraulics.com/images/logo.jpg"
+        "url": "https://emergencyhydraulics.com/images/logo.jpg"
       }
     },
     "datePublished": new Date(post.date).toISOString(), // Formatting date
     "description": post.excerpt,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": `https://frontlinehydraulics.com/blog/${post.slug}/`
+        "@id": `https://emergencyhydraulics.com/blog/${post.slug}/`
     }
   };
 

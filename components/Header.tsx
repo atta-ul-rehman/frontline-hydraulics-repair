@@ -68,6 +68,8 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                         <Link to="/services/cylinder-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Pump & Cylinder Repair</Link>
                         <Link to="/services/fluid-services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Oil & Fluid Services</Link>
                         <Link to="/services/fleet-maintenance" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Fleet Maintenance</Link>
+                        <Link to="/services/industrial-plant-service" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Industrial Plant Service</Link>
+                        <Link to="/services/heavy-equipment-repair" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors border-b border-gray-100">Heavy Equipment Repair</Link>
                         <Link to="/services" onClick={handleNavClick} className="block w-full text-left px-6 py-3 text-sm font-bold text-brand-orange hover:bg-gray-50 transition-colors">View All Services</Link>
                     </div>
                 </div>
