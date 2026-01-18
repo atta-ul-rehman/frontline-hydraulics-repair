@@ -62,19 +62,24 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
     { name: "Locations", item: "/locations/" },
     { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}/` }
   ];
-  const iconUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png';
-const iconRetinaUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png';
-const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png';
 
-  const customIcon = new L.Icon({
-    iconUrl: iconUrl,
-    iconRetinaUrl: iconRetinaUrl,
-    shadowUrl: shadowUrl,
+  const [isClient, setIsClient] = useState(false);
+
+  // This only runs in the browser, not during the Vercel build
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Create icon inside component or protected by window check
+  const customIcon = typeof window !== 'undefined' ? new L.Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-})
+  }) : null;
 
   // Map service links to routes
   const getServiceRoute = (serviceLink: string) => {
@@ -348,6 +353,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
 
                  <div className="flex flex-col lg:col-span-2 gap-6 justify-between gap-4">
                  <div className="lg:col-span-2 relative h-[420px] rounded-lg overflow-hidden border border-gray-200 shadow-inner">
+                  {isClient ? (
                     <MapContainer 
                         center={data.coords} 
                         zoom={10} 
@@ -367,6 +373,9 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
                             </Popup>
                         </Marker>
                     </MapContainer>
+                    ) : (
+                      <div className="flex items-center justify-center h-full text-gray-400">Loading Map...</div>
+                    )}
                  </div>
                  <div className="mb-2">
                  <Link 
@@ -654,3 +663,7 @@ const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
 };
 
 export default LocationPage;
+
+function useEffect(arg0: () => void, arg1: undefined[]) {
+  throw new Error('Function not implemented.');
+}

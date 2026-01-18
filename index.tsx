@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import * as ReactHelmetAsync from 'react-helmet-async';
+const HelmetProvider = ReactHelmetAsync.HelmetProvider || (ReactHelmetAsync as any).default?.HelmetProvider;
 import App from './App';
 import './index.css';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+const rootElement = document.getElementById('root')!;
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
+const MainApp = (
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
+
+// If there's already HTML (from our prerender), hydrate it.
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, MainApp);
+} else {
+  ReactDOM.createRoot(rootElement).render(MainApp);
+}

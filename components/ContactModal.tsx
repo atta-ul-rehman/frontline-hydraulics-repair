@@ -37,19 +37,18 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[60] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <div className="fixed inset-0 z-[9999] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div className="flex items-center justify-center min-h-screen p-4">
         
         {/* Background overlay */}
         <div 
-            className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" 
+            className="fixed inset-0 bg-gray-900/80 transition-opacity" 
             aria-hidden="true"
             onClick={onClose}
         ></div>
 
-        <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full">
+        {/* Modal content */}
+        <div className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all w-full max-w-lg mx-auto">
           <div className="bg-brand-navy px-4 py-4 sm:px-6 flex justify-between items-center">
             <h3 className="text-lg leading-6 font-bold text-white" id="modal-title">
               Request Technician

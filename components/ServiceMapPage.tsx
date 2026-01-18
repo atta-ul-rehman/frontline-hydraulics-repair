@@ -1,26 +1,14 @@
 
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SeoHead from './SeoHead';
 import L from 'leaflet';
 
+
 // Fix for default marker icons in Leaflet with Webpack/React
-const iconUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png';
-const iconRetinaUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png';
-const shadowUrl = 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png';
-
-const customIcon = new L.Icon({
-    iconUrl: iconUrl,
-    iconRetinaUrl: iconRetinaUrl,
-    shadowUrl: shadowUrl,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
-
 const locations = [
   {
     id: 'location-bakersfield',
@@ -49,6 +37,24 @@ const locations = [
 ];
 
 const ServiceMapPage: React.FC = ({  }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  // This only runs in the browser, not during the Vercel build
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Create icon inside component or protected by window check
+  const customIcon = typeof window !== 'undefined' && isClient ? new L.Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  }) : null;
+
   return (
     <div className="bg-white">
       <SeoHead 
@@ -85,7 +91,9 @@ const ServiceMapPage: React.FC = ({  }) => {
       </section>
 
       {/* Map Section */}
+      
       <section className="h-[250px] sm:h-[600px] w-full relative z-0">
+    {isClient ? (
         <MapContainer 
             center={[35.5, -108.0]} 
             zoom={5} 
@@ -113,7 +121,9 @@ const ServiceMapPage: React.FC = ({  }) => {
                 </Marker>
             ))}
         </MapContainer>
-        
+        ) : (
+          <div className="flex items-center justify-center h-full text-gray-400">Loading Map...</div>
+        )}
         {/* Overlay Legend for Desktop */}
         <div className="hidden md:block absolute top-4 right-4 z-[1000] bg-white/90 backdrop-blur rounded-lg shadow-xl p-4 border border-gray-200 max-w-xs">
             <h3 className="font-bold text-brand-navy mb-3 flex items-center gap-2">

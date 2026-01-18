@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.js",
+    "build": "vite build && npx tsx scripts/prerender.tsx",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,9 +23,9 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^22.19.7",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.0",
-    "chrome-aws-lambda": "^10.1.0",
-    "puppeteer": "^24.35.0",
     "sirv": "^3.0.2",
     "sitemap": "^8.0.2",
     "tsx": "^4.19.2",

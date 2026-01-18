@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-
+import * as ReactHelmetAsync from 'react-helmet-async';
+const Helmet = ReactHelmetAsync.Helmet || (ReactHelmetAsync as any).default?.Helmet;
 interface BreadcrumbItem {
   name: string;
   item: string;

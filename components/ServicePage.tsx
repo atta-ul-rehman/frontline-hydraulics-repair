@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, ShieldCheck, Wrench, Settings, Clock, Truck } from 'lucide-react';
 import { ServicePageData } from '../types';
 import SeoHead from './SeoHead';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 interface ServicePageProps {
   data: ServicePageData;
   onOpenContact: () => void;
-  onNavigate: (page: string) => void;
 }
 
-const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNavigate }) => {
+const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact }) => {
+  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -90,9 +90,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Breadcrumb Visual */}
           <div className="flex items-center justify-center gap-2 text-[8px] md:text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:text-brand-orange transition-colors">Home</button>
+            <Link to="/" className="hover:text-brand-orange transition-colors">Home</Link>
             <span className="text-brand-orange">/</span>
-            <span className="text-gray-300">Services</span>
+            <Link to="/services" className="text-gray-300 hover:text-brand-orange transition-colors">Services</Link>
             <span className="text-brand-orange">/</span>
             <span className="text-white">{data.title}</span>
           </div>
@@ -180,15 +180,15 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider flex-shrink-0">Related Services:</h4>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                     {data.relatedServices.map((service, idx) => (
-                        <button 
+                        <Link 
                             key={idx}
-                            onClick={() => onNavigate(service.id)}
+                            to={`/services/${service.id.replace('service-', '')}`}
                             className="text-brand-navy font-bold text-sm hover:text-brand-orange transition-colors border-b-2 border-transparent hover:border-brand-orange"
                         >
                             {service.title}
-                        </button>
+                        </Link>
                     ))}
-                    <button onClick={() => onNavigate('services')} className="text-brand-orange font-bold text-sm hover:underline">View All</button>
+                    <Link to="/services" className="text-brand-orange font-bold text-sm hover:underline">View All</Link>
                 </div>
               </div>
             </div>
@@ -373,9 +373,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact, onNaviga
                 <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Sedgwick County, KS</div>
                 <div className="flex items-center gap-2 text-gray-700 font-medium"><MapPin className="w-5 h-5 text-brand-orange" /> Serving Lubbock County, TX</div>
               </div>
-              <button onClick={() => onNavigate('home')} className="text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
+              <Link to="/service-map" className="text-brand-navy font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
                 View Full Service Area Map
-              </button>
+              </Link>
             </div>
             <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden border-4 border-gray-50 shadow-inner">
                <img 

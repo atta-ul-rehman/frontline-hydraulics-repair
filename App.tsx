@@ -1,5 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import * as ReactHelmetAsync from 'react-helmet-async';
+const HelmetProvider = ReactHelmetAsync.HelmetProvider || (ReactHelmetAsync as any).default?.HelmetProvider;
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Import ScrollToTop component
@@ -21,19 +22,21 @@ import ContactModal from './components/ContactModal';
 import FloatingCallButton from './components/FloatingCallButton';
 
 // Lazy load page components
-const AboutPage = lazy(() => import('./components/AboutPage'));
-const ContactPage = lazy(() => import('./components/ContactPage'));
-const ServicePage = lazy(() => import('./components/ServicePage'));
-const ServicesListingPage = lazy(() => import('./components/ServicesListingPage'));
-const LocationPage = lazy(() => import('./components/LocationPage'));
-const BlogIndexPage = lazy(() => import('./components/BlogIndexPage'));
-const BlogPostPage = lazy(() => import('./components/BlogPostPage'));
-const RecentJobs = lazy(() => import('./components/RecentJobs'));
-const CommercialAccounts = lazy(() => import('./components/CommercialAccounts'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
-const ServiceMapPage = lazy(() => import('./components/ServiceMapPage'));
-const SeoHead = lazy(() => import('./components/SeoHead'));
-const TermsOfService = lazy(() => import('./components/TermsOfService'));
+// 2. Page Imports (Changed from lazy to standard)
+import AboutPage from './components/AboutPage';
+import ContactPage from './components/ContactPage';
+import ServicePage from './components/ServicePage';
+import ServicesListingPage from './components/ServicesListingPage';
+import LocationPage from './components/LocationPage';
+import BlogIndexPage from './components/BlogIndexPage';
+import BlogPostPage from './components/BlogPostPage';
+import RecentJobs from './components/RecentJobs';
+import CommercialAccounts from './components/CommercialAccounts';
+import Testimonials from './components/Testimonials';
+import ServiceMapPage from './components/ServiceMapPage';
+import SeoHead from './components/SeoHead';
+import TermsOfService from './components/TermsOfService';
+
 import {
   emergencyRepairData,
   mobileFabricationData,
@@ -50,14 +53,13 @@ import {
   lubbockData
 } from './data/locations';
 
-// Home Page Component
-const HomePage: React.FC = () => {
+function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
   const openModal = () => setIsContactModalOpen(true);
   const closeModal = () => setIsContactModalOpen(false);
 
-  return (
+  // Home Page Component
+  const HomePageWithModal: React.FC = () => (
     <>
       <SeoHead
         title="24/7 Mobile Hydraulic Repair in Bakersfield, CA"
@@ -77,21 +79,12 @@ const HomePage: React.FC = () => {
       <ServiceArea />
       <CtaBanner />
       <ContactSection />
-
-      <ContactModal isOpen={isContactModalOpen} onClose={closeModal} />
       <FloatingCallButton />
     </>
   );
-};
 
-// Layout Component with Header and Footer
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-  const openModal = () => setIsContactModalOpen(true);
-  const closeModal = () => setIsContactModalOpen(false);
-
-  return (
+  // Layout Component with Header and Footer
+  const LayoutWithModal: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
       <Header onOpenContact={openModal} />
       <main>{children}</main>
@@ -100,153 +93,43 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <FloatingCallButton />
     </>
   );
-};
 
-function App() {
   return (
-    <HelmetProvider>
-      <Router>
-        <ScrollToTop />
         <div className="font-sans text-gray-900 bg-white selection:bg-brand-orange selection:text-white">
+        <ScrollToTop />
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-brand-orange"></div></div>}>
             <Routes>
-            {/* Home Page */}
-            <Route path="/" element={<Layout><HomePage /></Layout>} />
-
-
-            {/* About Page */}
-            <Route path="/about" element={
-              <Layout>
-                <AboutPage />
-              </Layout>
-            } />
-
-            {/* Contact Page */}
-            <Route path="/contact" element={
-              <Layout>
-                <ContactPage />
-              </Layout>
-            } />
-
-
-            {/* Service Map Page */}
-            <Route path="/service-map" element={
-              <Layout>
-                <ServiceMapPage />
-              </Layout>
-            } />
-
-
-            {/* Services Pages */}
-            <Route path="/services" element={
-              <Layout>
-                <ServicesListingPage />
-              </Layout>
-            } />
-
-
-            <Route path="/services/emergency-repair" element={
-              <Layout>
-                <ServicePage data={emergencyRepairData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/mobile-fabrication" element={
-              <Layout>
-                <ServicePage data={mobileFabricationData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/diagnostics" element={
-              <Layout>
-                <ServicePage data={diagnosticsData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/cylinder-repair" element={
-              <Layout>
-                <ServicePage data={cylinderRepairData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/fluid-services" element={
-              <Layout>
-                <ServicePage data={fluidServicesData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/fleet-maintenance" element={
-              <Layout>
-                <ServicePage data={maintenanceData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/industrial-plant-service" element={
-              <Layout>
-                <ServicePage data={industrialData} />
-              </Layout>
-            } />
-
-
-            <Route path="/services/heavy-equipment-repair" element={
-              <Layout>
-                <ServicePage data={equipmentRepairData} />
-              </Layout>
-            } />
-
-            {/* Location Pages */}
-            <Route path="/locations/bakersfield" element={
-              <Layout>
-                <LocationPage data={bakersfieldData} />
-              </Layout>
-            } />
-
-            <Route path="/locations/wichita" element={
-              <Layout>
-                <LocationPage data={wichitaData} />
-              </Layout>
-            } />
-
-            <Route path="/locations/lubbock" element={
-              <Layout>
-                <LocationPage data={lubbockData} />
-              </Layout>
-            } />
-
-            {/* Blog Pages */}
-            <Route path="/blog" element={
-              <Layout>
-                <BlogIndexPage
-                  onOpenContact={() => {}}
-                />
-              </Layout>
-            } />
-
-            <Route path="/blog/:slug" element={
-              <Layout>
-                <BlogPostPage
-                  onOpenContact={() => {}}
-                />
-              </Layout>
-            } />
-
-            {/* Terms of Service Page */}
-            <Route path="/terms" element={
-              <Layout>
-                <TermsOfService />
-              </Layout>
-            } />
-          </Routes>
+              {/* Home Page */}
+              <Route path="/" element={<LayoutWithModal><HomePageWithModal /></LayoutWithModal>} />
+              {/* About Page */}
+              <Route path="/about" element={<LayoutWithModal><AboutPage /></LayoutWithModal>} />
+              {/* Contact Page */}
+              <Route path="/contact" element={<LayoutWithModal><ContactPage /></LayoutWithModal>} />
+              {/* Service Map Page */}
+              <Route path="/service-map" element={<LayoutWithModal><ServiceMapPage /></LayoutWithModal>} />
+              {/* Services Pages */}
+              <Route path="/services" element={<LayoutWithModal><ServicesListingPage onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/emergency-repair" element={<LayoutWithModal><ServicePage data={emergencyRepairData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/mobile-fabrication" element={<LayoutWithModal><ServicePage data={mobileFabricationData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/diagnostics" element={<LayoutWithModal><ServicePage data={diagnosticsData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/cylinder-repair" element={<LayoutWithModal><ServicePage data={cylinderRepairData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/fluid-services" element={<LayoutWithModal><ServicePage data={fluidServicesData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/fleet-maintenance" element={<LayoutWithModal><ServicePage data={maintenanceData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/industrial-plant-service" element={<LayoutWithModal><ServicePage data={industrialData} onOpenContact={openModal} /></LayoutWithModal>} />
+              <Route path="/services/heavy-equipment-repair" element={<LayoutWithModal><ServicePage data={equipmentRepairData} onOpenContact={openModal} /></LayoutWithModal>} />
+              {/* Location Pages */}
+              <Route path="/locations/bakersfield" element={<LayoutWithModal><LocationPage data={bakersfieldData} /></LayoutWithModal>} />
+              <Route path="/locations/wichita" element={<LayoutWithModal><LocationPage data={wichitaData} /></LayoutWithModal>} />
+              <Route path="/locations/lubbock" element={<LayoutWithModal><LocationPage data={lubbockData} /></LayoutWithModal>} />
+              {/* Blog Pages */}
+              <Route path="/blog" element={<LayoutWithModal><BlogIndexPage /></LayoutWithModal>} />
+              <Route path="/blog/:slug" element={<LayoutWithModal><BlogPostPage /></LayoutWithModal>} />
+              {/* Terms of Service Page */}
+              <Route path="/terms" element={<LayoutWithModal><TermsOfService /></LayoutWithModal>} />
+            </Routes>
           </Suspense>
         </div>
-      </Router>
-    </HelmetProvider>
+      
   );
 }
 
