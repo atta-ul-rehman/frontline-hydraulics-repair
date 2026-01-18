@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2, MapPin, ChevronDown, ChevronUp, Star, PhoneCall, Calendar, Clock, ShieldCheck, ArrowRight, Timer, Zap, Wrench, Droplet, Truck, Factory } from 'lucide-react';
 import { LocationPageData } from '../types';
@@ -663,7 +663,3 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
 };
 
 export default LocationPage;
-
-function useEffect(arg0: () => void, arg1: undefined[]) {
-  throw new Error('Function not implemented.');
-}
