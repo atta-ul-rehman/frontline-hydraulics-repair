@@ -4,11 +4,5 @@
       "source": "/((?!assets/|sitemap\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }
-  ],
-  "functions": {
-    "api/**/*.js": {
-      "memory": 3008,
-      "maxDuration": 60
-    }
-  }
+  ]
 }
