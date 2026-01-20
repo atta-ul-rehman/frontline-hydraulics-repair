@@ -213,18 +213,18 @@ const BlogPostPage: React.FC = () => {
 
                 {/* Key Takeaways Box (Featured Snippet Bait) */}
                 {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-                    <div className="bg-brand-light border-l-4 border-brand-orange p-8 rounded-r-lg mb-12">
-                        <h3 className="flex items-center gap-2 text-xl font-bold text-brand-navy mb-4">
-                            <Lightbulb className="w-6 h-6 text-brand-orange" /> Key Takeaways
+                    <div className="bg-brand-light border-l-4 border-brand-orange p-8 rounded-r-lg mb-12" id="quick-answer">
+                        <h3 className="flex items-center gap-2 text-xl font-bold text-brand-navy mb-2">
+                            <Lightbulb className="w-6 h-6 text-brand-orange" /> Quick Answer
                         </h3>
-                        <ul className="space-y-3">
+                        <p className="text-gray-600 text-sm mb-4 italic">TL;DR for busy operators and fleet managers:</p>
+                        <ol className="space-y-3 list-decimal list-inside">
                             {post.keyTakeaways.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-3">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2.5 flex-shrink-0"></div>
-                                    <span className="text-gray-700 font-medium">{item}</span>
+                                <li key={idx} className="text-gray-700 font-medium pl-2">
+                                    {item}
                                 </li>
                             ))}
-                        </ul>
+                        </ol>
                     </div>
                 )}
 
@@ -247,26 +247,46 @@ const BlogPostPage: React.FC = () => {
                             <ArrowLeft className="w-4 h-4" /> Back to Articles
                          </Link>
                          <div className="flex gap-4">
-                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Facebook className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Twitter className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Linkedin className="w-5 h-5" /></button>
-                             <button className="text-gray-400 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full"><Mail className="w-5 h-5" /></button>
+                             <button className="text-gray-500 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full focus:ring-2 focus:ring-brand-orange" aria-label="Share on Facebook"><Facebook className="w-5 h-5" /></button>
+                             <button className="text-gray-500 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full focus:ring-2 focus:ring-brand-orange" aria-label="Share on Twitter"><Twitter className="w-5 h-5" /></button>
+                             <button className="text-gray-500 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full focus:ring-2 focus:ring-brand-orange" aria-label="Share on LinkedIn"><Linkedin className="w-5 h-5" /></button>
+                             <button className="text-gray-500 hover:text-brand-blue transition-colors p-2 hover:bg-gray-100 rounded-full focus:ring-2 focus:ring-brand-orange" aria-label="Share via Email"><Mail className="w-5 h-5" /></button>
                          </div>
                     </div>
                 </div>
 
-                {/* Author Bio */}
-                <div className="mt-12 bg-gray-50 p-8 rounded-lg border border-gray-100 flex items-start gap-6">
-                    <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center text-white font-black text-xl flex-shrink-0 shadow-md">
-                        {post.author.charAt(0)}
+                {/* Author Bio - Enhanced for E-E-A-T */}
+                <div className="mt-12 bg-gray-50 p-8 rounded-lg border border-gray-100">
+                    <div className="flex items-start gap-6">
+                        <div className="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center text-white font-black text-xl flex-shrink-0 shadow-md">
+                            {post.author.charAt(0)}
+                        </div>
+                        <div className="flex-1">
+                            <h4 className="font-bold text-brand-navy text-lg mb-1">{post.author}</h4>
+                            <p className="text-xs text-brand-orange font-bold uppercase mb-2">{post.authorRole}</p>
+                            {post.authorCredentials && (
+                                <p className="text-sm text-gray-700 font-medium mb-3 flex items-start gap-2">
+                                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                    {post.authorCredentials}
+                                </p>
+                            )}
+                            <p className="text-gray-600 text-sm">
+                                Expert in hydraulic systems with extensive field experience serving industries in Bakersfield, Wichita, and Lubbock. Dedicated to helping fleet managers reduce downtime through expert advice and emergency repair services.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-brand-navy text-lg mb-1">{post.author}</h4>
-                        <p className="text-xs text-brand-orange font-bold uppercase mb-3">{post.authorRole}</p>
-                        <p className="text-gray-600 text-sm">
-                            Expert in hydraulic systems with over 15 years of field experience serving industries in Bakersfield, Wichita, and Lubbock. Dedicated to helping fleet managers reduce downtime.
-                        </p>
-                    </div>
+                    {post.industryStandards && post.industryStandards.length > 0 && (
+                        <div className="mt-6 pt-4 border-t border-gray-200">
+                            <p className="text-xs text-gray-500 uppercase font-bold mb-2">Industry Standards Referenced</p>
+                            <div className="flex flex-wrap gap-2">
+                                {post.industryStandards.map((standard, idx) => (
+                                    <span key={idx} className="bg-white border border-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
+                                        {standard}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 

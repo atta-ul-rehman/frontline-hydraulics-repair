@@ -28,7 +28,16 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md transition-all duration-300 h-20 md:${isScrolled ? 'h-16' : 'h-24'}`}>
+    <>
+      {/* Skip Navigation Link for Accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+      >
+        Skip to main content
+      </a>
+      
+      <header className={`sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md transition-all duration-300 h-20 md:${isScrolled ? 'h-16' : 'h-24'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
@@ -43,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8" aria-label="Main navigation">
             
             {/* Services Dropdown */}
             <div className="relative group h-full flex items-center"
@@ -152,7 +161,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-brand-navy hover:text-brand-orange focus:outline-none p-2"
+              className="text-brand-navy hover:text-brand-orange focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 rounded p-2"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -169,7 +180,8 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <div className="border-b border-gray-100 pb-2">
                 <button 
                     onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange tracking-[0em]"
+                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange tracking-[0em] focus:ring-2 focus:ring-brand-orange focus:ring-inset rounded"
+                    aria-expanded={isServicesDropdownOpen}
                 >
                     Services 
                     <ChevronDown className={`w-5 h-5 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
@@ -224,6 +236,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         </div>
       )}
     </header>
+    </>
   );
 };
 

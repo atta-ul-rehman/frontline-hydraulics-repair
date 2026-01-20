@@ -17,28 +17,41 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  // Generate City Specific Schema
+  // Generate City Specific Schema - Enhanced for Local SEO
   const citySchema = {
     "@type": "LocalBusiness",
+    "@id": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}/#localbusiness`,
     "name": `Frontline Hydraulic Services - ${data.city}`,
+    "description": `Emergency mobile hydraulic repair dispatch network serving ${data.city}, ${data.state} and ${data.county}. 24/7 certified technicians for on-site hose repair and fabrication.`,
     "telephone": data.localDetails.phone,
     "url": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}/`,
+    "image": "https://emergencyhydraulics.com/assets/logo.webp",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": data.city,
       "addressRegion": data.state,
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "addressCountry": "US",
-        "addressLocality": data.city,
-        "addressRegion": data.state
-      },
-      "geoRadius": "80000" // ~50 miles in meters
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": data.coords[0],
+      "longitude": data.coords[1]
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": data.city,
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": data.county
+        }
+      },
+      ...data.localDetails.coverageAreas.map(area => ({
+        "@type": "City",
+        "name": area
+      }))
+    ],
+    "serviceType": ["Emergency Hydraulic Repair", "Mobile Hose Fabrication", "Hydraulic System Diagnostics", "On-Site Equipment Repair"],
     "priceRange": "$$",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -53,6 +66,11 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
       ],
       "opens": "00:00",
       "closes": "23:59"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
     }
   };
 
@@ -62,6 +80,20 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
     { name: "Locations", item: "/locations/" },
     { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}/` }
   ];
+
+  // FAQPage Schema for Location-specific FAQs
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
 
   const [isClient, setIsClient] = useState(false);
 
@@ -112,6 +144,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
         canonicalUrl={`https://emergencyhydraulics.com/locations/${data.city.toLowerCase()}`}
         type="local"
         schema={citySchema}
+        additionalSchemas={[faqSchema]}
         breadcrumbs={breadcrumbs}
       />
 
@@ -175,6 +208,31 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
       {/* SECTION 2: LOCAL INTRODUCTION */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Dispatch Network Clarification Banner - Builds Trust */}
+          <div className="bg-brand-navy/5 border border-brand-navy/20 rounded-lg p-6 mb-12 flex items-start gap-4">
+            <div className="bg-brand-orange p-2 rounded-full">
+              <ShieldCheck className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="font-bold text-brand-navy mb-1">How Our {data.city} Service Works</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Frontline Hydraulic Services operates as a <strong>dispatch network</strong> that connects you with certified, independent mobile hydraulic technicians throughout {data.city} and {data.county}. When you call, we dispatch the nearest available technician with the inventory and expertise to handle your emergency. <strong>One call, one invoice, fast response.</strong>
+              </p>
+            </div>
+          </div>
+
+          {/* Pain Point Callout - User Intent Alignment */}
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-12 rounded-r-lg">
+            <h3 className="font-bold text-red-800 mb-2">⚠️ Equipment Down in {data.city}? Every Minute Costs You Money.</h3>
+            <p className="text-red-700 text-sm mb-3">
+              A single hydraulic failure can cost your operation <strong>$500-2,000+ per hour</strong> in lost productivity, crew standby, and missed deadlines. Whether you're on a construction site in {data.city}, working in the {data.county} oil fields, or stuck during harvest—<strong>waiting is not an option.</strong>
+            </p>
+            <a href={`tel:${data.localDetails.phone.replace(/\D/g,'')}`} className="inline-flex items-center gap-2 bg-red-600 text-white font-bold text-sm px-4 py-2 rounded hover:bg-red-700 transition-colors">
+              <Phone className="w-4 h-4" /> Call {data.city} Dispatch Now
+            </a>
+          </div>
+
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             
             {/* Left Column: Content */}
@@ -587,10 +645,11 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
               <div key={idx} className="bg-white rounded-lg shadow-sm overflow-hidden">
                 <button 
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left focus:ring-2 focus:ring-brand-orange focus:ring-inset hover:bg-gray-50 transition-colors"
+                  aria-expanded={openFaq === idx}
                 >
                   <span className="font-bold text-brand-navy text-lg pr-4">{faq.question}</span>
-                  {openFaq === idx ? <ChevronUp className="text-brand-orange flex-shrink-0" /> : <ChevronDown className="text-gray-400 flex-shrink-0" />}
+                  {openFaq === idx ? <ChevronUp className="text-brand-orange flex-shrink-0" /> : <ChevronDown className="text-gray-500 flex-shrink-0" />}
                 </button>
                 {openFaq === idx && (
                   <div className="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">

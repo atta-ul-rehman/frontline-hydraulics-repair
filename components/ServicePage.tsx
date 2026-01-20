@@ -53,6 +53,20 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact }) => {
     "description": data.subheading
   };
 
+  // FAQPage Schema for Service-specific FAQs
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   // SEO Optimized Title & Description
   const seoTitle = data.seoTitle;
   const seoDesc = data.seoDesc;
@@ -72,6 +86,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact }) => {
         canonicalUrl={`https://emergencyhydraulics.com/services/${data.id.replace('service-', '')}`}
         type="service"
         schema={serviceSchema}
+        additionalSchemas={[faqSchema]}
         breadcrumbs={breadcrumbs}
       />
 
@@ -139,8 +154,18 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
-            Technicians Currently Available for Immediate Dispatch
+            Certified Technicians Currently Available for Immediate Dispatch
          </p>
+      </div>
+
+      {/* DISPATCH NETWORK CLARIFICATION - Trust Building */}
+      <div className="bg-brand-navy/5 border-b border-brand-navy/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <p className="text-sm text-gray-600 text-center">
+            <ShieldCheck className="w-4 h-4 inline-block mr-1 text-brand-orange" />
+            <strong>How It Works:</strong> Frontline operates as a dispatch network connecting you with <strong>certified, independent mobile hydraulic technicians</strong> in your area. One call to us dispatches the nearest qualified tech with the inventory to handle your {data.title.toLowerCase()} needs.
+          </p>
+        </div>
       </div>
 
       {/* SECTION 2: OVERVIEW & COMMON ISSUES */}
@@ -400,10 +425,11 @@ const ServicePage: React.FC<ServicePageProps> = ({ data, onOpenContact }) => {
               <div key={idx} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
                 <button 
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left focus:ring-2 focus:ring-brand-orange focus:ring-inset hover:bg-gray-50 transition-colors"
+                  aria-expanded={openFaq === idx}
                 >
                   <span className="font-bold text-brand-navy text-lg">{faq.question}</span>
-                  {openFaq === idx ? <ChevronUp className="text-brand-orange" /> : <ChevronDown className="text-gray-400" />}
+                  {openFaq === idx ? <ChevronUp className="text-brand-orange" /> : <ChevronDown className="text-gray-500" />}
                 </button>
                 {openFaq === idx && (
                   <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">

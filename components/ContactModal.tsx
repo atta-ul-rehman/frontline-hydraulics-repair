@@ -55,7 +55,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </h3>
             <button 
                 onClick={onClose}
-                className="text-gray-300 hover:text-white focus:outline-none transition-colors"
+                className="text-gray-300 hover:text-white focus:ring-2 focus:ring-white rounded transition-colors"
+                aria-label="Close dialog"
             >
                 <X size={24} />
             </button>
@@ -73,7 +74,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     <p className="text-gray-500 mb-6">A dispatcher will contact you shortly at the phone number provided.</p>
                     <button 
                         onClick={onClose}
-                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-navy text-base font-medium text-white hover:bg-blue-800 focus:outline-none sm:text-sm"
+                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-navy text-base font-medium text-white hover:bg-blue-800 focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 sm:text-sm"
                     >
                         Close
                     </button>

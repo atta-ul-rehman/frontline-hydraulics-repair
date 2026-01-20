@@ -14,6 +14,7 @@ interface SeoHeadProps {
   keywords?: string;
   image?: string;
   schema?: Record<string, any>;
+  additionalSchemas?: Record<string, any>[];
   breadcrumbs?: BreadcrumbItem[];
 }
 
@@ -25,6 +26,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
   keywords = "mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Kern County, Wichita, Lubbock",
   image = "https://emergencyhydraulics.com/assets/logo.webp",
   schema,
+  additionalSchemas = [],
   breadcrumbs
 }) => {
   const siteName = "Frontline Hydraulic Services";
@@ -127,6 +129,10 @@ const SeoHead: React.FC<SeoHeadProps> = ({
       {breadcrumbSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       )}
+      {/* Additional Schemas (FAQPage, HowTo, etc.) */}
+      {additionalSchemas.map((additionalSchema, index) => (
+        <script key={`schema-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(additionalSchema) }} />
+      ))}
     </Helmet>
   );
 };

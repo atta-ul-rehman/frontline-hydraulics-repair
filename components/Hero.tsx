@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           
           {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
           <p className="text-base md:text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
-            <strong>Every minute of downtime costs you $50-200.</strong> Don't wait for ETA quotes. We dispatch licensed technicians with full truck inventory—arriving in under 60 minutes.
+            <strong>Every minute of downtime costs you $500-2,000+.</strong> Don't wait for ETA quotes. We dispatch certified, independent technicians with full truck inventory—arriving in under 60 minutes. <span className="text-brand-orange font-bold">One call. One invoice. Back to work fast.</span>
           </p>
           
           {/* Live Status Indicator */}

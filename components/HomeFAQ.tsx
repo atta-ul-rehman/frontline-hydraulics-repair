@@ -36,10 +36,11 @@ const HomeFAQ: React.FC = () => {
             <div key={idx} className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
               <button 
                 onClick={() => toggleFaq(idx)}
-                className="w-full flex items-center justify-between p-5 text-left focus:outline-none hover:bg-gray-100 transition-colors"
+                className="w-full flex items-center justify-between p-5 text-left focus:ring-2 focus:ring-brand-orange focus:ring-inset hover:bg-gray-100 transition-colors"
+                aria-expanded={openIndex === idx}
               >
                 <span className="font-bold text-brand-navy text-lg">{faq.question}</span>
-                {openIndex === idx ? <ChevronUp className="text-brand-orange" /> : <ChevronDown className="text-gray-400" />}
+                {openIndex === idx ? <ChevronUp className="text-brand-orange" /> : <ChevronDown className="text-gray-500" />}
               </button>
               {openIndex === idx && (
                 <div className="px-5 pb-5 text-gray-600 leading-relaxed border-t border-gray-200 pt-4">

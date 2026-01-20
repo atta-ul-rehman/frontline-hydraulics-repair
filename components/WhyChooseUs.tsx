@@ -49,10 +49,10 @@ const WhyChooseUs: React.FC = () => {
           <div className="w-full lg:w-1/2">
             <div className="flex items-center gap-2 mb-4">
                 <MapPin className="text-brand-orange w-5 h-5" />
-                <h2 className="text-brand-gray font-bold tracking-wider uppercase text-sm">Locally Owned & Operated</h2>
+                <p className="text-brand-gray font-bold tracking-wider uppercase text-sm">Locally Owned & Operated</p>
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-6">Why Industries Choose Local Hydraulic Experts</h3>
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-6">Why Industries Choose Local Hydraulic Experts</h2>
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
               When industrial hydraulic systems fail, every minute costs thousands in downtime. You need certified local hydraulic technicians with emergency repair expertise and the right parts in-truck, right now. No call center middleman—just expert mobile hydraulic service.
             </p>
@@ -62,7 +62,7 @@ const WhyChooseUs: React.FC = () => {
                 <div key={index} className="flex items-start">
                   <CheckCircle2 className="w-6 h-6 text-brand-orange flex-shrink-0 mt-1 mr-4 fill-brand-orange/10" />
                   <div>
-                    <h4 className="text-xl font-bold text-brand-navy mb-1">{benefit.title}</h4>
+                    <h3 className="text-xl font-bold text-brand-navy mb-1">{benefit.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: benefit.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
                   </div>
                 </div>

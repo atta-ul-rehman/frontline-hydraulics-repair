@@ -133,6 +133,8 @@ export interface BlogPost {
     readTime: string;
     author: string;
     authorRole: string;
+    authorCredentials?: string; // E-E-A-T: Certifications, years experience, training
+    industryStandards?: string[]; // E-E-A-T: SAE, ISO, OSHA standards referenced
     content: ContentBlock[]; // Rich content structure
     keyTakeaways: string[]; // For Featured Snippet optimization
 }

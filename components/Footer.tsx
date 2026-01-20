@@ -18,17 +18,20 @@ const Footer: React.FC = () => {
                   className="h-12 w-auto"
                 />
             </Link>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              24/7 Mobile Hydraulic Repair Specialists. We bring the repair shop to you.
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              Frontline operates as a dispatch network connecting you with certified, independent mobile hydraulic technicians. 24/7 emergency service.
+            </p>
+            <p className="text-gray-500 text-xs mb-6 italic">
+              One call. One invoice. Fast response.
             </p>
             <div className="mb-2">
                  <h5 className="font-bold text-white mb-1">859 462-4673</h5>
-                 <p className="text-gray-400 text-xs">24/7 Emergency Service Available</p>
+                 <p className="text-gray-400 text-xs">24/7 Emergency Dispatch Available</p>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Quick links">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link to="/services" className="hover:text-brand-orange transition-colors">All Services</Link></li>
@@ -38,10 +41,10 @@ const Footer: React.FC = () => {
               <li><Link to="/contact" className="hover:text-brand-orange transition-colors">Contact</Link></li>
               <li><Link to="/terms" className="hover:text-brand-orange transition-colors">Terms of Service</Link></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Locations */}
-          <div>
+          <nav aria-label="Service locations">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white mb-6">Our Locations</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link to="/locations/bakersfield" className="hover:text-brand-orange transition-colors">Bakersfield, CA</Link></li>
@@ -49,7 +52,7 @@ const Footer: React.FC = () => {
               <li><Link to="/locations/lubbock" className="hover:text-brand-orange transition-colors">Lubbock, TX</Link></li>
               <li><Link to="/service-map" className="hover:text-brand-orange transition-colors">View Service Map</Link></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Hours / Social */}
           <div>
@@ -60,8 +63,8 @@ const Footer: React.FC = () => {
               <li>365 Days a Year</li>
             </ul>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Follow us on Facebook"><Facebook size={20} /></a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Follow us on LinkedIn"><Linkedin size={20} /></a>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ const DIST_PATH = path.join(__dirname, '..', 'dist');
 const routeSeoData = {
   // ========== MAIN PAGES ==========
   '/': {
-    title: '24/7 Mobile Hydraulic Repair in Bakersfield, Wichita & Lubbock | Frontline Hydraulic Services',
+    title: 'Mobile Hydraulic Hose Repair in Bakersfield, Wichita & Lubbock | 24/7 Emergency Service',
     description: 'Emergency hydraulic hose repair with 60-minute response. Mobile service for construction, agriculture, and industrial equipment. Call 859-462-4673 for immediate dispatch.',
     keywords: 'mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Wichita, Lubbock',
     h1: '24/7 Emergency Mobile Hydraulic Repair',
@@ -218,71 +218,191 @@ function generateMetaTags(seo, canonicalUrl) {
 function generateStaticContent(seo, route) {
   // Generate appropriate nav links based on route type
   let navSection = '';
+  let additionalContent = '';
+  
   if (route.startsWith('/services/')) {
     navSection = `
       <nav aria-label="Services">
+        <h2>Our Hydraulic Services</h2>
         <ul>
-          <li><a href="/services/emergency-repair">Emergency Hose Repair</a></li>
-          <li><a href="/services/mobile-fabrication">Mobile Fabrication</a></li>
-          <li><a href="/services/diagnostics">Diagnostics</a></li>
-          <li><a href="/services/cylinder-repair">Cylinder Repair</a></li>
-          <li><a href="/services/fluid-services">Fluid Services</a></li>
-          <li><a href="/services/fleet-maintenance">Fleet Maintenance</a></li>
+          <li><a href="/services/emergency-repair">Emergency Hose Repair</a> - 24/7 on-site hydraulic hose replacement</li>
+          <li><a href="/services/mobile-fabrication">Mobile Fabrication</a> - Custom assemblies built at your job site</li>
+          <li><a href="/services/diagnostics">Diagnostics & Testing</a> - Hydraulic system troubleshooting</li>
+          <li><a href="/services/cylinder-repair">Cylinder Repair</a> - Pump and cylinder rebuilds</li>
+          <li><a href="/services/fluid-services">Fluid Services</a> - Oil analysis and flushing</li>
+          <li><a href="/services/fleet-maintenance">Fleet Maintenance</a> - Preventive maintenance programs</li>
+          <li><a href="/services/industrial-plant-service">Industrial Plant Service</a> - Manufacturing hydraulic support</li>
+          <li><a href="/services/heavy-equipment-repair">Heavy Equipment Repair</a> - Construction and mining equipment</li>
         </ul>
       </nav>`;
+    
+    // Add common service content
+    additionalContent = `
+      <section>
+        <h2>Why Choose Frontline for ${seo.h1}</h2>
+        <ul>
+          <li><strong>24/7 Emergency Dispatch</strong> - We answer calls day and night, weekends and holidays</li>
+          <li><strong>60-Minute Average Response</strong> - Fast arrival to minimize your downtime</li>
+          <li><strong>On-Site Repairs</strong> - No towing required, we fix it where it sits</li>
+          <li><strong>Fully Stocked Trucks</strong> - Thousands of fittings and hoses ready</li>
+          <li><strong>Certified Technicians</strong> - Factory-trained professionals</li>
+          <li><strong>All Equipment Brands</strong> - Caterpillar, John Deere, Komatsu, Volvo, Case, and more</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Industries We Serve</h2>
+        <ul>
+          <li>Construction & Excavation</li>
+          <li>Oil & Gas Operations</li>
+          <li>Agriculture & Farming</li>
+          <li>Heavy Haul Trucking</li>
+          <li>Industrial Manufacturing</li>
+          <li>Waste Management</li>
+          <li>Material Handling</li>
+          <li>Mining & Quarry</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Frequently Asked Questions</h2>
+        <dl>
+          <dt>How fast can you get here?</dt>
+          <dd>If you're in Bakersfield, Wichita, or Lubbock metro areas, we aim for a 60-minute ETA.</dd>
+          <dt>Do you have fittings for Cat/Deere/Komatsu?</dt>
+          <dd>Yes. We stock Code 61/62 flanges, ORFS, JIC, BSP, and DIN fittings for 95% of equipment.</dd>
+          <dt>Can you fix equipment in the field?</dt>
+          <dd>Absolutely. As long as our truck can reach it, we can repair it on-site.</dd>
+          <dt>Do you offer commercial accounts?</dt>
+          <dd>Yes, we offer net-30 billing for established fleet accounts.</dd>
+        </dl>
+      </section>`;
+      
   } else if (route.startsWith('/locations/')) {
+    const cityName = route.includes('bakersfield') ? 'Bakersfield' : 
+                     route.includes('wichita') ? 'Wichita' : 'Lubbock';
+    const countyName = route.includes('bakersfield') ? 'Kern County' : 
+                       route.includes('wichita') ? 'Sedgwick County' : 'Lubbock County';
+    
     navSection = `
       <nav aria-label="Locations">
+        <h2>Our Service Locations</h2>
         <ul>
-          <li><a href="/locations/bakersfield">Bakersfield, CA</a></li>
-          <li><a href="/locations/wichita">Wichita, KS</a></li>
-          <li><a href="/locations/lubbock">Lubbock, TX</a></li>
+          <li><a href="/locations/bakersfield">Bakersfield, CA</a> - Serving Kern County and Central Valley</li>
+          <li><a href="/locations/wichita">Wichita, KS</a> - Serving Sedgwick County and South Central Kansas</li>
+          <li><a href="/locations/lubbock">Lubbock, TX</a> - Serving South Plains and West Texas</li>
         </ul>
       </nav>`;
+    
+    additionalContent = `
+      <section>
+        <h2>Emergency Hydraulic Services in ${cityName}</h2>
+        <ul>
+          <li><a href="/services/emergency-repair">Emergency Hose Repair</a> - 24/7 on-site service in ${cityName}</li>
+          <li><a href="/services/mobile-fabrication">Mobile Hose Fabrication</a> - Custom assemblies at your ${cityName} job site</li>
+          <li><a href="/services/diagnostics">System Diagnostics</a> - Troubleshooting for ${countyName} industries</li>
+          <li><a href="/services/cylinder-repair">Pump & Cylinder Repair</a> - Component rebuilds</li>
+          <li><a href="/services/fluid-services">Fluid Services</a> - Oil analysis and flushing</li>
+          <li><a href="/services/fleet-maintenance">Fleet Maintenance</a> - Preventive programs for ${cityName} fleets</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Industries Using ${cityName} Mobile Hydraulic Repair</h2>
+        <ul>
+          ${route.includes('bakersfield') ? '<li>Oil & Gas Operations - Kern River Oil Field, Belridge, Elk Hills</li><li>Agricultural Equipment - Almond orchards, cotton fields, harvesters</li><li>Heavy Construction - Highway 99, Grapevine corridor</li>' : ''}
+          ${route.includes('wichita') ? '<li>Aerospace Manufacturing - Aviation facilities and ground support</li><li>Agricultural Equipment - Wheat farming, combines, tractors</li><li>Heavy Construction - I-135, Kellogg Ave corridor</li>' : ''}
+          ${route.includes('lubbock') ? '<li>Cotton & Agriculture - Cotton strippers, module builders, harvest equipment</li><li>Oil & Gas Operations - Permian Basin overflow, drilling rigs</li><li>Wind Energy - Crane and turbine support</li>' : ''}
+          <li>Industrial Manufacturing - Plant hydraulic systems</li>
+          <li>Trucking & Fleet - Distribution and logistics</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Service Coverage in ${countyName}</h2>
+        <p>Our mobile hydraulic repair trucks are strategically positioned for rapid emergency response throughout ${cityName} and ${countyName}. We provide 60-minute average response times to most locations.</p>
+      </section>
+      <section>
+        <h2>Common Questions from ${cityName} Customers</h2>
+        <dl>
+          <dt>How fast can you respond in ${cityName}?</dt>
+          <dd>We maintain local staging areas for 60-minute average response times throughout ${countyName}.</dd>
+          <dt>Do you service ${route.includes('bakersfield') ? 'the oil fields' : route.includes('wichita') ? 'aerospace facilities' : 'cotton harvest equipment'}?</dt>
+          <dd>Yes, our technicians are trained and equipped for all ${cityName} industries.</dd>
+          <dt>What areas do you cover?</dt>
+          <dd>We serve ${cityName} and surrounding ${countyName} communities including nearby towns within 50 miles.</dd>
+        </dl>
+      </section>`;
+      
   } else if (route.startsWith('/blog')) {
     navSection = `
       <nav aria-label="Blog Posts">
+        <h2>Hydraulic Repair Articles</h2>
         <ul>
-          <li><a href="/blog/5-signs-hydraulic-hose-replacement">5 Signs You Need Hydraulic Hose Replacement</a></li>
-          <li><a href="/blog/how-to-choose-mobile-hydraulic-repair">How to Choose a Mobile Hydraulic Repair Service</a></li>
-          <li><a href="/blog/emergency-hydraulic-repair-guide">Emergency Hydraulic Repair Guide</a></li>
-          <li><a href="/blog/mobile-hydraulic-hose-repair-cost">Mobile Hydraulic Hose Repair Cost Guide</a></li>
-          <li><a href="/blog/can-hydraulic-hoses-be-repaired">Can Hydraulic Hoses Be Repaired?</a></li>
-          <li><a href="/blog/mobile-repair-vs-parts-store-hoses">Mobile Repair vs Parts Store Hoses</a></li>
+          <li><a href="/blog/5-signs-hydraulic-hose-replacement">5 Signs Your Hydraulic Hose Needs Replacement</a> - Learn warning signs before a blowout</li>
+          <li><a href="/blog/how-to-choose-mobile-hydraulic-repair">How to Choose a Mobile Hydraulic Repair Service</a> - Tips for hiring the right service</li>
+          <li><a href="/blog/emergency-hydraulic-repair-guide">Emergency Hydraulic Repair Guide</a> - What to do when equipment fails</li>
+          <li><a href="/blog/mobile-hydraulic-hose-repair-cost">Mobile Hydraulic Hose Repair Cost</a> - Understanding repair pricing</li>
+          <li><a href="/blog/can-hydraulic-hoses-be-repaired">Can Hydraulic Hoses Be Repaired?</a> - Temporary fixes vs replacement</li>
+          <li><a href="/blog/mobile-repair-vs-parts-store-hoses">Mobile Repair vs Parts Store Hoses</a> - Comparing your options</li>
         </ul>
       </nav>`;
+      
+    // Add expanded content for specific blog posts
+    if (route.includes('5-signs')) {
+      additionalContent = `
+        <section>
+          <h2>Key Takeaways</h2>
+          <ul>
+            <li>Inspect hoses daily for abrasion and wire exposure</li>
+            <li>Blisters on the outer cover indicate inner tube failure</li>
+            <li>Weeping fittings are an early warning sign of seal degradation</li>
+            <li>Heat and sunlight accelerate hose aging</li>
+            <li>Replace twisted or kinked hoses immediately</li>
+          </ul>
+        </section>
+        <section>
+          <h2>The 5 Warning Signs</h2>
+          <ol>
+            <li><strong>Visible Wire Reinforcement</strong> - Abrasion has worn through the outer cover</li>
+            <li><strong>Blisters or Bubbles</strong> - Oil trapped under the cover indicates failure</li>
+            <li><strong>Weeping Fittings</strong> - Oil at crimp collars means seal failure</li>
+            <li><strong>Cracked Outer Sheath</strong> - UV and heat damage causes brittleness</li>
+            <li><strong>Kinks or Twisted Routing</strong> - Improper installation reduces lifespan by 90%</li>
+          </ol>
+        </section>`;
+    }
   }
 
   return `
     <!-- SEO Static Content - Matches React rendered content -->
     <div id="seo-content" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;">
       <header>
-        <a href="/">Frontline Hydraulic Services</a>
+        <a href="/">Frontline Hydraulic Services - 24/7 Mobile Hydraulic Repair</a>
         <nav aria-label="Main Navigation">
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/locations/bakersfield">Bakersfield</a></li>
-            <li><a href="/locations/wichita">Wichita</a></li>
-            <li><a href="/locations/lubbock">Lubbock</a></li>
+            <li><a href="/locations/bakersfield">Bakersfield, CA</a></li>
+            <li><a href="/locations/wichita">Wichita, KS</a></li>
+            <li><a href="/locations/lubbock">Lubbock, TX</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
+        <p>Call <a href="tel:859-462-4673">859-462-4673</a> for 24/7 emergency service</p>
       </header>
       <main>
         <article>
           <h1>${seo.h1}</h1>
           <p>${seo.content}</p>
+          ${additionalContent}
           ${navSection}
-          <p>Call <a href="tel:859-462-4673">859-462-4673</a> for 24/7 emergency hydraulic repair service in Bakersfield, Wichita, and Lubbock.</p>
         </article>
       </main>
       <footer>
-        <p>Frontline Hydraulic Services - 24/7 Mobile Hydraulic Repair</p>
+        <p><strong>Frontline Hydraulic Services</strong> - 24/7 Mobile Hydraulic Repair Specialists</p>
+        <p>Emergency hydraulic hose repair, on-site fabrication, and equipment service.</p>
         <p>Serving Bakersfield CA, Wichita KS, and Lubbock TX</p>
-        <a href="tel:859-462-4673">859-462-4673</a>
+        <p>Call <a href="tel:859-462-4673">859-462-4673</a> for immediate dispatch</p>
+        <p>Licensed & Insured | 24/7 Emergency Service | All Equipment Types</p>
       </footer>
     </div>
   `;

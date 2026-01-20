@@ -62,7 +62,7 @@ function App() {
   const HomePageWithModal: React.FC = () => (
     <>
       <SeoHead
-        title="24/7 Mobile Hydraulic Repair in Bakersfield, CA"
+        title="Mobile Hydraulic Hose Repair Bakersfield, Wichita & Lubbock | 24/7 Emergency Service"
         description="Emergency hydraulic hose repair in Bakersfield. Fast mobile service, certified techs, and 24/7 dispatch. Call now for immediate response."
         canonicalUrl="https://emergencyhydraulics.com/"
         type="website"
@@ -87,7 +87,7 @@ function App() {
   const LayoutWithModal: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <>
       <Header onOpenContact={openModal} />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer />
       <ContactModal isOpen={isContactModalOpen} onClose={closeModal} />
       <FloatingCallButton />
