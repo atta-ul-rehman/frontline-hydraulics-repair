@@ -417,7 +417,7 @@ export const cylinderRepairData: ServicePageData = {
     title: "Hydraulic Pump & Cylinder Repair",
     seoTitle: "Hydraulic Pump & Cylinder Repair | Mobile Rebuilds",
     seoDesc: "Mobile hydraulic pump and cylinder repair in Bakersfield, Wichita, and Lubbock. On-site rebuilds and seal replacement. Save on OEM costs.",
-    heroImage: "https://images.unsplash.com/photo-1581093583449-ed2521344530?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
+    heroImage: "https://images.unsplash.com/photo-1690356107685-3725367f6f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Hydraulic cylinder rebuild and seal repair at your site or in our facility. We stock OEM-equivalent rods, seals, and buckets for fast same-day restoration.",
     description: {
         heading: "Mobile & Shop Hydraulic Cylinder Repair Service",
@@ -606,7 +606,7 @@ export const industrialData: ServicePageData = {
     title: "Industrial Hydraulic Services",
     seoTitle: "Industrial Hydraulic Services | Plant Maintenance",
     seoDesc: "Hydraulic repair for factories and plants in Bakersfield, Wichita, and Lubbock. Press cylinders, HPUs, and conveyor systems. OSHA-compliant service.",
-    heroImage: "https://images.unsplash.com/photo-1565435967962-d2279c6b5420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
+    heroImage: "https://images.unsplash.com/photo-1697281679290-ad7be1b10682?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp",
     subheading: "Specialized hydraulic repair for injection presses, HPUs, and conveyor systems. OSHA-compliant service with on-site troubleshooting in Bakersfield, Wichita, and Lubbock.",
     description: {
         heading: "Industrial Plant Hydraulic Repair & Maintenance",
