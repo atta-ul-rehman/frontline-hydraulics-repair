@@ -66,7 +66,7 @@ function App() {
       <SeoHead
         title="Mobile Hydraulic Hose Repair Bakersfield, Wichita & Lubbock | 24/7 Emergency Service"
         description="Emergency hydraulic hose repair in Bakersfield. Fast mobile service, certified techs, and 24/7 dispatch. Call now for immediate response."
-        canonicalUrl="https://emergencyhydraulics.com/"
+        canonicalUrl="https://emergencyhydraulics.com"
         type="website"
       />
       <Hero onOpenContact={openModal} />
