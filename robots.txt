@@ -7,6 +7,9 @@ Sitemap: https://emergencyhydraulics.com/sitemap.xml
 # Host
 Host: https://emergencyhydraulics.com
 
+# Disallow all URLs with trailing slashes (canonical URLs have no trailing slash)
+Disallow: /*/$
+
 # Disallow admin/utility pages
 Disallow: /admin/
 Disallow: /thank-you/
