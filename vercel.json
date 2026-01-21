@@ -11,11 +11,6 @@
       "source": "/services/pump-cylinder-repair/",
       "destination": "/services/cylinder-repair",
       "permanent": true
-    },
-    {
-      "source": "/:path*/",
-      "destination": "/:path*",
-      "permanent": true
     }
   ],
   "rewrites": [
