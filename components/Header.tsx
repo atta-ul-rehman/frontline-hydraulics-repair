@@ -10,6 +10,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
+  const [isToolsDropdownOpen, setIsToolsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     setIsMenuOpen(false);
     setIsServicesDropdownOpen(false);
     setIsLocationsDropdownOpen(false);
+    setIsToolsDropdownOpen(false);
   };
 
   return (
@@ -129,14 +131,41 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             >
               About
             </Link>
-            
-            <Link 
-              to="/contact"
-              onClick={handleNavClick}
-              className={`font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname === '/contact' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
+
+            {/* Tools Dropdown */}
+            <div className="relative group h-full flex items-center"
+                onMouseEnter={() => setIsToolsDropdownOpen(true)}
+                onMouseLeave={() => setIsToolsDropdownOpen(false)}
             >
-              Contact
-            </Link>
+                <button 
+                  className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors ${location.pathname.startsWith('/tools') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}
+                >
+                  Tools <ChevronDown className="w-4 h-4" />
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 w-72 bg-white shadow-xl border-t-4 border-brand-orange transform transition-all duration-200 origin-top ${isToolsDropdownOpen ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}>
+                    <div className="py-2">
+                        <Link to="/tools/excavator-parts-diagram" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/tools/excavator-parts-diagram' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>
+                          <span className="flex items-center gap-2">
+                            <span className="text-lg">🔧</span>
+                            Excavator Parts Diagram
+                          </span>
+                          <span className="text-xs text-gray-500 font-normal block mt-1">Interactive parts identification tool</span>
+                        </Link>
+                        <Link to="/tools/hydraulic-hose-dash-size-calculator" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/tools/hydraulic-hose-dash-size-calculator' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>
+                          <span className="flex items-center gap-2">
+                            <span className="text-lg">📏</span>
+                            Hose Dash Size Calculator
+                          </span>
+                          <span className="text-xs text-gray-500 font-normal block mt-1">Convert dash sizes, PSI to Bar</span>
+                        </Link>
+                        <div className="px-6 py-3 text-xs text-gray-400 bg-gray-50">
+                          More tools coming soon...
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div className="flex items-center gap-4 pl-4 border-l border-gray-200">
                 <div className={`text-right hidden xl:block transition-opacity duration-300 ${isScrolled ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100'}`}>
@@ -220,9 +249,40 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 )}
             </div>
 
+            {/* Mobile Tools Accordion */}
+            <div className="border-b border-gray-100 pb-2">
+                <button 
+                    onClick={() => setIsToolsDropdownOpen(!isToolsDropdownOpen)}
+                    className="w-full flex justify-between items-center px-3 py-4 text-lg font-bold text-brand-navy hover:text-brand-orange tracking-[0em] focus:ring-2 focus:ring-brand-orange focus:ring-inset rounded"
+                    aria-expanded={isToolsDropdownOpen}
+                >
+                    Tools 
+                    <ChevronDown className={`w-5 h-5 transition-transform ${isToolsDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isToolsDropdownOpen && (
+                    <div className="bg-gray-50 rounded-md mb-2 overflow-hidden">
+                        <Link to="/tools/excavator-parts-diagram" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base transition-colors border-b border-gray-100 ${location.pathname === '/tools/excavator-parts-diagram' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>
+                          <span className="flex items-center gap-2">
+                            <span>🔧</span>
+                            Excavator Parts Diagram
+                          </span>
+                        </Link>
+                        <Link to="/tools/hydraulic-hose-dash-size-calculator" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base transition-colors border-b border-gray-100 ${location.pathname === '/tools/hydraulic-hose-dash-size-calculator' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>
+                          <span className="flex items-center gap-2">
+                            <span>📏</span>
+                            Hose Dash Size Calculator
+                          </span>
+                        </Link>
+                        <div className="px-6 py-3 text-sm text-gray-400">
+                          More tools coming soon...
+                        </div>
+                    </div>
+                )}
+            </div>
+
             <Link to="/blog" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname.startsWith('/blog') ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>Blog</Link>
             <Link to="/about" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname === '/about' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>About Us</Link>
-            <Link to="/contact" onClick={handleNavClick} className={`w-full text-left block px-3 py-4 border-b border-gray-100 text-lg font-bold transition-colors ${location.pathname === '/contact' ? 'text-brand-orange font-bold' : 'text-brand-navy hover:text-brand-orange'}`}>Contact</Link>
             <button 
               onClick={() => {
                 setIsMenuOpen(false);

@@ -36,6 +36,8 @@ import Testimonials from './components/Testimonials';
 import ServiceMapPage from './components/ServiceMapPage';
 import SeoHead from './components/SeoHead';
 import TermsOfService from './components/TermsOfService';
+import ExcavatorPartsDiagram from './components/ExcavatorPartsDiagram';
+import HoseCalculator from './components/HoseCalculator';
 
 import {
   emergencyRepairData,
@@ -126,6 +128,9 @@ function App() {
               <Route path="/blog/:slug" element={<LayoutWithModal><BlogPostPage /></LayoutWithModal>} />
               {/* Terms of Service Page */}
               <Route path="/terms" element={<LayoutWithModal><TermsOfService /></LayoutWithModal>} />
+              {/* Tools Pages */}
+              <Route path="/tools/excavator-parts-diagram" element={<LayoutWithModal><ExcavatorPartsDiagram /></LayoutWithModal>} />
+              <Route path="/tools/hydraulic-hose-dash-size-calculator" element={<LayoutWithModal><HoseCalculator /></LayoutWithModal>} />
             </Routes>
           </Suspense>
         </div>

@@ -181,6 +181,22 @@ const routeSeoData = {
     keywords: 'mobile repair vs parts store, hydraulic hose options, repair service comparison, DIY vs professional',
     h1: "Mobile Hydraulic Hose Repair vs. Parts Store Hoses: What's Best When You're Down on Site?",
     content: "Should you call a mobile hose truck or pull the hose and drive to O'Reilly, NAPA, or Tractor Supply? The answer depends on one thing: how expensive an hour of downtime is for your operation. Parts counters are great when the machine is already in your yard, but mobile repair shines when equipment is stuck on a job site."
+  },
+
+  // ========== TOOLS PAGES ==========
+  '/tools/excavator-parts-diagram': {
+    title: 'Interactive Excavator Parts Diagram | Identify All Components | Free Tool',
+    description: 'Free interactive excavator parts diagram showing 35+ components with names, functions, and common issues. Click any part for details. Perfect for operators and mechanics.',
+    keywords: 'excavator parts diagram, excavator parts, parts of excavator, excavator components, excavator arm parts, excavator bucket parts, hydraulic excavator parts, mini excavator parts diagram, excavator terminology',
+    h1: 'Interactive Excavator Parts Diagram: Complete Visual Guide',
+    content: 'Identify any excavator component instantly with our free interactive parts diagram. Click on the boom, stick, bucket, cylinders, tracks, or hydraulic components to see detailed information including part names, functions, common issues, and maintenance tips. This comprehensive excavator parts identification tool covers 35+ components across upper structure, arm assembly, undercarriage, and hydraulic system categories. Perfect for operators, mechanics, and fleet managers troubleshooting equipment or ordering parts. Learn excavator terminology and understand how hydraulic excavator parts work together. Need hydraulic excavator repair? Our mobile technicians are available 24/7.'
+  },
+  '/tools/hydraulic-hose-dash-size-calculator': {
+    title: 'Hydraulic Hose Dash Size Calculator | Convert Dash Numbers to Inches/MM | Free Tool',
+    description: 'Free hydraulic hose dash size calculator. Convert dash sizes (-4 to -48) to inches and millimeters. Includes PSI to Bar converter, sizing wizard, and complete reference chart.',
+    keywords: 'hydraulic hose dash size, dash size chart, hose size calculator, -4 hose size, -6 hose size, -8 hose size, hydraulic hose ID, hose dash number, SAE dash size, hydraulic fitting size, PSI to Bar converter',
+    h1: 'Hydraulic Hose Dash Size Calculator & Conversion Chart',
+    content: 'Convert hydraulic hose dash sizes instantly with our free calculator. Dash sizes like -4, -6, -8, and -12 represent hose inner diameter in 1/16" increments. Use our interactive converter to find exact measurements in inches, millimeters, and fractional equivalents. Features include: Dash Size Converter with quick-select buttons, PSI/Bar/MPa Pressure Converter, Interactive Sizing Wizard for equipment-specific recommendations, and Complete Reference Chart with 14 dash sizes from -2 to -48. Perfect for hydraulic technicians, equipment operators, and mechanics ordering replacement hoses. Need hydraulic hose repair or custom fabrication? Frontline mobile technicians are available 24/7.'
   }
 };
 
@@ -366,6 +382,49 @@ function generateStaticContent(seo, route) {
             <li><strong>Cracked Outer Sheath</strong> - UV and heat damage causes brittleness</li>
             <li><strong>Kinks or Twisted Routing</strong> - Improper installation reduces lifespan by 90%</li>
           </ol>
+        </section>`;
+    }
+  } else if (route.startsWith('/tools/')) {
+    navSection = `
+      <nav aria-label="Tools and Resources">
+        <h2>Equipment Resources</h2>
+        <ul>
+          <li><a href="/tools/excavator-parts-diagram">Interactive Excavator Parts Diagram</a> - Identify all excavator components</li>
+          <li><a href="/services">Our Services</a> - Hydraulic repair services</li>
+          <li><a href="/blog">Blog</a> - Hydraulic repair guides and tips</li>
+        </ul>
+      </nav>`;
+    
+    if (route.includes('excavator-parts-diagram')) {
+      additionalContent = `
+        <section>
+          <h2>Excavator Parts Categories</h2>
+          <ul>
+            <li><strong>Upper Structure</strong> - Cab, engine compartment, counterweight, slew ring</li>
+            <li><strong>Arm Assembly</strong> - Boom, stick, bucket, cylinders, linkage</li>
+            <li><strong>Undercarriage</strong> - Track frame, shoes, chain, sprocket, idler, rollers, final drive</li>
+            <li><strong>Hydraulic System</strong> - Pump, control valve, tank, hoses, filters</li>
+          </ul>
+        </section>
+        <section>
+          <h2>How to Use This Tool</h2>
+          <p>Click or tap any part of the excavator diagram to see detailed information including the part name, function, common issues, and maintenance tips. Use the search bar to find parts by name or filter by category.</p>
+        </section>
+        <section>
+          <h2>Common Excavator Parts Names</h2>
+          <dl>
+            <dt>Boom</dt><dd>Main arm connecting to excavator body - provides vertical lift</dd>
+            <dt>Stick</dt><dd>Also called dipper arm - connects boom to bucket</dd>
+            <dt>Bucket</dt><dd>Attachment for digging and moving material</dd>
+            <dt>Slew Ring</dt><dd>Bearing allowing 360-degree rotation of upper structure</dd>
+            <dt>Final Drive</dt><dd>Planetary gear reduction powering tracks</dd>
+            <dt>Hydraulic Pump</dt><dd>Converts engine power to hydraulic flow</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Need Excavator Hydraulic Repair?</h2>
+          <p>Our mobile technicians repair hydraulic excavator systems on-site 24/7. Cylinder leaks, hose failures, pump problems - we fix it where it sits.</p>
+          <p><a href="tel:859-462-4673">Call 859-462-4673</a> for emergency excavator repair.</p>
         </section>`;
     }
   }

@@ -6,12 +6,27 @@ import SeoHead from './SeoHead';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
+// Dynamically load Leaflet CSS only when this component mounts
+const loadLeafletCSS = () => {
+  if (typeof document !== 'undefined' && !document.querySelector('link[href*="leaflet.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+  }
+};
+
 interface LocationPageProps {
   data: LocationPageData;
 }
 
 const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  // Load Leaflet CSS on mount
+  useEffect(() => {
+    loadLeafletCSS();
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);

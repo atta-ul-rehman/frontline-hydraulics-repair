@@ -7,6 +7,15 @@ import { Link } from 'react-router-dom';
 import SeoHead from './SeoHead';
 import L from 'leaflet';
 
+// Dynamically load Leaflet CSS only when this component mounts
+const loadLeafletCSS = () => {
+  if (typeof document !== 'undefined' && !document.querySelector('link[href*="leaflet.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+  }
+};
 
 // Fix for default marker icons in Leaflet with Webpack/React
 const locations = [
@@ -42,6 +51,7 @@ const ServiceMapPage: React.FC = ({  }) => {
   // This only runs in the browser, not during the Vercel build
   useEffect(() => {
     setIsClient(true);
+    loadLeafletCSS(); // Load Leaflet CSS only when this component mounts
   }, []);
 
   // Create icon inside component or protected by window check

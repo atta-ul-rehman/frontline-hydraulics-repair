@@ -174,48 +174,101 @@ button {
 /* text-xs */
 
 /* Desktop Defaults (md breakpoint approx 768px) */
-@media (min-width: 768px) {
+/* @media (min-width: 1024px) {
   h1 {
     font-size: 3.75rem;
   }
 
-  /* text-6xl */
   h2 {
     font-size: 3rem;
   }
 
-  /* text-5xl */
   h3 {
     font-size: 2.25rem;
   }
 
-  /* text-4xl */
+  
   h4 {
     font-size: 1.875rem;
   }
 
-  /* text-3xl */
+  /* text-3xl /
   h5 {
     font-size: 1.5rem;
   }
-
-  /* text-2xl */
+  /* text-2xl /
   h6 {
     font-size: 1.25rem;
   }
 
-  /* text-xl */
+  /* text-xl /
   p {
     font-size: 1.125rem;
   }
 
   /* text-lg */
 
-  /* text-base */
+  /* text-base /
   button {
     font-size: 0.875rem;
   }
 
-  /* text-sm */
+  /* text-sm /
+} */
 }
+
+/* Modal Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-backdrop {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+  animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+/* Custom Scrollbar - Brand Blue */
+.modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1f2937 0%, #374151 100%);
+  border-radius: 10px;
+  border: 2px solid #f1f5f9;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+}
+
+/* Firefox scrollbar */
+.modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1f2937 #f1f5f9;
 }

@@ -12,7 +12,9 @@
       '/services/diagnostics', '/services/cylinder-repair',
       '/services/fluid-services', '/services/fleet-maintenance',
       '/services/industrial-plant-service', '/services/heavy-equipment-repair',
-      '/locations/bakersfield', '/locations/wichita', '/locations/lubbock'
+      '/locations/bakersfield', '/locations/wichita', '/locations/lubbock',
+      '/tools/excavator-parts-diagram',
+      '/tools/hydraulic-hose-dash-size-calculator'
     ];
 
     try {
