@@ -77,6 +77,15 @@ const SeoHead: React.FC<SeoHeadProps> = ({
 
   const finalSchema = schema ? { ...defaultSchema, ...schema } : defaultSchema;
 
+  // WebSite Schema for Google Site Name Display
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Frontline Hydraulic Services",
+    "alternateName": ["Frontline Hydraulics", "Emergency Hydraulics"],
+    "url": "https://emergencyhydraulics.com"
+  };
+
   // Breadcrumb Schema Generator
   let breadcrumbSchema = null;
   if (breadcrumbs && breadcrumbs.length > 0) {
@@ -97,6 +106,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
+      <meta name="application-name" content={siteName} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       
@@ -125,6 +135,7 @@ const SeoHead: React.FC<SeoHeadProps> = ({
       <meta http-equiv="content-language" content="en-US" />
 
       {/* Structured Data (JSON-LD) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(finalSchema) }} />
       {breadcrumbSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
