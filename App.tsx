@@ -38,6 +38,7 @@ import SeoHead from './components/SeoHead';
 import TermsOfService from './components/TermsOfService';
 import ExcavatorPartsDiagram from './components/ExcavatorPartsDiagram';
 import HoseCalculator from './components/HoseCalculator';
+import ORingCalculator from './components/ORingCalculator';
 
 import {
   emergencyRepairData,
@@ -131,6 +132,7 @@ function App() {
               {/* Tools Pages */}
               <Route path="/tools/excavator-parts-diagram" element={<LayoutWithModal><ExcavatorPartsDiagram /></LayoutWithModal>} />
               <Route path="/tools/hydraulic-hose-dash-size-calculator" element={<LayoutWithModal><HoseCalculator /></LayoutWithModal>} />
+              <Route path="/tools/o-ring-dash-size-chart" element={<LayoutWithModal><ORingCalculator /></LayoutWithModal>} />
             </Routes>
           </Suspense>
         </div>

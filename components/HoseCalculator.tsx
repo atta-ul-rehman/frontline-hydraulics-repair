@@ -14,6 +14,7 @@ import {
   conversions, 
   recommendDashSize,
   faqData,
+  dnToDashData,
   HoseDashSize,
   getDashSizeByNumber
 } from '../data/hydraulicHoseData';
@@ -231,7 +232,7 @@ const HoseCalculator: React.FC = () => {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Free hydraulic hose dash size calculator and conversion tool. Convert dash sizes to inches/mm, calculate flow rates, and find the right hose size.",
+    "description": "Free hydraulic hose dash size chart and calculator. Convert dash sizes to inches or mm, find dash 4, dash 6, dash 8, dash 12, dash 16, dash 24, dash 32, dash 40, and dash 48 hose sizes. Includes dash size conversion chart and PSI to Bar converter.",
     "url": "https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator",
     "provider": {
       "@type": "Organization",
@@ -240,8 +241,11 @@ const HoseCalculator: React.FC = () => {
     },
     "featureList": [
       "Dash size to inch/mm conversion",
+      "Hydraulic hose dash size chart",
+      "Dash number size chart",
       "PSI to Bar to MPa converter",
       "Hose sizing wizard",
+      "DN to dash conversion",
       "Complete reference chart",
       "Flow rate calculator",
       "Mobile-responsive design"
@@ -261,28 +265,76 @@ const HoseCalculator: React.FC = () => {
     }))
   };
 
+  // HowTo Schema for measuring hydraulic hose
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Measure Hydraulic Hose Size",
+    "description": "Step-by-step guide to correctly measure hydraulic hose inside diameter and determine the dash size for replacement or new hose assembly.",
+    "totalTime": "PT5M",
+    "supply": [
+      { "@type": "HowToSupply", "name": "Digital calipers or measuring tape" },
+      { "@type": "HowToSupply", "name": "Clean rag" }
+    ],
+    "tool": [
+      { "@type": "HowToTool", "name": "Digital calipers (recommended)" },
+      { "@type": "HowToTool", "name": "Hose dash size chart" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Cut hose cleanly",
+        "text": "Cut the hydraulic hose cleanly to expose a fresh end, ensuring the inner tube is visible and not compressed.",
+        "url": "https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator#measure"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Measure inside diameter",
+        "text": "Using digital calipers, measure across the inner tube opening (inside diameter or ID). Do not measure the outside diameter.",
+        "url": "https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator#measure"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Convert to dash size",
+        "text": "Multiply your measurement in inches by 16 to get the dash size. For example: 0.5 inches × 16 = -8 dash size.",
+        "url": "https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator#measure"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Verify with layline",
+        "text": "Check the hose layline (printed text on hose surface) to confirm the size marking matches your measurement.",
+        "url": "https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator#measure"
+      }
+    ]
+  };
+
   return (
     <div className="bg-white">
       <Helmet>
-        <title>Hydraulic Hose Dash Size Calculator | Free PSI to Bar Converter</title>
-        <meta name="description" content="Free hydraulic hose dash size calculator. Convert dash sizes to inches/mm instantly. Includes PSI to Bar converter and complete reference chart. Mobile-friendly tool." />
-        <meta name="keywords" content="hydraulic hose dash size, hydraulic fitting size chart, hydraulic parts, PSI to Bar converter, hose size calculator, dash size chart, hydraulic hose sizing" />
+        <title>Hydraulic Hose Dash Size Chart & Calculator | Free Conversion Tool</title>
+        <meta name="description" content="Free hydraulic hose dash size chart and calculator. Convert dash sizes to inches or mm instantly. Find dash 4, dash 6, dash 8, dash 12, dash 16 sizes. Includes DN to dash conversion, PSI to Bar converter, and complete dash number size chart." />
+        <meta name="keywords" content="hose dash size chart, hydraulic hose dash size chart, dash number size chart, dash size conversion chart, dash size to inches, dash sizes to mm, dash 4 hose size, dash 6 hose size, dash 8 hose size, dash 12 hose size, dash 16 hose size, dash 24 hose size, dash 32 hose size, dash size vs DN hose, hydraulic fitting dash size, PSI to Bar converter" />
         <link rel="canonical" href="https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Hydraulic Hose Dash Size Calculator | Free Conversion Tool" />
-        <meta property="og:description" content="Convert dash sizes to inches/mm instantly. Free PSI to Bar converter and complete hydraulic hose reference chart." />
+        <meta property="og:title" content="Hydraulic Hose Dash Size Chart & Calculator | Free Tool" />
+        <meta property="og:description" content="Convert dash sizes to inches/mm instantly. Complete hydraulic hose dash size chart with DN conversion. Free PSI to Bar converter included." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hydraulic Hose Dash Size Calculator" />
-        <meta name="twitter:description" content="Free tool to convert hydraulic hose dash sizes. PSI to Bar converter included." />
+        <meta name="twitter:title" content="Hydraulic Hose Dash Size Chart & Calculator" />
+        <meta name="twitter:description" content="Free tool to convert hydraulic hose dash sizes to inches or mm. Complete dash size conversion chart." />
         
         {/* Schema */}
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 
       {/* Hero Section */}
@@ -304,15 +356,15 @@ const HoseCalculator: React.FC = () => {
             <span className="text-brand-orange">/</span>
             <span className="text-gray-300">Tools</span>
             <span className="text-brand-orange">/</span>
-            <span className="text-white">Hose Dash Size Calculator</span>
+            <span className="text-white">Hose Dash Size Chart</span>
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 tracking-wide leading-tight">
-            Hydraulic Hose <span className="text-brand-orange">Dash Size</span> Calculator
+            Hydraulic Hose <span className="text-brand-orange">Dash Size Chart</span> & Calculator
           </h1>
           <p className="text-normal sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium mb-10 leading-relaxed">
-            Convert dash sizes to inches/mm instantly. Includes PSI to Bar converter, hose sizing wizard, 
-            and complete reference chart. Free, fast, and mobile-friendly.
+            Free dash size conversion chart: convert dash to inches or mm instantly. Look up dash 4, dash 6, dash 8, dash 12, dash 16, dash 24 and more. 
+            Includes PSI to Bar converter, DN to dash reference, and complete dash number size chart.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1022,8 +1074,12 @@ const HoseCalculator: React.FC = () => {
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
                     <Ruler className="w-6 h-6 text-brand-orange" />
-                    Hydraulic Hose Size Chart: All Common Dash Sizes
+                    Hydraulic Hose Dash Size Chart: Complete Dash Number Reference
                   </h2>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Complete dash size conversion chart showing all common sizes from -2 through -48. Click any row for full specifications. 
+                    This dash number size chart includes dash 4, dash 6, dash 8, dash 12, dash 16, dash 24, dash 32, dash 40, and dash 48 hose sizes.
+                  </p>
                   
                   {/* Filters */}
                   <div className="flex flex-wrap gap-4">
@@ -1206,17 +1262,23 @@ const HoseCalculator: React.FC = () => {
                 What Is Hydraulic Hose Dash Size? (Complete Guide)
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Hydraulic hose "dash size" is the industry-standard naming system that indicates a hose's inside diameter (ID) in sixteenths of an inch. The dash number directly corresponds to this measurement—simply divide by 16 to get the ID in inches.
+                Hydraulic hose "dash size" is the industry-standard naming system that indicates a hose's inside diameter (ID) in sixteenths of an inch. 
+                The dash number directly corresponds to this measurement—simply divide by 16 to get the ID in inches. This dash size conversion chart 
+                method works for all standard sizes from dash 2 through dash 48.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                For example, a <strong>-8 dash hose</strong> has an inside diameter of 8/16 inch, which simplifies to 1/2 inch (12.7mm). A <strong>-16 dash hose</strong> has a 16/16 inch (1 inch or 25.4mm) inside diameter.
+                For example, a <strong>dash 8 hose size</strong> has an inside diameter of 8/16 inch, which simplifies to 1/2 inch (12.7mm). 
+                A <strong>dash 16 hose size</strong> has a 16/16 inch (1 inch or 25.4mm) inside diameter. Converting dash to inches is straightforward once you know the formula.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                This standardized system, established by the Society of Automotive Engineers (SAE), ensures compatibility between hoses and fittings from different manufacturers. When you know the dash size, you can quickly match hoses, adapters, and couplings across brands.
+                This standardized system, established by the Society of Automotive Engineers (SAE J517), ensures compatibility between hoses and fittings 
+                from different manufacturers. When you know the dash size, you can quickly match hoses, adapters, and hydraulic fitting dash sizes across brands like Parker, Gates, Eaton, and Aeroquip. 
+                Specifications vary by manufacturer and hose construction.
               </p>
               <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <p className="font-bold text-brand-navy mb-2">Quick Formula:</p>
+                <p className="font-bold text-brand-navy mb-2">Quick Formula for Converting Dash to Inches:</p>
                 <p className="font-mono text-lg text-brand-orange">Dash Size ÷ 16 = Inside Diameter (inches)</p>
+                <p className="text-sm text-gray-500 mt-2">For dash sizes to mm: Multiply inches result by 25.4</p>
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
@@ -1327,6 +1389,172 @@ const HoseCalculator: React.FC = () => {
         </div>
       </section>
 
+      {/* Section: Dash Size vs DN Hose (Metric Comparison) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1 bg-green-100 text-green-600 font-semibold text-sm rounded-full mb-4">METRIC CONVERSION</span>
+            <h2 className="text-2xl md:text-4xl font-heading font-black text-brand-navy mb-4">
+              Dash Size vs DN Hose: Metric Comparison Chart
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              DN (Diamètre Nominal) is the ISO 4397 metric standard for hydraulic hose sizing, representing the nominal bore in millimeters. 
+              Converting dash to DN or DN to dash is essential when working with international equipment or European specifications.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* DN to Dash Reference Table */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="bg-green-600 p-4">
+                <h3 className="font-bold text-white text-lg">DN to Dash Size Conversion Chart</h3>
+                <p className="text-green-100 text-sm">ISO 4397 nominal bore to SAE dash sizing</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-bold text-brand-navy">DN</th>
+                      <th className="px-4 py-3 text-left font-bold text-brand-navy">Dash Size</th>
+                      <th className="px-4 py-3 text-left font-bold text-brand-navy">Bore (mm)</th>
+                      <th className="px-4 py-3 text-left font-bold text-brand-navy">ID (inches)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dnToDashData.map((item, idx) => (
+                      <tr key={item.dn} className={`border-b border-gray-100 ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                        <td className="px-4 py-3 font-semibold text-green-700">DN{item.dn}</td>
+                        <td className="px-4 py-3 font-bold text-brand-navy">{item.dashSize}</td>
+                        <td className="px-4 py-3">{item.nominalBoreMm}</td>
+                        <td className="px-4 py-3">{item.approximateIdInches}"</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 bg-gray-50 text-xs text-gray-500">
+                <p>DN values per ISO 4397. Actual dimensions may vary slightly between SAE and ISO specifications.</p>
+              </div>
+            </div>
+
+            {/* DN Explanation */}
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                <h4 className="font-bold text-brand-navy text-lg mb-4">What is DN (Nominal Diameter)?</h4>
+                <p className="text-gray-600 mb-4">
+                  DN stands for "Diamètre Nominal" (French) or Nominal Diameter, defined by ISO 4397 as the metric system for identifying hose bore sizes. 
+                  Unlike dash sizes which use sixteenths of an inch, DN values represent the approximate internal bore in millimeters.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  <strong>Key difference:</strong> DN is a nominal (named) size, not an exact measurement. DN12 doesn't mean exactly 12mm—it's a classification 
+                  that corresponds to -8 dash hose with approximately 12.5-12.7mm actual bore.
+                </p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-blue-800">
+                    <strong>Tip:</strong> When ordering internationally, specify both DN and dash size to avoid confusion. 
+                    Example: "DN12 / -8 dash hydraulic hose"
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                <h4 className="font-bold text-brand-navy text-lg mb-4">Quick DN to Dash Reference</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { dn: 'DN6', dash: '-4', use: 'Small actuators' },
+                    { dn: 'DN10', dash: '-6', use: 'Auxiliary lines' },
+                    { dn: 'DN12', dash: '-8', use: 'Main circuits' },
+                    { dn: 'DN19', dash: '-12', use: 'Return lines' },
+                    { dn: 'DN25', dash: '-16', use: 'High flow' },
+                    { dn: 'DN38', dash: '-24', use: 'Suction lines' },
+                  ].map(item => (
+                    <div key={item.dn} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-semibold text-green-700">{item.dn}</span>
+                        <span className="font-bold text-brand-navy">{item.dash}</span>
+                      </div>
+                      <p className="text-xs text-gray-500">{item.use}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Hose Dash Size vs Fitting Dash Size */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-1 bg-purple-100 text-purple-600 font-semibold text-sm rounded-full mb-4">FITTING COMPATIBILITY</span>
+              <h2 className="text-2xl md:text-3xl font-heading font-black text-brand-navy mb-6">
+                Hose Dash Size vs Fitting Dash Size: What's the Difference?
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Hydraulic hose dash size and hydraulic fitting dash size are designed to match—a -8 hose requires -8 fittings for proper assembly. 
+                The dash number on a fitting indicates which hose size it accepts, not the thread size or port connection dimensions.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>When they always match:</strong> Crimp fittings, reusable fittings, and quick-disconnect couplings are dash-sized to the hose they attach to. 
+                A -10 crimp stem always fits a -10 hose.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>When differences arise:</strong> Adapters and reducers may have different dash sizes on each end. A -8 to -6 reducer fitting connects 
+                -8 hose to a -6 port. The fitting has two dash ratings: one for each end.
+              </p>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                <p className="text-yellow-800 text-sm flex items-start gap-2">
+                  <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <span><strong>Important:</strong> JIC fitting thread sizes (7/16-20, 9/16-18, etc.) are NOT the same as dash sizes. 
+                  A -8 JIC fitting uses 3/4-16 thread. Always verify both dash size and thread specification when ordering fittings.</span>
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+              <h3 className="font-bold text-brand-navy mb-6">JIC Fitting Thread vs Dash Size Chart</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                JIC 37° flare fittings (SAE J514) have thread sizes that differ from dash sizes. Specifications vary by manufacturer and hose construction.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-white">
+                    <tr>
+                      <th className="px-3 py-2 text-left font-bold text-brand-navy">Dash Size</th>
+                      <th className="px-3 py-2 text-left font-bold text-brand-navy">Hose ID</th>
+                      <th className="px-3 py-2 text-left font-bold text-brand-navy">JIC Thread</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { dash: '-4', id: '1/4"', thread: '7/16-20' },
+                      { dash: '-6', id: '3/8"', thread: '9/16-18' },
+                      { dash: '-8', id: '1/2"', thread: '3/4-16' },
+                      { dash: '-10', id: '5/8"', thread: '7/8-14' },
+                      { dash: '-12', id: '3/4"', thread: '1-1/16-12' },
+                      { dash: '-16', id: '1"', thread: '1-5/16-12' },
+                      { dash: '-20', id: '1-1/4"', thread: '1-5/8-12' },
+                      { dash: '-24', id: '1-1/2"', thread: '1-7/8-12' },
+                    ].map((item, idx) => (
+                      <tr key={item.dash} className={`border-t border-gray-200 ${idx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                        <td className="px-3 py-2 font-bold text-brand-navy">{item.dash}</td>
+                        <td className="px-3 py-2">{item.id}</td>
+                        <td className="px-3 py-2 font-mono text-gray-600">{item.thread}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-500 mt-4">
+                Thread sizes shown are for JIC 37° flare fittings per SAE J514. Other fitting styles (ORFS, NPT, BSPP) have different thread specifications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 4: How to Measure */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1406,9 +1634,13 @@ const HoseCalculator: React.FC = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-heading font-black text-brand-navy mb-10 text-center">
-            Hydraulic Hose Sizing FAQs
+          <h2 className="text-2xl md:text-3xl font-heading font-black text-brand-navy mb-4 text-center">
+            Hydraulic Hose Dash Size FAQs
           </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+            Common questions about dash size conversion, dash sizes to mm, comparing dash vs DN hose sizing, 
+            and understanding hydraulic fitting dash sizes.
+          </p>
           <div className="space-y-4">
             {faqData.map((faq, idx) => (
               <div key={idx} className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
@@ -1461,11 +1693,31 @@ const HoseCalculator: React.FC = () => {
         </div>
       </section>
 
+      {/* Related Tools */}
+      <section className="py-12 bg-white border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-xl font-bold text-brand-navy mb-6">Related Tools</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/tools/o-ring-dash-size-chart" 
+              className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg font-semibold text-brand-navy transition-colors"
+            >
+              <Calculator className="w-4 h-4" />
+              O-Ring Dash Size Chart (AS568)
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="py-8 bg-gray-100 border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs text-gray-500 text-center leading-relaxed">
-            <strong>Disclaimer:</strong> This calculator uses industry-standard SAE J517 and ISO 4397 specifications for reference. Actual hose specifications may vary by manufacturer and hose type. Always verify with manufacturer specifications and consult a hydraulic professional for critical applications. This tool is for estimation purposes only. Frontline Hydraulic Services is not liable for hose selection errors. For critical applications, consult a hydraulic engineer. Reference data compiled from publicly available manufacturer specifications.
+            <strong>Disclaimer:</strong> This hydraulic hose dash size chart uses industry-standard SAE J517 and ISO 4397 specifications for reference. 
+            Actual hose specifications vary by manufacturer and hose construction. Outside diameter values vary by hose type (1-wire, 2-wire, spiral) 
+            and manufacturer. Always verify with manufacturer specifications from Parker, Gates, Eaton, Aeroquip, or your hose supplier. 
+            This tool is for estimation purposes only. Frontline Hydraulic Services is not liable for hose selection errors. 
+            For critical applications, consult a hydraulic engineer. Reference data compiled from publicly available manufacturer specifications.
           </p>
         </div>
       </section>

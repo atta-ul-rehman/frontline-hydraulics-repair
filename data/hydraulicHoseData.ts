@@ -498,6 +498,44 @@ export const conversions = {
   }
 };
 
+// DN (Nominal Diameter) to Dash Size Reference
+// Based on ISO 4397 standard - DN values represent nominal bore in millimeters
+export interface DNDashMapping {
+  dn: number;
+  dashSize: string;
+  dashNumber: number;
+  nominalBoreMm: number;
+  approximateIdInches: number;
+  notes: string;
+}
+
+export const dnToDashData: DNDashMapping[] = [
+  { dn: 3, dashSize: '-2', dashNumber: 2, nominalBoreMm: 3.2, approximateIdInches: 0.125, notes: 'DN3 rare, typically gauge lines' },
+  { dn: 5, dashSize: '-3', dashNumber: 3, nominalBoreMm: 5, approximateIdInches: 0.1875, notes: 'DN5 pilot circuits' },
+  { dn: 6, dashSize: '-4', dashNumber: 4, nominalBoreMm: 6.3, approximateIdInches: 0.25, notes: 'Standard small bore' },
+  { dn: 8, dashSize: '-5', dashNumber: 5, nominalBoreMm: 8, approximateIdInches: 0.3125, notes: 'DN8 less common size' },
+  { dn: 10, dashSize: '-6', dashNumber: 6, nominalBoreMm: 10, approximateIdInches: 0.375, notes: 'DN10 common auxiliary' },
+  { dn: 12, dashSize: '-8', dashNumber: 8, nominalBoreMm: 12.5, approximateIdInches: 0.5, notes: 'DN12 most common size' },
+  { dn: 16, dashSize: '-10', dashNumber: 10, nominalBoreMm: 16, approximateIdInches: 0.625, notes: 'DN16 medium flow' },
+  { dn: 19, dashSize: '-12', dashNumber: 12, nominalBoreMm: 19, approximateIdInches: 0.75, notes: 'DN19 standard industrial' },
+  { dn: 25, dashSize: '-16', dashNumber: 16, nominalBoreMm: 25, approximateIdInches: 1.0, notes: 'DN25 high flow applications' },
+  { dn: 31, dashSize: '-20', dashNumber: 20, nominalBoreMm: 31.5, approximateIdInches: 1.25, notes: 'DN31 large equipment' },
+  { dn: 38, dashSize: '-24', dashNumber: 24, nominalBoreMm: 38, approximateIdInches: 1.5, notes: 'DN38 industrial suction' },
+  { dn: 51, dashSize: '-32', dashNumber: 32, nominalBoreMm: 51, approximateIdInches: 2.0, notes: 'DN51 heavy industrial' },
+  { dn: 63, dashSize: '-40', dashNumber: 40, nominalBoreMm: 63, approximateIdInches: 2.5, notes: 'DN63 mining, marine' },
+  { dn: 76, dashSize: '-48', dashNumber: 48, nominalBoreMm: 76, approximateIdInches: 3.0, notes: 'DN76 maximum common size' }
+];
+
+// Get DN size from dash number
+export const getDnFromDash = (dashNumber: number): DNDashMapping | undefined => {
+  return dnToDashData.find(d => d.dashNumber === dashNumber);
+};
+
+// Get dash size from DN
+export const getDashFromDn = (dn: number): DNDashMapping | undefined => {
+  return dnToDashData.find(d => d.dn === dn);
+};
+
 // Recommend dash size based on flow and pressure
 export const recommendDashSize = (
   gpm: number, 
@@ -598,5 +636,41 @@ export const faqData = [
   {
     question: "What's the maximum working pressure for hydraulic hose?",
     answer: "It depends on hose size and construction type. Smaller hoses generally handle higher pressures: -4 dash 2-wire is rated to 5,800 PSI, while -16 dash 2-wire is rated to 2,500 PSI. Always select hose rated above your maximum working pressure, including pressure spikes."
+  },
+  {
+    question: "What dash size is 1 inch hydraulic hose?",
+    answer: "A 1-inch inside diameter hydraulic hose is dash size -16. The dash number equals the inside diameter in sixteenths of an inch (16/16 = 1 inch). This is a common size for high-flow main circuits on large excavators, wheel loaders, and industrial equipment requiring 40-60 GPM flow rates."
+  },
+  {
+    question: "What dash size is 3/4 hose?",
+    answer: "A 3/4-inch (0.75\") inside diameter hose is dash size -12. Calculate this by multiplying 0.75 by 16, which equals 12. The -12 dash hose is standard for main pressure and return lines on medium construction equipment, offering 22-33 GPM flow capacity at recommended velocities."
+  },
+  {
+    question: "What does dash 6 mean?",
+    answer: "Dash 6 (written as \"-6\") indicates a hydraulic hose with 6/16-inch inside diameter, which equals 3/8-inch or 9.5mm. This is a popular size for compact equipment, auxiliary hydraulic circuits, power steering systems, and small loader hydraulics requiring 5-8 GPM flow capacity."
+  },
+  {
+    question: "How do you convert dash size to mm?",
+    answer: "First convert dash to inches by dividing by 16, then multiply by 25.4 to get millimeters. For example: -8 ÷ 16 = 0.5 inches × 25.4 = 12.7mm. Alternatively, multiply the dash number directly by 1.5875 (25.4 ÷ 16). Common conversions: -4 = 6.4mm, -8 = 12.7mm, -12 = 19.1mm."
+  },
+  {
+    question: "What is dash 24 in inches?",
+    answer: "Dash 24 equals 1.5 inches (1-1/2\") inside diameter. Divide 24 by 16 to get 1.5 inches or 38.1mm. This is a large-bore hose used for pump suction lines, reservoir connections, and high-flow industrial systems requiring 90-134 GPM capacity. Specifications vary by manufacturer and hose construction."
+  },
+  {
+    question: "Are hose dash sizes universal?",
+    answer: "Yes, dash sizes are standardized per SAE J517 across manufacturers for inside diameter. A -8 hose from Parker, Gates, Eaton, or Aeroquip all have 0.5-inch ID. However, outside diameter varies by construction type (1-wire vs 2-wire vs spiral), and pressure ratings differ between manufacturers."
+  },
+  {
+    question: "What dash size is DN12?",
+    answer: "DN12 (nominal 12mm bore per ISO 4397) corresponds to dash size -8 in the SAE system. The DN number indicates nominal bore in millimeters, while dash indicates sixteenths of an inch. DN12 equals approximately 12.5mm ID, which aligns with -8 dash (0.5\" = 12.7mm)."
+  },
+  {
+    question: "What is the largest hydraulic hose dash size?",
+    answer: "The largest commonly available dash size is -48, which has a 3-inch (76.2mm) inside diameter. Some manufacturers offer -56 and -64 for specialized applications. Dash 48 hoses are used in mining equipment, marine applications, and industrial plants requiring 360-540 GPM flow capacity."
+  },
+  {
+    question: "What is the difference between hose dash size and fitting dash size?",
+    answer: "Hose dash size and fitting dash size typically match—a -8 hose uses -8 fittings. The dash number on fittings refers to the hose size they accept, not thread size. JIC fitting thread sizes are separate from dash sizing. Always verify both hose and fitting dash ratings match for proper assembly."
   }
 ];

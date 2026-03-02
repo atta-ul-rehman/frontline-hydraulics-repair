@@ -160,9 +160,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                           </span>
                           <span className="text-xs text-gray-500 font-normal block mt-1">Convert dash sizes, PSI to Bar</span>
                         </Link>
-                        <div className="px-6 py-3 text-xs text-gray-400 bg-gray-50">
-                          More tools coming soon...
-                        </div>
+                        <Link to="/tools/o-ring-dash-size-chart" onClick={handleNavClick} className={`block w-full text-left px-6 py-3 text-sm font-bold transition-colors border-b border-gray-100 ${location.pathname === '/tools/o-ring-dash-size-chart' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-orange'}`}>
+                          <span className="flex items-center gap-2">
+                            <span className="text-lg">⭕</span>
+                            O-Ring Dash Size Chart
+                          </span>
+                          <span className="text-xs text-gray-500 font-normal block mt-1">AS568 O-ring sizing reference</span>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -274,9 +278,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                             Hose Dash Size Calculator
                           </span>
                         </Link>
-                        <div className="px-6 py-3 text-sm text-gray-400">
-                          More tools coming soon...
-                        </div>
+                        <Link to="/tools/o-ring-dash-size-chart" onClick={handleNavClick} className={`w-full text-left block px-6 py-3 text-base transition-colors border-b border-gray-100 ${location.pathname === '/tools/o-ring-dash-size-chart' ? 'text-brand-orange font-bold' : 'text-gray-700 hover:bg-gray-100'}`}>
+                          <span className="flex items-center gap-2">
+                            <span>⭕</span>
+                            O-Ring Dash Size Chart
+                          </span>
+                        </Link>
                     </div>
                 )}
             </div>
