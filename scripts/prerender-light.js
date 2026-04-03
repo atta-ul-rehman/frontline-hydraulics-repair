@@ -18,9 +18,9 @@ const routeSeoData = {
   '/': {
     title: 'Mobile Hydraulic Hose Repair | 24/7 Emergency Service',
     description: '60-minute mobile hydraulic hose repair for construction, agriculture & industry. Serving Bakersfield, Wichita & Lubbock. Call 859-462-4673.',
-    keywords: 'mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Wichita, Lubbock',
+    keywords: 'emergency hydraulic hose repair near me, mobile hydraulic repair, 24 hour hydraulic hose repair near me, on-site hydraulic hose repair, hydraulic hose repair near me, Bakersfield, Wichita, Lubbock',
     h1: '24/7 Emergency Mobile Hydraulic Repair',
-    content: 'When hydraulic systems fail, every minute costs money. Frontline Hydraulic Services provides 24/7 emergency mobile hydraulic repair across Bakersfield, Wichita, and Lubbock with 60-minute average response times. Our fully-equipped service trucks bring the shop to your jobsite.'
+    content: 'When hydraulic systems fail, every minute costs money. Frontline Hydraulic Services provides 24/7 emergency mobile hydraulic repair across Bakersfield, Wichita, and Lubbock with 60-minute average response times. Our fully-equipped service trucks bring the shop to your jobsite. When you need emergency hydraulic hose repair near you, our dispatch is live 24 hours a day—nights, weekends, and holidays.'
   },
   '/about': {
     title: 'About Frontline Hydraulic Services | Mobile Repair',
@@ -55,9 +55,9 @@ const routeSeoData = {
   '/services/emergency-repair': {
     title: 'Emergency Hydraulic Hose Repair | 24/7 Mobile Service',
     description: 'Fast emergency hydraulic hose repair in Bakersfield, Wichita, and Lubbock. Mobile techs dispatched in 60 minutes. On-site hose fixes for all equipment.',
-    keywords: 'emergency hydraulic repair, hydraulic hose repair, mobile hose repair, 24/7 service',
+    keywords: 'emergency hydraulic hose repair near me, 24 hour hydraulic hose repair near me, on-site hydraulic hose repair, mobile hydraulic hose repair cost, mobile hydraulic mechanic near me, emergency hydraulic line repair',
     h1: 'Emergency Hydraulic Hose Repair',
-    content: 'When a hydraulic hose fails, every minute costs thousands. We dispatch certified mobile technicians within 60 minutes for 24/7 emergency hose repair and on-site fabrication in Bakersfield, Wichita, and Lubbock. Our mobile trucks carry thousands of fittings and hoses to fix your equipment on-site.'
+    content: 'When a hydraulic hose fails, every minute costs thousands. We dispatch certified mobile technicians within 60 minutes for 24/7 emergency hose repair and on-site fabrication in Bakersfield, Wichita, and Lubbock. Need emergency hydraulic hose repair near you? Our 24-hour dispatch line is always live. Mobile hydraulic hose repair cost for most single-hose jobs runs $150–$450 in parts and labor plus a service call fee—far less than towing to a dealer.'
   },
   '/services/mobile-fabrication': {
     title: 'Mobile Hydraulic Hose Fabrication | On-Site Service',
@@ -104,32 +104,32 @@ const routeSeoData = {
   '/services/heavy-equipment-repair': {
     title: 'Heavy Equipment Hydraulic Repair | Excavator Service',
     description: 'Mobile hydraulic repair for excavators, dozers, and loaders in Bakersfield, Wichita, and Lubbock. On-site boom cylinders, travel motors, and pumps fixed.',
-    keywords: 'heavy equipment repair, excavator hydraulics, construction equipment, loader repair',
+    keywords: 'mobile hydraulic mechanic near me, excavator hydraulic repair near me, heavy equipment hydraulic repair, hydraulic cylinder repair cost, on-site hydraulic repair open now',
     h1: 'Heavy Equipment Hydraulic Repair',
-    content: 'Heavy equipment hydraulic repair on-site without trailer fees or dealer delays. Boom cylinders, travel motors, and main pump diagnostics for Caterpillar, John Deere, Komatsu, Volvo, and Case equipment in Bakersfield, Wichita, and Lubbock.'
+    content: 'Heavy equipment hydraulic repair on-site without trailer fees or dealer delays. Searching for a mobile hydraulic mechanic near you? We are available open now, 24 hours a day. Boom cylinders, travel motors, and main pump diagnostics for Caterpillar, John Deere, Komatsu, Volvo, and Case equipment in Bakersfield, Wichita, and Lubbock. Hydraulic cylinder repair cost for on-site rebuilds is typically 40–60% less than OEM replacement.'
   },
 
   // ========== LOCATION PAGES (from data/locations.ts) ==========
   '/locations/bakersfield': {
     title: '24/7 Mobile Hydraulic Repair in Bakersfield, CA',
     description: 'Emergency hydraulic hose repair in Bakersfield and Kern County. 24/7 mobile service for oilfield, agriculture, and construction equipment.',
-    keywords: 'Bakersfield hydraulic repair, Kern County mobile service, California hydraulic hose repair, oilfield hydraulics',
+    keywords: 'emergency hydraulic hose repair near me Bakersfield, 24 hour hydraulic repair Bakersfield, mobile hydraulic repair near me open now Bakersfield, on-site hydraulic hose repair Kern County',
     h1: "Bakersfield's Mobile Hydraulic Repair Leader",
-    content: "From the pump jacks in Oildale to the almond orchards in Lamont, Bakersfield runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the Kern River Oil Field, you need immediate emergency hydraulic repair. Frontline delivers 24/7 mobile hydraulic hose repair in Bakersfield with certified technicians and on-site fabrication capability throughout Kern County."
+    content: "From the pump jacks in Oildale to the almond orchards in Lamont, Bakersfield runs on hydraulics. Need emergency hydraulic hose repair near you in Bakersfield? Our 24 hour hydraulic repair dispatch is always live—nights, weekends, harvest season, and holidays. Frontline delivers mobile hydraulic hose repair in Bakersfield with certified technicians and on-site fabrication capability throughout Kern County. Mobile hydraulic repair near you, open now."
   },
   '/locations/wichita': {
     title: '24/7 Mobile Hydraulic Repair in Wichita, KS',
     description: 'Emergency hydraulic hose repair in Wichita and Sedgwick County. 24/7 mobile service for aerospace, construction, and industrial equipment.',
-    keywords: 'Wichita hydraulic repair, Kansas mobile service, Sedgwick County hydraulic hose, aerospace hydraulics',
+    keywords: 'emergency hydraulic hose repair near me Wichita, 24 hour hydraulic repair Wichita, mobile hydraulic mechanic near me Wichita, on-site hydraulic repair Sedgwick County',
     h1: "Wichita's Industrial & Mobile Hydraulic Repair Experts",
-    content: "As the Air Capital of the World, Wichita demands precision in emergency hydraulic repair. Frontline provides expert mobile hydraulic repair and on-site fabrication in Wichita and Sedgwick County, serving aerospace manufacturing support, heavy construction, and regional industrial facilities with certified technicians."
+    content: "As the Air Capital of the World, Wichita demands precision in emergency hydraulic repair. Need emergency hydraulic hose repair near you in Wichita? Our 24 hour hydraulic repair Wichita dispatch is always live. Frontline provides expert mobile hydraulic repair and on-site fabrication in Wichita and Sedgwick County, serving aerospace manufacturing, heavy construction, and industrial facilities with certified technicians available open now, 24/7."
   },
   '/locations/lubbock': {
     title: '24/7 Mobile Hydraulic Repair in Lubbock, TX',
     description: 'Emergency hydraulic hose repair in Lubbock and South Plains. 24/7 mobile service for oilfield, cotton, and construction equipment.',
-    keywords: 'Lubbock hydraulic repair, West Texas mobile service, Lubbock County hydraulic hose, cotton equipment',
+    keywords: 'emergency hydraulic hose repair near me Lubbock, 24 hour hydraulic repair Lubbock, mobile hydraulic repair near me open now Lubbock, on-site hydraulic repair South Plains Texas',
     h1: "Hub City's Most Trusted Emergency Hydraulic Repair Service",
-    content: "The South Plains demand tough, dependable emergency mobile hydraulic repair in Lubbock. Frontline delivers 24/7 certified technicians with complete mobile fabrication labs, supporting West Texas oilfield equipment and cotton/ag machinery that power the region's economy."
+    content: "The South Plains demand tough, dependable emergency mobile hydraulic repair in Lubbock. Need 24 hour hydraulic hose repair in Lubbock? Our dispatch is live around the clock. Frontline delivers 24/7 certified technicians with complete mobile fabrication capability, supporting West Texas oilfield equipment and cotton/ag machinery throughout Lubbock County. Mobile hydraulic repair near you, open now."
   },
 
   // ========== BLOG PAGES (from data/blog.ts) ==========
@@ -164,9 +164,9 @@ const routeSeoData = {
   '/blog/mobile-hydraulic-hose-repair-cost': {
     title: 'Mobile Hydraulic Hose Repair Cost Explained',
     description: 'Understand mobile hydraulic hose repair costs, including labor, parts, and service fees. Compare with shop repair pricing to save downtime.',
-    keywords: 'hydraulic repair cost, hose repair pricing, mobile service cost, repair invoice breakdown',
+    keywords: 'mobile hydraulic hose repair cost, hydraulic hose replacement cost, hydraulic line repair cost, hydraulic cylinder repair cost near me, on-site hydraulic repair pricing',
     h1: 'Mobile Hydraulic Hose Repair Cost: What You\'re Really Paying For',
-    content: "Break down the true cost of a mobile hydraulic hose repair call—from parts and labor to downtime—and learn how to keep your bills (and idle time) under control. Most of the cost is not the hose itself, but downtime, travel, and after-hours rates."
+    content: "Break down the true cost of a mobile hydraulic hose repair call. Hydraulic hose replacement cost for most single-hose emergency repairs runs $150–$450 in parts and labor plus a service call fee. Hydraulic line repair cost depends on hose size, pressure rating, fittings, and time of day. After-hours and holiday calls carry a premium. Most mobile repairs cost far less than towing equipment to a dealer."
   },
   '/blog/can-hydraulic-hoses-be-repaired': {
     title: 'Hydraulic Hose Repair: Temporary Fixes vs Full Replacement',
@@ -178,9 +178,9 @@ const routeSeoData = {
   '/blog/mobile-repair-vs-parts-store-hoses': {
     title: 'Mobile Hydraulic Hose Repair vs Parts Store | What\'s Best?',
     description: 'Mobile hydraulic hose repair vs parts store hoses: Compare costs, quality & downtime. Learn when to call a mobile service or DIY repair.',
-    keywords: 'mobile repair vs parts store, hydraulic hose options, repair service comparison, DIY vs professional',
+    keywords: 'mobile hydraulic hose repair near me, mobile repair vs parts store, hydraulic hose repair near me open now, mobile hydraulic service near me, on-site hydraulic hose repair near me',
     h1: "Mobile Repair vs. Parts Store Hoses: What's Best On Site?",
-    content: "Should you call a mobile hose truck or pull the hose and drive to O'Reilly, NAPA, or Tractor Supply? The answer depends on one thing: how expensive an hour of downtime is for your operation. Parts counters are great when the machine is already in your yard, but mobile repair shines when equipment is stuck on a job site."
+    content: "Should you call a mobile hose truck or pull the hose and drive to O'Reilly, NAPA, or Tractor Supply? When you need mobile hydraulic hose repair near you, a local service truck staged in your city dispatches immediately—no waiting for store hours. Parts counters are great when the machine is already in your yard, but mobile repair is the right call when equipment is stuck on a job site and every hour counts."
   },
 
   // ========== TOOLS PAGES ==========
@@ -396,6 +396,10 @@ function generateStaticContent(seo, route) {
           <dd>Absolutely. As long as our truck can reach it, we can repair it on-site.</dd>
           <dt>Do you offer commercial accounts?</dt>
           <dd>Yes, we offer net-30 billing for established fleet accounts.</dd>
+          <dt>Are you open 24 hours for emergency hydraulic hose repair?</dt>
+          <dd>Yes—24 hours a day, 7 days a week, 365 days a year. Our dispatch line is always live.</dd>
+          <dt>How much does mobile hydraulic hose repair cost?</dt>
+          <dd>Most single-hose emergency repairs run $150–$450 in parts and labor plus a service call fee. After-hours and holiday calls carry a premium. Getting a mobile tech on-site almost always beats the cost of towing to a shop.</dd>
         </dl>
       </section>`;
       
@@ -448,6 +452,10 @@ function generateStaticContent(seo, route) {
           <dd>We maintain local staging areas for 60-minute average response times throughout ${countyName}.</dd>
           <dt>Do you service ${route.includes('bakersfield') ? 'the oil fields' : route.includes('wichita') ? 'aerospace facilities' : 'cotton harvest equipment'}?</dt>
           <dd>Yes, our technicians are trained and equipped for all ${cityName} industries.</dd>
+          <dt>Is there a 24 hour hydraulic repair service in ${cityName}?</dt>
+          <dd>Yes—our ${cityName} dispatch line is open 24 hours a day, 7 days a week. We route the nearest certified mobile technician to your location immediately, including nights, weekends, and holidays.</dd>
+          <dt>How much does mobile hydraulic hose repair cost in ${cityName}?</dt>
+          <dd>Most single-hose emergency repairs in the ${cityName} area run $150–$450 in parts and labor plus a service call fee. After-hours calls carry a premium. Getting a mobile tech on-site is almost always cheaper than towing your equipment to a dealer.</dd>
           <dt>What areas do you cover?</dt>
           <dd>We serve ${cityName} and surrounding ${countyName} communities including nearby towns within 50 miles.</dd>
         </dl>

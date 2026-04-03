@@ -44,10 +44,21 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   </svg> Bakersfield, Wichita & Lubbock</span>
           </h1>
           
-          {/* Subtext Optimized for: hydraulic hose repair near me, emergency hydraulic repair */}
-          <p className="text-base md:text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
-            <strong>Every minute of downtime costs you $500-2,000+.</strong> Don't wait for ETA quotes. We dispatch certified, independent technicians with full truck inventory—arriving in under 60 minutes. <span className="text-brand-orange font-bold">One call. One invoice. Back to work fast.</span>
+          {/* Subtext Optimized for: emergency hydraulic hose repair near me, 24 hour hydraulic hose repair, on-site hydraulic repair */}
+          <p className="text-base md:text-lg text-gray-200 mb-4 leading-relaxed max-w-2xl font-medium border-l-4 border-brand-orange pl-6">
+            <strong>Every minute of downtime costs you $500–2,000+.</strong> Don't wait for ETA quotes. We dispatch certified mobile technicians with full on-site fabrication trucks—arriving in under 60 minutes for <strong>emergency hydraulic hose repair near you</strong>, 24 hours a day. <span className="text-brand-orange font-bold">One call. One invoice. Back to work fast.</span>
           </p>
+
+          {/* What to do if a hydraulic hose blows — High-intent UX element */}
+          <div className="mb-8 max-w-2xl bg-brand-navy/60 border border-gray-600 rounded-lg px-5 py-4">
+            <p className="text-brand-orange font-black text-sm uppercase tracking-wider mb-2">⚡ Hose Just Blew? Do This Now:</p>
+            <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
+              <li>Shut down the engine immediately to prevent pump damage</li>
+              <li>Lower all implements to the ground to release trapped pressure</li>
+              <li>Contain the spill with dirt or any absorbent on hand</li>
+              <li><strong className="text-white">Call us — our 24-hour dispatch rolls the nearest truck to your GPS pin</strong></li>
+            </ol>
+          </div>
           
           {/* Live Status Indicator */}
           <div className="mb-8 inline-flex items-center gap-3 bg-green-600 text-white px-4 py-2 rounded-full font-bold text-sm animate-pulse">
@@ -72,15 +83,15 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </button>
           </div>
 
-          {/* Trust Indicators - Optimized for Keywords */}
+          {/* Trust Indicators - keyword rich with near-me and 24-hour signals */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-700 pt-8">
              <div className="flex items-center gap-3">
                 <div className="bg-brand-gray p-2 rounded">
                     <Clock className="w-6 h-6 text-brand-orange" />
                 </div>
                 <div>
-                    <span className="block text-white font-bold uppercase text-sm">On-Site Fast</span>
-                    <span className="block text-gray-400 text-xs">60-Min Avg Response</span>
+                    <span className="block text-white font-bold uppercase text-sm">On-Site in 60 Min</span>
+                    <span className="block text-gray-400 text-xs">24-Hour Mobile Dispatch</span>
                 </div>
              </div>
              <div className="flex items-center gap-3">
@@ -88,8 +99,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                     <ShieldCheck className="w-6 h-6 text-brand-orange" />
                 </div>
                 <div>
-                    <span className="block text-white font-bold uppercase text-sm">We Build It There</span>
-                    <span className="block text-gray-400 text-xs">Mobile Fabrication</span>
+                    <span className="block text-white font-bold uppercase text-sm">We Build It On-Site</span>
+                    <span className="block text-gray-400 text-xs">No Tow, No Shop Trip</span>
                 </div>
              </div>
              <div className="flex items-center gap-3">
@@ -98,7 +109,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 </div>
                 <div>
                     <span className="block text-white font-bold uppercase text-sm">All Equipment</span>
-                    <span className="block text-gray-400 text-xs">Cat, Deere, Komatsu</span>
+                    <span className="block text-gray-400 text-xs">Cat, Deere, Komatsu &amp; More</span>
                 </div>
              </div>
           </div>

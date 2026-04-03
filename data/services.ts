@@ -12,10 +12,10 @@ export const emergencyRepairData: ServicePageData = {
   description: {
     heading: "24/7 Emergency Hydraulic Hose Repair Service",
     paragraphs: [
-      "A main boom hose bursts mid-project, hydraulic fluid sprays everywhere, and your entire crew stops working. Every minute costs money. You don't need a call center—you need a certified mobile hydraulic repair truck on-site, right now, with equipment ready.",
-      "Frontline Hydraulic Services provides true 24/7 emergency mobile hydraulic hose repair with certified technicians across Bakersfield, CA, Wichita, KS, and Lubbock, TX. We don't work banking hours—we work your hours. Nights, weekends, holidays—if your equipment is running, we're dispatched and rolling. Our technicians are factory-trained in high-pressure system safety and efficient emergency repair.",
-      "Our mobile hydraulic repair trucks are fully equipped workshops carrying thousands of certified fittings, adapters, and high-pressure hoses (2-wire, 4-wire, 6-wire assemblies). Whether you're stuck on a roadside in Kern County, harvest field in Sedgwick County, or drilling rig in Lubbock, we arrive ready to fabricate and install on-site. No towing required, no waiting for parts.",
-      "We handle emergency hose failures for all equipment types—excavators, dump trucks, agricultural harvesters, presses. We carry Code 61/62 flanges, JIC, ORFS, BSP, and metric fittings for Caterpillar, John Deere, Komatsu, Volvo equipment. Make the call, we fix the leak, your yellow iron gets back to work."
+      "A main boom hose bursts mid-project, hydraulic fluid sprays everywhere, and your entire crew stops working. Every minute costs money. You don't need a call center—you need a certified mobile hydraulic repair truck on-site, right now, with equipment ready. When you search for <strong>emergency hydraulic hose repair near me</strong>, you need a service that actually dispatches immediately—not a call center that routes you to a voicemail.",
+      "Frontline Hydraulic Services provides true 24/7 emergency mobile hydraulic hose repair with certified technicians across Bakersfield, CA, Wichita, KS, and Lubbock, TX. We don't work banking hours—we work your hours. Nights, weekends, holidays—if your equipment is running, we're dispatched and rolling. Our technicians are factory-trained in high-pressure system safety and efficient emergency repair. Need <strong>24 hour hydraulic hose repair near you</strong>? Our dispatch line answers around the clock, every day of the year.",
+      "Our mobile hydraulic repair trucks are fully equipped workshops carrying thousands of certified fittings, adapters, and high-pressure hoses (2-wire, 4-wire, 6-wire assemblies). Whether you're stuck on a roadside in Kern County, harvest field in Sedgwick County, or drilling rig in Lubbock, we arrive ready to fabricate and install <strong>on-site hydraulic hose repair</strong>—no towing required, no waiting for parts.",
+      "We handle emergency hose failures for all equipment types—excavators, dump trucks, agricultural harvesters, presses. We carry Code 61/62 flanges, JIC, ORFS, BSP, and metric fittings for Caterpillar, John Deere, Komatsu, Volvo equipment. Make the call, we fix the leak, your yellow iron gets back to work. Wondering about <strong>mobile hydraulic hose repair cost</strong>? Most on-site repairs are completed in a single visit with a flat service call plus parts—far less than the cost of towing and dealer downtime."
     ]
   },
   features: [
@@ -159,6 +159,22 @@ export const emergencyRepairData: ServicePageData = {
     {
       question: "Do you offer net-30 billing?",
       answer: "For established fleet accounts, yes. Call our office to get your credit application started."
+    },
+    {
+      question: "How much does emergency hydraulic hose repair cost?",
+      answer: "Most single-hose emergency repairs fall in the $150–$450 range for parts and labor, plus a service call/travel fee. Cost depends on hose size, pressure rating, fittings required, and time of day. After-hours and holiday calls carry a premium. The good news: one mobile visit almost always beats the cost of towing your equipment to a shop."
+    },
+    {
+      question: "Are you open 24 hours for hydraulic hose repair?",
+      answer: "Yes—24 hours a day, 7 days a week, 365 days a year. Our dispatch line is always live. We handle nights, weekends, and holidays because hydraulic failures don't follow business hours."
+    },
+    {
+      question: "What should I do if a hydraulic hose blows on my job site?",
+      answer: "Shut down the engine immediately to prevent pump damage from running dry. Lower all implements to the ground to release trapped pressure. Contain the spill with dirt or absorbent pads. Do NOT run your hand along a pressurized hose—pinhole leaks inject fluid at lethal velocity. Then call our 24-hour dispatch with your GPS location, machine make/model, and which circuit failed."
+    },
+    {
+      question: "Can you repair hydraulic hoses on excavators, tractors, and oilfield equipment?",
+      answer: "Yes. We service all types: excavators, dozers, loaders, agricultural harvesters, cotton strippers, drilling rigs, work-over units, dump trucks, industrial presses, and forklifts. If it has a hydraulic system and our truck can reach it, we can fix it on-site."
     }
   ]
 };
@@ -320,6 +336,10 @@ export const mobileFabricationData: ServicePageData = {
     {
       question: "Do you clean the hoses?",
       answer: "Always. We projectile clean every hose to ensure no rubber dust enters your hydraulic system."
+    },
+    {
+      question: "How much does on-site hydraulic hose fabrication cost?",
+      answer: "Fabrication pricing depends on hose size, pressure rating, length, and fitting type. Most single-hose assemblies run $80–$300 in parts, plus our service call fee. Custom high-pressure spiral hose (4-wire, 6-wire) or exotic fittings cost more. We always quote before we build."
     }
   ]
 };
@@ -470,7 +490,11 @@ export const cylinderRepairData: ServicePageData = {
         { question: "Can you reseal a cylinder on the machine?", answer: "Yes! If the rod and barrel aren't damaged, we can often pull the gland and reseal it on-site to save time." },
         { question: "Is it worth rebuilding a gear pump?", answer: "Usually not. Small aluminum gear pumps are cheaper to replace. Large piston pumps are definitely worth rebuilding." },
         { question: "How long does a rebuild take?", answer: "Simple reseals take 1-2 days. If we need to re-chrome a rod, it might take a week." },
-        { question: "Do you warranty your work?", answer: "Yes, all rebuilds come with a warranty against defects in parts and workmanship." }
+        { question: "Do you warranty your work?", answer: "Yes, all rebuilds come with a warranty against defects in parts and workmanship." },
+        {
+            question: "How much does hydraulic cylinder repair cost near me?",
+            answer: "A mobile on-site cylinder reseal (replacing gland seals only, no rod damage) typically costs $200–$600 in labor plus parts—far less than a new OEM cylinder. A full shop rebuild with honing and new seals runs $400–$1,200 depending on bore size. Bent or scored rods requiring re-chroming add more. We quote before we start work."
+        }
     ]
 };
 
@@ -674,9 +698,9 @@ export const equipmentRepairData: ServicePageData = {
     description: {
         heading: "Mobile Heavy Equipment Hydraulic Repair Service",
         paragraphs: [
-            "Your excavator doesn't make money sitting on a trailer at the dealer. When a Caterpillar boom loses power or a John Deere loader bucket drifts, you need it fixed right there on the jobsite. Frontline provides on-site heavy equipment hydraulic repair for excavators, dozers, loaders, and material handlers—no downtime for hauling.",
-            "We specialize in excavator boom cylinder repair, travel motor diagnostics, final drive troubleshooting, and main pump pressure testing for Caterpillar, John Deere, Komatsu, Volvo, and Case equipment. Our certified technicians serve Bakersfield, Wichita, and Lubbock construction and mining industries with same-day heavy equipment hydraulic diagnostics and mobile repair.",
-            "Skip the trailer rental and dealer waiting lists. Our fully stocked repair trucks provide on-site hydraulic repair for boom systems, swing motors, track tensioners, steering cylinders, and attachment plumbing. Get your yellow iron back to work in hours, not weeks—and save thousands in transportation and downtime costs."
+            "Your excavator doesn't make money sitting on a trailer at the dealer. When a Caterpillar boom loses power or a John Deere loader bucket drifts, you need it fixed right there on the jobsite. Searching for <strong>mobile hydraulic mechanic near me</strong> or <strong>excavator hydraulic repair near me</strong>? Frontline provides on-site heavy equipment hydraulic repair for excavators, dozers, loaders, and material handlers—no downtime for hauling.",
+            "We specialize in excavator boom cylinder repair, travel motor diagnostics, final drive troubleshooting, and main pump pressure testing for Caterpillar, John Deere, Komatsu, Volvo, and Case equipment. Our certified technicians serve Bakersfield, Wichita, and Lubbock construction and mining industries with same-day heavy equipment hydraulic diagnostics and mobile repair. We are available open now, 24 hours a day.",
+            "Skip the trailer rental and dealer waiting lists. Our fully stocked repair trucks provide on-site hydraulic repair for boom systems, swing motors, track tensioners, steering cylinders, and attachment plumbing. Get your yellow iron back to work in hours, not weeks—and save thousands in transportation and downtime costs. The <strong>hydraulic cylinder repair cost</strong> for an on-site rebuild is typically 40–60% less than dealer replacement, and you avoid towing fees entirely."
         ]
     },
     features: [
@@ -722,7 +746,15 @@ export const equipmentRepairData: ServicePageData = {
         { question: "Can you repack an excavator cylinder on site?", answer: "Usually, yes. As long as our can get the nut loose and the rod isn't bent, we can seal it there." },
         { question: "Do you work on all brands?", answer: "Yes. Cat, Deere, Komatsu, Volvo, Case, Hitachi, Bobcat—we fix them all." },
         { question: "My loader steers hard. Can you fix it?", answer: "Yes, that's often a priority valve or pump issue. We can troubleshoot it." },
-        { question: "Do you install hammer kits?", answer: "Yes, we can plumb auxiliary hydraulics for attachments." }
+        { question: "Do you install hammer kits?", answer: "Yes, we can plumb auxiliary hydraulics for attachments." },
+        {
+            question: "How much does it cost to replace a hydraulic hose on an excavator?",
+            answer: "A single hose replacement on an excavator typically runs $150–$500 depending on hose size, pressure rating, and fitting type. Add the mobile service call fee plus any after-hours premium. Dealing with a boom or stick cylinder hose (high-pressure 4-wire or 6-wire) costs more than a return line. Getting a mobile tech on-site almost always beats the cost of trucking the excavator to a dealer."
+        },
+        {
+            question: "Are you available open now for excavator hydraulic repair?",
+            answer: "Yes—our dispatch line is live 24/7, including nights, weekends, and holidays. If your excavator is down right now, call us and we will route the nearest technician to your location immediately."
+        }
     ]
 };
 

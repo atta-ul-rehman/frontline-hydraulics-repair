@@ -14,9 +14,9 @@ heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=fo
   intro: {
     heading: "Bakersfield's Mobile Hydraulic Repair Leader",
     paragraphs: [
-      "From the pump jacks in Oildale to the almond orchards in Lamont, <strong>Bakersfield</strong> runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the <strong>Kern River Oil Field</strong>, you need immediate emergency hydraulic repair. Frontline operates as a dispatch network connecting <strong>Bakersfield</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Kern County</strong>.",
-      "Our <strong>Bakersfield</strong> technician network specializes in the unique hydraulic challenges of the San Joaquin Valley. Whether it's heavy-duty 4-wire and 6-wire hoses for <strong>Kern County</strong> oilfield applications, metric fittings for agricultural harvesters near Shafter, or complete OEM diagnostics for construction equipment on the Grapevine—we dispatch certified techs with full inventory to your <strong>Bakersfield</strong> job site.",
-      "Don't lose a production day in <strong>Bakersfield</strong>. When equipment fails in <strong>Kern County</strong>, call Frontline for fast emergency hydraulic repair and on-site hose fabrication. Our locally dispatched, certified technicians know <strong>Bakersfield</strong> and deliver 60-minute average emergency response to get your equipment back to work. <strong>One call to our Bakersfield dispatch, one invoice, fast response.</strong>"
+      "From the pump jacks in Oildale to the almond orchards in Lamont, <strong>Bakersfield</strong> runs on hydraulics. When a hose fails on Hwy 99 or a rig goes down in the <strong>Kern River Oil Field</strong>, you need immediate <strong>emergency hydraulic hose repair near you in Bakersfield</strong>. Frontline operates as a dispatch network connecting <strong>Bakersfield</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Kern County</strong>. Our <strong>24 hour hydraulic repair Bakersfield</strong> dispatch is always live—nights, weekends, harvest season, holidays.",
+      "Our <strong>Bakersfield</strong> technician network specializes in the unique hydraulic challenges of the San Joaquin Valley. Whether it's heavy-duty 4-wire and 6-wire hoses for <strong>Kern County</strong> oilfield applications, metric fittings for agricultural harvesters near Shafter, or complete OEM diagnostics for construction equipment on the Grapevine—we dispatch certified techs with full inventory to your <strong>Bakersfield</strong> job site. Need <strong>mobile hydraulic repair near you open now in Bakersfield</strong>? We're available 24/7.",
+      "Don't lose a production day in <strong>Bakersfield</strong>. When equipment fails in <strong>Kern County</strong>, call Frontline for fast <strong>on-site hydraulic hose repair</strong> and mobile fabrication. Our locally dispatched, certified technicians know <strong>Bakersfield</strong> and deliver 60-minute average emergency response to get your equipment back to work. <strong>One call to our Bakersfield dispatch, one invoice, fast response.</strong>"
     ]
   },
   localDetails: {
@@ -77,6 +77,14 @@ heroImage: "https://images.unsplash.com/photo-1700126830092-9e7c2fffee46?auto=fo
     {
       question: "Do you stock metric fittings for John Deere/Kubota?",
       answer: "Yes, we carry a full line of metric, BSP, and ORFS fittings common on modern agricultural equipment found in Kern County."
+    },
+    {
+      question: "Is there a 24 hour hydraulic repair service in Bakersfield?",
+      answer: "Yes—Frontline is available 24 hours a day, 7 days a week in the Bakersfield and Kern County area. Our dispatch line answers around the clock, including nights, weekends, and holidays. We route the nearest certified mobile technician to your location immediately."
+    },
+    {
+      question: "How much does mobile hydraulic hose repair cost in Bakersfield?",
+      answer: "Most single-hose emergency repairs in the Bakersfield area run $150–$450 in parts and labor, plus a service call/travel fee. After-hours and holiday calls carry a premium. The total is almost always less than towing your equipment to a shop and waiting for a dealer appointment."
     }
   ],
   nearbyLocations: [
@@ -98,8 +106,8 @@ export const wichitaData: LocationPageData = {
     intro: {
         heading: "Wichita's Industrial & Mobile Hydraulic Repair Experts",
         paragraphs: [
-            "As the Air Capital of the World, <strong>Wichita</strong> demands precision in emergency hydraulic repair. Frontline operates as a dispatch network connecting <strong>Wichita</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Sedgwick County</strong>. We serve aerospace manufacturing support, heavy construction, and regional industrial facilities with fast emergency response.",
-            "From manufacturing plants along Kellogg Avenue to wheat fields near Goddard and Derby, our <strong>Wichita</strong> technician network is positioned for rapid emergency response. <strong>Sedgwick County</strong> industries rely on us for industrial hydraulic systems (presses, injection molding) and OEM diagnostics for mobile heavy equipment repair. When your <strong>Wichita</strong> operation stops, we dispatch immediately.",
+            "As the Air Capital of the World, <strong>Wichita</strong> demands precision in emergency hydraulic repair. Frontline operates as a dispatch network connecting <strong>Wichita</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Sedgwick County</strong>. Need <strong>emergency hydraulic hose repair near you in Wichita</strong>? We serve aerospace manufacturing support, heavy construction, and regional industrial facilities with fast emergency response and a <strong>24 hour hydraulic repair Wichita</strong> dispatch line.",
+            "From manufacturing plants along Kellogg Avenue to wheat fields near Goddard and Derby, our <strong>Wichita</strong> technician network is positioned for rapid emergency response. <strong>Sedgwick County</strong> industries rely on us for industrial hydraulic systems (presses, injection molding) and OEM diagnostics for mobile heavy equipment repair. When your <strong>Wichita</strong> operation stops, we dispatch immediately. Looking for <strong>mobile hydraulic mechanic near you open now in Wichita</strong>? We're available 24/7.",
             "Whether you have a forklift hydraulic failure at a warehouse near I-135 or a combine stuck in a field near Valley Center, call Frontline's <strong>Wichita</strong> dispatch. We connect you with certified technicians who deliver OEM-quality hose fabrication, high-pressure assembly, and hydraulic system diagnostics directly on-site throughout <strong>Wichita</strong> and <strong>Sedgwick County</strong>. <strong>One call, one invoice, fast response.</strong>"
         ]
     },
@@ -124,7 +132,15 @@ export const wichitaData: LocationPageData = {
         { question: "Do you serve the aircraft plants?", answer: "Yes, we work with facilities across Wichita. We carry the necessary insurance and follow strict safety protocols for industrial sites." },
         { question: "How far out of Wichita do you travel?", answer: "We cover all of Sedgwick County and frequently dispatch to Newton, El Dorado, and Wellington." },
         { question: "Can you fix a forklift on site?", answer: "Yes, we repair mast hoses, tilt cylinders, and steering hydraulics for forklifts in warehouses and distribution centers." },
-        { question: "Do you offer 24/7 service?", answer: "Yes. Manufacturing lines and harvest crews don't stop at 5 PM, and neither do we." }
+        { question: "Do you offer 24/7 service?", answer: "Yes. Manufacturing lines and harvest crews don't stop at 5 PM, and neither do we." },
+        {
+            question: "Is there a 24 hour hydraulic hose repair service in Wichita?",
+            answer: "Yes—our Wichita dispatch line is open 24 hours a day, every day. We route the nearest certified mobile technician to your location regardless of what time it is. Nights, weekends, and holidays are all covered."
+        },
+        {
+            question: "How much does mobile hydraulic repair cost in Wichita?",
+            answer: "Most single-hose emergency repairs in the Wichita and Sedgwick County area run $150–$450 in parts and labor, plus a service call fee. After-hours calls carry a premium. Industrial press or HPU repairs involving diagnostic time and specialty components will be quoted separately before work begins."
+        }
     ],
     nearbyLocations: [
         { name: "Topeka, KS", id: "location-topeka" },
@@ -145,9 +161,9 @@ export const lubbockData: LocationPageData = {
     intro: {
         heading: "Hub City's Most Trusted Emergency Hydraulic Repair Service",
         paragraphs: [
-            "The South Plains demand tough, dependable emergency mobile hydraulic repair. Frontline operates as a dispatch network connecting <strong>Lubbock</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Lubbock County</strong> and the South Plains. We support West Texas oilfield equipment and cotton/ag machinery that power the region's economy.",
-            "Our <strong>Lubbock</strong> technician network is a familiar presence on Loop 289 and farm roads to Idalou and Slaton. During cotton harvest season, a blown stripper hose is a disaster—that's why <strong>Lubbock County</strong> operators rely on our 24/7 emergency dispatch with on-site hose fabrication to get back in the row fast. <strong>Lubbock</strong> agriculture can't wait, and neither do we.",
-            "We also support Permian Basin overflow, providing industrial hydraulic repair for drilling rigs and well-service fleets in the <strong>Lubbock</strong> region. From Texas Tech campus construction to the oil patch, Frontline is <strong>Lubbock's</strong> certified partner for emergency hydraulic service and OEM diagnostics throughout <strong>Lubbock County</strong>. <strong>One call to our Lubbock dispatch, one invoice, fast response.</strong>"
+            "The South Plains demand tough, dependable <strong>emergency mobile hydraulic repair in Lubbock</strong>. Frontline operates as a dispatch network connecting <strong>Lubbock</strong> businesses with certified, independent mobile hydraulic technicians throughout <strong>Lubbock County</strong> and the South Plains. We support West Texas oilfield equipment and cotton/ag machinery that power the region's economy. Our <strong>24 hour hydraulic repair Lubbock</strong> dispatch line is always live—even during harvest season and deep-night rig failures.",
+            "Our <strong>Lubbock</strong> technician network is a familiar presence on Loop 289 and farm roads to Idalou and Slaton. During cotton harvest season, a blown stripper hose is a disaster—that's why <strong>Lubbock County</strong> operators rely on our 24/7 emergency dispatch with on-site hose fabrication to get back in the row fast. Need <strong>mobile hydraulic hose repair near you open now in Lubbock</strong>? We're available around the clock. <strong>Lubbock</strong> agriculture can't wait, and neither do we.",
+            "We also support Permian Basin overflow, providing industrial hydraulic repair for drilling rigs and well-service fleets in the <strong>Lubbock</strong> region. From Texas Tech campus construction to the oil patch, Frontline is <strong>Lubbock's</strong> certified partner for <strong>emergency hydraulic service</strong> and OEM diagnostics throughout <strong>Lubbock County</strong>. <strong>One call to our Lubbock dispatch, one invoice, fast response.</strong>"
         ]
     },
     localDetails: {
@@ -171,7 +187,15 @@ export const lubbockData: LocationPageData = {
         { question: "Are you open during cotton harvest?", answer: "We never close. We know harvest is 'go time' for Lubbock. We run 24/7 shifts to keep strippers and boll buggies running." },
         { question: "Do you have John Deere stripper fittings?", answer: "Yes, we stock the specific metric and standard fittings common on JD and Case cotton equipment." },
         { question: "Do you go out to the oilfields?", answer: "Yes, we service equipment in Levelland, Brownfield, and Post. We are equipped for the oil patch." },
-        { question: "Can you build hoses for wind turbine cranes?", answer: "Yes, we can fabricate high-pressure assemblies for mobile cranes and support equipment used in wind energy." }
+        { question: "Can you build hoses for wind turbine cranes?", answer: "Yes, we can fabricate high-pressure assemblies for mobile cranes and support equipment used in wind energy." },
+        {
+            question: "Is there a 24 hour hydraulic repair service in Lubbock, TX?",
+            answer: "Yes—Frontline's Lubbock dispatch is open 24 hours a day, 7 days a week. Whether it's a cotton stripper down at 2 AM in harvest or a drilling rig failure on the weekend, we route the nearest certified mobile technician to your location immediately."
+        },
+        {
+            question: "How much does hydraulic hose repair cost in Lubbock?",
+            answer: "Most single-hose mobile repairs in the Lubbock and South Plains area run $150–$450 in parts and labor plus a service call fee. Agricultural equipment with metric or specialty cotton-specific fittings may cost slightly more. Getting a mobile tech on-site is almost always cheaper than trucking equipment to a dealer."
+        }
     ],
     nearbyLocations: [
         { name: "Amarillo, TX", id: "location-amarillo" },

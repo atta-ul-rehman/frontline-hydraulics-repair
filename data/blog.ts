@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
         intent: "Commercial",
         image: "https://emergencyhydraulics.com/assets/blog-4 image.webp",
         excerpt: "Break down the true cost of a mobile hydraulic hose repair call—from parts and labor to downtime—and learn how to keep your bills (and idle time) under control.",
-        seoTitle: "Mobile Hydraulic Hose Repair Cost Explained<",
+        seoTitle: "Mobile Hydraulic Hose Repair Cost Explained",
         seoDesc: "Understand mobile hydraulic hose repair costs, including labor, parts, and service fees. Compare with shop repair pricing to save downtime.",
         date: "Jan 20, 2024",
         readTime: "8 min read",
@@ -273,7 +273,7 @@ export const blogPosts: BlogPost[] = [
         content: [
             {
                 type: 'paragraph',
-                content: "When a main line blows on a dozer in <strong>Bakersfield</strong> or a sprayer outside <strong>Lubbock</strong>, the first question the office asks is: <em>“How much is this going to cost?”</em> The internet is full of prices for hoses and fittings, but very few breakdowns of what a real <a href='/services/emergency-hydraulic-hose-repair/' class='text-brand-orange font-bold hover:underline'>mobile hydraulic hose repair</a> actually includes."
+                 content: "When a main line blows on a dozer in <strong>Bakersfield</strong> or a sprayer outside <strong>Lubbock</strong>, the first question the office asks is: <em>\u201cHow much is this going to cost?\u201d</em> The internet is full of prices for hoses and fittings, but very few breakdowns of what a real <a href='/services/emergency-hydraulic-hose-repair/' class='text-brand-orange font-bold hover:underline'>mobile hydraulic hose repair</a> actually includes. Whether you are searching for <strong>hydraulic hose replacement cost</strong>, <strong>hydraulic line repair cost</strong>, or just want to know what a service call will run before you call dispatch - this breakdown is for you."
             },
             {
                 type: 'h2',
@@ -362,6 +362,29 @@ export const blogPosts: BlogPost[] = [
                     "<strong>Standardize fittings:</strong> Reducing the number of thread types in your fleet simplifies inventory and speeds repairs.",
                     "<strong>Plan daytime repairs when possible:</strong> If the machine can limp until the shift ends, you can often avoid after-hours rates."
                 ]
+            },
+            {
+                type: 'h2',
+                content: "6. Typical Hydraulic Hose Replacement Cost Ranges"
+            },
+            {
+                type: 'paragraph',
+                content: "To give you a ballpark for planning purposes, here are typical <strong>hydraulic hose repair and replacement cost</strong> ranges for mobile on-site service in markets like Bakersfield, Wichita, and Lubbock:"
+            },
+            {
+                type: 'ul',
+                items: [
+                    "<strong>Return/low-pressure hose (½\" or smaller):</strong> $80–$180 parts + labor, plus service call fee.",
+                    "<strong>Standard 2-wire high-pressure hose (⅜\"–¾\"):</strong> $120–$280 parts + labor.",
+                    "<strong>4-wire or 6-wire spiral hose (excavator boom/stick):</strong> $200–$500 parts + labor.",
+                    "<strong>Service call / travel fee:</strong> $75–$150 depending on distance and provider.",
+                    "<strong>After-hours premium (nights/weekends):</strong> 25–50% above standard rate.",
+                    "<strong>Towing a dead machine vs. calling mobile:</strong> Towing a 30-ton excavator can run $500–$2,000+ before any repair is done."
+                ]
+            },
+            {
+                type: 'paragraph',
+                content: "These are general benchmarks—actual <strong>hydraulic line repair cost</strong> depends on your machine, hose spec, location, and time of day. The fastest way to know your number is to call dispatch with your machine type and location."
             },
             {
                 type: 'cta',
@@ -641,8 +664,24 @@ export const blogPosts: BlogPost[] = [
                     "<strong>If safety or load-handling systems are involved:</strong> err on the side of a professional on-site repair."
                 ]
             },
+            {                type: 'h2',
+                content: "6. How to Find Reliable Mobile Hydraulic Hose Repair Near You"
+            },
             {
-                type: 'cta',
+                type: 'paragraph',
+                content: "When you search for <strong>mobile hydraulic hose repair near me</strong>, you want a service that actually dispatches from your area—not a national call center that routes you to a contractor two hours away. Here's what to look for:"
+            },
+            {
+                type: 'ul',
+                items: [
+                    "<strong>Local staging:</strong> Ask whether they have a truck based in your city or county, not just a phone number.",
+                    "<strong>24-hour availability:</strong> Real emergencies happen at night and on weekends. Confirm they answer their dispatch line after hours.",
+                    "<strong>On-site fabrication:</strong> The best mobile services build the replacement hose right at your machine. If they need to leave and come back, that's lost time.",
+                    "<strong>Equipment coverage:</strong> Verify they stock fittings for your specific make and model—especially metric, BSP, or Code 61/62 flange types if you run European or late-model equipment.",
+                    "<strong>Free estimate:</strong> Reputable services will quote labor and parts before starting work, not after."
+                ]
+            },
+            {                type: 'cta',
                 title: "Need Mobile Hydraulic Hose Repair Near You?",
                 content: "Emergency Hydraulics stages trucks in Bakersfield, Wichita, and Lubbock so you don’t have to gamble on a long parts run when every hour counts.",
                 url: "service-emergency",
