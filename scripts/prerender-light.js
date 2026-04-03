@@ -16,22 +16,22 @@ const DIST_PATH = path.join(__dirname, '..', 'dist');
 const routeSeoData = {
   // ========== MAIN PAGES ==========
   '/': {
-    title: 'Mobile Hydraulic Hose Repair in Bakersfield, Wichita & Lubbock | 24/7 Emergency Service',
-    description: 'Emergency hydraulic hose repair with 60-minute response. Mobile service for construction, agriculture, and industrial equipment. Call 859-462-4673 for immediate dispatch.',
+    title: 'Mobile Hydraulic Hose Repair | 24/7 Emergency Service',
+    description: '60-minute mobile hydraulic hose repair for construction, agriculture & industry. Serving Bakersfield, Wichita & Lubbock. Call 859-462-4673.',
     keywords: 'mobile hydraulic repair, hydraulic hose repair, emergency hydraulic service, Bakersfield, Wichita, Lubbock',
     h1: '24/7 Emergency Mobile Hydraulic Repair',
     content: 'When hydraulic systems fail, every minute costs money. Frontline Hydraulic Services provides 24/7 emergency mobile hydraulic repair across Bakersfield, Wichita, and Lubbock with 60-minute average response times. Our fully-equipped service trucks bring the shop to your jobsite.'
   },
   '/about': {
-    title: 'About Frontline Hydraulic Services | 24/7 Mobile Hydraulic Repair',
-    description: 'Learn about Frontline Hydraulic Services - your trusted partner for emergency mobile hydraulic repair in Bakersfield, Wichita, and Lubbock. Certified technicians available 24/7.',
+    title: 'About Frontline Hydraulic Services | Mobile Repair',
+    description: 'Frontline Hydraulic Services—certified mobile hydraulic repair in Bakersfield, Wichita & Lubbock. 24/7 emergency dispatch with expert technicians.',
     keywords: 'about frontline hydraulics, hydraulic repair company, mobile hydraulic service',
     h1: 'About Frontline Hydraulic Services',
     content: 'Frontline Hydraulic Services is your trusted partner for emergency mobile hydraulic repair. Our certified technicians are available 24/7 in Bakersfield, Wichita, and Lubbock, delivering fast, professional hydraulic hose repair and fabrication directly to your jobsite.'
   },
   '/contact': {
     title: 'Contact Us | Frontline Hydraulic Services | 859-462-4673',
-    description: 'Contact Frontline Hydraulic Services for emergency hydraulic repair. Available 24/7 in Bakersfield, Wichita, and Lubbock. Call 859-462-4673 or request service online.',
+    description: 'Contact Frontline for emergency hydraulic repair, 24/7 in Bakersfield, Wichita & Lubbock. Call 859-462-4673 or request service online.',
     keywords: 'contact hydraulic repair, emergency hydraulic service, dispatch technician',
     h1: 'Contact Frontline Hydraulic Services',
     content: 'Need emergency hydraulic repair? Contact Frontline Hydraulic Services 24/7. Call 859-462-4673 for immediate dispatch in Bakersfield, Wichita, and Lubbock. Our mobile technicians are ready to respond.'
@@ -44,8 +44,8 @@ const routeSeoData = {
     content: 'Frontline Hydraulic Services provides 24/7 emergency mobile hydraulic repair coverage across three major regions: Bakersfield and Kern County CA, Wichita and Sedgwick County KS, and Lubbock and West Texas. View our service map to find coverage in your area.'
   },
   '/services': {
-    title: 'Hydraulic Repair Services | Mobile Hose Repair & More | Frontline',
-    description: 'Complete hydraulic repair services including emergency hose repair, cylinder repair, system diagnostics, and fleet maintenance. 24/7 mobile service available.',
+    title: 'Hydraulic Repair Services | Frontline Hydraulics',
+    description: 'Complete hydraulic services: emergency repair, cylinder service, diagnostics & fleet maintenance. 24/7 mobile dispatch available.',
     keywords: 'hydraulic services, hose repair, cylinder repair, fleet maintenance, mobile hydraulic service',
     h1: 'Hydraulic Repair Services',
     content: 'Frontline offers comprehensive hydraulic repair services: Emergency Hose Repair, Mobile Fabrication, System Diagnostics, Cylinder Repair, Fluid Services, Fleet Maintenance, Industrial Plant Service, and Heavy Equipment Repair. All services available 24/7 with mobile dispatch.'
@@ -53,7 +53,7 @@ const routeSeoData = {
 
   // ========== SERVICE PAGES (from data/services.ts) ==========
   '/services/emergency-repair': {
-    title: '24/7 Emergency Hydraulic Hose Repair Near You | Mobile Service',
+    title: 'Emergency Hydraulic Hose Repair | 24/7 Mobile Service',
     description: 'Fast emergency hydraulic hose repair in Bakersfield, Wichita, and Lubbock. Mobile techs dispatched in 60 minutes. On-site hose fixes for all equipment.',
     keywords: 'emergency hydraulic repair, hydraulic hose repair, mobile hose repair, 24/7 service',
     h1: 'Emergency Hydraulic Hose Repair',
@@ -89,7 +89,7 @@ const routeSeoData = {
   },
   '/services/fleet-maintenance': {
     title: 'Hydraulic Fleet Maintenance | Preventive Service Plans',
-    description: 'Preventive hydraulic maintenance for fleets in Bakersfield, Wichita, and Lubbock. Scheduled inspections, filter changes, and hose tagging. Reduce breakdowns.',
+    description: 'Preventive hydraulic maintenance for fleets in Bakersfield, Wichita & Lubbock. Scheduled inspections, filter changes & hose tagging.',
     keywords: 'fleet maintenance, preventive maintenance, scheduled service, hose inspection',
     h1: 'Hydraulic Fleet Maintenance',
     content: 'Preventive hydraulic maintenance stops costly emergency repairs. Scheduled inspections, filter changes, fluid analysis, and hose tagging for fleets in Bakersfield, Wichita, and Lubbock. Reduce unplanned downtime by 60-70%.'
@@ -134,28 +134,28 @@ const routeSeoData = {
 
   // ========== BLOG PAGES (from data/blog.ts) ==========
   '/blog': {
-    title: 'Hydraulic Repair Blog | Tips, Guides & Industry News | Frontline',
+    title: 'Hydraulic Repair Blog | Tips & Industry News',
     description: 'Expert hydraulic repair tips, maintenance guides, and industry news. Learn how to extend equipment life and reduce downtime.',
     keywords: 'hydraulic blog, repair tips, maintenance guides, hydraulic hose care',
     h1: 'Hydraulic Repair Blog',
     content: 'Expert hydraulic repair tips, maintenance guides, and industry news from Frontline Hydraulic Services. Learn how to extend equipment life, prevent failures, and reduce costly downtime.'
   },
   '/blog/5-signs-hydraulic-hose-replacement': {
-    title: '5 Signs Your Hydraulic Hose Needs Replacement | Warning Signs',
-    description: 'Learn the 5 critical warning signs that your hydraulic hose needs immediate replacement. Prevent costly downtime with early detection of leaks, abrasions, and failures.',
+    title: '5 Signs Your Hydraulic Hose Needs Replacement',
+    description: 'Learn the 5 warning signs your hydraulic hose needs replacement. Prevent downtime with early detection of leaks, abrasions, and fitting failures.',
     keywords: 'hydraulic hose replacement, hose failure signs, when to replace hoses, hose inspection',
     h1: '5 Signs Your Hydraulic Hose Needs Immediate Replacement',
     content: "Don't wait for a blowout on the job site. Learn to spot the subtle warning signs—from weeping fittings to wire reinforcement exposure—that indicate your hose is about to fail. Hydraulic hose failure is the number one cause of downtime for heavy equipment."
   },
   '/blog/how-to-choose-mobile-hydraulic-repair': {
-    title: 'How to Choose Mobile Hydraulic Repair Service | Complete Guide',
-    description: 'Learn how to choose the right mobile hydraulic repair service. Compare inventory, response times, certifications & pricing for Bakersfield, Wichita & Lubbock areas.',
+    title: 'How to Choose a Mobile Hydraulic Repair Service',
+    description: 'How to choose the right mobile hydraulic repair service. Compare inventory, response time, certifications & pricing in Bakersfield, Wichita & Lubbock.',
     keywords: 'choose hydraulic repair, mobile service selection, repair service tips, hydraulic service comparison',
     h1: 'How to Choose a Mobile Hydraulic Repair Service',
     content: "Not all service trucks are created equal. When you have a dead machine blocking a haul road, you need help fast. But calling the first number on Google can lead to more downtime if the truck that shows up doesn't have the right parts. Here is how to vet a mobile hydraulic repair service."
   },
   '/blog/emergency-hydraulic-repair-guide': {
-    title: 'Emergency Hydraulic Repair Guide | What to Do When Equipment Fails',
+    title: 'Emergency Hydraulic Repair Guide | What to Do',
     description: 'Emergency hydraulic repair guide: Safety protocols, spill containment & dispatch procedures when equipment fails. Step-by-step instructions for operators.',
     keywords: 'emergency hydraulic guide, system failure, hydraulic emergency, safety procedures',
     h1: 'Emergency Hydraulic Repair: What to Do When Equipment Fails',
@@ -172,28 +172,28 @@ const routeSeoData = {
     title: 'Hydraulic Hose Repair: Temporary Fixes vs Full Replacement',
     description: 'Can hydraulic hoses be repaired? Learn when temporary fixes are safe and when full replacement is required, including field repair safety tips.',
     keywords: 'repair hydraulic hose, hose repair vs replace, hose damage assessment, temporary fixes',
-    h1: 'Can Hydraulic Hoses Be Repaired? Temporary Fixes vs. Proper On-Site Replacement',
+    h1: 'Can Hydraulic Hoses Be Repaired? Fixes vs. Full Replacement',
     content: "Field clamps, tape, and DIY fixes are all over the internet—but when is it actually safe to repair a hydraulic hose, and when must it be replaced? Most manufacturers do not recommend installing new fittings on old hose. A mobile service truck can fabricate a new assembly on-site in one visit."
   },
   '/blog/mobile-repair-vs-parts-store-hoses': {
     title: 'Mobile Hydraulic Hose Repair vs Parts Store | What\'s Best?',
     description: 'Mobile hydraulic hose repair vs parts store hoses: Compare costs, quality & downtime. Learn when to call a mobile service or DIY repair.',
     keywords: 'mobile repair vs parts store, hydraulic hose options, repair service comparison, DIY vs professional',
-    h1: "Mobile Hydraulic Hose Repair vs. Parts Store Hoses: What's Best When You're Down on Site?",
+    h1: "Mobile Repair vs. Parts Store Hoses: What's Best On Site?",
     content: "Should you call a mobile hose truck or pull the hose and drive to O'Reilly, NAPA, or Tractor Supply? The answer depends on one thing: how expensive an hour of downtime is for your operation. Parts counters are great when the machine is already in your yard, but mobile repair shines when equipment is stuck on a job site."
   },
 
   // ========== TOOLS PAGES ==========
   '/tools/excavator-parts-diagram': {
-    title: 'Interactive Excavator Parts Diagram | Identify All Components | Free Tool',
-    description: 'Free interactive excavator parts diagram showing 35+ components with names, functions, and common issues. Click any part for details. Perfect for operators and mechanics.',
+    title: 'Interactive Excavator Parts Diagram | Free Tool',
+    description: 'Free interactive excavator parts diagram—35+ components with names, functions & common issues. Click any part for details. For operators & mechanics.',
     keywords: 'excavator parts diagram, excavator parts, parts of excavator, excavator components, excavator arm parts, excavator bucket parts, hydraulic excavator parts, mini excavator parts diagram, excavator terminology',
     h1: 'Interactive Excavator Parts Diagram: Complete Visual Guide',
     content: 'Identify any excavator component instantly with our free interactive parts diagram. Click on the boom, stick, bucket, cylinders, tracks, or hydraulic components to see detailed information including part names, functions, common issues, and maintenance tips. This comprehensive excavator parts identification tool covers 35+ components across upper structure, arm assembly, undercarriage, and hydraulic system categories. Perfect for operators, mechanics, and fleet managers troubleshooting equipment or ordering parts. Learn excavator terminology and understand how hydraulic excavator parts work together. Need hydraulic excavator repair? Our mobile technicians are available 24/7.'
   },
   '/tools/hydraulic-hose-dash-size-calculator': {
-    title: 'Hydraulic Hose Dash Size Calculator | Convert Dash Numbers to Inches/MM | Free Tool',
-    description: 'Free hydraulic hose dash size calculator. Convert dash sizes (-4 to -48) to inches and millimeters. Includes PSI to Bar converter, sizing wizard, and complete reference chart.',
+    title: 'Hydraulic Hose Dash Size Chart & Calculator | Free Tool',
+    description: 'Free hydraulic hose dash size calculator. Convert dash numbers to inches & mm. Includes PSI to Bar converter, sizing wizard & reference chart.',
     keywords: 'hydraulic hose dash size, dash size chart, hose size calculator, -4 hose size, -6 hose size, -8 hose size, hydraulic hose ID, hose dash number, SAE dash size, hydraulic fitting size, PSI to Bar converter',
     h1: 'Hydraulic Hose Dash Size Calculator & Conversion Chart',
     content: 'Convert hydraulic hose dash sizes instantly with our free calculator. Dash sizes like -4, -6, -8, and -12 represent hose inner diameter in 1/16" increments. Use our interactive converter to find exact measurements in inches, millimeters, and fractional equivalents. Features include: Dash Size Converter with quick-select buttons, PSI/Bar/MPa Pressure Converter, Interactive Sizing Wizard for equipment-specific recommendations, and Complete Reference Chart with 14 dash sizes from -2 to -48. Perfect for hydraulic technicians, equipment operators, and mechanics ordering replacement hoses. Need hydraulic hose repair or custom fabrication? Frontline mobile technicians are available 24/7.'
@@ -236,7 +236,114 @@ function generateStaticContent(seo, route) {
   let navSection = '';
   let additionalContent = '';
   
-  if (route.startsWith('/services/')) {
+  if (route === '/') {
+    additionalContent = `
+      <section>
+        <h2>24/7 Mobile Hydraulic Repair Services</h2>
+        <ul>
+          <li><a href="/services/emergency-repair">Emergency Hose Repair</a> - On-site hydraulic hose replacement within 60 minutes</li>
+          <li><a href="/services/mobile-fabrication">Mobile Fabrication</a> - Custom hose assemblies built at your job site</li>
+          <li><a href="/services/diagnostics">System Diagnostics</a> - Pressure testing and root cause analysis</li>
+          <li><a href="/services/cylinder-repair">Cylinder Repair</a> - Pump and cylinder rebuilds on-site or in-shop</li>
+          <li><a href="/services/fluid-services">Fluid Services</a> - Oil flushing, filtration, and contamination control</li>
+          <li><a href="/services/fleet-maintenance">Fleet Maintenance</a> - Scheduled preventive hydraulic programs</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Why Choose Frontline Hydraulic Services</h2>
+        <ul>
+          <li><strong>60-Minute Average Response</strong> - Fastest dispatch in Bakersfield, Wichita, and Lubbock</li>
+          <li><strong>Fully-Stocked Mobile Trucks</strong> - Thousands of fittings, hoses, and adapters ready</li>
+          <li><strong>Certified Technicians</strong> - IFPS-certified field techs with factory training</li>
+          <li><strong>All Equipment Brands</strong> - Cat, Deere, Komatsu, Volvo, Case, and more</li>
+          <li><strong>No Towing Required</strong> - We fabricate and install on-site</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Our Service Areas</h2>
+        <ul>
+          <li><a href="/locations/bakersfield">Bakersfield, CA</a> - Serving Kern County, oilfield, and agriculture</li>
+          <li><a href="/locations/wichita">Wichita, KS</a> - Serving Sedgwick County, aerospace, and construction</li>
+          <li><a href="/locations/lubbock">Lubbock, TX</a> - Serving South Plains, cotton harvest, and oilfield</li>
+        </ul>
+      </section>`;
+
+  } else if (route === '/about') {
+    additionalContent = `
+      <section>
+        <h2>About Our Mobile Hydraulic Network</h2>
+        <p>Frontline Hydraulic Services operates a certified dispatch network connecting businesses with independent mobile hydraulic technicians across Bakersfield, Wichita, and Lubbock. Our technicians are IFPS-certified and factory-trained by Parker Hannifin and Gates Corporation.</p>
+      </section>
+      <section>
+        <h2>Our Service Locations</h2>
+        <ul>
+          <li><a href="/locations/bakersfield">Bakersfield, CA</a> - Kern County and Central Valley</li>
+          <li><a href="/locations/wichita">Wichita, KS</a> - Sedgwick County and South Central Kansas</li>
+          <li><a href="/locations/lubbock">Lubbock, TX</a> - South Plains and West Texas</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Certifications & Industry Standards</h2>
+        <ul>
+          <li>IFPS Certified Hydraulic Specialist (CHS)</li>
+          <li>Parker Hannifin Factory Training</li>
+          <li>Gates Corporation Certified Assembly</li>
+          <li>SAE J517 Hose Standards Compliant</li>
+          <li>OSHA 30 Safety Certified Technicians</li>
+        </ul>
+      </section>`;
+
+  } else if (route === '/contact') {
+    additionalContent = `
+      <section>
+        <h2>Emergency Hydraulic Service Request</h2>
+        <p>For immediate dispatch, call <a href="tel:859-462-4673">859-462-4673</a>. Our dispatcher routes the nearest certified technician to your location 24 hours a day, 7 days a week, including nights, weekends, and holidays.</p>
+      </section>
+      <section>
+        <h2>Service Locations & Dispatch Centers</h2>
+        <ul>
+          <li><a href="/locations/bakersfield">Bakersfield, CA</a> - Kern County dispatch, 60-min response</li>
+          <li><a href="/locations/wichita">Wichita, KS</a> - Sedgwick County dispatch, 60-min response</li>
+          <li><a href="/locations/lubbock">Lubbock, TX</a> - South Plains dispatch, 60-min response</li>
+        </ul>
+      </section>`;
+
+  } else if (route === '/service-map') {
+    additionalContent = `
+      <section>
+        <h2>Emergency Service Zones</h2>
+        <ul>
+          <li><strong>Bakersfield, CA</strong> - Kern County, Central Valley, Highway 99 corridor</li>
+          <li><strong>Wichita, KS</strong> - Sedgwick County, South Central Kansas, I-135 corridor</li>
+          <li><strong>Lubbock, TX</strong> - South Plains, West Texas, Permian Basin overflow</li>
+        </ul>
+      </section>
+      <section>
+        <h2>60-Minute Response Coverage Areas</h2>
+        <p>Our mobile technicians are staged for 60-minute average response times throughout each service zone. Coverage extends approximately 50 miles from each dispatch center to surrounding counties.</p>
+      </section>`;
+
+  } else if (route === '/services') {
+    additionalContent = `
+      <section>
+        <h2>All Hydraulic Repair Services</h2>
+        <ul>
+          <li><a href="/services/emergency-repair">Emergency Hose Repair</a> - 24/7 on-site hydraulic hose replacement</li>
+          <li><a href="/services/mobile-fabrication">Mobile Fabrication</a> - Custom hose assemblies at your job site</li>
+          <li><a href="/services/diagnostics">System Diagnostics</a> - Hydraulic troubleshooting and pressure testing</li>
+          <li><a href="/services/cylinder-repair">Cylinder Repair</a> - Pump and cylinder rebuilds</li>
+          <li><a href="/services/fluid-services">Fluid Services</a> - Oil flushing and filtration</li>
+          <li><a href="/services/fleet-maintenance">Fleet Maintenance</a> - Preventive maintenance programs</li>
+          <li><a href="/services/industrial-plant-service">Industrial Plant Service</a> - Manufacturing and plant hydraulics</li>
+          <li><a href="/services/heavy-equipment-repair">Heavy Equipment Repair</a> - Construction and mining equipment</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Emergency Hydraulic Response Available 24/7</h2>
+        <p>Every service we offer is available 24 hours a day, 7 days a week—including nights, weekends, and holidays. One call dispatches a fully stocked mobile hydraulic repair truck to your location.</p>
+      </section>`;
+
+  } else if (route.startsWith('/services/')) {
     navSection = `
       <nav aria-label="Services">
         <h2>Our Hydraulic Services</h2>
@@ -266,7 +373,7 @@ function generateStaticContent(seo, route) {
         </ul>
       </section>
       <section>
-        <h2>Industries We Serve</h2>
+        <h2>Industries Using ${seo.h1}</h2>
         <ul>
           <li>Construction & Excavation</li>
           <li>Oil & Gas Operations</li>

@@ -195,7 +195,7 @@ const ExcavatorPartsDiagram: React.FC = () => {
   return (
     <div className="bg-white">
       <Helmet>
-        <title>Interactive Excavator Parts Diagram | Identify All Components | Free Tool</title>
+        <title>Interactive Excavator Parts Diagram | Free Tool</title>
         <meta name="description" content="Free interactive excavator parts diagram showing 35+ components with names, functions, and common issues. Click any part for details. Perfect for operators and mechanics." />
         <meta name="keywords" content="excavator parts diagram, excavator parts, parts of excavator, excavator components, excavator arm parts, excavator bucket parts, hydraulic excavator parts, mini excavator parts diagram" />
         <link rel="canonical" href="https://emergencyhydraulics.com/tools/excavator-parts-diagram" />

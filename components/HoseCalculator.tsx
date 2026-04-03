@@ -315,7 +315,7 @@ const HoseCalculator: React.FC = () => {
   return (
     <div className="bg-white">
       <Helmet>
-        <title>Hydraulic Hose Dash Size Chart & Calculator | Free Conversion Tool</title>
+        <title>Hydraulic Hose Dash Size Chart & Calculator | Free Tool</title>
         <meta name="description" content="Free hydraulic hose dash size chart and calculator. Convert dash sizes to inches or mm instantly. Find dash 4, dash 6, dash 8, dash 12, dash 16 sizes. Includes DN to dash conversion, PSI to Bar converter, and complete dash number size chart." />
         <meta name="keywords" content="hose dash size chart, hydraulic hose dash size chart, dash number size chart, dash size conversion chart, dash size to inches, dash sizes to mm, dash 4 hose size, dash 6 hose size, dash 8 hose size, dash 12 hose size, dash 16 hose size, dash 24 hose size, dash 32 hose size, dash size vs DN hose, hydraulic fitting dash size, PSI to Bar converter" />
         <link rel="canonical" href="https://emergencyhydraulics.com/tools/hydraulic-hose-dash-size-calculator" />

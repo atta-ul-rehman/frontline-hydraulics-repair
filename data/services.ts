@@ -5,7 +5,7 @@ import { ServicePageData } from '../types';
 export const emergencyRepairData: ServicePageData = {
   id: 'service-emergency-repair',   // matches /services/emergency-repair
   title: "Emergency Hydraulic Hose Repair",
-  seoTitle: "24/7 Emergency Hydraulic Hose Repair Near You | Mobile Service",
+  seoTitle: "Emergency Hydraulic Hose Repair | 24/7 Mobile Service",
   seoDesc: "Fast emergency hydraulic hose repair in Bakersfield, Wichita, and Lubbock. Mobile techs dispatched in 60 minutes. On-site hose fixes for all equipment.",
   heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80&fm=webp",
   subheading: "When a hydraulic hose fails, every minute costs thousands. We dispatch certified mobile technicians within 60 minutes for 24/7 emergency hose repair and on-site fabrication in Bakersfield, Wichita, and Lubbock.",

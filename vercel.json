@@ -5,12 +5,81 @@
     {
       "source": "/services/pump-cylinder-repair",
       "destination": "/services/cylinder-repair",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/services/pump-cylinder-repair/",
       "destination": "/services/cylinder-repair",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/wichita/",
+      "destination": "/locations/wichita",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/bakersfield/",
+      "destination": "/locations/bakersfield",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/lubbock/",
+      "destination": "/locations/lubbock",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/emergency-repair/",
+      "destination": "/services/emergency-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cylinder-repair/",
+      "destination": "/services/cylinder-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/mobile-fabrication/",
+      "destination": "/services/mobile-fabrication",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/diagnostics/",
+      "destination": "/services/diagnostics",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/fluid-services/",
+      "destination": "/services/fluid-services",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/fleet-maintenance/",
+      "destination": "/services/fleet-maintenance",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/industrial-plant-service/",
+      "destination": "/services/industrial-plant-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/heavy-equipment-repair/",
+      "destination": "/services/heavy-equipment-repair",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'self';"
+        }
+      ]
     }
   ],
   "rewrites": [
