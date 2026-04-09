@@ -11,7 +11,3 @@ Host: https://emergencyhydraulics.com
 Disallow: /admin/
 Disallow: /thank-you/
 Disallow: /form-submitted/
-
-# Disallow old/removed URLs
-Disallow: /services/pump-cylinder-repair/
-Disallow: /services/pump-cylinder-repair

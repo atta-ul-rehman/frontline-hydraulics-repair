@@ -35,11 +35,11 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
   // Generate City Specific Schema - Enhanced for Local SEO
   const citySchema = {
     "@type": "LocalBusiness",
-    "@id": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}/#localbusiness`,
+    "@id": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}#localbusiness`,
     "name": `Frontline Hydraulic Services - ${data.city}`,
     "description": `Emergency mobile hydraulic repair dispatch network serving ${data.city}, ${data.state} and ${data.county}. 24/7 certified technicians for on-site hose repair and fabrication.`,
     "telephone": data.localDetails.phone,
-    "url": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}/`,
+    "url": `https://emergencyhydraulics.com/locations/${data.id.replace('location-', '')}`,
     "image": "https://emergencyhydraulics.com/assets/logo.webp",
     "address": {
       "@type": "PostalAddress",
@@ -93,7 +93,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ data }) => {
   const breadcrumbs = [
     { name: "Home", item: "/" },
     { name: "Locations", item: "/locations/" },
-    { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}/` }
+    { name: `${data.city}, ${data.state}`, item: `/locations/${data.id.replace('location-', '')}` }
   ];
 
   // FAQPage Schema for Location-specific FAQs
