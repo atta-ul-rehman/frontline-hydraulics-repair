@@ -4,8 +4,7 @@
     {
       "source": "/:path+/",
       "destination": "/:path+",
-      "statusCode": 301,
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/services/pump-cylinder-repair",
@@ -29,7 +28,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/).*)",
+      "source": "/((?!assets/|robots\\.txt|sitemap\\.xml|site\\.webmanifest|2eaa82b484914ce09a55a8500407d8c3\\.txt).*)",
       "destination": "/index.html"
     }
   ]

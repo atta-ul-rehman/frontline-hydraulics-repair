@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender-light.js",
+    "build": "vite build && node scripts/prerender-light.js && node scripts/submit-indexnow-on-vercel.js",
     "build:full-ssr": "vite build && npx tsx scripts/prerender.tsx",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "indexnow:submit": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
